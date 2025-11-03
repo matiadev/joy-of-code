@@ -2789,7 +2789,7 @@ The last thing to do is to update the rest of the components to accept callback 
 	<input
 		type="text"
 		value={todo.text}
-		oninput={() => updateTodo(todo)}
+		oninput={(e) => updateTodo({ ...todo, text: e.currentTarget.value })}
 	/>
 	<button onclick={() => removeTodo(todo)}>🗙</button>
 </li>

@@ -29,7 +29,7 @@ Hex codes are probably what you're used to.
 ```css:example.css showLineNumbers
 /* hex code */
 .element {
-  color: #008080;
+  color: #008888;  /* #008080 can't be written as shorthand, the shorthand puts the same digit at 2nd value, i.e. #0fe means #00ffee */
 }
 
 /* hex shorthand */
@@ -40,7 +40,7 @@ Hex codes are probably what you're used to.
 
 How the shorthand works is that you abbreviate each color channel using one character to represent red, green, and blue values.
 
-For example `#008080` can be read as `00 80 80` — so the shorthand would be `#088`.
+For example `#008888` can be read as `00 88 88` — so the shorthand would be `#088`.
 
 **Did you know you can add opacity to a hex color?**
 
@@ -52,7 +52,7 @@ Doing so changes the hex code format from #RRGGBB to #RRGGBBAA (8 digits), or #R
   color: rgba(0, 128, 128, 50%);
 
   /* hexa (hex + alpha) */
-  color: #00808080;
+  color: #00888888;
 
   /* hexa shorthand */
   color: #0888;

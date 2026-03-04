@@ -29,18 +29,18 @@ Hex codes are probably what you're used to.
 ```css:example.css showLineNumbers
 /* hex code */
 .element {
-  color: #008888;  /* #008080 can't be written as shorthand, the shorthand puts the same digit at 2nd value, i.e. #0fe means #00ffee */
+  color: #004488;
 }
 
 /* hex shorthand */
 .element {
-  color: #088;
+  color: #048;
 }
 ```
 
 How the shorthand works is that you abbreviate each color channel using one character to represent red, green, and blue values.
 
-For example `#008888` can be read as `00 88 88` — so the shorthand would be `#088`.
+For example `#004488` can be read as `00 44 88` — so the shorthand would be `#048`.
 
 **Did you know you can add opacity to a hex color?**
 
@@ -68,7 +68,7 @@ If you're using `rgb()`, you can write it like this instead since the former syn
 ```css:example.css showLineNumbers
 /* rgb */
 .element {
-  color: rgba(0 128 128);
+  color: rgb(0 128 128);
 }
 
 /* rgba */
@@ -83,9 +83,9 @@ I have a strong preference for `hsl()` which I plan to cover in another post.
 
 For one it makes it easier to create, and reason about your design system than other values since:
 
-- **Hue** is just a degree on the color wheel from **0 to 360** (red to blue)
+- **Hue** is just a degree on the color wheel from **0 to 360** (0° = red, 120° = green, 240° = blue)
 - **Saturation** is a percentage where **0% is gray**, and **100% is the full color**
-- **Lightness** is a percentage where **0% is black**, and **50% is normal**
+- **Lightness** is a percentage where **0% is black**, **50% is normal**, and **100% is white**
 
 ```scss:example.css showLineNumbers
 /* hsl */

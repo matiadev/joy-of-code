@@ -1,6 +1,9 @@
 import { error } from '@sveltejs/kit'
+import { dev } from '$app/environment'
 
 export async function load({ params: { slug } }) {
+	if (!dev) error(404, 'Not found')
+
 	try {
 		const module = await import(`../../../../posts/${slug}/${slug}.md`)
 		return { component: module.default, frontmatter: module.metadata }
@@ -8,3 +11,5 @@ export async function load({ params: { slug } }) {
 		error(404, `Post does not exist`)
 	}
 }
+
+export const prerender = false

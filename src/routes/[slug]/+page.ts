@@ -6,6 +6,6 @@ export async function load({ params: { slug } }) {
 		return { component: module.default, frontmatter: module.metadata }
 	} catch (e) {
 		console.error(e)
-		throw new Error()
+		error(404, `Post does not exist`)
 	}
 }

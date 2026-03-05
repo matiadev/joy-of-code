@@ -10,9 +10,7 @@ export async function GET() {
 
 	const pages = [
 		'archive',
-		'series',
 		'newsletter',
-		'uses',
 		'about',
 		...Object.keys(config.categories).map(
 			(category) => `categories/${category}`

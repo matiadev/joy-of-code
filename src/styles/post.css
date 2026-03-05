@@ -203,6 +203,8 @@
 		border-radius: var(--rounded-20);
 
 		.icon {
+			--icon-bg: #101a1b;
+
 			width: 48px;
 			height: 48px;
 			padding: var(--spacing-4);
@@ -211,7 +213,7 @@
 			top: 0px;
 			translate: -50% -50%;
 			color: var(--icon-color);
-			background: #101a1b;
+			background: var(--icon-bg);
 		}
 
 		&.info {

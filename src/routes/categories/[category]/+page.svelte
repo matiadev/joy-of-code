@@ -7,7 +7,7 @@
 
 	let { data } = $props()
 
-	const { posts } = data
+	const { posts } = $derived(data)
 	const category = $page.params.category as Categories
 </script>
 

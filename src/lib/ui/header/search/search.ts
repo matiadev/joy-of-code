@@ -1,4 +1,5 @@
 import FlexSearch from 'flexsearch'
+import type { Index } from 'flexsearch'
 
 export type Post = {
 	content: string
@@ -12,7 +13,7 @@ export type Result = {
 	title: string
 }
 
-let postsIndex: FlexSearch.Index
+let postsIndex: Index
 let posts: Post[]
 
 export function createPostsIndex(data: Post[]) {

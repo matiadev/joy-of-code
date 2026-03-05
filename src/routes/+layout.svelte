@@ -21,7 +21,7 @@
 	<Header />
 
 	<div class="layout">
-		{#key data.url}
+		{#key (data as any).url}
 			<div in:fly={{ y: -50, duration: 250 }}>
 				{@render children?.()}
 			</div>

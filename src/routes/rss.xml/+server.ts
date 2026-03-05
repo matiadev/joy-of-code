@@ -18,6 +18,7 @@ export async function GET() {
 					config.siteUrl
 				}rss.xml" rel="self" type="application/rss+xml"/>
 				${posts
+					.filter((post) => !post.draft)
 					.reverse()
 					.map(
 						(post) => `

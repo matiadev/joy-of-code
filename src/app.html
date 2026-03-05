@@ -33,10 +33,10 @@
 			const userPostTextHeight = localStorage.textHeight
 
 			const prefersDarkMode = window.matchMedia(
-				'prefers-color-scheme: dark'
+				'(prefers-color-scheme: dark)'
 			).matches
 			const prefersLightMode = window.matchMedia(
-				'prefers-color-scheme: light'
+				'(prefers-color-scheme: light)'
 			).matches
 
 			// check if the user set a dyslexic font
@@ -55,7 +55,7 @@
 			}
 
 			// check if the user set a text height for posts
-			if (userPostTextLength) {
+			if (userPostTextHeight) {
 				html.style.setProperty('--post-txt-height', userPostTextHeight)
 			}
 

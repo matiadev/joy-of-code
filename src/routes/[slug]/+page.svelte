@@ -10,8 +10,12 @@
 
 	let { data } = $props()
 
-	let editUrl = `${config.fileUrl}/${data.frontmatter.slug}/${data.frontmatter.slug}.md`
-	let image = `${config.postImage}${encodeURIComponent(data.frontmatter.title)}.png`
+	let editUrl = $derived(
+		`${config.fileUrl}/${data.frontmatter.slug}/${data.frontmatter.slug}.md`
+	)
+	let image = $derived(
+		`${config.postImage}${encodeURIComponent(data.frontmatter.title)}.png`
+	)
 </script>
 
 <svelte:head>

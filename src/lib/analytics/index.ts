@@ -2,9 +2,11 @@ import posthog from 'posthog-js'
 import { browser } from '$app/environment'
 import { beforeNavigate, afterNavigate } from '$app/navigation'
 
+const POSTHOG_KEY = 'phc_nZDwmyGFBKKFyA7fag8ia0Lq9PYMqxeofhojcOX67jW'
+
 export function initAnalytics() {
 	if (browser) {
-		posthog.init('phc_nZDwmyGFBKKFyA7fag8ia0Lq9PYMqxeofhojcOX67jW', {
+		posthog.init(POSTHOG_KEY, {
 			api_host: 'https://eu.i.posthog.com',
 			capture_pageview: false,
 			capture_pageleave: false,

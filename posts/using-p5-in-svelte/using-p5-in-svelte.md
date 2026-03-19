@@ -1,5 +1,5 @@
 ---
-title: Make Art Using Code With P5 And Svelte
+title: Make Art Using Code With P5.js And Svelte
 description: Learn how to use p5.js and integrate older CommonJS libraries in Svelte
 slug: using-p5-in-svelte
 published: '2026-03-18'
@@ -14,11 +14,11 @@ category: svelte
 
 This all started when someone asked how to use [p5.js](https://p5js.org/) in Svelte. While there's already a `p5-svelte` library, it's inactive and has a memory leak. So I decided to make a simple wrapper myself and fix some of the issues.
 
-Even though I don't use `p5.js` regularly, when I think of `p5.js`, I think of Dan Shiffman from [The Coding Train](https://www.youtube.com/@TheCodingTrain), which has a special place in my heart. He also has a fantastic book on creative coding called [The Nature of Code](https://natureofcode.com/) which you can read for free online.
+Even though I don't use p5.js regularly, when I think of p5.js, I think of Dan Shiffman from [The Coding Train](https://www.youtube.com/@TheCodingTrain), which has a special place in my heart. He also has a fantastic book on creative coding called [The Nature of Code](https://natureofcode.com/) which you can read for free online.
 
 I'm also going to show you how to make old [CommonJS](https://nodejs.org/api/modules.html) libraries work in Svelte which uses [ESM](https://nodejs.org/api/esm.html).
 
-## What Is p5.js?
+## What Is P5?
 
 p5.js is a creative coding library which makes it simple to work with the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API). Here's an example in **global mode** where you specify the `setup` and `draw` functions:
 
@@ -39,7 +39,7 @@ function draw() {
 
 You can try the example in the [p5.js editor](https://editor.p5js.org/) and you're going to see an interactive canvas where you can drag the circle around.
 
-## Using p5.js In Svelte
+## Using P5 In Svelte
 
 To use p5.js in Svelte install the `@sveltecraft/p5-svelte` package using your favorite package manager inside your project:
 
@@ -79,13 +79,13 @@ We're using [instance mode](https://github.com/processing/p5.js/wiki/Global-and-
 
 The `diameter` variable doesn't actually need to be reactive since the draw loop runs continuously, but it demonstrates that Svelte reactivity works seamlessly.
 
-Once you're done, start the development server with `npm run dev` and navigate to `localhost`. You'll see a working `p5.js` example in Svelte.
+Once you're done, start the development server with `npm run dev` and navigate to `localhost`. You'll see a working p5.js example in Svelte.
 
 ## Using Addons
 
-Using older addons like `p5.sound` can be tricky because they're not part of `p5.js` anymore, but they're standalone packages which also lack types.
+Using older addons like `p5.sound` can be tricky because they're not part of p5.js anymore, but they're standalone packages which also lack types.
 
-The new version of `p5.js` preloads assets inside `setup` instead of `preload`:
+The new version of p5.js preloads assets inside `setup` instead of `preload`:
 
 ```svelte:+page.svelte
 <script lang="ts">
@@ -124,7 +124,7 @@ The reason we use dynamic imports is because addons like `p5.sound` look for a g
 
 ## Using Older Libraries In Svelte
 
-While `p5.js` is starting the move to ESM, it uses CJS packages that throw a wrench if you try to import it:
+While p5.js is starting the move to ESM, it uses CJS packages that throw a wrench if you try to import it:
 
 ```svelte:P5Sketch.svelte
 <script lang="ts">
@@ -212,4 +212,4 @@ Returning a promise prevents the cleanup from running, leading to a memory leak.
 </script>
 ```
 
-That's everything you need to know to use `p5.js` in Svelte. If you find any issues, feel free to file them on [GitHub](https://github.com/matiadev/p5-svelte).
+That's everything you need to know to use p5.js in Svelte. If you find any issues, feel free to file them on [GitHub](https://github.com/matiadev/p5-svelte).

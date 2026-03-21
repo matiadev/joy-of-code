@@ -9,6 +9,14 @@ const config = {
 	preprocess: sequence([markdown(), vitePreprocess(), preprocessMeltUI()]),
 	kit: {
 		adapter: adapter(),
+		experimental: {
+			remoteFunctions: true,
+		},
+	},
+	compilerOptions: {
+		experimental: {
+			async: true,
+		},
 	},
 	vitePlugin: {
 		inspector: {

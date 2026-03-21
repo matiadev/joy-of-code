@@ -7,7 +7,7 @@
 	import { useAnalytics } from '$lib/analytics'
 	import { setupViewTransition } from '$lib/utils'
 
-	import '../styles/styles.css'
+	import '../../styles/styles.css'
 
 	useAnalytics()
 	setupViewTransition()

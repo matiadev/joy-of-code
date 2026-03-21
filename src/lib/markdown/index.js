@@ -137,7 +137,7 @@ function searchAndReplace(content, slug) {
  * @param {string} content
  * @param {string} slug
  */
-async function parseMarkdown(content, slug) {
+export async function parseMarkdown(content, slug) {
 	const replacedContent = searchAndReplace(content, slug)
 	const parsedMarkdown = await markdownProcessor.process(replacedContent)
 	return parsedMarkdown.toString()

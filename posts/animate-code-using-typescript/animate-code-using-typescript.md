@@ -1,5 +1,5 @@
 ---
-title: How To Animate Code Using TypeScript
+title: Animate Code Using TypeScript
 description: Learn how to animate code using TypeScript and the Shiki Magic Move library
 slug: animate-code-using-typescript
 published: '2026-03-21'
@@ -35,7 +35,6 @@ npm i shiki-magic-move shiki
 At the heart of Shiki Magic Move is a framework agnostic **core**, and **renderer**:
 
 ```ts:magic-move.ts
-import { createHighlighter } from 'shiki'
 import { codeToKeyedTokens, createMagicMoveMachine } from 'shiki-magic-move/core'
 import { MagicMoveRenderer } from 'shiki-magic-move/renderer'
 ```
@@ -43,13 +42,14 @@ import { MagicMoveRenderer } from 'shiki-magic-move/renderer'
 We also need to import the CSS styles for the animations from `shiki-magic-move`:
 
 ```ts:magic-move.ts
-// ...
 import 'shiki-magic-move/dist/style.css'
 ```
 
 Next let's create the Shiki highlighter:
 
 ```ts:magic-move.ts
+import { createHighlighter } from 'shiki'
+
 // create the Shiki highlighter
 const highlighter = await createHighlighter({
 	langs: ['typescript'],
@@ -81,7 +81,7 @@ class MagicMove {
 	constructor(target: Element, highlighter: HighlighterCore, code: string, options: MagicMoveOptions) {
 		const { lang, theme, lineNumbers = false } = options
 
-		// create and add <pre> element to target
+		// add `<pre>` element to target
 		const pre = document.crateElement('pre')
 		pre.className = 'shiki-magic-move-container'
 		target.appendChild(pre)

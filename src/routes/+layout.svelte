@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition'
-
 	import Header from '$lib/ui/header/header.svelte'
 	import Footer from '$lib/ui/footer.svelte'
 	import LiteYouTubeEmbed from '$lib/embed/youtube.svelte'
@@ -12,7 +10,7 @@
 	useAnalytics()
 	setupViewTransition()
 
-	let { data, children } = $props()
+	let { children } = $props()
 </script>
 
 <LiteYouTubeEmbed />
@@ -21,11 +19,7 @@
 	<Header />
 
 	<div class="layout">
-		{#key (data as any).url}
-			<div in:fly={{ y: -50, duration: 250 }}>
-				{@render children?.()}
-			</div>
-		{/key}
+		{@render children?.()}
 
 		<Footer />
 	</div>

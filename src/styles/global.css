@@ -47,7 +47,6 @@ html {
 	scroll-behavior: smooth;
 	scrollbar-width: thin;
 	scrollbar-color: var(--clr-scrollbar-thumb) transparent;
-	view-transition-name: none;
 }
 
 html,
@@ -180,6 +179,21 @@ lite-youtube::before {
 	clip: rect(0, 0, 0, 0);
 	white-space: nowrap;
 	border-width: 0;
+}
+
+::view-transition-old(root) {
+	animation: slide 0.25s reverse ease-out;
+}
+
+::view-transition-new(root) {
+	animation: slide 0.25s ease-out;
+}
+
+@keyframes slide {
+	from {
+		opacity: 0;
+		translate: 0% 100%;
+	}
 }
 
 @media (prefers-reduced-motion) {

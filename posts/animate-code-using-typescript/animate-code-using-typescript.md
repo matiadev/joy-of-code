@@ -12,11 +12,11 @@ category: typescript
 
 ## Shiki Magic Move
 
-[Shiki Magic Move](https://shiki-magic-move.netlify.app/) is a low-level library for animating code blocks using [Shiki](https://shiki.style/) for syntax highlighting.
+In another post I wrote about [how to create animated code blocks using Shiki Magic Move in Svelte](https://joyofcode.xyz/animated-code-blocks-using-shiki) by creating a custom Svelte renderer.
 
-In a previous post I wrote about [how to create animated code blocks using Shiki Magic Move in Svelte](https://joyofcode.xyz/animated-code-blocks-using-shiki) by creating a custom Svelte renderer. Shiki Magic Move provides framework wrappers so you don't have to make your own renderer, but it doesn't have instructions on how to use it with regular TypeScript.
+[Shiki Magic Move](https://shiki-magic-move.netlify.app/) is a low-level library for animating code blocks using [Shiki](https://shiki.style/) for syntax highlighting, so it only provides framework wrappers and doesn't have instructions on how to create a TypeScript renderer.
 
-In this post I'm going to show you how you can use TypeScript to create smoothly animated code blocks using Shiki Magic Move.
+In this post I'm going to show you how to create a TypeScript renderer using Shiki Magic Move for smoothly animated code blocks.
 
 ## Animating Code Blocks Using TypeScript
 

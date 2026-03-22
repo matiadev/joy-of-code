@@ -40,10 +40,11 @@
 
 <style>
 	.menu {
+		position: relative;
+		background: var(--clr-menu-bg);
 		z-index: 20;
 
 		[data-melt-dropdown-menu-arrow] {
-			background-image: var(--clr-menu-bg);
 			border-top: 1px solid var(--clr-menu-border);
 			border-left: 1px solid var(--clr-menu-border);
 		}
@@ -53,9 +54,8 @@
 		position: relative;
 		padding: var(--spacing-24);
 		font-size: var(--font-18);
-		background-image: var(--clr-menu-bg);
-		border-top: 1px solid var(--clr-menu-border);
-		border-left: 1px solid var(--clr-menu-border);
+		background: var(--clr-menu-bg);
+		border: 1px solid var(--clr-menu-border);
 		border-radius: var(--rounded-20);
 		box-shadow: var(--shadow-lg);
 

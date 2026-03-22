@@ -4,7 +4,6 @@
 
 	import Card from '../../[slug]/card.svelte'
 	import Clipboard from '../../[slug]/clipboard.svelte'
-	import Overlay from '../../[slug]/overlay.svelte'
 	import TableOfContents from '../../[slug]/toc.svelte'
 
 	let { data } = $props()
@@ -38,7 +37,6 @@
 <Clipboard />
 
 <main>
-	<Overlay />
 	<TableOfContents />
 
 	<article class="prose">

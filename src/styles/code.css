@@ -10,7 +10,7 @@
 		padding-block: var(--spacing-16);
 		line-height: var(--post-txt-height);
 		background-image: var(--clr-code-bg);
-		border-left: 1px solid var(--clr-code-border);
+		border: 1px solid var(--clr-code-border);
 		border-top: none;
 		border-bottom-left-radius: var(--rounded-20);
 		border-bottom-right-radius: var(--rounded-20);
@@ -89,9 +89,7 @@
 		font-size: var(--post-txt-size);
 		color: var(--clr-code-title);
 		background-color: var(--clr-code-title-bg);
-		border-top: 1px solid var(--clr-code-border);
-		border-left: 1px solid var(--clr-code-border);
-		border-bottom: none;
+		border: 1px solid var(--clr-code-border);
 		border-top-left-radius: var(--rounded-20);
 		border-top-right-radius: var(--rounded-20);
 	}

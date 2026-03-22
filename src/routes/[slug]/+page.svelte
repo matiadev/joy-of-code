@@ -4,9 +4,7 @@
 
 	import Card from './card.svelte'
 	import Clipboard from './clipboard.svelte'
-	import Overlay from './overlay.svelte'
 	import TableOfContents from './toc.svelte'
-	// import Warning from './warning.svelte'
 
 	let { data } = $props()
 
@@ -39,9 +37,7 @@
 <Clipboard />
 
 <main>
-	<Overlay />
 	<TableOfContents />
-	<!-- <Warning published={data.frontmatter.published} {editUrl} /> -->
 
 	<article class="prose">
 		<header>

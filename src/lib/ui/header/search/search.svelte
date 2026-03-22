@@ -79,12 +79,12 @@
 				spellcheck="false"
 				type="search"
 			/>
-			<div class="results">
-				{#if search === 'load'}
-					<p>Loading...</p>
-				{/if}
+			{#if results.length > 0}
+				<div class="results">
+					{#if search === 'load'}
+						<p>Loading...</p>
+					{/if}
 
-				{#if results}
 					<ul>
 						{#each results as result}
 							{#if result.content.length > 0}
@@ -99,8 +99,8 @@
 							{/if}
 						{/each}
 					</ul>
-				{/if}
-			</div>
+				</div>
+			{/if}
 		</div>
 	{/if}
 </div>
@@ -173,8 +173,7 @@
 		padding: var(--spacing-8) var(--spacing-16);
 		color: var(--clr-search-txt);
 		background-color: var(--clr-search-bg);
-		border-top: 1px solid var(--clr-search-border);
-		border-left: 1px solid var(--clr-search-border);
+		border: 1px solid var(--clr-search-border);
 		border-radius: var(--rounded-20);
 		transition: color 0.3s ease;
 

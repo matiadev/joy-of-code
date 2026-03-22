@@ -60,23 +60,9 @@ body {
 	font-size: var(--post-txt-size);
 	color: var(--clr-txt);
 	background-color: var(--clr-bg);
-
-	&::before {
-		content: '';
-		width: 100%;
-		height: 100%;
-		position: fixed;
-		background-image: linear-gradient(
-			to bottom,
-			hsl(225 74% 40%),
-			hsl(270 70% 40%)
-		);
-		opacity: 0.1;
-		z-index: -1;
-	}
 }
 
-*:focus {
+:is(a, button, input):focus {
 	outline: none;
 	box-shadow: 0 0 0 4px var(--clr-primary);
 	border-radius: var(--rounded-20);

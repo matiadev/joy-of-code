@@ -105,9 +105,8 @@
 	.sidebar-toggle,
 	.table-of-contents {
 		padding: var(--spacing-16);
-		background-color: var(--clr-bg);
-		border-top: 1px solid var(--clr-menu-border);
-		border-left: 1px solid var(--clr-menu-border);
+		background-color: var(--clr-footer-bg);
+		border: 1px solid var(--clr-menu-border);
 		border-radius: var(--rounded-20);
 		box-shadow: var(--shadow-sm);
 	}

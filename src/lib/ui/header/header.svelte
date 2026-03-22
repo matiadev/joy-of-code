@@ -38,6 +38,7 @@
 		font-size: var(--font-18);
 		border-radius: 1rem;
 		z-index: 20;
+		view-transition-name: header;
 		transition:
 			background-color 0.3s ease,
 			color 0.3s ease;

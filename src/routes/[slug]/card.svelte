@@ -15,13 +15,7 @@
 			<Heart width={24} height={24} aria-hidden={true} />
 		</div>
 		<span class="title">Support</span>
-		<p class="text">
-			You can <a
-				href="https://www.youtube.com/@JoyofCodeDev?sub_confirmation=1"
-			>
-				subscribe on YouTube
-			</a>, or consider becoming a patron if you want to support my work.
-		</p>
+		<p class="text">You can support my work on Patreon.</p>
 		<a
 			class="link"
 			href="https://www.patreon.com/joyofcode"

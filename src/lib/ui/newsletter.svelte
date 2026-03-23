@@ -59,7 +59,7 @@
 		display: flex;
 		max-width: 360px;
 		height: 48px;
-		margin: var(--spacing-8) 0;
+		margin: var(--spacing-16) 0;
 		border-radius: var(--rounded-4);
 		border: 1px solid var(--clr-input-border);
 		box-shadow: var(--shadow-sm);

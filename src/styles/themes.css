@@ -1,7 +1,7 @@
 html[data-theme='🌛 Night'] {
 	/* global */
 	--clr-primary: hsl(173 100% 66%);
-	--clr-txt: hsl(184 100% 98%);
+	--clr-txt: hsl(220 100% 98%);
 	--clr-bg: hsl(220 20% 12%);
 
 	--bg: radial-gradient(hsl(173 100% 4%), var(--clr-bg));
@@ -11,10 +11,10 @@ html[data-theme='🌛 Night'] {
 	--clr-header-bg: hsl(220 20% 12% / 80%);
 
 	/* menu */
-	--clr-menu-text: hsl(0 0% 78%);
-	--clr-menu-bg: hsl(220, 20%, 12%);
+	--clr-menu-text: hsl(224 28% 78%);
+	--clr-menu-bg: hsl(220 20% 12%);
 	--clr-menu-arrow-bg: hsl(180 7% 14%);
-	--clr-menu-border: hsl(220, 20%, 20%);
+	--clr-menu-border: hsl(220 20% 20%);
 
 	--clr-theme-txt: hsl(177 100% 15%);
 	--clr-theme-active: hsl(177 100% 80%);
@@ -30,9 +30,9 @@ html[data-theme='🌛 Night'] {
 	);
 	--clr-hero-divider-bg: hsl(0 0% 21%);
 	--clr-input-txt: hsl(177 100% 15%);
-	--clr-input-bg: hsl(210 13% 24%);
+	--clr-input-bg: hsl(220 20% 20%);
 	--clr-input-placeholder-txt: hsl(210 13% 50%);
-	--clr-input-border: hsl(0 0% 21%);
+	--clr-input-border: hsl(220 20% 24%);
 
 	/* card */
 	--clr-card-bg: linear-gradient(
@@ -40,14 +40,14 @@ html[data-theme='🌛 Night'] {
 		hsl(180 7% 14%) 0%,
 		hsl(216 7% 14%) 100%
 	);
-	--clr-card-txt: hsl(0 0% 78%);
+	--clr-card-txt: hsl(224 28% 78%);
 
 	/* link */
 	--clr-link-txt: hsl(0 100% 98%);
 	--clr-link-background: hsl(0 0% 4%);
 
 	/* footer */
-	--clr-footer-txt: hsl(0 0% 78%);
+	--clr-footer-txt: hsl(224 28% 78%);
 	--clr-footer-bg: hsl(220 20% 14%);
 
 	/* post */

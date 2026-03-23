@@ -64,9 +64,8 @@
 	.hero {
 		margin-block-start: var(--spacing-64);
 		padding: var(--spacing-32) var(--spacing-24);
-		background: var(--clr-hero-bg);
-		border-top: 1px solid var(--clr-menu-border);
-		border-left: 1px solid var(--clr-menu-border);
+		background: var(--clr-footer-bg);
+		border: 1px solid var(--clr-menu-border);
 		border-radius: var(--rounded-20);
 		box-shadow: var(--shadow-sm);
 
@@ -77,14 +76,14 @@
 		}
 
 		.divider {
-			border-bottom: 1px solid var(--clr-hero-divider-bg);
+			border-bottom: 1px solid var(--clr-menu-border);
 			margin: var(--spacing-32) 0;
 
 			@media (width >= 860px) {
 				grid-column: column-start 7 / span 1;
 				justify-self: center;
 				margin: 0;
-				border-left: 1px solid var(--clr-hero-divider-bg);
+				border-left: 1px solid var(--clr-menu-border);
 				border-bottom: none;
 			}
 		}
@@ -102,7 +101,7 @@
 
 		.description {
 			font-size: var(--font-20);
-			color: var(--clr-hero-txt);
+			color: var(--clr-card-txt);
 		}
 
 		.continue-reading {
@@ -127,7 +126,7 @@
 		}
 
 		h2 {
-			font-size: var(--font-24);
+			font-size: var(--font-32);
 			line-height: 32px;
 		}
 	}

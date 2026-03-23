@@ -159,7 +159,7 @@
 
 	:global {
 		[data-theme='🌛 Night'] .table-of-contents a {
-			--color: hsl(0 0% 80%);
+			--color: hsl(224 28% 78%);
 		}
 
 		[data-theme='☀️ Daylight'] .table-of-contents a {

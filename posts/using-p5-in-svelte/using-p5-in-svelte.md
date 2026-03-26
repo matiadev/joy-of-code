@@ -6,7 +6,11 @@ published: '2026-03-18'
 category: svelte
 ---
 
-{% youtube id="97bD9ZHwv2U" title="Using p5.js In Svelte" %}
+<script lang="ts">
+	import YouTube from '$lib/components/youtube.svelte'
+</script>
+
+<YouTube id="97bD9ZHwv2U" title="Using P5.js In Svelte" />
 
 ## Table of Contents
 

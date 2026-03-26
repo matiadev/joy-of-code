@@ -6,7 +6,11 @@ published: '2026-03-21'
 category: typescript
 ---
 
-{% youtube id="wGf0PUlOQoA" title="Animate Code Using TypeScript" %}
+<script lang="ts">
+	import YouTube from '$lib/components/youtube.svelte'
+</script>
+
+<YouTube id="wGf0PUlOQoA" title="Animate Code Using TypeScript" />
 
 ## Table of Contents
 

@@ -6,7 +6,11 @@ published: '2026-3-14'
 category: svelte
 ---
 
-{% youtube id="7mQCRxdIPJg" title="Avoid These Mistakes With Svelte Events" %}
+<script lang="ts">
+	import YouTube from '$lib/components/youtube.svelte'
+</script>
+
+<YouTube id="7mQCRxdIPJg" title="Avoid These Mistakes With Svelte Events" />
 
 ## Table of Contents
 

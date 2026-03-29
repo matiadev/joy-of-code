@@ -30,3 +30,5 @@ export const fileUrl = `https://github.com/mattcroat/joy-of-code/blob/main/posts
 
 // https://raw.githubusercontent.com/user/repo/main/posts/post-slug/images/image.webp
 export const imagesUrl = `https://raw.githubusercontent.com/mattcroat/joy-of-code/main/posts`
+
+export const imagesLocal = `/posts`

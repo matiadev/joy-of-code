@@ -27,7 +27,7 @@
 
 <style>
 	.container {
-		height: 100%;
+		min-height: 100%;
 		padding-block-start: var(--spacing-24);
 	}
 

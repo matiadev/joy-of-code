@@ -7,12 +7,12 @@
 	import * as config from '$lib/site/config'
 
 	let scrollY = $state(0)
-	let fixed = $derived(scrollY > 0)
+	let scrolled = $derived(scrollY > 0)
 </script>
 
 <svelte:window bind:scrollY />
 
-<header class:fixed>
+<header class:scrolled>
 	<div class="container">
 		<div class="logo">
 			<Logo />
@@ -31,6 +31,8 @@
 
 <style>
 	header {
+		position: sticky;
+		top: 10px;
 		width: 90%;
 		max-width: 800px;
 		margin-inline: auto;
@@ -41,16 +43,13 @@
 		view-transition-name: header;
 		transition:
 			background-color 0.3s ease,
-			color 0.3s ease;
+			color 0.3s ease,
+			box-shadow 0.3s ease,
+			backdrop-filter 0.3s ease;
 
-		&.fixed {
-			position: fixed;
-			top: 10px;
-			left: 50%;
-			translate: -50% 0;
+		&.scrolled {
 			background-color: var(--clr-header-bg);
 			color: var(--clr-primary);
-			box-shadow: var(--shadow-md);
 			box-shadow: 1px 1px 10px hsl(0 0% 0% / 40%);
 			backdrop-filter: blur(20px);
 		}

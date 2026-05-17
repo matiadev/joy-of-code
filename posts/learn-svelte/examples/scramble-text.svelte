@@ -41,7 +41,7 @@
 
 <style>
 	p {
-		font-family: 'Monaspace Neon';
+		font-family: 'JetBrains Mono';
 		font-size: var(--font-32);
 	}
 

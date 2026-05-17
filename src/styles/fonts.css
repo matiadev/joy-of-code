@@ -43,19 +43,19 @@
 }
 
 @font-face {
-	font-family: 'Monaspace Neon';
+	font-family: 'JetBrains Mono';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/monaspace-neon/monaspace-neon-400.woff2') format('woff2');
+	src: url('/fonts/jetbrains-mono/jetbrains-mono-400.woff2') format('woff2');
 }
 
 @font-face {
-	font-family: 'Monaspace Neon';
+	font-family: 'JetBrains Mono';
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url('/fonts/monaspace-neon/monaspace-neon-700.woff2') format('woff2');
+	src: url('/fonts/jetbrains-mono/jetbrains-mono-700.woff2') format('woff2');
 }
 
 @font-face {

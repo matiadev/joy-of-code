@@ -8,7 +8,7 @@
 	pre {
 		max-height: 800px;
 		padding-block: var(--spacing-16);
-		line-height: var(--post-txt-height);
+		line-height: var(--code-txt-height);
 		background-image: var(--clr-code-bg);
 		border: 1px solid var(--clr-code-border);
 		border-top: none;

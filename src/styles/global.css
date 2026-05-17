@@ -2,7 +2,7 @@
 	/* font */
 	--font-sans: 'Atkinson Hyperlegible', sans-serif;
 	--font-serif: 'DM Serif', serif;
-	--font-mono: 'Monaspace Neon', monospace;
+	--font-mono: 'JetBrains Mono', monospace;
 	--font-dyslexic: 'OpenDyslexic', sans-serif;
 	--font-dyslexic-mono: 'OpenDyslexic Mono', monospace;
 
@@ -25,8 +25,9 @@
 
 	/* post */
 	--post-txt-size: 20px;
-	--post-txt-length: 60ch;
-	--post-txt-height: 32px;
+	--post-txt-length: 70ch;
+	--post-txt-height: 34px;
+	--code-txt-height: 30px;
 
 	/* scrollbar */
 	--clr-scrollbar-thumb: hsl(173 10% 20%);

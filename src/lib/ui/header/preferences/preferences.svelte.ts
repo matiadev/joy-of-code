@@ -1,9 +1,13 @@
 import { browser } from '$app/environment'
 
+const DEFAULT_TEXT_SIZE = 20
+const DEFAULT_TEXT_LENGTH = 70
+const DEFAULT_TEXT_HEIGHT = 34
+
 class Preferences {
-	#textSize = $state(20)
-	#textLength = $state(60)
-	#textHeight = $state(32)
+	#textSize = $state(DEFAULT_TEXT_SIZE)
+	#textLength = $state(DEFAULT_TEXT_LENGTH)
+	#textHeight = $state(DEFAULT_TEXT_HEIGHT)
 	#htmlEl: HTMLElement | undefined
 	resetTheme = $state(false)
 
@@ -50,9 +54,9 @@ class Preferences {
 	}
 
 	reset() {
-		this.textSize = 20
-		this.textLength = 60
-		this.textHeight = 32
+		this.textSize = DEFAULT_TEXT_SIZE
+		this.textLength = DEFAULT_TEXT_LENGTH
+		this.textHeight = DEFAULT_TEXT_HEIGHT
 
 		this.#htmlEl!.dataset.theme = '🌛 Night'
 		delete this.#htmlEl!.dataset.font

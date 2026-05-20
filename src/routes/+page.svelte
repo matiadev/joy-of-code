@@ -91,7 +91,7 @@
 
 	.latest-post {
 		@media (width >= 860px) {
-			grid-column: column-start 2 / span 4;
+			grid-column: column-start 2 / span 5;
 		}
 
 		.title {

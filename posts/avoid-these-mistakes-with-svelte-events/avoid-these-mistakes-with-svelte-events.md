@@ -1,6 +1,6 @@
 ---
 title: Avoid These Mistakes With Svelte Events
-description: Learn how Svelte handles events using event delegation and how to avoid mistakes when creating events
+description: Learn how Svelte handles events using event delegation and how to avoid mistakes when creating events.
 slug: avoid-these-mistakes-with-svelte-events
 published: '2026-3-14'
 category: svelte

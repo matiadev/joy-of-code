@@ -1,6 +1,6 @@
 ---
 title: Console Logs Are Lying To You
-description: Browser console logs are great but they can be deceiving and waste your time unless you understand how they work
+description: Browser console logs are great but they can be deceiving and waste your time unless you understand how they work.
 slug: console-logs-are-lying-to-you
 published: '2026-3-4'
 category: javascript

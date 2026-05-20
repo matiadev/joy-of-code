@@ -1,6 +1,6 @@
 ---
 title: Make Art Using Code With P5.js And Svelte
-description: Learn how to use p5.js and integrate older CommonJS libraries in Svelte
+description: Learn how to use p5.js and integrate older CommonJS libraries in Svelte.
 slug: using-p5-in-svelte
 published: '2026-03-18'
 category: svelte

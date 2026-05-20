@@ -1,6 +1,6 @@
 ---
 title: Animate Code Using TypeScript
-description: Learn how to animate code using TypeScript and the Shiki Magic Move library
+description: Learn how to animate code using TypeScript and the Shiki Magic Move library.
 slug: animate-code-using-typescript
 published: '2026-03-21'
 category: typescript

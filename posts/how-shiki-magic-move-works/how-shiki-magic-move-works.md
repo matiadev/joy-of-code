@@ -1,6 +1,6 @@
 ---
 title: The Magic Behind Shiki Magic Move Code Animations
-description: A deep dive into how Shiki Magic Move animates code blocks
+description: A deep dive into how Shiki Magic Move animates code blocks.
 slug: how-shiki-magic-move-works
 published: '2026-03-30'
 category: typescript

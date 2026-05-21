@@ -79,10 +79,6 @@
 			color: var(--clr-card-txt);
 			margin-top: var(--spacing-8);
 			margin-bottom: var(--spacing-32);
-
-			a {
-				text-decoration: underline;
-			}
 		}
 
 		.link {

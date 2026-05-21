@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from '$app/state'
-	import { building, dev } from '$app/environment'
 	import { imagesLocal, imagesUrl } from '$lib/site/config'
 
 	type Props = {
@@ -11,7 +10,7 @@
 
 	let { src, alt }: Props = $props()
 
-	const images = building || !dev ? imagesUrl : imagesLocal
+	const images = import.meta.env.DEV ? imagesLocal : imagesUrl
 	const slug = page.params.slug
 </script>
 

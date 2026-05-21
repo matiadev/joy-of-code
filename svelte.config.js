@@ -7,6 +7,15 @@ import markdown from './src/lib/markdown/index.js'
 const config = {
 	extensions: ['.svelte', '.md'],
 	preprocess: sequence([markdown(), vitePreprocess(), preprocessMeltUI()]),
+	compilerOptions: {
+		warningFilter: (warning) => {
+			const ignore = [
+				'a11y_img_redundant_alt',
+				'a11y_no_static_element_interactions',
+			]
+			return !ignore.includes(warning.code)
+		},
+	},
 	kit: {
 		adapter: adapter(),
 	},

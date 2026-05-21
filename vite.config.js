@@ -6,4 +6,7 @@ export default defineConfig({
 	server: {
 		fs: { allow: ['..'] },
 	},
+	worker: {
+		format: 'es',
+	},
 })

@@ -62,10 +62,8 @@ body {
 	background-color: var(--clr-bg);
 }
 
-:is(a, button, input):focus {
-	outline: none;
-	box-shadow: 0 0 0 4px var(--clr-primary);
-	border-radius: var(--rounded-20);
+:is(a, button, input):focus-visible {
+	outline: 2px solid var(--clr-primary);
 }
 
 html[data-font='dyslexic'] :is(body, h1, h2, h3) {

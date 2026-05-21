@@ -11,9 +11,7 @@
 
 	let { src, alt }: Props = $props()
 
-	// TODO: figure out why doesn't work in Vercel
-	// const images = dev ? imagesLocal : imagesUrl
-	const images = imagesUrl
+	const images = dev ? imagesLocal : imagesUrl
 	const slug = page.params.slug
 </script>
 

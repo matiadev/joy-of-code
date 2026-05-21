@@ -87,7 +87,7 @@
 			top: 0px;
 			translate: -50% -50%;
 			color: var(--icon-color);
-			background: #101a1b;
+			background: var(--clr-bg);
 		}
 
 		&.info {

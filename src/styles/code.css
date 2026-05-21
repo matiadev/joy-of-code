@@ -55,8 +55,8 @@
 				content: counter(step);
 				counter-increment: step;
 				display: inline-block;
-				width: 1rem;
-				margin-right: 4rem;
+				width: 10px;
+				margin-right: 40px;
 				text-align: right;
 				opacity: 0.4;
 			}

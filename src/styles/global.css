@@ -6,22 +6,22 @@
 	--font-dyslexic: 'OpenDyslexic', sans-serif;
 	--font-dyslexic-mono: 'OpenDyslexic Mono', monospace;
 
-	--font-16: 1.6rem;
-	--font-18: 1.8rem;
-	--font-20: 2rem;
-	--font-24: 2.4rem;
-	--font-32: 3.2rem;
-	--font-48: 4.8rem;
-	--font-96: 9.6rem;
+	--font-16: 1rem;
+	--font-18: 1.125rem;
+	--font-20: 1.25rem;
+	--font-24: 1.5rem;
+	--font-32: 2rem;
+	--font-48: 3rem;
+	--font-96: 6rem;
 
 	/* spacing */
-	--spacing-4: 0.4rem;
-	--spacing-8: 0.8rem;
-	--spacing-16: 1.6rem;
-	--spacing-24: 2.4rem;
-	--spacing-32: 3.2rem;
-	--spacing-64: 6.4rem;
-	--spacing-128: 12.8rem;
+	--spacing-4: 0.25rem;
+	--spacing-8: 0.5rem;
+	--spacing-16: 1rem;
+	--spacing-24: 1.5rem;
+	--spacing-32: 2rem;
+	--spacing-64: 4rem;
+	--spacing-128: 8rem;
 
 	/* post */
 	--post-txt-size: 20px;
@@ -43,7 +43,6 @@
 }
 
 html {
-	font-size: 62.5%;
 	scroll-padding-top: var(--spacing-64);
 	scroll-behavior: smooth;
 	scrollbar-width: thin;

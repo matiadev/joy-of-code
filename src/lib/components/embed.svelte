@@ -43,7 +43,7 @@
 		button {
 			display: flex;
 			align-items: center;
-			gap: 0.5rem;
+			gap: 5px;
 			margin-inline: auto;
 			text-shadow: var(--shadow-sm);
 		}

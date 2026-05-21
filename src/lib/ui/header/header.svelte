@@ -38,7 +38,7 @@
 		margin-inline: auto;
 		padding: var(--spacing-16) var(--spacing-24);
 		font-size: var(--font-18);
-		border-radius: 1rem;
+		border-radius: 10px;
 		z-index: 20;
 		view-transition-name: header;
 		transition:

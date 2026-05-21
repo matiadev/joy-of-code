@@ -62,18 +62,18 @@
 	}
 
 	.toggle {
-		--width: 6.8rem;
-		--padding: 1rem;
+		--width: 68px;
+		--padding: 10px;
 		--background: var(--clr-switch-off-bg);
 
 		width: var(--width);
-		height: 3.6rem;
+		height: 36px;
 		background-color: var(--background);
 		border-radius: 9999px;
 		transition: background-color 0.15s ease;
 
 		.thumb {
-			--size: 3.4rem;
+			--size: 34px;
 
 			display: block;
 			width: var(--size);

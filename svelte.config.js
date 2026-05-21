@@ -9,15 +9,6 @@ const config = {
 	preprocess: sequence([markdown(), vitePreprocess(), preprocessMeltUI()]),
 	kit: {
 		adapter: adapter(),
-		// `/posts/` paths are used by the `<Image>` component for blog post images
-		// hosted on GitHub raw — the prerenderer flags them as 404s since they
-		// aren't served by the app itself
-		prerender: {
-			handleHttpError: ({ path }) => {
-				if (path.startsWith('/posts/')) return 'ignore'
-				throw new Error(`Failed to prerender ${path}`)
-			},
-		},
 	},
 	vitePlugin: {
 		inspector: {

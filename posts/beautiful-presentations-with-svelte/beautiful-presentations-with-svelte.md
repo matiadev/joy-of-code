@@ -6,13 +6,19 @@ published: '2023-06-09'
 category: svelte
 ---
 
+<script>
+	import Card from '$lib/components/card.svelte'
+</script>
+
 {% youtube id="67lqa5kTQkA" title="Create Beautiful Presentations With Svelte" %}
 
 ## Table of Contents
 
-## Everyone Loves Making Presentations
+## Making Presentations
 
-No one likes making boring presentations and learning an unfamiliar tool at the same time but what if you could use technologies you know and love like HTML, CSS and JavaScript?
+<Card type="warning">
+	This post uses an older version of Svelte and hasn't been updated. If you're looking for a Svelte presentation library, I made <a href="https://animotion.pages.dev/">Animotion</a> for creating slides.
+</Card>
 
 {% embed src="https://stackblitz.com/github/joysofcode/svelte-deck?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Deck" title="Svelte Deck" %}
 
@@ -20,15 +26,13 @@ You might need to **enable cookies** for the example but the code is also availa
 
 You're going to learn how to make beautiful looking presentations in Svelte with minimal effort using the HTML presentation framework [Reveal.js](https://revealjs.com/) and [Tailwind CSS](https://tailwindcss.com/).
 
-> 🐿️ You've probably heard about [Slides.com](https://slides.com/) which uses the open source HTML presentation framework Reveal.js made by the same creator.
+> If you ever used [Slides.com](https://slides.com/), it's made by the same creator behind the open source HTML presentation framework Reveal.js.
 
-I know Tailwind might not be everyone's cup of tea but I picked Tailwind on purpose because it makes styling slides fast but it's not required in which case you can skip it.
-
-I want you to be able to customize everything but not have to make a lot of decisions.
+You might not like Tailwind, but in my opinion it's the best way to author slides. It's optional of course, in which case you can skip it.
 
 ## SvelteKit And Tailwind Setup
 
-I'm going to set up a **skeleton** SvelteKit project with TypeScript (optional) including ESLint and Prettier for code formatting.
+We're going to set up a SvelteKit project with TypeScript, including ESLint and Prettier for code formatting:
 
 ```shell:terminal
 npm create svelte@latest
@@ -52,45 +56,43 @@ npm create svelte@latest
 └  Your project is ready!
 ```
 
-After it's done install the dependencies.
+Next install the dependencies:
 
 ```shell:terminal
 npm i
 ```
 
-Use the `svelte-add` package to add Tailwind CSS.
+Use the `svelte-add` package to add Tailwind CSS:
 
 ```shell:terminal
 pnpx svelte-add tailwindcss
 ```
 
-Install Reveal.js including the optional types and fonts.
+Install Reveal.js, types and fonts:
 
-```shell:terminal showLineNumbers
+```shell:terminal
 npm i reveal.js @types/reveal.js @fontsource/manrope @fontsource/jetbrains-mono
 ```
 
-Start the development server.
+Start the development server:
 
 ```shell:terminal
 npm run dev
 ```
 
-That's it! 😄
-
 ## Creating The Slide Deck
 
-Before I do anything I'm going to disable server-side rendering in SvelteKit because it's going to cause problems and we don't need it for a single page application.
+Before I do anything, I'm going to disable server-side rendering in SvelteKit. It's going to cause problems, and we don't need it for a single page application:
 
-```ts:src/routes/+page.ts showLineNumbers
+```ts:src/routes/+page.ts
 export const ssr = false
 ```
 
-> 🐿️ You could use the Vite CLI to set up a regular Svelte project but I always use SvelteKit in case I change my mind.
+> You can use the Vite CLI to set up a regular Svelte project, but I prefer the SvelteKit CLI in case I change my mind and need more features.
 
-Inside `+page.svelte` I'm going to import a `<Slides />` component and global styles.
+Inside `+page.svelte` I'm going to import a `<Slides />` component and global styles:
 
-```svelte:src/routes/+page.svelte showLineNumbers
+```svelte:src/routes/+page.svelte
 <script lang="ts">
 	import Slides from '$lib/deck/slides.svelte'
 	import '../app.postcss'
@@ -103,9 +105,9 @@ Inside `+page.svelte` I'm going to import a `<Slides />` component and global st
 <Slides />
 ```
 
-The styles include some [CSS variables for theming from Reveal.js](https://github.com/hakimel/reveal.js/blob/master/css/theme/template/exposer.scss) and styles to make the code blocks look nicer.
+The styles include some [CSS variables for theming from Reveal.js](https://github.com/hakimel/reveal.js/blob/master/css/theme/template/exposer.scss) and styles to make the code blocks look nicer:
 
-```css:src/app.postcss showLineNumbers
+```css:src/app.postcss
 /*
 	CSS Variables For Theming
 	https://github.com/hakimel/reveal.js/blob/master/css/theme/template/exposer.scss
@@ -145,9 +147,9 @@ The styles include some [CSS variables for theming from Reveal.js](https://githu
 }
 ```
 
-Inside the `<Slides />` component initialize Reveal.js.
+Inside the `<Slides />` component initialize Reveal.js:
 
-```svelte:src/lib/decks/slides.svelte showLineNumbers
+```svelte:src/lib/decks/slides.svelte
 <script lang="ts">
 	import { onMount } from 'svelte'
 
@@ -168,8 +170,6 @@ Inside the `<Slides />` component initialize Reveal.js.
 			autoAnimateEasing: 'ease',
 			autoAnimateDuration: 1,
 			hash: true
-			// controls: false,
-			// progress: false
 		})
 
 		deck.initialize()
@@ -183,13 +183,13 @@ Inside the `<Slides />` component initialize Reveal.js.
 </div>
 ```
 
-I'm using the highlight, markdown and speaker notes plugin from Reveal.js but [you can find more plugins in their documentation](https://revealjs.com/plugins/).
+I'm using the **highlight**, **markdown** and **speaker** notes plugin from Reveal.js but [you can find more plugins in their documentation](https://revealjs.com/plugins/).
 
 You can use other [included Reveal.js themes](https://revealjs.com/themes/) and change the syntax highlighter theme. Reveal.js uses [highlight.js](https://highlightjs.org/) and there's a lot of [options to choose from for syntax highligting](https://highlightjs.org/static/demo/).
 
-I encourage you to read the [Reveal.js docs](https://revealjs.com/) to know what you can customize but here is a basic idea how you do slides.
+I encourage you to read the [Reveal.js docs](https://revealjs.com/) to know what you can customize, but here is a basic idea how you do slides:
 
-```svelte:example.html showLineNumbers
+```svelte:example.html
 <div class="reveal">
   <div class="slides">
     <section>Slide 1</section>
@@ -198,11 +198,9 @@ I encourage you to read the [Reveal.js docs](https://revealjs.com/) to know what
 </div>
 ```
 
-It can't be any simpler.
+One of the best features of Reveal.js is [auto-animate](https://revealjs.com/auto-animate/) for animating elements across slides using the [FLIP animation technique](https://aerotwist.com/blog/flip-your-animations/):
 
-One of the best features of Reveal.js is [auto-animate](https://revealjs.com/auto-animate/) which automatically animates elements across slides using the [FLIP animation technique](https://aerotwist.com/blog/flip-your-animations/).
-
-```svelte:example.html showLineNumbers
+```svelte:example.html
 <section data-auto-animate>
   <p>Auto-Animate</p>
 </section>
@@ -212,11 +210,11 @@ One of the best features of Reveal.js is [auto-animate](https://revealjs.com/aut
 </section>
 ```
 
-You can learn more about how Reveal.js matches elements from reading the documentation but the short version is that it looks for elements that are the same.
+You can learn more about how Reveal.js matches elements from reading the documentation, but the short version is that it looks for elements that are the same.
 
-Because the contents of the `<p>` tag are the same Reveal.js knows it should auto-animate it but you can also specify a data attribute `data-id` id for elements that aren't the same but should be animated.
+Because the contents of the `<p>` tag are the same, Reveal.js knows it should auto-animate it, but you can also specify a data attribute `data-id` id for elements that aren't the same, but should be animated:
 
-```svelte:example.html showLineNumbers
+```svelte:example.html
 <section data-auto-animate>
   <div data-id="box" class="w-[200px] bg-teal-400"></div>
 </section>
@@ -226,9 +224,9 @@ Because the contents of the `<p>` tag are the same Reveal.js knows it should aut
 </section>
 ```
 
-I'm going to create reusable components which you can use to make a presentation inside the `<Presentation />` component.
+I'm going to create reusable components which you can use to make a presentation inside the `<Presentation />` component:
 
-```svelte:src/lib/deck/presentation.svelte showLineNumbers
+```svelte:src/lib/deck/presentation.svelte
 <script lang="ts">
 	import Slide from './slide.svelte'
 	import Code from './code.svelte'
@@ -240,9 +238,9 @@ I'm going to create reusable components which you can use to make a presentation
 
 ## The Slide Component
 
-Let's start with creating the `<Slide />` component.
+Let's start with creating the `<Slide />` component:
 
-```svelte:src/lib/deck/slide.svelte showLineNumbers
+```svelte:src/lib/deck/slide.svelte
 <script lang="ts">
 	export let id: string | null = null
 	export let animate = false
@@ -262,11 +260,11 @@ Let's start with creating the `<Slide />` component.
 - `data-auto-animate` attribute marks the slide to be animated
 - `data-auto-animate-restart` option is useful if you want to break from the same group you're animating into a new slide
 
-Using `null` is crucial otherwise the data attribute is always going to be present on the element. By saying `animate || null` we check if the prop is passed in which case the data attribute is used otherwise it's not.
+> Using `null` is important, otherwise the data attribute is always going to be present on the element.
 
-With this simple `<Slide />` component you can already do a lot.
+You can already do a lot with a simple `<Slide />` component:
 
-```svelte:src/lib/deck/presentation.svelte showLineNumbers
+```svelte:src/lib/deck/presentation.svelte
 <script lang="ts">
 	import Slide from './slide.svelte'
 </script>
@@ -297,13 +295,11 @@ With this simple `<Slide />` component you can already do a lot.
 </Slide>
 ```
 
-How awesome is that? 😄
-
 ## The Code Component
 
-The code component is straightforward.
+The code component is straightforward:
 
-```svelte:src/lib/deck/code.svelte showLineNumbers
+```svelte:src/lib/deck/code.svelte
 <script lang="ts">
 	export let id: string | null = null
 	export let lines: string | boolean | null = null
@@ -326,9 +322,9 @@ The code component is straightforward.
 - `data-line-numbers` toggles lines numbers and you can also pass a string to highlight the code
 - `data-noescape` attribute is useful if you don't want to escape HTML characters (this might be redundant in Svelte's case)
 
-Here is how you can use the `<Code />` component to animate a code block.
+Here is how you can use the `<Code />` component to animate a code block:
 
-```svelte:src/lib/deck/presentation.svelte showLineNumbers
+```svelte:src/lib/deck/presentation.svelte
 <script lang="ts">
 	import Code from './code.svelte'
 </script>
@@ -352,19 +348,17 @@ Here is how you can use the `<Code />` component to animate a code block.
 </Slide>
 ```
 
-The first line of code is shown in the first slide and then in the second slide the change is made and `lines="2|1-3"` means the second line should be highlighted and then lines 1-3 should be highlighted.
+> The curly brackets are required to prevent Svelte from interpreting the code.
 
-> 🐿️ The curly brackets are required to prevent Svelte from interpreting the code.
-
-That's it! 😄
+The first line of code is shown in the first slide, then in the second slide the code is updated. The `lines="2|1-3"` attribute is used to highlight the second line, followed by lines 1-3.
 
 ## The Markdown Component
 
-You might want to author your slides with Markdown and you can use HTML and Markdown in your slides and even write the entire presentation using an external Markdown file.
+You can author your slides with Markdown, and you can use HTML and Markdown in the slides, or write the entire presentation using an external Markdown file.
 
-These should be two separate components to be honest but I've decided to be crafty and use an `external` prop to decide which component to render.
+These should be separate components, but I've decided to be crafty and use an `external` prop to decide which component to render:
 
-```svelte:src/lib/deck/markdown.svelte showLineNumbers
+```svelte:src/lib/deck/markdown.svelte
 <script lang="ts">
 	export let name = 'example.md'
 	export let external = false
@@ -381,9 +375,9 @@ These should be two separate components to be honest but I've decided to be craf
 {/if}
 ```
 
-Here is how you can use the `<Markdown />` component.
+Here is how you can use the `<Markdown />` component:
 
-```svelte:src/lib/deck/presentation.svelte showLineNumbers
+```svelte:src/lib/deck/presentation.svelte
 <script lang="ts">
 	import Markdown from './markdown.svelte'
 </script>
@@ -398,9 +392,9 @@ Here is how you can use the `<Markdown />` component.
 <Markdown name="example.md" external />
 ```
 
-The `example.md` file is located in `static/example.md`.
+The `example.md` file is located in `static/example.md`:
 
-````md:example.md showLineNumbers
+````md:example.md
 ## Slide 1
 
 You can write the entire presentation in Markdown using an external Markdown file.
@@ -416,21 +410,21 @@ function love() {
 ```
 ````
 
-You can always find more information in the Reveal.js documentation and just because I've done it this way doesn't mean you have to.
+You can always find more information in the Reveal.js documentation. Just because I've done it this way, doesn't mean you have to.
 
 ## Speaker Notes Component
 
-Speaker notes are only visible to you and they're useful to include notes for the slide and to prepare you for the next slide.
+Speaker notes are useful if you want notes for a slide when presenting. They're only visible to you when doing a presentation:
 
-```svelte:src/lib/deck/notes.svelte showLineNumbers
+```svelte:src/lib/deck/notes.svelte
 <aside class="notes">
 	<slot />
 </aside>
 ```
 
-You can include a node inside your slide.
+You can include a node inside your slide:
 
-```svelte:src/lib/deck/presentation.svelte showLineNumbers
+```svelte:src/lib/deck/presentation.svelte
 <script lang="ts">
 	import Slide from './slide.svelte'
 	import Code from './code.svelte'
@@ -447,10 +441,6 @@ You can include a node inside your slide.
 </Slide>
 ```
 
-You can activate speaker notes by pressing the <kbd>S</kbd> key on your keyboard.
+You can activate speaker notes by pressing the <kbd>S</kbd> key on your keyboard. Another useful shortcut is the <kbd>Escape</kbd> key that shows a bird's-eye view of your slides.
 
-> 🐿️ Another useful shortcut is the <kbd>Escape</kbd> key that shows a bird's-eye view of your slides.
-
-That's it! 😄
-
-There's beauty in expressing complex thoughts through visuals and I hope you end up loving making slides from now on and tailor it to your needs.
+There's beauty in having the freedom to modify a tool to your needs and visualizing complex ideas with code.

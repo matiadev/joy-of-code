@@ -90,7 +90,7 @@
 		text-underline-offset: 4px;
 	}
 
-	p > a {
+	:is(p, .card) > a {
 		&::after {
 			content: '';
 			display: inline-block;

@@ -14,11 +14,13 @@ category: svelte
 
 ## Table of Contents
 
-## Making Presentations
+## Most Presentations Are Boring
 
 <Card type="warning">
 	This post uses an older version of Svelte and hasn't been updated. If you're looking for a Svelte presentation library, I made <a href="https://animotion.pages.dev/">Animotion</a> for creating slides.
 </Card>
+
+No one likes boring presentations, but what if you could make them more engaging through rich visuals and animations using web technologies you're already familiar with?
 
 {% embed src="https://stackblitz.com/github/joysofcode/svelte-deck?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Deck" title="Svelte Deck" %}
 

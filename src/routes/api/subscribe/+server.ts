@@ -1,14 +1,12 @@
-import { json } from '@sveltejs/kit'
-import { BUTTONDOWN_API_KEY } from '$env/static/private'
+import { BUTTONDOWN_API_KEY } from '$app/env/private'
 
 export async function POST({ request }) {
 	const API_URL = 'https://api.buttondown.email/v1/subscribers'
 	const API_KEY = BUTTONDOWN_API_KEY
-
 	const email = await request.json()
 
 	if (!email) {
-		return json(
+		return Response.json(
 			{ error: 'You forget the email. 😊' },
 			{
 				status: 400,
@@ -30,7 +28,7 @@ export async function POST({ request }) {
 			const text = await response.text()
 
 			if (text.includes('already subscribed')) {
-				return json(
+				return Response.json(
 					{ error: `You're already subscribed. 😊` },
 					{
 						status: 400,
@@ -38,10 +36,10 @@ export async function POST({ request }) {
 				)
 			}
 
-			return json({ error: text }, { status: 400 })
+			return Response.json({ error: text }, { status: 400 })
 		}
 
-		return json(
+		return Response.json(
 			{ success: 'Thank you for subscribing! 🥳' },
 			{
 				status: 201,
@@ -50,7 +48,7 @@ export async function POST({ request }) {
 		)
 	} catch (error) {
 		if (error instanceof Error) {
-			return json({ error: error.message })
+			return Response.json({ error: error.message })
 		}
 	}
 }

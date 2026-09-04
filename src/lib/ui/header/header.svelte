@@ -4,7 +4,7 @@
 	import Socials from './socials.svelte'
 	import Preferences from './preferences/index.svelte'
 	import Menu from './menu.svelte'
-	import * as config from '$lib/site/config'
+	import * as config from '#lib/site/config.js'
 
 	let scrollY = $state(0)
 	let scrolled = $derived(scrollY > 0)

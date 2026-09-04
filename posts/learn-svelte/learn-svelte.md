@@ -7,9 +7,9 @@ category: svelte
 ---
 
 <script lang="ts">
-	import Card from '$lib/components/card.svelte'
-	import YouTube from '$lib/components/youtube.svelte'
-	import Image from '$lib/components/image.svelte'
+	import Card from '#lib/components/card.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+	import Image from '#lib/components/image.svelte'
 	import Example from './examples/example-loader.svelte'
 </script>
 

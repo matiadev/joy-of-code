@@ -1,5 +1,5 @@
 import { onNavigate } from '$app/navigation'
-import type { DateStyle, Fetch } from '$lib/types'
+import type { DateStyle, Fetch } from '#lib/types/index.js'
 
 export async function fetchJSON<Data>(
 	url: string,
@@ -27,6 +27,7 @@ export function formatNumber(number: number, locales = 'en') {
 
 export async function setupViewTransition() {
 	onNavigate((navigation) => {
+		if (navigation.shallow) return
 		if (!document.startViewTransition) return
 
 		return new Promise((resolve) => {

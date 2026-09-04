@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit'
-import { dev } from '$app/environment'
-import { fetchJSON } from '$lib/utils'
-import type { Post } from '$lib/types'
+import { dev } from '$app/env'
+import { fetchJSON } from '#lib/utils/index.js'
+import type { Post } from '#lib/types/index.js'
 
 export async function load({ fetch }) {
 	if (!dev) error(404, 'Not found')

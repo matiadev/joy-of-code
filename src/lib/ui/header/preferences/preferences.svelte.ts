@@ -1,4 +1,4 @@
-import { browser } from '$app/environment'
+import { browser } from '$app/env'
 
 const DEFAULT_TEXT_SIZE = 20
 const DEFAULT_TEXT_LENGTH = 70

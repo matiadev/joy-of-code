@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition'
 	import { createDropdownMenu, melt } from '@melt-ui/svelte'
-	import { Menu } from '$lib/icons'
-	import { sfx } from '$lib/sfx'
-	import * as config from '$lib/site/config'
+	import { Menu } from '#lib/icons/index.js'
+	import { sfx } from '#lib/sfx/index.js'
+	import * as config from '#lib/site/config.js'
 
 	const {
 		elements: { trigger, menu, item, arrow },

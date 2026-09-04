@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit'
-import { getPostsByCategory } from '$lib/site/posts'
-import * as config from '$lib/site/config'
-import type { Categories } from '$lib/types/index.js'
+import { getPostsByCategory } from '#lib/site/posts.js'
+import * as config from '#lib/site/config.js'
+import type { Categories } from '#lib/types/index.js'
 
 export async function load({ params }) {
 	const category = params.category as Categories

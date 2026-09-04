@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Bluesky, RSS, X, YouTube } from '$lib/icons'
-	import * as config from '$lib/site/config'
+	import { Bluesky, RSS, X, YouTube } from '#lib/icons/index.js'
+	import * as config from '#lib/site/config.js'
 </script>
 
 <div class="socials">

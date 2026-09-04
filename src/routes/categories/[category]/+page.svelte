@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { page } from '$app/stores'
-	import Heading from '$lib/ui/heading.svelte'
-	import Posts from '$lib/ui/posts.svelte'
-	import * as config from '$lib/site/config'
-	import type { Categories } from '$lib/types'
+	import { page } from '$app/state'
+	import Heading from '#lib/ui/heading.svelte'
+	import Posts from '#lib/ui/posts.svelte'
+	import * as config from '#lib/site/config.js'
+	import type { Categories } from '#lib/types/index.js'
 
 	let { data } = $props()
 
 	const { posts } = $derived(data)
-	const category = $page.params.category as Categories
+	const category = page.params.category as Categories
 </script>
 
 <svelte:head>

@@ -2,8 +2,7 @@
 	import { createDialog, melt } from '@melt-ui/svelte'
 	import { fade } from 'svelte/transition'
 	import { onNavigate } from '$app/navigation'
-	import { browser } from '$app/environment'
-
+	import { browser } from '$app/env'
 	import SearchIcon from './search-icon.svelte'
 	import SearchWorker from './search-worker?worker'
 	import type { Result } from './search'
@@ -12,8 +11,8 @@
 		elements: { trigger, portalled, overlay, content },
 		states: { open },
 	} = createDialog()
-	const platform = browser && window.navigator.platform
 
+	const platform = browser && window.navigator.platform
 	let search: 'idle' | 'load' | 'ready' = $state('idle')
 	let searchTerm = $state('')
 	let results: Result[] = $state([])
@@ -31,7 +30,9 @@
 		searchWorker.postMessage({ type: 'load' })
 	}
 
-	onNavigate(() => {
+	onNavigate(({ shallow }) => {
+		if (shallow) return
+
 		$open = false
 	})
 

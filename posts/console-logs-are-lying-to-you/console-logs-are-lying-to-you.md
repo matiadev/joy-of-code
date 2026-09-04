@@ -7,7 +7,7 @@ category: javascript
 ---
 
 <script lang="ts">
-	import YouTube from '$lib/components/youtube.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
 </script>
 
 <YouTube id="wpaioC9RtOA" title="Console Log Are Lying To You" />

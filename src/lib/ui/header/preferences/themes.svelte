@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition'
 	import { createSelect, melt } from '@melt-ui/svelte'
-	import { browser } from '$app/environment'
+	import { browser } from '$app/env'
 	import { preferences } from './preferences.svelte'
 
 	type Themes = { name: keyof typeof themes }

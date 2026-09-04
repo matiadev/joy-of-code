@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ArrowRight, PencilSquare, Heart } from '$lib/icons'
+	import { ArrowRight, PencilSquare, Heart } from '#lib/icons/index.js'
 
 	interface Props {
 		preset: 'support' | 'edit'

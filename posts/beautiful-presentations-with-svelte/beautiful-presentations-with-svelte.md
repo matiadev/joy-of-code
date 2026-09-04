@@ -7,7 +7,7 @@ category: svelte
 ---
 
 <script>
-	import Card from '$lib/components/card.svelte'
+	import Card from '#lib/components/card.svelte'
 </script>
 
 {% youtube id="67lqa5kTQkA" title="Create Beautiful Presentations With Svelte" %}

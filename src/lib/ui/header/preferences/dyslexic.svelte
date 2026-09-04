@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { browser } from '$app/environment'
+	import { browser } from '$app/env'
 	import { createSwitch, melt } from '@melt-ui/svelte'
 	import { preferences } from './preferences.svelte'
 
@@ -11,6 +11,7 @@
 
 	function handleChange() {
 		const html = document.documentElement
+
 		enabled = !enabled
 
 		if (enabled) {

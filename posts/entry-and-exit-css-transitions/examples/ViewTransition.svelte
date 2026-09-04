@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Sandbox } from '@sveltecraft/sandbox'
+	import { WebSandbox } from '@sveltecraft/sandbox'
 </script>
 
 <div class="sandbox">
-	<Sandbox
+	<WebSandbox
 		height={400}
 		code={{
 			html: `

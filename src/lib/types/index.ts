@@ -1,4 +1,4 @@
-import type * as config from '$lib/site/config'
+import type * as config from '#lib/site/config.js'
 
 export type Post = {
 	title: string

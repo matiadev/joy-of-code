@@ -7,9 +7,9 @@ category: typescript
 ---
 
 <script lang="ts">
-	import Embed from '$lib/components/embed.svelte'
-	import Image from '$lib/components/image.svelte'
-	import YouTube from '$lib/components/youtube.svelte'
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
 </script>
 
 <YouTube id="mjw3X6bPIpA" title="The Magic Behind Shiki Magic Move" />

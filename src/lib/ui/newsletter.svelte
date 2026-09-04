@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition'
-	import { Envelope } from '$lib/icons'
+	import { Envelope } from '#lib/icons/index.js'
 
 	let email = $state('')
 	let error = $state('')

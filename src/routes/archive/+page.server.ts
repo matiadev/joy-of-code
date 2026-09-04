@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit'
-import { fetchJSON } from '$lib/utils'
-import type { Post } from '$lib/types'
+import { fetchJSON } from '#lib/utils/index.js'
+import type { Post } from '#lib/types/index.js'
 
 export async function load({ fetch }) {
 	try {

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Newsletter from '$lib/ui/newsletter.svelte'
-	import Posts from '$lib/ui/posts.svelte'
-	import { ArrowRight } from '$lib/icons'
-	import * as config from '$lib/site/config'
+	import Newsletter from '#lib/ui/newsletter.svelte'
+	import Posts from '#lib/ui/posts.svelte'
+	import { ArrowRight } from '#lib/icons/index.js'
+	import * as config from '#lib/site/config.js'
 
 	let { data } = $props()
 

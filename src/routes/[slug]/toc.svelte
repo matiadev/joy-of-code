@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte'
 	import { fly } from 'svelte/transition'
-	import { ChevronDoubleLeft, ChevronDoubleRight } from '$lib/icons'
+	import { ChevronDoubleLeft, ChevronDoubleRight } from '#lib/icons/index.js'
 
 	type TableOfContentsItem = {
 		active: boolean

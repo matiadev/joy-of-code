@@ -1,5 +1,5 @@
-import { getPosts } from '$lib/site/posts.js'
-import * as config from '$lib/site/config'
+import { getPosts } from '#lib/site/posts.js'
+import * as config from '#lib/site/config.js'
 
 export const prerender = true
 

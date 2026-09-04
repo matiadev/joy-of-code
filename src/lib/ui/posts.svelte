@@ -2,8 +2,8 @@
 	import type { Snippet } from 'svelte'
 	import { fade } from 'svelte/transition'
 
-	import { formatDate } from '$lib/utils'
-	import type { Post } from '$lib/types'
+	import { formatDate } from '#lib/utils/index.js'
+	import type { Post } from '#lib/types/index.js'
 
 	type Props = {
 		posts: Post[]

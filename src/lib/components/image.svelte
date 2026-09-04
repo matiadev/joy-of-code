@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state'
-	import { dev } from '$app/environment'
-	import { imagesLocal, imagesUrl } from '$lib/site/config'
+	import { dev } from '$app/env'
+	import { imagesLocal, imagesUrl } from '#lib/site/config.js'
 
 	type Props = {
 		alt: string

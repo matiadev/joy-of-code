@@ -1,4 +1,3 @@
-import { json } from '@sveltejs/kit'
 import matter from 'gray-matter'
 
 export const prerender = true
@@ -70,5 +69,5 @@ export async function GET() {
 		})
 		.filter(Boolean)
 
-	return json(posts)
+	return Response.json(posts)
 }

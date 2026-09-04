@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition'
-	import Heading from '$lib/ui/heading.svelte'
+	import Heading from '#lib/ui/heading.svelte'
 
 	let { data } = $props()
 </script>

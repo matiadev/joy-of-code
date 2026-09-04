@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { formatDate } from '$lib/utils'
-	import * as config from '$lib/site/config'
+	import { formatDate } from '#lib/utils/index.js'
+	import * as config from '#lib/site/config.js'
 
 	import Card from '../../[slug]/card.svelte'
 	import Clipboard from '../../[slug]/clipboard.svelte'

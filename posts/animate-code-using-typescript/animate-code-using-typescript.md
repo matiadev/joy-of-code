@@ -7,7 +7,7 @@ category: typescript
 ---
 
 <script lang="ts">
-	import YouTube from '$lib/components/youtube.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
 </script>
 
 <YouTube id="wGf0PUlOQoA" title="Animate Code Using TypeScript" />

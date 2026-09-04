@@ -7,9 +7,9 @@ category: svelte
 ---
 
 <script lang="ts">
-	import Card from '$lib/components/card.svelte'
-	import Video from '$lib/components/video.svelte'
-	import YouTube from '$lib/components/youtube.svelte'
+	import Card from '#lib/components/card.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
 </script>
 
 <YouTube id="Qglbt8M8H_w" title="Svelte Inspector" />
@@ -23,7 +23,6 @@ The [Svelte Inspector](https://github.com/sveltejs/vite-plugin-svelte/blob/main/
 <Card type="info">This post has been updated for Svelte 5 and the same instructions should work for any Vite based Svelte and SvelteKit project.</Card>
 
 <Video src="inspector.mp4" />
-
 
 ## Enabling The Svelte Inspector
 

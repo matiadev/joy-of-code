@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Heading from '$lib/ui/heading.svelte'
-	import Newsletter from '$lib/ui/newsletter.svelte'
+	import Heading from '#lib/ui/heading.svelte'
+	import Newsletter from '#lib/ui/newsletter.svelte'
 </script>
 
 <svelte:head>

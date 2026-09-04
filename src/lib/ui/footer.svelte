@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Bluesky, Mail, RSS, X, YouTube } from '$lib/icons'
-	import * as config from '$lib/site/config'
+	import { Bluesky, Mail, RSS, X, YouTube } from '#lib/icons/index.js'
+	import * as config from '#lib/site/config.js'
 </script>
 
 <footer>

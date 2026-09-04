@@ -7,7 +7,7 @@ category: svelte
 ---
 
 <script lang="ts">
-	import YouTube from '$lib/components/youtube.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
 </script>
 
 <YouTube id="7mQCRxdIPJg" title="Avoid These Mistakes With Svelte Events" />

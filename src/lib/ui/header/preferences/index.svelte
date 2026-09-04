@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition'
 	import { createDropdownMenu, melt } from '@melt-ui/svelte'
-	import { Cog } from '$lib/icons'
-	import { sfx } from '$lib/sfx'
+	import { Cog } from '#lib/icons/index.js'
+	import { sfx } from '#lib/sfx/index.js'
 
 	import Themes from './themes.svelte'
 	import Reading from './reading.svelte'

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import matter from 'gray-matter'
-import type { Post } from '$lib/types'
+import type { Post } from '#lib/types/index.js'
 
 async function parseMarkdownFiles() {
 	try {

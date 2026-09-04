@@ -14,8 +14,7 @@
 		value={toSpongeBobCase(text)}
 		oninput={(e) => {
 			text = toSpongeBobCase((e.target as HTMLInputElement).value)
-		}}
-	></textarea>
+		}}></textarea>
 </div>
 
 <style>

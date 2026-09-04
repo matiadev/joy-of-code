@@ -107,7 +107,6 @@ You can create a **server-only** module by adding `.server` to a filename or pla
 
 Files located in `$lib/server` can only be imported into other **server-only** modules. This prevents you from accidentally importing secrets into client-side code because they only run on the server.
 
-
 ```ts:lib/server/data.ts showLineNumbers
 import { env } from '$env/dynamic/private'
 

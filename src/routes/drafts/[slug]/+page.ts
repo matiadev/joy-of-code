@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit'
-import { dev } from '$app/environment'
+import { dev } from '$app/env'
 
 export async function load({ params: { slug } }) {
 	if (!dev) error(404, 'Not found')

@@ -7,7 +7,7 @@ category: css
 ---
 
 <script lang="ts">
-	import YouTube from '$lib/components/youtube.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
 	import Keyframes from './examples/Keyframes.svelte'
 	import Transitions from './examples/Transitions.svelte'
 	import KeyframeToggle from './examples/KeyframeToggle.svelte'

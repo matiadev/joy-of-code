@@ -9,7 +9,11 @@ export default defineConfig({
 	plugins: [
 		sveltekit({
 			extensions: ['.svelte', '.md'],
-			preprocess: sequence([markdown(), vitePreprocess(), preprocessMeltUI()]),
+			preprocess: sequence([
+				markdown(),
+				vitePreprocess(),
+				preprocessMeltUI({ svelteConfigPath: false }),
+			]),
 			compilerOptions: {
 				warningFilter: (warning) => {
 					const ignore = [

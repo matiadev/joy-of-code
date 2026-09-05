@@ -15,8 +15,12 @@
 	"devDependencies": {
 		"@melt-ui/pp": "^0.3.2",
 		"@playwright/test": "^1.62.1",
-		"@shikijs/rehype": "^4.4.3",
+		"@shikijs/core": "^4.4.3",
+		"@shikijs/engine-javascript": "^4.4.3",
+		"@shikijs/langs": "^4.4.3",
+		"@shikijs/themes": "^4.4.3",
 		"@shikijs/transformers": "^4.4.3",
+		"hast-util-to-string": "^3.0.1",
 		"@sveltejs/adapter-vercel": "7.0.0-next.8",
 		"@sveltejs/kit": "3.0.0-next.25",
 		"@sveltejs/vite-plugin-svelte": "^7.3.0",

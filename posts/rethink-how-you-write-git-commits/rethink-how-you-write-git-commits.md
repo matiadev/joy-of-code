@@ -32,7 +32,7 @@ You often perform other [verb](https://en.wikipedia.org/wiki/Verb) actions on yo
 
 You can learn more by reading [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/) which inspired the title of this section.
 
-Same as writing comments in your code — **try that your commits answer what, and why, instead of how.**
+Same as writing comments in your code, **try that your commits answer what, and why, instead of how.**
 
 You can see the Git history, by saying `git log`. You're going to get a list ordered by most recent commits. Each commit is listed with a [SHA-1](https://en.wikipedia.org/wiki/SHA-1) checksum. Since it's long, we can just specify the first 8 characters.
 

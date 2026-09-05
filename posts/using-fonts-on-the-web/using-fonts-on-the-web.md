@@ -12,11 +12,11 @@ category: general
 
 ## Table of Contents
 
-Using fonts on the web can be complicated, and unwieldy if we don't understand the trade-offs we're making. I want to share what I learned about best practices when it comes to using fonts on the web — and show you some of the pitfalls you can avoid.
+Using fonts on the web can be complicated, and unwieldy if we don't understand the trade-offs we're making. I want to share what I learned about best practices when it comes to using fonts on the web, and show you some of the pitfalls you can avoid.
 
 ## Web Fonts
 
-In the past we could only use a handful of fonts considered web-safe because they were guaranteed to be on each computer. Thanks to CSS, we can specify any font files to be downloaded, and used when someone opens our site. You've probably used [Google Fonts](https://fonts.google.com/) — one of the most popular font providers. You only have to grab a link to a font, and include it in your site.
+In the past we could only use a handful of fonts considered web-safe because they were guaranteed to be on each computer. Thanks to CSS, we can specify any font files to be downloaded, and used when someone opens our site. You've probably used [Google Fonts](https://fonts.google.com/), one of the most popular font providers. You only have to grab a link to a font, and include it in your site.
 
 ```html:example.html
 <link
@@ -31,15 +31,15 @@ In the past we could only use a handful of fonts considered web-safe because the
 
 The preconnect keyword is saying: **"Hey, we're going to talk to this resource for sure, so let's pick up the phone."** It's a hint to the browser to establish a connection as soon as possible (while it's loading your CSS file, it can resolve that URL).
 
-It's only a suggestion to the browser, since browsers already try to anticipate what connections a page might need — so it might be ignored completely.
+It's only a suggestion to the browser, since browsers already try to anticipate what connections a page might need, so it might be ignored completely.
 
 <Image src="preconnect.webp" alt="A diagram showing fetching a resource with, and without preconnect" />
 
 > In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a round trip. — [Establish network connections early to improve perceived page speed](https://web.dev/preconnect-and-dns-prefetch/)
 
-Without preconnect, we would have to make a round trip when requesting a resource — when it's easier to open a phone line at page load.
+Without preconnect, we would have to make a round trip when requesting a resource, when it's easier to open a phone line at page load.
 
-The stylesheet we load is interesting, because whatever parameters we pass — it gets generated on the fly. In this case we're saying: **"Give me the font Inter, with the default weight."** There's an interesting display property **swap** that says **"If the font hasn't loaded yet, swap it for another."** This is defined in **@font-face**.
+The stylesheet we load is interesting, because whatever parameters we pass, it gets generated on the fly. In this case we're saying: **"Give me the font Inter, with the default weight."** There's an interesting display property **swap** that says **"If the font hasn't loaded yet, swap it for another."** This is defined in **@font-face**.
 
 Why not add some more weights, and fonts?
 
@@ -73,7 +73,7 @@ Instead of including it in our HTML, we can also import it in our CSS using the 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 ```
 
-This is pure preference, and has no impact on performance. You can read [don't use @import](https://www.stevesouders.com/blog/2009/04/09/dont-use-import/) that talks about why you shouldn't use it for importing CSS — which is not the case here.
+This is pure preference, and has no impact on performance. You can read [don't use @import](https://www.stevesouders.com/blog/2009/04/09/dont-use-import/) that talks about why you shouldn't use it for importing CSS, which is not the case here.
 
 ## Taking a Closer Look At The Google Fonts Stylesheet
 
@@ -143,7 +143,7 @@ This shows the Basic Latin unicode range **U+0020-007F**.
 
 Unicode is a standard maintained by the [Unicode Consortium](https://en.wikipedia.org/wiki/Unicode_Consortium) that aims to solve the limitations of [ASCII](https://en.wikipedia.org/wiki/ASCII) by having a unique list of characters, and symbols ordered by number.
 
-For example, take the letter **A**. In Unicode this letter is represented as **U+0041**. These code points are in hexadecimal — preceded by **U+**. If we used a [Hex to ASCII Text Converter](https://www.rapidtables.com/convert/number/hex-to-ascii.html), we would get the same result.
+For example, take the letter **A**. In Unicode this letter is represented as **U+0041**. These code points are in hexadecimal, preceded by **U+**. If we used a [Hex to ASCII Text Converter](https://www.rapidtables.com/convert/number/hex-to-ascii.html), we would get the same result.
 
 <Image src="unicode.webp" alt="Diagram showing a breakdown of unicode for the letter A" />
 
@@ -166,11 +166,11 @@ When transfering data we have to take distance into consideration. [CDN](https:/
 - If there's an update, **Server A** is going to send fresh data to **Server B** to be cached for future visits
 - The initial load is going to be slower for the person who made the first request, but fast for subsequent visits
 
-If you remember — [https://fonts.gstatic.com](https://fonts.gstatic.com) is the CDN for Google Fonts. Because of this global content delivery network, when a user requests a font it can be served from the nearest cached location.
+If you remember, [https://fonts.gstatic.com](https://fonts.gstatic.com) is the CDN for Google Fonts. Because of this global content delivery network, when a user requests a font it can be served from the nearest cached location.
 
 ## The Reason to Host Your Fonts
 
-The browser also has a [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) — which serves as a temporary storage for any assets you downloaded browsing other sites so future requests are served faster.
+The browser also has a [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching), which serves as a temporary storage for any assets you downloaded browsing other sites so future requests are served faster.
 
 <Image src="shared-cache-a.webp" alt="Diagram of how a cache key gets generated in the shared cache" />
 
@@ -187,7 +187,7 @@ However, the problem with this approach is:
 
 > HTTP requests can reveal that the browser has accessed the same resource in the past, which opens the browser to security and privacy attacks. — [Gaining security and privacy by partitioning the cache](https://developers.google.com/web/updates/2020/10/http-cache-partitioning)
 
-For this reason, **browsers aren't using one big cache for everything anymore — but cache on a per-site basis**:
+For this reason, **browsers aren't using one big cache for everything anymore, but cache on a per-site basis**:
 
 <Image src="single-cache-a.webp" alt="Diagram of how a per-site cache basis works" />
 
@@ -221,7 +221,7 @@ Fonts come in many formats, but the most used ones on the web you're going to en
 
 This shows over a **100% reduction in file size**.
 
-Having a **30% reduction in size for most cases over WOFF — WOFF 2 is what you should always use.**
+Having a **30% reduction in size for most cases over WOFF, WOFF 2 is what you should always use.**
 
 We're going to get into some [Command-line interface (CLI)](https://en.wikipedia.org/wiki/Command-line_interface) tools later when it comes to optimizing, and converting fonts. You can already [convert non-variable fonts](https://onlinefontconverter.com/) online for an easy win.
 
@@ -262,10 +262,10 @@ Assuming you have your font downloaded already which you can do from [Google Fon
 
 ```
 
-- **font-family** — is used to refer to the font, you can give it any name
-- **font-style** — can be **normal**, **italic**, **oblique** (keep in mind you have to include an italic version of the font, since it only makes the regular glyphs slanted, and hideous)
-- **font-weight** — are numbers mapped to weight names: **100** (Thin), **200** (Extra Light), **300** (Light), **400** (Normal), **500** (Medium), **600** (Semi Bold), **700** (Bold), **800** (Extra Bold), **900** (Black)
-- **font-display** — determines how a font is displayed depending on if it's loaded, or not
+- **font-family** is used to refer to the font, you can give it any name
+- **font-style** can be **normal**, **italic**, **oblique** (keep in mind you have to include an italic version of the font, since it only makes the regular glyphs slanted, and hideous)
+- **font-weight** are numbers mapped to weight names: **100** (Thin), **200** (Extra Light), **300** (Light), **400** (Normal), **500** (Medium), **600** (Semi Bold), **700** (Bold), **800** (Extra Bold), **900** (Black)
+- **font-display** determines how a font is displayed depending on if it's loaded, or not
 
 The only thing left to do is serve the fonts which depends on your hosting. Treat them as any other static asset. In general, you want to place them in some public folder. I simply include mine in **public/fonts** for [Next.js](https://nextjs.org/). That way it's a relative path, for example https://joyofcode.xyz/fonts/Inter.woff2.
 
@@ -288,7 +288,7 @@ Another fallback tip is that you should use a system UI font that resembles your
 
 The problem with using non-variable fonts is that you have to be careful with what you include. Including each font weight requires a separate file meaning an additional HTTP request, and declaring **@font-face** for each one (you can get around this by combining fonts into a single file).
 
-For example if we wanted to use every weight of Inter, that's **9 HTTP requests** in total. It gets worse — that's around **~1.8 MB** (assuming we're using **WOFF 2**, otherwise it's more than double). To put things into perspective, the regular weight of Inter is around **~98 kB**.
+For example if we wanted to use every weight of Inter, that's **9 HTTP requests** in total. It gets worse, that's around **~1.8 MB** (assuming we're using **WOFF 2**, otherwise it's more than double). To put things into perspective, the regular weight of Inter is around **~98 kB**.
 
 How much is too much when it comes to sending data through the pipe? The bundle size of a framework such as React is **~128 kB** before it's minified, and [gzipped](https://en.wikipedia.org/wiki/Gzip) being around **~42 kB**. You don't want to ship React to display text.
 
@@ -312,19 +312,19 @@ We briefly went over **font-display** earlier, but this time let's explore it fu
 
 <Image src="block.gif" alt="Shows invisible text until the font loads" />
 
-**Block gives the font a short block period, and an infinite swap period** — this means until the font is ready to use, it should use "invisible" text, and swap once it's ready. This creates a ugly user experience as you can see, and causes layout shifts.
+**Block gives the font a short block period, and an infinite swap period**, this means until the font is ready to use, it should use "invisible" text, and swap once it's ready. This creates a ugly user experience as you can see, and causes layout shifts.
 
 <Image src="swap.gif" alt="Shows how text gets swapped until the font is ready" />
 
-**Swap gives the font a zero second block period and an infinite swap period** — this means the browser uses the fallback font immediately, until the font is loaded. This is the one that Google Fonts uses by default. It's important to have visible text when you visit a site. It's not the perfect solution, but works great if you use a similar looking fallback font.
+**Swap gives the font a zero second block period and an infinite swap period**, this means the browser uses the fallback font immediately, until the font is loaded. This is the one that Google Fonts uses by default. It's important to have visible text when you visit a site. It's not the perfect solution, but works great if you use a similar looking fallback font.
 
 <Image src="fallback.gif" alt="Shows how the fallback is going to be used if the font doesn't load in a reasonable time" />
 
-**Fallback gives the font face an extremely small block period (100 ms), and a short swap period (3 seconds)** — similar to swap, if the font is not ready, it loads the fallback immediately. However, if the font doesn't load in a reasonable time, the fallback is going to be used.
+**Fallback gives the font face an extremely small block period (100 ms), and a short swap period (3 seconds)**, similar to swap, if the font is not ready, it loads the fallback immediately. However, if the font doesn't load in a reasonable time, the fallback is going to be used.
 
 <Image src="optional.gif" alt="Shows how there's a small amount of time for the font to load, without a swap period" />
 
-**Optional gives the font face an extremely small block period (100 ms), and a zero second swap period** — you should use this, if the font you're using is unimportant to how your site looks. Otherwise it's going to be a jarring experience.
+**Optional gives the font face an extremely small block period (100 ms), and a zero second swap period**, you should use this, if the font you're using is unimportant to how your site looks. Otherwise it's going to be a jarring experience.
 
 The conclusion is that there's no best option to use regardless what anyone says. You have to understand the trade-offs. To alleviate analysis paralysis, **swap** or **optional** should serve you well in most situations. You can read [Controlling Font Performance with font-display](https://developers.google.com/web/updates/2016/02/font-display) to learn more.
 
@@ -332,7 +332,7 @@ The conclusion is that there's no best option to use regardless what anyone says
 
 I'm going to give you the TL;DR since you can do crazy things with variable fonts.
 
-**Rather than having a separate font file for every width, weight, or style — variable fonts contain them in a single file.**
+**Rather than having a separate font file for every width, weight, or style, variable fonts contain them in a single file.**
 
 The only other aspect of variable fonts you should understand is the concept of **axis**. Axis are a specified range of controls for features such as **weight**, **width**, **slant**, **optical size**, **italics**, and **custom** ones.
 
@@ -356,7 +356,7 @@ The variable font version of Inter has a **weight**, and **slant** axis. The bes
 
 <Image src="custom-axis.webp" alt="Dark Mode VF with a custom Darkmode axis" />
 
-**This is an example of a custom axis** — meant to offset a light font looking thin on a dark background by adjusting the grade which changes the weight of the font without changing it's width.
+**This is an example of a custom axis**, meant to offset a light font looking thin on a dark background by adjusting the grade which changes the weight of the font without changing it's width.
 
 You can play around with more examples on [Variable Fonts](https://v-fonts.com/), to understand what variable fonts can do. If you want to learn more, you can read [Introduction to variable fonts on the web](https://web.dev/variable-fonts/) that has great explanations with graphics.
 
@@ -369,13 +369,13 @@ Google Fonts already serves variable fonts by default. You can look at the [comp
 />
 ```
 
-Notice how significantly smaller the size is at **~17 kB**, compared to **~98 kB per-weight** for the non-varible WOFF 2 version (we could save perhaps 30% if it was gzipped) — if we combined these weights it would barely come to **~54 kB.** We can do a lot more optimization on top of this.
+Notice how significantly smaller the size is at **~17 kB**, compared to **~98 kB per-weight** for the non-varible WOFF 2 version (we could save perhaps 30% if it was gzipped), if we combined these weights it would barely come to **~54 kB.** We can do a lot more optimization on top of this.
 
 <Image src="google-variable-fonts.webp" alt="Dark Mode VF with a custom Darkmode axis" />
 
-I also wanted to show going back to our preconnect section earlier — how there was no time spent connecting to the Google Fonts CDN, since the browser has already done that part.
+I also wanted to show going back to our preconnect section earlier, how there was no time spent connecting to the Google Fonts CDN, since the browser has already done that part.
 
-**Interestingly enough** — it serves a file for each weight when variable fonts promise us a single file. That's for a good reason. If we looked at the file size of a single file variable font — it's astronomical. For example the **TTF** version of Inter is **~800 kB**, and the **WOFF 2** version is around **~320 kB**. We're left with a couple of options:
+**Interestingly enough**, it serves a file for each weight when variable fonts promise us a single file. That's for a good reason. If we looked at the file size of a single file variable font, it's astronomical. For example the **TTF** version of Inter is **~800 kB**, and the **WOFF 2** version is around **~320 kB**. We're left with a couple of options:
 
 - Use Google Fonts if the font you want is supported
 - Download, and use the variable font Google Fonts generates
@@ -385,15 +385,15 @@ I also wanted to show going back to our preconnect section earlier — how there
 
 Remember our adventure into unicode?
 
-**The idea behind creating font subsets is simple — we can specify a unicode range to remove characters we don't need.**
+**The idea behind creating font subsets is simple, we can specify a unicode range to remove characters we don't need.**
 
 The problem with most online converters, and tools I tried is **they completeley strip out the variations from the variable font** in the process. You can use [Wakamai Fondue](https://wakamaifondue.com/) to drop a font, and learn what it can do.
 
 <Image src="inter-variable.webp" alt="Shows everything the variable version of Inter includes" />
 
-At the time of writing this the only reliable method is having to use **pyftsubset** which is part of **fonttools** (which means having to use Python). There's some other JavaScript libraries such as **glyphhanger** that you can use — but they also require having those dependencies, and are just an abstraction on top. **glyphanger** is interesting because it can crawl your site, and create a tiny subset based on what characters you use. **Fortunately, it's simple** — even if you don't have any Python experience like me.
+At the time of writing this the only reliable method is having to use **pyftsubset** which is part of **fonttools** (which means having to use Python). There's some other JavaScript libraries such as **glyphhanger** that you can use, but they also require having those dependencies, and are just an abstraction on top. **glyphanger** is interesting because it can crawl your site, and create a tiny subset based on what characters you use. **Fortunately, it's simple**, even if you don't have any Python experience like me.
 
-Make sure you have Python installed, and **add it to your path** if you're on Windows (look at the installer options) — it comes with **pip** which is a package manager for Python like **npm** is for JavaScript. I'm using Linux, so I already have it. The same should be true for macOS. You can confirm by opening you terminal:
+Make sure you have Python installed, and **add it to your path** if you're on Windows (look at the installer options), it comes with **pip** which is a package manager for Python like **npm** is for JavaScript. I'm using Linux, so I already have it. The same should be true for macOS. You can confirm by opening you terminal:
 
 ```shell:terminal
 python --version
@@ -427,10 +427,10 @@ pyftsubset \
 
 The backwards slash let's us split text into multiple lines.
 
-- We specify our font — **Inter-Variable.ttf**
-- Then we give the output a name — **Inter-Variable-English.woff2**
-- Specify the font format — **woff2**
-- **Layout features** — [feature tags](https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags) such as **kern** let us justify the space between glyphs, **liga** replaces a sequence of glyphs with a single glyph, or we can specify everything with the asterisk
+- We specify our font **Inter-Variable.ttf**
+- Then we give the output a name **Inter-Variable-English.woff2**
+- Specify the font format **woff2**
+- **Layout features**, [feature tags](https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags) such as **kern** let us justify the space between glyphs, **liga** replaces a sequence of glyphs with a single glyph, or we can specify everything with the asterisk
 - As a last step we give it the **Latin** unicode range
 
 <Image src="inter-variable-subset.webp" alt="Shows everything the subset variable version of Inter includes" />
@@ -455,7 +455,7 @@ pyftsubset \
   --unicodes="U+0100-017F"
 ```
 
-Speaking of Google fonts — **you can specify the variable font weight range, but also subset it using their API.**
+Speaking of Google fonts, **you can specify the variable font weight range, but also subset it using their API.**
 
 ```html:example.html
 <link
@@ -480,5 +480,5 @@ Don't forget, you can also combine other parameters such as **display**. You can
 - You should always use variable fonts since [they're supported in most browsers](https://caniuse.com/variable-fonts) (except Internet Explorer) with a global usage of ~**92%**
 - Always use **WOFF 2** since it has the highest compression
 - Self-host your fonts if you want browser caching, and fine-grained control
-- Take advantage of font subsets, but also don't overdo it — you might think you only want English, but there might be cases where you have to use [diacritics](https://en.wikipedia.org/wiki/Diacritic) from other languages
+- Take advantage of font subsets, but also don't overdo it, you might think you only want English, but there might be cases where you have to use [diacritics](https://en.wikipedia.org/wiki/Diacritic) from other languages
 - Your goal shouldn't be size, but to deliver the best user experience by finding balance, and understanding the trade-offs

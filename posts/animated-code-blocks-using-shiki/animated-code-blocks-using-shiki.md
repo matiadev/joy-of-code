@@ -21,7 +21,7 @@ category: svelte
 
 You can click on the example on the page to activate the code block animation. You can find the [source code](https://github.com/joysofcode/shiki-magic-move) on GitHub.
 
-[Shiki](https://shiki.style/) is a powerful, modern JavaScript syntax highlighter. [Shiki Magic Move](https://shiki-magic-move.netlify.app/) is a low-level framework agnostic library for animating code blocks which uses Shiki for syntax highlighting — it has framework wrappers for Vue and React, but in this post I'm going to show you how to make a Svelte renderer.
+[Shiki](https://shiki.style/) is a powerful, modern JavaScript syntax highlighter. [Shiki Magic Move](https://shiki-magic-move.netlify.app/) is a low-level framework agnostic library for animating code blocks which uses Shiki for syntax highlighting. It has framework wrappers for Vue and React, but in this post I'm going to show you how to make a Svelte renderer.
 
 You can read [The Magic In Shiki Magic Move](https://antfu.me/posts/shiki-magic-move) if you want to understand how Shiki Magic Move works, but the gist is that it uses text diffing, and the [FLIP animation technique](https://www.youtube.com/watch?v=idD9DA9eR_A) to animate the changes.
 

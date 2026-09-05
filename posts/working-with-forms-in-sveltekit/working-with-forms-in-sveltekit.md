@@ -99,7 +99,7 @@ export function clearTodos() {
 
 ## Reintroduction To Forms
 
-A `form` is a way to exchange information between the browser and server — it's just a container for form controls with some optional attributes to configure how the form behaves.
+A `form` is a way to exchange information between the browser and server. It's just a container for form controls with some optional attributes to configure how the form behaves.
 
 ```svelte:src/routes/+page.svelte showLineNumbers
 <form method="GET" action="/login">
@@ -121,7 +121,7 @@ The `GET` method requests a resource from the server and appends the form data a
 </form>
 ```
 
-The `POST` method is similar to `GET` but it can return a resource depending on the data sent in the request body of the HTTP request — no data is appended to the URL and the data is included in the body instead.
+The `POST` method is similar to `GET` but it can return a resource depending on the data sent in the request body of the HTTP request, no data is appended to the URL and the data is included in the body instead.
 
 In our example the form is going to send data to the URL using the HTTP `POST` method. The server is going to receive the data as a list of `key: value` pairs contained in the HTTP request.
 
@@ -220,7 +220,7 @@ The `action` attribute is optional because we're going to use the same endpoint 
 
 > 🐿️ You might be more used to JavaScript instead of using forms and it might feel weird using forms for what might seem easier to use a button for but it's perfectly normal and you should embrace it (you're going to see how awesome it is).
 
-I'm going to create a `POST` and `DELETE` function inside `+server.ts` that should get the data from the form and do the appropriate action — I'm going to use a `formData` object to send `success` and `errors` to update the UI for the user.
+I'm going to create a `POST` and `DELETE` function inside `+server.ts` that should get the data from the form and do the appropriate action. I'm going to use a `formData` object to send `success` and `errors` to update the UI for the user.
 
 ```ts:src/routes/todos/+server.ts showLineNumbers
 import { json } from '@sveltejs/kit'
@@ -344,7 +344,7 @@ Let's go back to `+page.svelte` and create `addTodo` and `removeTodo` functions 
 {/if}
 ```
 
-If you add or remove a to-do you can see the `fetch` request and the payload in the network tab — the request also returns a JSON response that has `success` and `errors` which is then used on the front-end to update the UI for the user.
+If you add or remove a to-do you can see the `fetch` request and the payload in the network tab, the request also returns a JSON response that has `success` and `errors` which is then used on the front-end to update the UI for the user.
 
 This taught us a lot about about forms but...
 
@@ -521,7 +521,7 @@ Actions might look like magic but they're just a URL that invokes a function. If
 
 Try to add or remove a to-do item from the list and pay attention to the icon in the browser tab and look at your network tab.
 
-You're going to notice each time you add or remove a to-do the page reloads. This is the default form behavior once you submit it — this means the form works without JavaScript!
+You're going to notice each time you add or remove a to-do the page reloads. This is the default form behavior once you submit it. This means the form works without JavaScript!
 
 [JavaScript can fail to load for many reasons](https://www.kryogenix.org/code/browser/everyonehasjs.html) but I'm not advocating that every site should work without JavaScript and should instead work before JavaScript is loaded on the page. This approach to development makes your app more resilient and you can use JavaScript once it's available on the page to improve the user experience using progressive enhancement as intended.
 
@@ -567,7 +567,7 @@ Remember the first example how we had to do everything by hand? SvelteKit does t
 <!-- ... -->
 ```
 
-It only takes one line of code if you count the import and everything works the same but instead of reloading the page it's going to prevent the default form behavior and use JavaScript — if you look at the network tab you should see the `fetch` request.
+It only takes one line of code if you count the import and everything works the same but instead of reloading the page it's going to prevent the default form behavior and use JavaScript, if you look at the network tab you should see the `fetch` request.
 
 When you submit the form the `use:enhance` action is going to:
 
@@ -575,7 +575,7 @@ When you submit the form the `use:enhance` action is going to:
 - Reset the `<form>` element and rerun the `load` function for the page by using `invalidateAll`
 - Use `goto` for a redirect response
 
-If you want to learn how it works you can look at [form.js](https://github.com/sveltejs/kit/blob/master/packages/kit/src/runtime/app/forms.js) inside the SvelteKit repo which looks very familiar to what I showed you earlier — everything leads to this point because I want to give you perspective and understanding how the things you use work and why.
+If you want to learn how it works you can look at [form.js](https://github.com/sveltejs/kit/blob/master/packages/kit/src/runtime/app/forms.js) inside the SvelteKit repo which looks very familiar to what I showed you earlier, everything leads to this point because I want to give you perspective and understanding how the things you use work and why.
 
 ## Customize The Enhance Action To Show A Loading UI
 
@@ -738,7 +738,7 @@ I'm going to create a `routes/login` route using the first example but I'm going
 </form>
 ```
 
-The browser has some built-in validation but the problem is that anyone can be hackerman and edit client-side code and submit whatever they want — this serves more as a nicer user experience than a guard against malicious actors and that is why you should always do server-side validation.
+The browser has some built-in validation but the problem is that anyone can be hackerman and edit client-side code and submit whatever they want, this serves more as a nicer user experience than a guard against malicious actors and that is why you should always do server-side validation.
 
 The next part is going to make more sense if I describe the shape of the object I want for the `form` prop on the page.
 

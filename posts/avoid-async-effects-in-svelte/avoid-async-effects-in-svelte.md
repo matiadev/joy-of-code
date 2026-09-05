@@ -96,7 +96,7 @@ I assume this is probably because having async effects would cause race conditio
 
 What's also interesting is that if we read the Svelte docs on [understanding dependencies](https://svelte.dev/docs/svelte/$effect#Understanding-dependencies), it says:
 
-> "Values that are read asynchronously — after an `await` or inside a `setTimeout`, for example — **will not be tracked**.
+> "Values that are read asynchronously, after an `await` or inside a `setTimeout`, for example, **will not be tracked**.
 
 The values **after** `await` or **inside** `setTimeout` and `then` are not going to be tracked by Svelte:
 

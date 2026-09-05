@@ -23,7 +23,7 @@ At the end of this post you're going to learn how to make a custom `<select>` me
 
 You might be used to using a component library like [Material UI](https://sveltematerialui.com/) or any other which is great if you enjoy it but you can find yourself fighting against its opinions.
 
-A headless UI component library on the other hand doesn't have opinions — meaning it's completely **unstyled** giving you complete control not only over styles but how you compose components by only exposing the logic to you like lego pieces.
+A headless UI component library on the other hand doesn't have opinions, meaning it's completely **unstyled** giving you complete control not only over styles but how you compose components by only exposing the logic to you like lego pieces.
 
 [Svelte Headless UI](https://svelte-headlessui.goss.io/docs) is an unofficial port of the [Headless UI for Tailwind CSS](https://headlessui.dev/) component library. It works great with [Tailwind](https://tailwindcss.com/) but it's **optional** - in fact I don't use Tailwind in Svelte projects because I prefer to write regular CSS when I can which is harder to do using React.
 

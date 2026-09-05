@@ -103,8 +103,8 @@ It makes your project structure easily scannable:
 - `providers` is where you keep your [context](https://reactjs.org/docs/hooks-reference.html#usecontext) providers
 - `scripts` could be **Bash** or **Node** scripts you can run
 - `styles` could hold anything related to styles even if you're using [CSS-in-JS](https://en.wikipedia.org/wiki/CSS-in-JS) you could have some logic (I use it for cards on the site)
-- `tests` are where you keep tests — I prefer this over the **\_\_tests\_\_** convention (if you want to learn testing use [Testing Library](https://testing-library.com/))
-- `types` is where you keep your reusable TypeScript types (if used in a single component, I don't include it here) — if you're using a npm package without types, you can add `index.d.ts` and `declare module 'package-name'` so TypeScript doesn't complain
+- `tests` are where you keep tests, I prefer this over the **\_\_tests\_\_** convention (if you want to learn testing use [Testing Library](https://testing-library.com/))
+- `types` is where you keep your reusable TypeScript types (if used in a single component, I don't include it here), if you're using a npm package without types, you can add `index.d.ts` and `declare module 'package-name'` so TypeScript doesn't complain
 - `utils` are helpful functions such as currency conversion
 
 If you have static assets such as images or fonts, they should be placed inside the `assets` or `static` folder.

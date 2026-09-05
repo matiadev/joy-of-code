@@ -27,7 +27,7 @@ You can use any JavaScript animation library in your slides, but I always wanted
 
 You can find the code on [GitHub](https://github.com/joysofcode/motion-svg).
 
-I thought about it for months, and explored everything I could think of such as a [declarative timeline using the Web Animations API](https://x.com/joyofcodedev/status/1716406230074171538), but nothing felt right — only to realize that Motion Canvas was right all along.
+I thought about it for months, and explored everything I could think of such as a [declarative timeline using the Web Animations API](https://x.com/joyofcodedev/status/1716406230074171538), but nothing felt right, only to realize that Motion Canvas was right all along.
 
 ## Animation Library Foundations
 

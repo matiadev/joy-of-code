@@ -29,7 +29,7 @@ To understand what this means, we first have to understand the three parts that 
 - `<script>`
 - `<style>`
 
-If your component uses TypeScript for example, it has to be transformed to JavaScript first, before it goes through the Svelte compiler — you're already using [vitePreprocess](https://kit.svelte.dev/docs/integrations#preprocessors-vitepreprocess) in your Svelte project for handling everything from TypeScript, to PostCSS through Vite.
+If your component uses TypeScript for example, it has to be transformed to JavaScript first, before it goes through the Svelte compiler. You're already using [vitePreprocess](https://kit.svelte.dev/docs/integrations#preprocessors-vitepreprocess) in your Svelte project for handling everything from TypeScript, to PostCSS through Vite.
 
 Another great example is [Melt UI](https://melt-ui.com/) which provides a custom [preprocessor](https://melt-ui.com/docs/preprocessor) to enhance the developer experience by reducing boilerplate.
 
@@ -51,7 +51,7 @@ It takes the following code:
 </div>
 ```
 
-[mdsvex](https://mdsvex.pngwn.io/) is a popular Markdown preprocessor for Svelte which transforms Markdown in your Svelte components to HTML — similar to [MDX](https://mdxjs.com/) for React.
+[mdsvex](https://mdsvex.pngwn.io/) is a popular Markdown preprocessor for Svelte which transforms Markdown in your Svelte components to HTML, similar to [MDX](https://mdxjs.com/) for React.
 
 In the next part we're going to make a simple Markdown preprocessor for learning purposes.
 
@@ -59,7 +59,7 @@ In the next part we're going to make a simple Markdown preprocessor for learning
 
 A preprocessor is a regular JavaScript function which can be passed alongside other preprocessors inside the Svelte config.
 
-The preprocessor includes `markup`, `script`, and `style` methods where the order is **important** — you can use these methods to change parts of the Svelte component you're interested in.
+The preprocessor includes `markup`, `script`, and `style` methods where the order is **important**, you can use these methods to change parts of the Svelte component you're interested in.
 
 ```js:svelte.config.js {3-10,14} showLineNumbers
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
@@ -124,7 +124,7 @@ Congrats on writing your first preprocessor! 🥳
 
 For the Markdown preprocessor the only part we're interested in is the `markup` method to transform Markdown to HTML in the Svelte component.
 
-You can also specify a list of file extensions that should be treated as Svelte files — you can use any extension like `.banana` if you want but I'm going to use `.md` for Markdown.
+You can also specify a list of file extensions that should be treated as Svelte files, you can use any extension like `.banana` if you want but I'm going to use `.md` for Markdown.
 
 ```js:svelte.config.js {3} showLineNumbers
 /** @type {import('@sveltejs/kit').Config} */
@@ -171,7 +171,7 @@ I'm going to use [unified](https://github.com/unifiedjs/unified) which is an eco
 - [remark](https://github.com/remarkjs/remark) (Markdown processor)
 - [rehype](https://github.com/rehypejs/rehype) (HTML processor)
 
-It's helpful but you don't have to understand how abstract syntax trees work — they're just a data structure that uses nodes to represent code.
+It's helpful but you don't have to understand how abstract syntax trees work. They're just a data structure that uses nodes to represent code.
 
 Create the `markdown` preprocessor inside `src/lib/markdown.js` to keep things organized.
 

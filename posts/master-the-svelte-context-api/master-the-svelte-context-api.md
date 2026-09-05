@@ -200,7 +200,7 @@ To understand the drawback of using global state compared to using context, we n
 
 <Image src="context-api.webp" alt="Svelte component tree using the Context API" />
 
-In this example, we set the context inside component `<A>` and ask for it in component `<D>` where Svelte is going to walk up the component tree until it finds the context — if we set the context inside component `<B>` it would only be available to that component and its children.
+In this example, we set the context inside component `<A>` and ask for it in component `<D>` where Svelte is going to walk up the component tree until it finds the context. If we set the context inside component `<B>` it would only be available to that component and its children.
 
 **The context is scoped to the component tree**, so it's only available to the parent and its children, where global state makes more sense for state used by the entire app:
 

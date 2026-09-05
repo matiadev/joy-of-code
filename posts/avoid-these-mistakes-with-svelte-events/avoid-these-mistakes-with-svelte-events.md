@@ -24,7 +24,7 @@ Most JavaScript frameworks don't attach event listeners directly on elements. In
 </button>
 ```
 
-If you inspect a button with a click handler in Svelte and look at the event listeners, you'll notice the button itself has no event listeners — the event listener is actually on the root element.
+If you inspect a button with a click handler in Svelte and look at the event listeners, you'll notice the button itself has no event listeners, the event listener is actually on the root element.
 
 This works thanks to [event bubbling](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling). When you click a button, the event bubbles up through all of its ancestors. So instead of attaching a separate listener to every button (which would be memory inefficient and require manual cleanup), Svelte attaches a single event listener higher up the tree and figures out which element was clicked.
 
@@ -68,7 +68,7 @@ This works fine when you listen for the event on the element itself. But what if
 
 Nothing happens, because **custom events don't bubble by default**.
 
-The fix is simple — pass `{ bubbles: true }` to your `CustomEvent`:
+The fix is simple. Pass `{ bubbles: true }` to your `CustomEvent`:
 
 ```ts:+page.svelte
 new CustomEvent('clickedoutside', { bubbles: true })
@@ -129,7 +129,7 @@ Consider an attachment that adds a manual `click` event listener directly to a n
 </section>
 ```
 
-When you click the button, you might expect `click` to log first and `manual click` second — but the **opposite** happens. The manual event listener fires first, before the declarative one.
+When you click the button, you might expect `click` to log first and `manual click` second, but the **opposite** happens. The manual event listener fires first, before the declarative one.
 
 This also breaks `stopPropagation`.
 
@@ -168,7 +168,7 @@ The fix is to use `on` from `svelte/events` instead of calling `addEventListener
 </section>
 ```
 
-Now events fire in the correct order (`click` first, `manual click` second), and `stopPropagation` works as expected — when propagation is stopped, the manual listener won't fire at all.
+Now events fire in the correct order (`click` first, `manual click` second), and `stopPropagation` works as expected, when propagation is stopped, the manual listener won't fire at all.
 
 ## How Event Delegation Works Under The Hood
 
@@ -188,7 +188,7 @@ var delegated = current_target[event.symbol]?.[event.name]
 delegated.call(current_target, event)
 ```
 
-This is why declarative Svelte events "just work" — the ordering and cleanup are all managed for you.
+This is why declarative Svelte events "just work." The ordering and cleanup are all managed for you.
 
 ## How On Is Implemented
 

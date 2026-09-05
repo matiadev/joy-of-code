@@ -20,7 +20,7 @@ category: general
 
 **Do you feel stuck** after watching hours of courses and tutorials on YouTube but now when there's no one to guide you through it you feel completely lost?
 
-I want to assure you that's **normal** and there's a cure — the reason you're in this position is because you never considered how problem solving and learning how to learn is a skill you have to practice besides coding.
+I want to assure you that's **normal** and there's a cure, the reason you're in this position is because you never considered how problem solving and learning how to learn is a skill you have to practice besides coding.
 
 **I want to help you learn how to learn by showing you ten methods how to approach and practice problem solving you can try yourself and see if it works for you**.
 
@@ -32,7 +32,7 @@ This happens when you're a passive consumer of content and not actively using yo
 
 I'm a self-learner and don't have any computer science background or anything that would give me an advantage over you and I tried and gave up coding countless times not because it was hard but because I didn't understand how it's useful to me.
 
-Whatever your motivation is I want you to know that **you don't have to fit the coder stereotype** when it comes to being a developer — I'm not particularly good at or enjoy math problems, coding challenges or algorithms and you don't have to either.
+Whatever your motivation is I want you to know that **you don't have to fit the coder stereotype** when it comes to being a developer, I'm not particularly good at or enjoy math problems, coding challenges or algorithms and you don't have to either.
 
 I don't want to say it's irrelevant because there's a lot of different jobs when it comes to web development but it's not something you use regularly as a web developer.
 
@@ -40,7 +40,7 @@ I don't want to say it's irrelevant because there's a lot of different jobs when
 
 **Everything is a problem even if you don't think of it that way.**
 
-Before an artist decides to use their expensive paints they spend a lot of time sketching out their idea beforehand — If you want to do something do it with intent and purpose instead of looking at a blank canvas and expecting code to pour out of your mind.
+Before an artist decides to use their expensive paints they spend a lot of time sketching out their idea beforehand. If you want to do something do it with intent and purpose instead of looking at a blank canvas and expecting code to pour out of your mind.
 
 **Stop and think about the requirements.**
 
@@ -90,7 +90,7 @@ The sane advice you're going to hear a lot is "work on projects" but if you're a
 
 After you learn the fundamentals of JavaScript you're going to learn the answer through working on projects because it's going to show the holes in your knowledge.
 
-**There is no such thing as mastery and don't make the mistake of thinking you have to learn everything because you can spend years learning about one thing** — this is the trap of learning for sake of learning, so avoid it because you're going to be more excited to learn about something when you understand how it can help you solve a problem.
+**There is no such thing as mastery and don't make the mistake of thinking you have to learn everything because you can spend years learning about one thing**, this is the trap of learning for sake of learning, so avoid it because you're going to be more excited to learn about something when you understand how it can help you solve a problem.
 
 **Learning is a marathon and not a race** meaning you're going to reference the same things for years and deepen your knowledge and it's not done once you finish a course.
 
@@ -190,7 +190,7 @@ In the case of a tutorial take notes of the requirements, so you can try doing i
 
 **Remembering syntax isn't important here but developing muscle memory and being comfortable using something**.
 
-**Feeling uncomfortable is an indicator you're learning** because you're challenging yourself but you shouldn't feel angry and frustrated, so know when to stop — **your brain craves instant gratification** but you have to learn to recognize and resist it.
+**Feeling uncomfortable is an indicator you're learning** because you're challenging yourself but you shouldn't feel angry and frustrated, so know when to stop. **Your brain craves instant gratification** but you have to learn to recognize and resist it.
 
 **Five minutes of practice a day is more valuable than making excuses and trying to make up for everything on the weekend and get crushed trying to learn everything at once.**
 
@@ -418,7 +418,7 @@ For me it's easier if I write the static HTML first and go backwards and make it
 </script>
 ```
 
-I isolated the problem so I don't have to think about the moving parts and focus on solving one problem at a time — reproducing a problem like this lets you share it with others when asking for help.
+I isolated the problem so I don't have to think about the moving parts and focus on solving one problem at a time, reproducing a problem like this lets you share it with others when asking for help.
 
 I only need to dynamically render the playlist in the browser and drive the user interface based on the user action regardless if you're using plain JavaScript or using a JavaScript framework that makes working with the user interface a lot easier the principle is the same.
 
@@ -430,7 +430,7 @@ Here's an example of everything put together using the JavaScript framework Svel
 
 As a frontend developer most of your time spent is turning an API response into something you can show in the browser and that's why you have to learn how to manipulate arrays and objects in JavaScript.
 
-Using `map` and `filter` to manipulate arrays is going to be your bread and butter but there's other useful methods such as `includes`, `some`, `find` — you can learn `reduce` if you want that's everything combined but it's harder to read than chaining methods, so I prefer using chaining and having readable code over clever code.
+Using `map` and `filter` to manipulate arrays is going to be your bread and butter but there's other useful methods such as `includes`, `some`, `find`, you can learn `reduce` if you want that's everything combined but it's harder to read than chaining methods, so I prefer using chaining and having readable code over clever code.
 
 For working with arrays and objects using […spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) is useful because it's easy to merge data but also you can avoid mutating values by creating a copy of something.
 
@@ -453,7 +453,7 @@ bananaVarieties = [...bananaVarieties, { variety: 'Plantain' }]
 
 **Data structures and algorithms and being able to solve coding challenges doesn't reflect your ability as a developer, so don't waste your time and work on projects instead unless you have to learn those things.**
 
-To practice manipulating data I love using the [Pokemon API](https://pokeapi.co/) because it has a lot of data you can play around with — start with something simple and display the Pokemon and their information in a card.
+To practice manipulating data I love using the [Pokemon API](https://pokeapi.co/) because it has a lot of data you can play around with, start with something simple and display the Pokemon and their information in a card.
 
 This is going to teach you important concepts such as [data fetching in JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and reading the [PokeAPI documetation](https://pokeapi.co/docs/v2) is a great start to practicing reading documentation.
 
@@ -520,7 +520,7 @@ Avoid being isolated on your own island as you learn how to code. You should be 
 
 If you're already not a part of some [Discord](https://discord.com/) or [Slack](https://slack.com/) community then have a look if your favorite content creator or the course you're taking has one you can join.
 
-**You should never feel bad about asking questions** because everyone is a volunteer and it also helps them reinforce their understanding — anyone can answer questions including you and it's alright to be wrong if you can learn from it.
+**You should never feel bad about asking questions** because everyone is a volunteer and it also helps them reinforce their understanding. Anyone can answer questions including you and it's alright to be wrong if you can learn from it.
 
 Here's a great tip when learning something and that's commenting every line of code you don't understand and asking questions.
 
@@ -540,7 +540,7 @@ From this simple example you can learn about the [destructuring assignment](http
 
 You should question everything because I've seen people skip JavaScript and confuse `map` for being a React thing when it's not.
 
-Take advantage of social media and places where developers aggregate like [Twitter](https://twitter.com/) and start following smart people which is like having a mentor — you can peak into the mind of great developers and ask questions or learn useful tips and tricks and stay up to date.
+Take advantage of social media and places where developers aggregate like [Twitter](https://twitter.com/) and start following smart people which is like having a mentor, you can peak into the mind of great developers and ask questions or learn useful tips and tricks and stay up to date.
 
 ## Write About What You Learned
 
@@ -554,7 +554,7 @@ Use a platform such as [DEV Community](https://dev.to/) or [Hashnode](https://ha
 
 I don't have any hot tips on writing other than keep it simple and avoid confusing language to sound smart because you should serve the reader.
 
-The biggest lesson for me is knowing what not to do after reading a tragic amount of posts that assume your knowledge — that's why I write for myself.
+The biggest lesson for me is knowing what not to do after reading a tragic amount of posts that assume your knowledge, that's why I write for myself.
 
 Start by creating an outline and dump your brain on the page and then go over it and clean it up and leave it for a day to think about it before you publish it.
 

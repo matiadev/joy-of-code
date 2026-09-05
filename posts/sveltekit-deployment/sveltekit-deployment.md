@@ -59,7 +59,7 @@ If you want to use **infrastructure as a service** (IaaS) like AWS you need a de
 
 Some of the popular serverless hosts include [Netlify](https://www.netlify.com/) and [Cloudflare Pages](https://pages.cloudflare.com/) which you might have heard of due to the popularity of [Jamstack](https://jamstack.org/) which is a term for architecture where you use third-party APIs to make a site.
 
-Another selling point is the built-in **continuous integration** (CI/CD) you get just for using a servless provider because you can focus on writing code and not think about infrastructure and deployment — when you push changes to [GitHub](https://github.com/) it's going to redeploy the site which is a great developer experience.
+Another selling point is the built-in **continuous integration** (CI/CD) you get just for using a servless provider because you can focus on writing code and not think about infrastructure and deployment, when you push changes to [GitHub](https://github.com/) it's going to redeploy the site which is a great developer experience.
 
 **Serverless is a misnomer** because it doesn't mean there are no servers but it means you don't have to provision and manage servers yourself but everything is managed for you.
 
@@ -150,7 +150,7 @@ After you're done, deploying is easy:
 - Under **environment variables** add **DATABASE_URL** as the **name** and the database connection string as the **value** and press **ADD**
 - Press **Deploy**
 
-Deployment should take under a minute and you can see what's going on in the **building** section. You should get used to it because the output is the same thing if you ran the build command but it's on a remote server — this is why it's important to read the logs if you get any errors during deployment.
+Deployment should take under a minute and you can see what's going on in the **building** section. You should get used to it because the output is the same thing if you ran the build command but it's on a remote server, this is why it's important to read the logs if you get any errors during deployment.
 
 Congrats! 🎉
 

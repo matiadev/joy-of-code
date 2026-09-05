@@ -106,7 +106,7 @@ I mentioned how SvelteKit is a Vite plugin but that's an oversimplification (and
 - Configurable rendering (SSR, SSG, CSR)
 - Deployment
 
-One of the most powerful things about SvelteKit is the flexibility in how you build your app — you can **prerender** your about page, use **SSR** (server-side rendering) for dynamic pages and your app section can be a **SPA** (single page application) inside the same app.
+One of the most powerful things about SvelteKit is the flexibility in how you build your app, you can **prerender** your about page, use **SSR** (server-side rendering) for dynamic pages and your app section can be a **SPA** (single page application) inside the same app.
 
 ```ts:src/routes/+layout.ts showLineNumbers
 // turns app into a SPA
@@ -119,7 +119,7 @@ export const prerender = true
 export const csr = false
 ```
 
-Since `ssr` is set to `false` inside the root layout the entire app becomes a client-rendered SPA or SSG if you set `prerender` to `true` and you can even disable the client altogether — you can override these values on a per-page basis or groups of pages inside your app.
+Since `ssr` is set to `false` inside the root layout the entire app becomes a client-rendered SPA or SSG if you set `prerender` to `true` and you can even disable the client altogether. You can override these values on a per-page basis or groups of pages inside your app.
 
 ## Best Of Both Worlds: Server-Side Rendering With Client-Side Navigation
 

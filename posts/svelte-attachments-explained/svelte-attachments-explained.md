@@ -21,7 +21,7 @@ Svelte released a new [@attach](https://svelte.dev/docs/svelte/@attach) feature 
 
 I like to think of them as `onMount` functions for elements, and in this post I'm going to show you why you would use them.
 
-A common use for lifecycle functions is integrating a third-party JavaScript library, so I'm going to use the JavaScript animation library [GSAP](https://gsap.com/) in the examples — you can try the examples in the [Svelte playground](https://svelte.dev/playground).
+A common use for lifecycle functions is integrating a third-party JavaScript library, so I'm going to use the JavaScript animation library [GSAP](https://gsap.com/) in the examples. You can try the examples in the [Svelte playground](https://svelte.dev/playground).
 
 Let's start by creating a box:
 

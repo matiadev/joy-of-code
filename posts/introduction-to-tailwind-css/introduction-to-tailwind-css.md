@@ -15,9 +15,9 @@ category: css
 
 ## Introduction
 
-I love writing CSS. It's a satisfying feeling when you get into the flow, and assemble the pieces of a site like a puzzle. I understand not everyone might feel that way — and a lot of us instead reach for a popular CSS framework.
+I love writing CSS. It's a satisfying feeling when you get into the flow, and assemble the pieces of a site like a puzzle. I understand not everyone might feel that way, and a lot of us instead reach for a popular CSS framework.
 
-While each have their pros, and cons — there's always friction that gets in the way of writing styles like naming, and context switching between files regardless if you're using a framework, or writing it yourself.
+While each have their pros, and cons, there's always friction that gets in the way of writing styles like naming, and context switching between files regardless if you're using a framework, or writing it yourself.
 
 Wouldn't it be nicer if writing styles could flow like prose?
 
@@ -294,7 +294,7 @@ There's not much to the styles. We're using [Google Fonts](https://fonts.google.
 
 I've added some basic media queries such as dark mode support, and responsive to show how it translates to Tailwind.
 
-If you're wondering why for the color options we don't use a simple gradient — it's because of an issue with jagged edges when a color abruptly stops in a gradient causing banding.
+If you're wondering why for the color options we don't use a simple gradient, it's because of an issue with jagged edges when a color abruptly stops in a gradient causing banding.
 
 ```css:example.css showLineNumbers
 .gradient {
@@ -490,7 +490,7 @@ Next up is the color section.
 </div>
 ```
 
-"That's great, but it's a lot of repetition" you might be thinking. While you would be right, keep in mind when using a framework you often loop through some data you get. You would only have to change it in one place — if it was a component.
+"That's great, but it's a lot of repetition" you might be thinking. While you would be right, keep in mind when using a framework you often loop through some data you get. You would only have to change it in one place, if it was a component.
 
 There's other ways of extracting out classes (see the documentation), but it's not recommended as you get into the same predicament as writing regular styles. One helpful feature is to toggle word wrap in your editor.
 

@@ -94,7 +94,7 @@ This can be great fun! Instead of getting overwhelmed by everything observe how 
 
 We're going to use [Vite](https://vitejs.dev/) which is a fast and simple build tool with a lot of presets for different frameworks so we can focus on Svelte instead of configuring things.
 
-I'm going to be using [VS Code](https://code.visualstudio.com/) as my editor (you're going to need the [Svelte for VS Code extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)) but you can use a web based editor like [CodeSandbox](https://codesandbox.io/) which is great if you're on a potato 🥔 — in that case just pick the Svelte preset and you're good.
+I'm going to be using [VS Code](https://code.visualstudio.com/) as my editor (you're going to need the [Svelte for VS Code extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)) but you can use a web based editor like [CodeSandbox](https://codesandbox.io/) which is great if you're on a potato 🥔. In that case, just pick the Svelte preset and you're good.
 
 🖌️ In your terminal create the Vite project and pick Svelte with TypeScript.
 

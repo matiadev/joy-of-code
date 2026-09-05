@@ -91,9 +91,9 @@ If you refresh the page in the browser, you're going to see a flash of the `user
 
 Unlike `+page.server.ts`, the `load` function inside `+page.ts` runs both on the server and client so, the state is unique between them.
 
-> 🐿️ `+page.ts` gives you access to URL state among other things and can be used for a SPA if you're not using SSR — you can even pass data from `+page.server.ts` to `+page.ts` using `event.data` to do something before you navigate to the page, like loading an image.
+> 🐿️ `+page.ts` gives you access to URL state among other things and can be used for a SPA if you're not using SSR. You can even pass data from `+page.server.ts` to `+page.ts` using `event.data` to do something before you navigate to the page, like loading an image.
 
-Servers are stateless, kind of since there are cookies, but they're just a long-running process, so if we update `id` it's going to persist in memory until we restart the server — on the client side the `id` is always `1` after `id++` if you refresh the page because the state doesn't persist between page reloads.
+Servers are stateless, kind of since there are cookies, but they're just a long-running process, so if we update `id` it's going to persist in memory until we restart the server. On the client side the `id` is always `1` after `id++` if you refresh the page because the state doesn't persist between page reloads.
 
 ## Avoid Shared State On The Server
 

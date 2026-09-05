@@ -23,7 +23,7 @@ Are you thinking about learning React? Maybe you already have an eye on a course
 
 A brief history.
 
-After the ashes of [Angular.js](https://angularjs.org/) (not to be confused with [Angular](https://angular.io/)) transition to Angular 2 which was entirely a different framework to the ire of developers — many flocked to React in protest where it became and stayed one of the most popular frontend JavaScript frameworks.
+After the ashes of [Angular.js](https://angularjs.org/) (not to be confused with [Angular](https://angular.io/)) transition to Angular 2 which was entirely a different framework to the ire of developers. Many flocked to React in protest where it became and stayed one of the most popular frontend JavaScript frameworks.
 
 Unlike [Angular](https://angular.io/docs), [Vue](https://vuejs.org/), or [Svelte](https://svelte.dev/) that are more opinionated (think of it as the swiss-army knife of frameworks) meaning they come with everything included out of the box such as state management, a router, perhaps a nice CLI (command-line interface) to bootstrap projects, and manage everything.
 
@@ -31,7 +31,7 @@ React took a different approach. It's completely unopinionated about those thing
 
 Let's back up a bit.
 
-There's a war waged on the internet. Is React a framework? The answer is simple; it's not important. If you visit the [React site](https://reactjs.org/) it says "A JavaScript library for building user interfaces". To me a library is something that you pull off the shelf, but isn't integral to how your application works. Take for example [Lodash](https://lodash.com/) that provides you with utility functions for making it easier to write code. React on the other hand — to be able to use it has to be included in your project.
+There's a war waged on the internet. Is React a framework? The answer is simple; it's not important. If you visit the [React site](https://reactjs.org/) it says "A JavaScript library for building user interfaces". To me a library is something that you pull off the shelf, but isn't integral to how your application works. Take for example [Lodash](https://lodash.com/) that provides you with utility functions for making it easier to write code. React on the other hand, to be able to use it has to be included in your project.
 
 React is just a humble library at ~2.8 kb. It consists of two parts. The first being the [react](https://www.npmjs.com/package/react) package which is a diffing library (fancy term for some algorithm that is responsible to keep track of what changed, and perform an update based on that information). The other part is the [react-dom](https://www.npmjs.com/package/react-dom) package. A chonker at ~39.4 kb responsible for everything DOM (document object model) related, and is meant to be paired with the `react` package.
 
@@ -41,7 +41,7 @@ Interesting thing to note is that because React is just a diffing algorithm, we 
 
 If React is your first framework, this section is going to be enlightening.
 
-If you wrote any JavaScript, then you know how repetitive, tedious and error-prone things such as DOM manipulation can be. You're doing the same thing over and over. Everything is great on a fresh project, but soon enough things get out of hand. Your code becomes spaghetti. You might reach for a design pattern like OOP (object-oriented programming) to manage things easier. You also have to consider performance. Soon enough you're going to write your own hacked together framework before you know — that you're now responsible of maintaining.
+If you wrote any JavaScript, then you know how repetitive, tedious and error-prone things such as DOM manipulation can be. You're doing the same thing over and over. Everything is great on a fresh project, but soon enough things get out of hand. Your code becomes spaghetti. You might reach for a design pattern like OOP (object-oriented programming) to manage things easier. You also have to consider performance. Soon enough you're going to write your own hacked together framework before you know, you're now responsible of maintaining.
 
 The purpose of a framework is so you never have to touch the DOM, unless you have to. It makes writing code more declarative. That means things are abstracted so you don't worry about implementation details. You can just focus on writing the logic.
 
@@ -109,7 +109,7 @@ pokemonEl.addEventListener('click', ({ target }) => {
 showPokemon(state.pokemon)
 ```
 
-This is a lot of work already! Sure, we can abstract things further. We can create a nicer API for our developers — but now we're responsible for maintaing a framework. We have to think about the implementation details, before writing "actual" code.
+This is a lot of work already! Sure, we can abstract things further. We can create a nicer API for our developers, but now we're responsible for maintaing a framework. We have to think about the implementation details, before writing "actual" code.
 
 Notice also how we're flushing the entire DOM, before we update it. We would have to implement logic that knows what element got removed, and only update that part in the DOM tree. Yikes! Only if there was a better way (_cries out in infomercial_).
 
@@ -159,7 +159,7 @@ _Taken from [Vue docs](https://v3.vuejs.org/guide/reactivity.html#what-is-reacti
 
 ## Virtual DOM
 
-One thing I touched upon briefly was how we flushed the entire DOM for the list. With React we don't have to. It just updates what changed. We talked earlier how that's the entire point of the library. How does that work? It's thanks to the [virtual DOM](https://reactjs.org/docs/faq-internals.html). Think of it as a representation of the actual DOM in-memory. Once a change is made, React diffs it — and performs the update where needed.
+One thing I touched upon briefly was how we flushed the entire DOM for the list. With React we don't have to. It just updates what changed. We talked earlier how that's the entire point of the library. How does that work? It's thanks to the [virtual DOM](https://reactjs.org/docs/faq-internals.html). Think of it as a representation of the actual DOM in-memory. Once a change is made, React diffs it, and performs the update where needed.
 
 We can see this in the browser by enabling "Toggle paint flashing". I'm using Firefox, but you can find the same feature in Chrome.
 

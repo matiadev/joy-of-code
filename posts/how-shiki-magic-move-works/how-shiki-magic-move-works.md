@@ -39,7 +39,7 @@ I'm going to use JavaScript for legibility, but you can find the [typed code on 
 
 ## The Core
 
-Let's start by creating the `createMagicMoveMachine` function which accepts a `codeToKeyedTokens` callback function and `options` — it's main role is to return the `previous` and `after` state, and the `commit` function:
+Let's start by creating the `createMagicMoveMachine` function which accepts a `codeToKeyedTokens` callback function and `options`, it's main role is to return the `previous` and `after` state, and the `commit` function:
 
 ```js:shiki-magic-move/core.js
 export function createMagicMoveMachine(codeToKeyedTokens, options = {}) {

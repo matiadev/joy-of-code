@@ -161,7 +161,7 @@ That's it for the setup!
 
 Before making the mistake of going straight to code let's think about the problem we're trying to solve first.
 
-I encourage you to inspect [Monkeytype](https://monkeytype.com/) and see what you can find out about how it works — does it work how you thought?
+I encourage you to inspect [Monkeytype](https://monkeytype.com/) and see what you can find out about how it works, does it work how you thought?
 
 Problem solving in coding is similar to math where you need to figure out what information you know to solve a problem.
 
@@ -778,7 +778,7 @@ Let's use our new power and replace the placeholder text. You need to do it when
 
 I do love the simplicity of SvelteKit.
 
-It blurs the line between frontend and backend as you just wrote backend code and created an endpoint — I guess you're a fullstack developer now! 🥳
+It blurs the line between frontend and backend as you just wrote backend code and created an endpoint, I guess you're a fullstack developer now! 🥳
 
 ## Game Reset
 

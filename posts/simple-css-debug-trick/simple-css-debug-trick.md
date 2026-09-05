@@ -21,7 +21,7 @@ The fastest way to find misbehaving elements on the page is using the `outline` 
 
 <Image src="css-debug.webp" alt="Debugging CSS" />
 
-You can use `outline` to set an outline on every element, which isn't going to affect the layout compared to using `border` — unless you specify `box-sizing: border-box`.
+You can use `outline` to set an outline on every element, which isn't going to affect the layout compared to using `border`, unless you specify `box-sizing: border-box`.
 
 ```css:css showLineNumbers
 * {

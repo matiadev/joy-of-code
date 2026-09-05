@@ -29,15 +29,15 @@ The software mentioned in this post is **free** and **cross-platform** (I use Li
 
 Every professional uses the [Shure SM7B](https://www.shure.com/en-US/products/microphones/sm7b?variant=SM7B) microphone, but it costs around **$400**.
 
-Not only that, but it includes a hidden cost since it requires phantom power using an XLR connector — meaning you have to also pay for an audio interface.
+Not only that, but it includes a hidden cost since it requires phantom power using an XLR connector, meaning you have to also pay for an audio interface.
 
 <Image src="shure.webp" alt="Shure SM7B" />
 
 <Image src="interface.webp" alt="Audio interface" />
 
-Even if you get a good deal, that means more points of failure when you just got started and just because a microphone is more expensive, doesn't mean you're going to sound better — if you don't know what you're doing.
+Even if you get a good deal, that means more points of failure when you just got started and just because a microphone is more expensive, doesn't mean you're going to sound better, if you don't know what you're doing.
 
-I use an affordable **USB dynamic microphone** in the **$50-$100** range. You have to be close to it, so it won't pick up outside noise. It's the same type of microphone as the Shure SM7B, but keep in mind that **not every microphone is equal** — do your research and listen to how it sounds before you purchase it.
+I use an affordable **USB dynamic microphone** in the **$50-$100** range. You have to be close to it, so it won't pick up outside noise. It's the same type of microphone as the Shure SM7B, but keep in mind that **not every microphone is equal**. Do your research and listen to how it sounds before you purchase it.
 
 You can get a great deal and pick up a microphone bundle with a microphone arm and a pop filter:
 
@@ -47,13 +47,13 @@ You can get a great deal and pick up a microphone bundle with a microphone arm a
 
 You can even get away with a decent headset microphone, since you can clean up the audio after you're done recording.
 
-In general, **you want less friction as possible** when it comes to making content — you're not going to feel motivated if you have to always fight your setup.
+In general, **you want less friction as possible** when it comes to making content, you're not going to feel motivated if you have to always fight your setup.
 
 ## What I Use For Recording And Editing
 
 I use [OBS](https://obsproject.com/) for screen recording, and [Kdenlive](https://kdenlive.org/en/) for video editing.
 
-You can use a professional video editor like [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/) if you want, but I prefer simplicity — the free version of DaVinci Resolve also doesn't support the most used video format (MP4) on Linux. 🤦
+You can use a professional video editor like [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/) if you want, but I prefer simplicity. The free version of DaVinci Resolve also doesn't support the most used video format (MP4) on Linux. 🤦
 
 ## Recording Your Screen
 
@@ -78,7 +78,7 @@ If I'm recording a video where there's not a lot of motion, then using a low bit
 
 If you're going to record video with a lot of motion like animations, then you should use a higher bitrate (**~8k-20k**) and framerate (**60 FPS**). The video is going to be larger, so you have to strike a balance. You can read the [YouTube recommended upload encoding settings](https://support.google.com/youtube/answer/1722171) for more information.
 
-<Card type="info">I found that upscaling videos from 1080p to 1440p before rendering looks noticably better on YouTube if you care about bitrate — I assume YouTube either uses a different codec or higher bitrate at that resolution.</Card>
+<Card type="info">I found that upscaling videos from 1080p to 1440p before rendering looks noticably better on YouTube if you care about bitrate, I assume YouTube either uses a different codec or higher bitrate at that resolution.</Card>
 
 If you need to adjust the colors, you can go inside the **advanced** tab and play with the **color format**.
 

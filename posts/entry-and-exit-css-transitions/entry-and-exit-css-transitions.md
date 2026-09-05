@@ -27,7 +27,7 @@ Using keyframes for enter animations in CSS shouldn't be anything new. In this e
 
 <Keyframes />
 
-For the `fadeIn` animation direction, we define `backwards` so we apply `from` styles instantly — otherwise it would use the default element styles. For the stagger effect, we use `sibling-index()` inside `animation-delay`:
+For the `fadeIn` animation direction, we define `backwards` so we apply `from` styles instantly, otherwise it would use the default element styles. For the stagger effect, we use `sibling-index()` inside `animation-delay`:
 
 ```css:style.css
 @keyframes fadeIn {
@@ -83,7 +83,7 @@ As you can see, keyframe animations can't be interrupted mid-way. Now try toggli
 
 <TransitionToggle />
 
-The elements in the CSS transition example smoothly reverse back to their starting position. That's because transitions are interruptible — the browser knows the current computed value and the target value, so it can animate between them in either direction.
+The elements in the CSS transition example smoothly reverse back to their starting position. That's because transitions are interruptible, the browser knows the current computed value and the target value, so it can animate between them in either direction.
 
 This makes CSS transitions the better choice for interactive UI, where the user might change their mind, so the animation can gracefully be interrupted and avoid jank.
 

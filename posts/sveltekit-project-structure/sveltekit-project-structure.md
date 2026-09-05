@@ -26,7 +26,7 @@ I don't know about you but when I'm learning something I want at least a high le
 
 Understanding what makes SvelteKit work is going to give you more confidence using it as you get more familiar with it like getting to know a friend.
 
-In this post I'm going to show you how to set up SvelteKit yourself without the CLI — don't worry I'm going to use off the shelf parts instead of doing SvelteKit from scratch 😅.
+In this post I'm going to show you how to set up SvelteKit yourself without the CLI. Don't worry I'm going to use off the shelf parts instead of doing SvelteKit from scratch 😅.
 
 After that I'm going to walk you through the SvelteKit CLI and explain every file, so you at least understand the purpose of it.
 
@@ -88,7 +88,7 @@ This is the finished `package.json` file.
 
 ```
 
-SvelteKit requires a Vite config at the root of the project and in the previous [What Is SvelteKit?](https://joyofcode.xyz/what-is-sveltekit) I mentioned how SvelteKit is a Vite plugin and here it is — the beating heart of SvelteKit.
+SvelteKit requires a Vite config at the root of the project and in the previous [What Is SvelteKit?](https://joyofcode.xyz/what-is-sveltekit) I mentioned how SvelteKit is a Vite plugin and here it is, the beating heart of SvelteKit.
 
 ```js:vite.config.js showLineNumbers
 import { sveltekit } from '@sveltejs/kit/vite'
@@ -145,7 +145,7 @@ As the last step I'm going to add a route that's going to be the first page some
 
 If you run `npm run dev` you have a working SvelteKit site! 🥳
 
-SvelteKit creates a special `.svelte-kit` folder which you can ignore or delete that's going to generate files as you develop and regenerates each time you run `dev` or `build` — that's how the magic sauce works for generating types for your pages which you can find in `.svelte-kit/types`.
+SvelteKit creates a special `.svelte-kit` folder which you can ignore or delete that's going to generate files as you develop and regenerates each time you run `dev` or `build`, that's how the magic sauce works for generating types for your pages which you can find in `.svelte-kit/types`.
 
 ## Using The SvelteKit CLI
 

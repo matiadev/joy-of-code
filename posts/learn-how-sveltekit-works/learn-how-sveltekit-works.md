@@ -33,7 +33,7 @@ Let me explain some important concepts briefly:
 - **CSR** (client-side rendering) is the opposite where you send the browser an empty HTML document and let JavaScript handle the rendering for all the content inside it and is great for applications but not for **SEO**
 - **SSG** (static site generation) is similar to **SSR** but instead of building a page on demand when you visit a page you **prerender** the pages in advance you can cache forever and it's great for **SEO** but you have to do it each time when you make a change
 - **SPA** (single page application) is a general term used to describe an app that doesn't need to reload when you change a route and is contained within one page where JavaScript handles everything using **CSR**
-- **MPA** (multi page application) is the opposite of a **SPA** where every page you navigate has to refresh the page — think of an eCommerce store because using **SSR** to load a HTML document is faster than having to wait for a **SPA** to load JavaScript
+- **MPA** (multi page application) is the opposite of a **SPA** where every page you navigate has to refresh the page, think of an eCommerce store because using **SSR** to load a HTML document is faster than having to wait for a **SPA** to load JavaScript
 
 SvelteKit is a full stack framework that gives you the best of both worlds where the page is **server-side rendered** on your first visit but when you navigate to other pages they're going to be **client-side rendered**.
 
@@ -49,7 +49,7 @@ This post assumes you're at least familiar with SvelteKit but if you're not I ha
 
 **Kit** isn't built on top of **Svelte** but it's a **backend web framework** where Svelte is used as the view layer but in theory you could rip it out and replace it with another component framework that supports server-side rendering and the same is true for other web frameworks.
 
-It helps If you're familiar with [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) and have prior experience with backend frameworks like [Express](https://expressjs.com/) but it's not required and you can think of SvelteKit as a replacement because **you don't need a separate backend** — SvelteKit is where you write your frontend and backend logic.
+It helps If you're familiar with [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) and have prior experience with backend frameworks like [Express](https://expressjs.com/) but it's not required and you can think of SvelteKit as a replacement because **you don't need a separate backend**, SvelteKit is where you write your frontend and backend logic.
 
 ![https://c.tenor.com/1wJU51jgwSQAAAAC/dbz-dragonball.gif](https://c.tenor.com/1wJU51jgwSQAAAAC/dbz-dragonball.gif)
 
@@ -239,7 +239,7 @@ That's everything you need to set up a basic SvelteKit project. 😎
 
 I'm always amazed how the browser is smart enough to construct a proper HTML page even after the crime we've done.
 
-If you run a build it's going to use Node by default but it's going to be different based on what adapter you use — preconfigured SvelteKit projects use `@sveltejs/adapter-auto` that detects your production environment and uses the appropriate adapter.
+If you run a build it's going to use Node by default but it's going to be different based on what adapter you use, preconfigured SvelteKit projects use `@sveltejs/adapter-auto` that detects your production environment and uses the appropriate adapter.
 
 The SvelteKit project is a monorepo meaning instead of having every package in a separate repository on GitHub it can be in one place instead making it easier to maintain and contribute to.
 
@@ -548,7 +548,7 @@ If you remember our diagram for Kit showed how the `node` package makes web APIs
 
 This wasn't the case for `api/pokemon.json` because that only runs on the server but the page is going to run on the server and the client and it would throw an error.
 
-Long story short **—** everything happens on the server.
+Long story short, everything happens on the server.
 
 If you open the page it's going to be server-side rendered meaning if you look at the HTML document that the server responds with you're going to see the data.
 
@@ -659,7 +659,7 @@ Hydration sounds like a fancy term but it just means adding JavaScript back to y
 
 If you want to learn more [@lihautan](https://twitter.com/lihautan) has a great [video explaining how hydration works](https://www.youtube.com/watch?v=D46aT3mx9LU).
 
-This is important to understand because your page runs both on the server and client — first the page has to be server-side rendered on the server and sent back as HTML so you have to re-render it on the client to hydrate the page.
+This is important to understand because your page runs both on the server and client, first the page has to be server-side rendered on the server and sent back as HTML so you have to re-render it on the client to hydrate the page.
 
 Because of this if you try to talk to a database inside the `load` function you're going to realize it doesn't work without using an endpoint because `load` runs on the server and client while an endpoint only runs on the server.
 
@@ -830,7 +830,7 @@ export { hydrate }
 
 </details>
 
-It's not that hard to read to at least get an idea of what's going on and it looks similar to the code from the Svelte REPL — if you look at the `instance` function you can see the `click_handler` code for our counter.
+It's not that hard to read to at least get an idea of what's going on and it looks similar to the code from the Svelte REPL, if you look at the `instance` function you can see the `click_handler` code for our counter.
 
 If you **view page source** you can see the hydrate script added by SvelteKit.
 

@@ -24,21 +24,21 @@ Why are these the major browsers demanding our attention?
 
 The reason is because these browsers have the highest market share but each has their own [browser engine](https://en.wikipedia.org/wiki/Browser_engine) (the browser engine is responsible for rendering the page on your screen) that makes it different enough resulting in having to test for it.
 
-Most browsers such as [Brave](https://brave.com/) and [Microsoft Edge](https://www.microsoft.com/en-us/edge) among other browsers are [Chromium](<https://en.wikipedia.org/wiki/Chromium_(web_browser)>)-based — the same browser that [Google Chrome](https://en.wikipedia.org/wiki/Google_Chrome) uses meaning they are the same in that regard:
+Most browsers such as [Brave](https://brave.com/) and [Microsoft Edge](https://www.microsoft.com/en-us/edge) among other browsers are [Chromium](<https://en.wikipedia.org/wiki/Chromium_(web_browser)>)-based, the same browser that [Google Chrome](https://en.wikipedia.org/wiki/Google_Chrome) uses meaning they are the same in that regard:
 
 - Chrome uses [Blink](<https://en.wikipedia.org/wiki/Blink_(browser_engine)>) developed as part of the Chromium project as a fork of WebKit
 - Firefox uses [Gecko](<https://en.wikipedia.org/wiki/Gecko_(software)>) developed by [Mozilla](https://en.wikipedia.org/wiki/Mozilla)
 - Safari uses [WebKit](https://en.wikipedia.org/wiki/WebKit) developed by [Apple](https://en.wikipedia.org/wiki/Apple_Inc.)
 
-This explains why we test for these browsers but the problem is that only Chrome and Firefox are available on all platforms but Safari is [macOS](https://en.wikipedia.org/wiki/MacOS) only, so you're out of luck if you're a Linux or Windows user — so what can you do?
+This explains why we test for these browsers but the problem is that only Chrome and Firefox are available on all platforms but Safari is [macOS](https://en.wikipedia.org/wiki/MacOS) only, so you're out of luck if you're a Linux or Windows user. So what can you do?
 
 ## Method That Works For Linux, macOS, Windows
 
-If you're a Linux user you're in luck because you can use a WebKit based browser such as [Epiphany](https://wiki.gnome.org/Apps/Web) and it works great without any setup — it's not going to match all the features of Safari but the browser engine they use is the same.
+If you're a Linux user you're in luck because you can use a WebKit based browser such as [Epiphany](https://wiki.gnome.org/Apps/Web) and it works great without any setup, it's not going to match all the features of Safari but the browser engine they use is the same.
 
 Windows on the other hand doesn't have any WebKit based browser you can use as far as I'm aware of, so you would have to use a virtual machine or use the latest [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) that can use a graphical user interface and use Epiphany.
 
-Instead of doing that you can use [Playwright](https://playwright.dev/) which is used for automated testing and has the ability to test every browser — this works because Playwright ships a binary for every browser including Chromium, Firefox and WebKit using their open source builds.
+Instead of doing that you can use [Playwright](https://playwright.dev/) which is used for automated testing and has the ability to test every browser, this works because Playwright ships a binary for every browser including Chromium, Firefox and WebKit using their open source builds.
 
 This is also useful to have a clean browser testing environment without extensions that can cause interference.
 
@@ -87,7 +87,7 @@ The [Playwright CLI](https://playwright.dev/docs/test-cli) has some interesting 
 
 5\. Add a test for Playwright
 
-This is only so you can specify what page to visit and pause the browser so you can inspect the page — if you comment out the `page.goto` line it's going to open a blank tab.
+This is only so you can specify what page to visit and pause the browser so you can inspect the page, if you comment out the `page.goto` line it's going to open a blank tab.
 
 ```ts:tests/browser.test.ts showLineNumbers
 import { test } from '@playwright/test'

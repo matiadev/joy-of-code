@@ -69,7 +69,7 @@ export async function handle({ event, resolve }) {
 }
 ```
 
-Notice that even if you go to a route that doesn't exist it's going to return a banana — in that case you might want to be more precise.
+Notice that even if you go to a route that doesn't exist it's going to return a banana. In that case, you might want to be more precise.
 
 ```ts:src/hooks.server.ts showLineNumbers
 export async function handle({ event, resolve }) {

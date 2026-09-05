@@ -16,7 +16,7 @@ category: general
 
 If you're using images anywhere hosting is only part of the equation since you have to make sure they're optimized for your users.
 
-There's just one problem — **it's a giant pain**.
+There's just one problem. **It's a giant pain**.
 
 ## Squoosh
 

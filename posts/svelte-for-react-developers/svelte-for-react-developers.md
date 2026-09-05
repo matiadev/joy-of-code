@@ -43,7 +43,7 @@ export function Counter() {
 }
 ```
 
-To describe what the user interface looks like React uses [JSX](https://reactjs.org/docs/introducing-jsx.html) that looks similar to writing HTML — you can think of JSX as a templating language and while you might hear “It's just JavaScript!” JSX isn't JavaScript as it has to be transpiled to JavaScript first.
+To describe what the user interface looks like React uses [JSX](https://reactjs.org/docs/introducing-jsx.html) that looks similar to writing HTML, you can think of JSX as a templating language and while you might hear “It's just JavaScript!” JSX isn't JavaScript as it has to be transpiled to JavaScript first.
 
 To set state we use a `useState` function that returns the state variable `count` and the state setter function `setCount`.
 
@@ -68,7 +68,7 @@ Here's the same example in Svelte.
 
 Svelte uses a single file component similar to [Vue](https://vuejs.org/) that encapsulates HTML, CSS, and JavaScript.
 
-The JavaScript logic lives inside the `<script>` tag and the styles inside the `<style>` tag are unique to your component — you can use preprocessors such as [SCSS](https://sass-lang.com/) for CSS or [Pug](https://pugjs.org/api/getting-started.html) for your template and the markup doesn't need a parent element.
+The JavaScript logic lives inside the `<script>` tag and the styles inside the `<style>` tag are unique to your component. You can use preprocessors such as [SCSS](https://sass-lang.com/) for CSS or [Pug](https://pugjs.org/api/getting-started.html) for your template and the markup doesn't need a parent element.
 
 In Svelte updates are triggered using assignments so `count + 1` wouldn't work because you need to assign it where `count += 1` is the same as `count = count + 1` .
 
@@ -258,7 +258,7 @@ Here's the same example in Svelte.
 
 In Svelte you use logic blocks like `If`, `Each` and `Await`.
 
-This syntax might look uncomfortable but it makes sense because it mirrors how HTML works and once you start using you're going to love it — I'm not against JSX but I find this easier to read.
+This syntax might look uncomfortable but it makes sense because it mirrors how HTML works and once you start using you're going to love it, I'm not against JSX but I find this easier to read.
 
 You can destructure the values from `todo` if you wanted as `{ id, text, completed }` and get the index `...as todo, index` or specify a key inside `(key)`.
 
@@ -330,7 +330,7 @@ In Svelte you can use [event modifiers](https://learn.svelte.dev/tutorial/event-
 
 Sometimes you have to synchronize your component state with something outside of it like browser APIs, data fetching and so on.
 
-The next example shows a video player we have to hook into using `useRef` to get a reference to the element to be able to play and pause it — this is a side effect because we have to synchronize it with our component state.
+The next example shows a video player we have to hook into using `useRef` to get a reference to the element to be able to play and pause it, this is a side effect because we have to synchronize it with our component state.
 
 ```tsx:Synchronization.tsx showLineNumbers
 import { useEffect, useRef, useState } from 'react'
@@ -403,7 +403,7 @@ This is the same example in Svelte.
 </button>
 ```
 
-It's much simpler and you don't have to think about `useEffect` and dependencies — if you want to start playing the video immediately you can run `play()` inside the `onMount` [lifecyle method](https://learn.svelte.dev/tutorial/onmount).
+It's much simpler and you don't have to think about `useEffect` and dependencies, if you want to start playing the video immediately you can run `play()` inside the `onMount` [lifecyle method](https://learn.svelte.dev/tutorial/onmount).
 
 Here's an example of using the Canvas API in Svelte.
 
@@ -750,7 +750,7 @@ export function Composition() {
 
 </details>
 
-In Svelte you can do the same thing using the [Context API](https://learn.svelte.dev/tutorial/context-api) by passing values to `setContext` and receive it using `getContext` — if you need reactive values you can use a [store](https://learn.svelte.dev/tutorial/writable-stores) and pass the value.
+In Svelte you can do the same thing using the [Context API](https://learn.svelte.dev/tutorial/context-api) by passing values to `setContext` and receive it using `getContext`, if you need reactive values you can use a [store](https://learn.svelte.dev/tutorial/writable-stores) and pass the value.
 
 <details>
   <summary>Context API</summary>

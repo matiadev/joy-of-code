@@ -28,7 +28,7 @@ for (const movie of movies) {
 document.body.append(ulElement)
 ```
 
-We didn't even add **classes**, **attributes**, or nested elements yet that make the code harder to read, and more error prone compared to using **template literals**. I'm **not** saying you **shouldn't** do it — but it sucks the fun out of it.
+We didn't even add **classes**, **attributes**, or nested elements yet that make the code harder to read, and more error prone compared to using **template literals**. I'm **not** saying you **shouldn't** do it, but it sucks the fun out of it.
 
 ```js:example.js showLineNumbers
 const movies = ['Seven Samurai', 'Hara-Kiri', 'Yojimbo', 'The Sword of Doom']
@@ -47,7 +47,7 @@ document.body.innerHTML = moviesHtml
 
 It's not perfect because we don't get the usual benefits and help from our code editor such as **syntax highlight**, **code completion** from [IntelliSense](https://code.visualstudio.com/docs/editor/intellisense) and [Emmet](https://code.visualstudio.com/docs/editor/emmet) which causes similar problems I had before.
 
-That's how I found [Inline HTML](https://marketplace.visualstudio.com/items?itemName=pushqrdx.inline-html) — a **Visual Studio Code** extension that solves those problems.
+That's how I found [Inline HTML](https://marketplace.visualstudio.com/items?itemName=pushqrdx.inline-html), a **Visual Studio Code** extension that solves those problems.
 
 To use it you only have to prefix the **template literal** with `html` or `/* html */`. You can do the same for **CSS** using `css` or `/* css */`.
 

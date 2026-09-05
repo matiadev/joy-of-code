@@ -87,7 +87,7 @@ Using a modern web framework like SvelteKit you knowledge is transferable becaus
 
 In SvelteKit you can create a standalone endpoint like in the Express example that you can expose to the world or consume it yourself.
 
-Standalone endpoints can have an optional file extension like `photos/index.json.ts` making it available at [example.com/photos.json](http://example.com/photos.json) — it could also be other things such as XML or images and it sets the proper response headers where using `photos/index.ts` is directly available at [example.com/photos](http://example.com/photos.json).
+Standalone endpoints can have an optional file extension like `photos/index.json.ts` making it available at [example.com/photos.json](http://example.com/photos.json). It could also be other things such as XML or images and it sets the proper response headers where using `photos/index.ts` is directly available at [example.com/photos](http://example.com/photos.json).
 
 Let's look at the same Express example in SvelteKit.
 
@@ -281,7 +281,7 @@ If you visit [example.com/photos/1](http://example.com/photos/1) it works great 
 
 <Video src="flicker.mp4" />
 
-You can pass the `props` from the page endpoint to the `load` function and load the image before navigating to the page — pretend `loadImage` is some function imported from utils.
+You can pass the `props` from the page endpoint to the `load` function and load the image before navigating to the page, pretend `loadImage` is some function imported from utils.
 
 ```svelte:photos/[id].svelte
 <script context="module" lang="ts">

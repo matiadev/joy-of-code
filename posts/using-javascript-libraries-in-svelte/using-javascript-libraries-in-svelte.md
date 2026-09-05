@@ -19,7 +19,7 @@ category: svelte
 
 The Svelte ecosystem covers the entire JavaScript ecosystem because Svelte gives you control over the DOM without requiring any glue code compared to a framework like React.
 
-You don't need a specific Svelte library for something if it doesn't exist — instead you can take advantage of the entire [npm](https://www.npmjs.com/) JavaScript ecosystem, and use an existing JavaScript library.
+You don't need a specific Svelte library for something if it doesn't exist, instead you can take advantage of the entire [npm](https://www.npmjs.com/) JavaScript ecosystem, and use an existing JavaScript library.
 
 <Embed src="https://www.sveltelab.dev/3ukxxq4a3fss7dd?files=.%2Fsrc%2Froutes%2F%2Bpage.svelte" title="Using JavaScript Libraries In Svelte" />
 
@@ -107,7 +107,7 @@ export const ssr = false
 
 I'm going to use the framework agnostic JavaScript animation library [Motion One](https://motion.dev/) to demonstrate how to use a third party JavaScript library with Svelte.
 
-Most JavaScript libraries need to query the DOM for an element to perform a task — if you just read the docs for your library and try it out, you're going to see it just works.
+Most JavaScript libraries need to query the DOM for an element to perform a task, if you just read the docs for your library and try it out, you're going to see it just works.
 
 ```svelte:+page.svelte showLineNumbers
 <script lang="ts">

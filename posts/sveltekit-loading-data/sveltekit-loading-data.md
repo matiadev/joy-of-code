@@ -207,7 +207,7 @@ export async function POST(event) {
 }
 ```
 
-Navigating to `/api/newsletter` is going to do a `GET` request and you can see some amusing headers for the request in the network tab — [you can learn more about the origins of the 418 response here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418).
+Navigating to `/api/newsletter` is going to do a `GET` request and you can see some amusing headers for the request in the network tab, [you can learn more about the origins of the 418 response here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/418).
 
 In this example I'm using an API endpoint for a newsletter form but SvelteKit has a nicer method for working with forms which I'm going to cover in another part.
 
@@ -386,7 +386,7 @@ Here is how you get the data for the page.
 </ul>
 ```
 
-If you look at the network tab you're going to see the entire HTML document for your posts and no `fetch` request like before because it was server-side rendered on the first page load — if you navigate from another page you would see a `fetch` request because SvelteKit would behave like a SPA at that point.
+If you look at the network tab you're going to see the entire HTML document for your posts and no `fetch` request like before because it was server-side rendered on the first page load, if you navigate from another page you would see a `fetch` request because SvelteKit would behave like a SPA at that point.
 
 If you view the page source you can see how SvelteKit saves the data in the HTML because you used `event.fetch`.
 
@@ -705,7 +705,7 @@ You won't find how to use `searchParams` in the SvelteKit docs because you're us
 
 Using the URL for state management is not a unique concept and something we just started rediscovering because frameworks like SvelteKit make working with the URL great again.
 
-You're used to having component state for something like search but you can't share the link to the search result with someone else — if you store the search term in a URL you don't have to manage that state and it becomes a link such as `/search?q=banana`.
+You're used to having component state for something like search but you can't share the link to the search result with someone else, if you store the search term in a URL you don't have to manage that state and it becomes a link such as `/search?q=banana`.
 
 In SvelteKit you can use `goto` to update the search params which is also going to rerun the `load` function for the page.
 
@@ -825,7 +825,7 @@ You should understand how `load` functions work because you're going to rerun a 
 
 SvelteKit tracks the dependencies of each `load` function to avoid having to do the same work during navigation.
 
-Take for example the `load` function responsible for returning the data for a post — it's going to rerun each time `params.slug` has changed.
+Take for example the `load` function responsible for returning the data for a post, it's going to rerun each time `params.slug` has changed.
 
 ```ts:src/routes/posts/[slug]/+page.server.ts showLineNumbers
 import { error } from '@sveltejs/kit'

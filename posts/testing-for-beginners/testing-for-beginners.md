@@ -135,7 +135,7 @@ If you're using any of these methods to achieve that is going to be an accident 
 
 **You don't do testing to please others but to give yourself confidence.**
 
-If we strip away the terminology and technology we're only left with something simple — which is making our test work.
+If we strip away the terminology and technology we're only left with something simple, which is making our test work.
 
 The second thing you're going to ask is **"What to test?"**. This depends of course but you always want to test something that's most critical to your application.
 

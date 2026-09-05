@@ -27,7 +27,7 @@ In the future I might revisit the idea of creating a Twitter clone in SvelteKit 
 
 ## Introduction
 
-You're going to make **Twittr** — a social media site for sharing hot takes.
+You're going to make **Twittr**, a social media site for sharing hot takes.
 
 <Video src="twittr.mp4" />
 
@@ -45,7 +45,7 @@ Let's dive into it! 🐬
 
 SvelteKit is made by [@rich_harris](https://twitter.com/rich_harris) and a group of amazing [contributors](https://github.com/sveltejs/kit/graphs/contributors).
 
-In simplest terms — SvelteKit does all the boring stuff for you and empowers you to build amazing things.
+In simplest terms, SvelteKit does all the boring stuff for you and empowers you to build amazing things.
 
 This isn't just true for SvelteKit but all the other meta-frameworks you might have heard of such as [Next.js](https://nextjs.org/) that's built on top of React or [Nuxt.js](https://nuxtjs.org/) built on top of Vue.
 
@@ -125,7 +125,7 @@ Easy! 😏 You only need...
 - Figure out how to deploy our full stack project to anywhere
 - ...
 
-That would be a complete nightmare! 😱 I wouldn't even know where to begin to be frank with you. You don't have to either — SvelteKit has already done the hard work for us.
+That would be a complete nightmare! 😱 I wouldn't even know where to begin to be frank with you. You don't have to either, SvelteKit has already done the hard work for us.
 
 In fact we can have the best of both worlds using server-side rendering and client-side navigation without page refresh.
 
@@ -153,7 +153,7 @@ Instead of using a `fetch` request on the client the form sends the Pokémon the
 
 The only thing that changed is that **the computation moved from the frontend to the backend**.
 
-This might be hard to wrap your head around at first — I know it was for me!
+This might be hard to wrap your head around at first, I know it was for me!
 
 Open the page inside a new window and navigate to the network tab inside your developer tools. Disable JavaScript by pressing <kbd>Ctrl + P</kbd> and type `> javascript` until you see the option to run the command **"Disable JavaScript"** (you can enable it the same way later).
 
@@ -299,7 +299,7 @@ CREATE TABLE "User" (
 );
 ```
 
-I'm going to be honest here — I don't even know SQL and you don't have to. This empowers you as a developer to do more.
+I'm going to be honest here, I don't even know SQL and you don't have to. This empowers you as a developer to do more.
 
 We're going to use a SQLite database that's just a regular file so we don't have to set up anything. Later if you decide to use another SQL database you simply change the config and that's it.
 
@@ -1328,7 +1328,7 @@ The home page is done! 🥳
 
 <Image src="home-page.webp" alt="Home page" />
 
-I want to show you the real power of nested layouts — if a part of your site explodes it won't bring the entire thing down but just the part that failed with a useful error message. 🤯
+I want to show you the real power of nested layouts, if a part of your site explodes it won't bring the entire thing down but just the part that failed with a useful error message. 🤯
 
 🖌️ Let's add an error page which is going to be used by the other pages.
 

@@ -22,7 +22,7 @@ You learned JavaScript. Maybe you watched a course. You felt confident in your a
 
 ## Disillusion
 
-Have you watched a cooking show? The chef makes it look easy. Behind the scenes there's a lot of people responsible for that. Someone needs to scrub the pans, taste test, and style the food before they present it to you. Tutorials are like a cooking show where they can set unrealistic expectations, and make you feel like you don't get it. They give you the false impression the person knows everything. You'll be relieved to know — they don't! They're just great cooks.
+Have you watched a cooking show? The chef makes it look easy. Behind the scenes there's a lot of people responsible for that. Someone needs to scrub the pans, taste test, and style the food before they present it to you. Tutorials are like a cooking show where they can set unrealistic expectations, and make you feel like you don't get it. They give you the false impression the person knows everything. You'll be relieved to know. They don't! They're just great cooks.
 
 Don't compare yourself with the experience of someone else. It takes time and practice.
 
@@ -240,7 +240,7 @@ function updateUI() {
 
 ## Pseudocode
 
-Another great technique is writing [pseudocode](https://en.wikipedia.org/wiki/Pseudocode) to help us think through a problem. While pseudocode by definition is "a notation resembling a simplified programming language" — we can just write comments.
+Another great technique is writing [pseudocode](https://en.wikipedia.org/wiki/Pseudocode) to help us think through a problem. While pseudocode by definition is "a notation resembling a simplified programming language". We can just write comments.
 
 ```js:app.js showLineNumbers
 function addTodo() {

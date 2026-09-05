@@ -16,7 +16,7 @@ category: javascript
 
 ## Why You Can't Trust Console Logs
 
-You've probably been burned by this before without even realizing it. You add a `console.log` to inspect a value, open the developer tools, **unfold** the log containing an object or array — and the data looks wrong.
+You've probably been burned by this before without even realizing it. You add a `console.log` to inspect a value, open the developer tools, **unfold** the log containing an object or array, and the data looks wrong.
 
 It seems like changes that happen **later** in the code are already reflected in your log:
 
@@ -45,7 +45,7 @@ The warning was in front of us this entire time! If you hover over the blue info
 
 > This value was evaluated upon first expanding. It may have changed since then.
 
-I've looked up the reason and turns out, `console.log` is lazy-evaluated intentionally for performance — there's no point evaluating the full structure of every logged value until you actually open it.
+I've looked up the reason and turns out, `console.log` is lazy-evaluated intentionally for performance. There's no point evaluating the full structure of every logged value until you actually open it.
 
 It also only reevaluates once, so further changes to the value have no impact:
 
@@ -69,9 +69,9 @@ There are a few ways to log the actual value at the time of the log call, rather
 console.log([...items].map((item) => ({ ...item })))
 ```
 
-Spreading `items` alone creates a **shallow copy** — the top-level array is new, but its objects still point to the same references in memory. You need to spread each item too, which is why the `.map` is necessary here.
+Spreading `items` alone creates a **shallow copy**. The top-level array is new, but its objects still point to the same references in memory. You need to spread each item too, which is why the `.map` is necessary here.
 
-Note that this only works one level deep — for deeply nested structures, prefer `structuredClone` instead.
+Note that this only works one level deep, for deeply nested structures, prefer `structuredClone` instead.
 
 ### Cloning The Value
 
@@ -103,11 +103,11 @@ debugger
 
 This way the browser's built-in debugger pauses execution and gives you insight into your entire application state at that exact moment.
 
-You can inspect every variable in scope, step through your code line by line, and see exactly what's happening — without any of the reference-evaluation and timing issues that `console.log` has.
+You can inspect every variable in scope, step through your code line by line, and see exactly what's happening, without any of the reference-evaluation and timing issues that `console.log` has.
 
 ## Conclusion
 
-I love `console.log`, but it's also important to remember that objects and arrays are logged by reference, not by value. When you unfold them in developer tools, you're seeing the current state of that reference — which may have changed since the log was called.
+I love `console.log`, but it's also important to remember that objects and arrays are logged by reference, not by value. When you unfold them in developer tools, you're seeing the current state of that reference, which may have changed since the log was called.
 
 To work around this, use `structuredClone`, a spread with a deep copy, or `JSON.parse(JSON.stringify(...))` to take a true snapshot.
 

@@ -30,7 +30,7 @@ I'm using [SQLite](https://www.sqlite.org/index.html) for the database because i
 npx prisma init --datasource-provider sqlite
 ```
 
-This is going to create a `prisma` folder and a `.env` file with the connection string at the root of your project — inside the folder you're going to find the Prisma schema and the SQLite database.
+This is going to create a `prisma` folder and a `.env` file with the connection string at the root of your project, inside the folder you're going to find the Prisma schema and the SQLite database.
 
 ```ts:schema.prisma showLineNumbers
 generator client {
@@ -82,7 +82,7 @@ Create the database from the Prisma schema.
 npx prisma db push
 ```
 
-I'm going to open [Prisma Studio](https://www.prisma.io/studio) that's a nice graphical user interface for your database and go to the `Roles` table and press **Add record** to add `ADMIN` and `USER` roles — enter the role name and press **Save** for each one.
+I'm going to open [Prisma Studio](https://www.prisma.io/studio) that's a nice graphical user interface for your database and go to the `Roles` table and press **Add record** to add `ADMIN` and `USER` roles, enter the role name and press **Save** for each one.
 
 ```shell:terminal
 npx prisma studio

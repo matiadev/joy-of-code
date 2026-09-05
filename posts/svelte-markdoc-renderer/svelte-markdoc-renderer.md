@@ -82,7 +82,7 @@ Render the HTML on the page:
 {@html data.content}
 ```
 
-Markdoc doesn't know how to render the custom `<Callout>` component yet, which is where a custom renderer comes in — Markdoc has a HTML, and React [renderer](https://markdoc.dev/docs/render#render), but it's relatively simple to make your own renderer.
+Markdoc doesn't know how to render the custom `<Callout>` component yet, which is where a custom renderer comes in. Markdoc has a HTML, and React [renderer](https://markdoc.dev/docs/render#render), but it's relatively simple to make your own renderer.
 
 ## Creating The Markdoc Renderer
 

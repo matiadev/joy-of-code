@@ -16,7 +16,7 @@ category: git
 
 Recently I wrote about [how you should rethink your Git commits](https://joyofcode.xyz/rethink-how-you-write-git-commits) where I explain the benefits of having a readable Git history.
 
-I want to go a step further and show you how to have complete control over your Git history — rewrite it, keep a linear project history and integrate upstream changes.
+I want to go a step further and show you how to have complete control over your Git history. Rewrite it, keep a linear project history and integrate upstream changes.
 
 I find most explanations confusing because they spend time explaining features instead of showing you how to use the feature. That's why I encourage you to practice what you read.
 

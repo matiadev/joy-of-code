@@ -40,7 +40,7 @@ Hex codes are probably what you're used to.
 
 How the shorthand works is that you abbreviate each color channel using one character to represent red, green, and blue values.
 
-For example `#004488` can be read as `00 44 88` — so the shorthand would be `#048`.
+For example `#004488` can be read as `00 44 88`, so the shorthand would be `#048`.
 
 **Did you know you can add opacity to a hex color?**
 

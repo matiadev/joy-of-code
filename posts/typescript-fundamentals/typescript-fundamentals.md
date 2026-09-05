@@ -45,9 +45,9 @@ Imagine not having this feature. You would have to remember and look every metho
 
 If we look at the `map` array method we can see it's **call signature** and description in the tooltip.
 
-This is **JavaScript** — yet it's using **TypeScript** under the hood.
+This is **JavaScript**, yet it's using **TypeScript** under the hood.
 
-TypeScript isn't just types — it's popular because this is the kind of **developer experience** that every other developer is used to in other languages.
+TypeScript isn't just types, it's popular because this is the kind of **developer experience** that every other developer is used to in other languages.
 
 We can add `@ts-check` at the top of a JavaScript file to enable **type checking** in JavaScript.
 
@@ -107,7 +107,7 @@ To prove my point I'm sure you barely noticed the mistake and had to look at wha
 
 The editor didn't warn us about mispelling `weight`.
 
-Imagine the same scenario with an API where you pass wrong arguments to a method — **you just hope it works**.
+Imagine the same scenario with an API where you pass wrong arguments to a method, **you just hope it works**.
 
 ```js:example.ts showLineNumbers
 const pikachu = {
@@ -927,7 +927,7 @@ We're going to learn ways to **abstract** types to make them more **readable** a
 
 So far we've been using types directly using **type annotations**. This is hard to read and not reusable.
 
-A **type alias** is as the name suggests — just an **alias** for a type.
+A **type alias** is as the name suggests, just an **alias** for a type.
 
 Just how we assign names to different _types_ 🤭 of people.
 
@@ -1094,7 +1094,7 @@ You can also use a semicolon or period after each property if you want as it's p
 
 > For the most part, you can choose based on personal preference, and TypeScript will tell you if it needs something to be the other kind of declaration. If you would like a heuristic, use interface until you need to use features from type. - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
 
-The short answer is — **doesn't matter**. Pick one and if it doesn't work for you use the other one.
+**Doesn't matter.** Pick one and if it doesn't work for you use the other one.
 
 I use **both** when it makes sense:
 
@@ -1881,7 +1881,7 @@ TypeScript lets us know the `pokemon` type was narrowed down to `string[] | null
 
 In `logPokemon` we naively check if `pokemon` is an array by checking if it's an `object`.
 
-This isn't a bad assumption since almost everything in JavaScript is an object. We don't know one thing — `null` is also an object.
+This isn't a bad assumption since almost everything in JavaScript is an object. We don't know one thing. `null` is also an object.
 
 In JavaScript `null` is a primitive value that returns `object`.
 
@@ -2511,7 +2511,7 @@ We glanced over classes in TypeScript because it's a large topic deserving it's 
 
 If classes are something you want to learn more about using in TypeScript [read the Classes section in the TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/classes.html).
 
-In the next section we're going to briefly introduce another concept that TypeScript introduced to classes — **decorators**.
+In the next section we're going to briefly introduce another concept that TypeScript introduced to classes, **decorators**.
 
 ## Decorators
 
@@ -2852,7 +2852,7 @@ This problem might be harder to reason about if you don't understand things like
 
 The second part of the error message reveals the problem.
 
-We don't care if `chosenPokemon` type is `any` because that's what TypeScript cares about — we care about what causes it.
+We don't care if `chosenPokemon` type is `any` because that's what TypeScript cares about, we care about what causes it.
 
 This is what TypeScript thinks is going on.
 
@@ -2970,7 +2970,7 @@ server.listen(8080)
 
 <Image src="type-definitions.webp" alt="Type definitions" />
 
-You don't have to use search to figure out if what you're using is typed or not — TypeScript is going to let you know.
+You don't have to use search to figure out if what you're using is typed or not, TypeScript is going to let you know.
 
 To install a **type definition** you just have to do `npm i -D @types/package` to install it as a development dependency.
 

@@ -19,13 +19,13 @@ You can play around with the example and you can find the [source code on GitHub
 
 ## Your Digital Garden
 
-Despite popular platforms for developers to author and share content with others you should have your own place on the internet — your own **digital garden.**
+Despite popular platforms for developers to author and share content with others you should have your own place on the internet, your own **digital garden.**
 
 I set out to create something that I would use based on what I think a **Markdown** blog should have instead of leaving you with something barely usable. Everyone loves building **Markdown** blogs because it's an excuse to learn and be creative.
 
 If you wonder "Why not just use [Gatsby](https://www.gatsbyjs.com/)?" it's because I consider it **easy but not simple** like [Wordpress](https://wordpress.org/) where you don't understand how any of it works because the abstraction is so high (I would even argue it's more complicated to learn because how it's tied to [GraphQL](https://graphql.org/)).
 
-For this reason I'm using [Next.js](https://nextjs.org/) because while you have to do more work you get to learn a lot more — in fact you're going to be surprised how little code we're going to write.
+For this reason I'm using [Next.js](https://nextjs.org/) because while you have to do more work you get to learn a lot more, in fact you're going to be surprised how little code we're going to write.
 
 Understanding **React** is required but I'm going to try to keep it beginner friendly if you never used **Next.js** before and we're going to be using **TypeScript** which is **optional**, so you can completely ignore it and just use **JavaScript**.
 
@@ -455,7 +455,7 @@ export async function getStaticProps({ params }: Params) {
 
 ```
 
-I urge you to `console.log` everything to see how it works — keep in mind logs inside special **Next.js** functions only show inside your **terminal** because it happens on the server (I still fall for that one).
+I urge you to `console.log` everything to see how it works. Keep in mind logs inside special **Next.js** functions only show inside your **terminal** because it happens on the server (I still fall for that one).
 
 ## Markdown Plugins
 

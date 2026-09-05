@@ -871,7 +871,7 @@ mdsvex first parses the Markdown into a Markdown tree (MDAST) where **remark** p
 
 You don't have to understand ASTs but I recommend reading [How to Modify Nodes in an Abstract Syntax Tree](https://css-tricks.com/how-to-modify-nodes-in-an-abstract-syntax-tree/) if you want to learn the fundamentals and write your own plugin which is just a JavaScript function.
 
-You can use [rehype](https://github.com/rehypejs/rehype) plugins to transform HTML and [remark](https://github.com/remarkjs/remark) plugins for transforming Markdown — I'm going to refer to them as **Markdown plugins** even if they're general plugins for transforming HTML and Markdown.
+You can use [rehype](https://github.com/rehypejs/rehype) plugins to transform HTML and [remark](https://github.com/remarkjs/remark) plugins for transforming Markdown. I'm going to refer to them as **Markdown plugins** even if they're general plugins for transforming HTML and Markdown.
 
 Using these plugins it's very simple to extend the functionality of your Markdown blog:
 

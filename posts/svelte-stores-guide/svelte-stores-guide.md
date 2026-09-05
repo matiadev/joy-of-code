@@ -61,7 +61,7 @@ function createCounter(count) {
 export const counter = createCounter(0)
 ```
 
-This is also known as the [observer pattern](https://www.patterns.dev/posts/observer-pattern) which is just an object with subscribers who get notified when a value they're subscribed to updates — you might have heard of it as the **publish-subscribe**, or **pub/sub** pattern.
+This is also known as the [observer pattern](https://www.patterns.dev/posts/observer-pattern) which is just an object with subscribers who get notified when a value they're subscribed to updates, you might have heard of it as the **publish-subscribe**, or **pub/sub** pattern.
 
 <Image src="observer.webp" alt="Observer pattern" />
 
@@ -127,7 +127,7 @@ You can update the `count` value from anywhere, and it's going to be reactive.
 </button>
 ```
 
-You might have noticed how `createCounter` has nothing specific to a counter inside of it — let's rename it to something more generic like `writable`, add a `set` method, and return a cleanup function inside the `subscribe` method.
+You might have noticed how `createCounter` has nothing specific to a counter inside of it. Let's rename it to something more generic like `writable`, add a `set` method, and return a cleanup function inside the `subscribe` method.
 
 ```ts:lib/counter.ts {1,5-8,10-12,18-20,23} showLineNumbers
 export function writable(value) {
@@ -197,7 +197,7 @@ export const counter = writable(0)
 
 You just implemented a Svelte store! 😄
 
-You don't have to understand the observer pattern to use a Svelte store, but knowing JavaScript makes you resilient to change — [signals are becoming adopted by every JavaScript framework](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob), and use the observer pattern.
+You don't have to understand the observer pattern to use a Svelte store, but knowing JavaScript makes you resilient to change, [signals are becoming adopted by every JavaScript framework](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob), and use the observer pattern.
 
 ## Svelte Stores
 
@@ -584,4 +584,4 @@ You no longer have to remember where you can use `$` for stores and other rules,
 
 The greatest tragedy of only knowing JavaScript frameworks instead of JavaScript is [mistaking runes for other frameworks instead of understanding that you can do anything](https://x.com/joyofcodedev/status/1711718344473129319).
 
-I hope this makes you question how JavaScript frameworks work, and you realize it's not magic — you're going to be more resilient to changes, and gain a deeper understanding and passion for your craft.
+I hope this makes you question how JavaScript frameworks work, and you realize it's not magic, you're going to be more resilient to changes, and gain a deeper understanding and passion for your craft.

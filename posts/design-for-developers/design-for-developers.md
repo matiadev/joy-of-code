@@ -21,7 +21,7 @@ The greatest misconception about design is that one has to be **artistic**.
 
 The purpose of design is to solve problems meaning it's [utilitarian](https://en.wikipedia.org/wiki/Utilitarianism), which is why design and development have more in common than you think.
 
-You already know what great design is when you look at it — you just don't know how to reason about it because you lack the required vocabulary.
+You already know what great design is when you look at it, you just don't know how to reason about it because you lack the required vocabulary.
 
 I'm not going to bore you with theory but give you actual tips you can use and see a drastic improvement. I'm not a professional designer but this is what I learned through experience and learning from others.
 
@@ -105,7 +105,7 @@ Let me show you the **invisible line** I mentioned earlier.
 
 You should always have a strong **horizontal** or **vertical** line because it anchors your eye.
 
-The **alignment** for the logo and navigation is also **intentional** being on the **baseline**. This **isn't** to say that centering is bad — you can center short text, but long text is hard to read. I'm going to cover more on **typography** later.
+The **alignment** for the logo and navigation is also **intentional** being on the **baseline**. This **isn't** to say that centering is bad, you can center short text, but long text is hard to read. I'm going to cover more on **typography** later.
 
 Once you learn enough design fundamentals, you can break the rules to create more interesting design. Having everything on a grid can feel rigid, and boring. To make the design more interesting, images are often used to break outside the grid, which looks great because it's **intentional**.
 
@@ -198,7 +198,7 @@ You don't have to understand color theory.
 
 Find a **primary** color you like. From there find a **complementary** color that works together. If you're using **black** and **white** you're already using two colors. You can use **shades** of one color for a **monochromatic** color scheme, so you don't even need more colors.
 
-To find a **complementary** color is simple — just pick the color opposite the **primary** color you picked on the **color wheel**.
+To find a **complementary** color is simple, just pick the color opposite the **primary** color you picked on the **color wheel**.
 
 <Image src="color-picker.webp" alt="Color picker" />
 

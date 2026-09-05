@@ -19,7 +19,7 @@ Do you ignore focus styles because they're ugly? I'm going to explain why you sh
 
 <Embed src="https://codepen.io/mattcroat/embed/oNBxKvb?height=600&theme-id=dark&default-tab=result" title="Simple Product Card" />
 
-Let's say you're presented with the design above. If you were to just <kbd>Tab</kbd> through, it's functional — but we can agree it's not something to behold.
+Let's say you're presented with the design above. If you were to just <kbd>Tab</kbd> through, it's functional, but we can agree it's not something to behold.
 
 <Image src="default.gif" alt="Default styles" />
 
@@ -91,4 +91,4 @@ Notice we're also able to animate the transition.
 
 ## Conclusion
 
-Accessibility is important. It's an important subject worth understanding. No one goes out of their way to create a bad user experience on purpose. If you're aware, and strive to make the web a better place — that's what counts.
+Accessibility is important. It's an important subject worth understanding. No one goes out of their way to create a bad user experience on purpose. If you're aware, and strive to make the web a better place, that's what counts.

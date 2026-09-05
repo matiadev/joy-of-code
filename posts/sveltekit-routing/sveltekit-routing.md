@@ -66,7 +66,7 @@ For example the default route `src/routes/+page.svelte` maps to `/` in the brows
 <h1>Home page</h1>
 ```
 
-**The page component gets rendered twice** — on the server (SSR) for the initial request and on the client (CSR) because of [hydration](https://kit.svelte.dev/docs/glossary#hydration) which is just a fancy word that means adding JavaScript for interactivity to the page after the server returns the HTML document.
+**The page component gets rendered twice**, on the server (SSR) for the initial request and on the client (CSR) because of [hydration](https://kit.svelte.dev/docs/glossary#hydration) which is just a fancy word that means adding JavaScript for interactivity to the page after the server returns the HTML document.
 
 ```svelte:src/routes/+page.svelte showLineNumbers
 <script lang="ts">

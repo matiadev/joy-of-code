@@ -162,7 +162,7 @@ After you're done apply the FLIP animation technique.
 </script>
 ```
 
-I'm going to use `getBoundingClientRect()` to get the measurements for the elements and calculate the difference — to animate the change I'm going to use the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
+I'm going to use `getBoundingClientRect()` to get the measurements for the elements and calculate the difference. To animate the change, I'm going to use the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
 
 ```svelte:+page.svelte showLineNumbers
 <script lang="ts">

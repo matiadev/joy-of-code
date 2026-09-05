@@ -12,9 +12,9 @@ category: javascript
 
 In a [previous post](https://joyofcode.xyz/create-a-coding-sandbox) we created a simple **code sandbox** from scratch using plain **TypeScript** and it works great but then I noticed something interesting.
 
-Whenever you update code on sites such as [Codepen](https://codepen.io/) the **iframe flashes** because it tears down and rebuilds the **DOM** (Document Object Model). When I was using the [Svelte REPL](https://svelte.dev/repl/hello-world), or [CodeSandbox](https://codesandbox.io/) I noticed it doesn't do that — in fact it updates **instantly** without the **iframe flashing**.
+Whenever you update code on sites such as [Codepen](https://codepen.io/) the **iframe flashes** because it tears down and rebuilds the **DOM** (Document Object Model). When I was using the [Svelte REPL](https://svelte.dev/repl/hello-world), or [CodeSandbox](https://codesandbox.io/) I noticed it doesn't do that, in fact it updates **instantly** without the **iframe flashing**.
 
-At first I wondered how could this be — does it use some clever **DOM** updates behind the scenes? The answer is simpler than you might think.
+At first I wondered how could this be, does it use some clever **DOM** updates behind the scenes? The answer is simpler than you might think.
 
 ## The Flashing Iframe
 

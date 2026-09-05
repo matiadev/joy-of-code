@@ -49,7 +49,7 @@ git checkout solution
 
 ## Sometimes You Want Routes With Different Layouts
 
-Let's say I have a million dollar idea and it's named Plume — a site for discovering and sharing inspiring quotes.
+Let's say I have a million dollar idea and it's named Plume, a site for discovering and sharing inspiring quotes.
 
 <Image src="plume.webp" alt="A site for discovering and sharing inspiring quotes" />
 
@@ -173,7 +173,7 @@ That's it!
 
 I think what makes group layouts confusing is when you start nesting layouts because you can think of group layouts as buckets to put things into but if you're not confident in using layouts yet this is going to be hard to wrap your head around.
 
-If you're not sure when to use a layout ask yourself if the child routes of a given route have some repeating content you want to show — also remember we previously learned that data returned from layout `load` functions is available to child routes on the `data` prop which is useful.
+If you're not sure when to use a layout ask yourself if the child routes of a given route have some repeating content you want to show. Also remember we previously learned that data returned from layout `load` functions is available to child routes on the `data` prop which is useful.
 
 You don't have to use group layouts, so put this away in your pocket in case you need it and focus on the fundamentals instead.
 

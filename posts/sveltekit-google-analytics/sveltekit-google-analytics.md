@@ -105,7 +105,7 @@ Include the `<Analytics />` component inside your main layout `__layout.svelte` 
 
 That's it! 🎉
 
-> ⚠️ If you're using an ad blocker you're going to see the **net::ERR_BLOCKED_BY_CLIENT** error in your console as it gets blocked by those extensions — so if you have a tech savvy audience you might want to look into other options.
+> ⚠️ If you're using an ad blocker you're going to see the **net::ERR_BLOCKED_BY_CLIENT** error in your console as it gets blocked by those extensions, so if you have a tech savvy audience you might want to look into other options.
 
 You should start receiving data in the next 30 minutes if you go to **Reports** under **Realtime** inside Google Analytics.
 

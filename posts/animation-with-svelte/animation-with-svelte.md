@@ -18,7 +18,7 @@ category: svelte
 
 ## Beyond Whimsy
 
-There's a lack of reverence for both animation and accessibility where they're treated as “nice to have” instead of being part of a holistic user experience but it's not because of a lack of care but historically being hard — none of us intend to create a bad user experience on purpose.
+There's a lack of reverence for both animation and accessibility where they're treated as “nice to have” instead of being part of a holistic user experience but it's not because of a lack of care but historically being hard. None of us intend to create a bad user experience on purpose.
 
 Animations can tell stories and help the user not feel disoriented if elements on the page reflect how objects behave in the real world instead of teleporting around and help bring attention to parts of the site that require it.
 
@@ -73,7 +73,7 @@ You can use the same intro and outro transition with `transition:fade` but if yo
 
 Each transition function accepts at least a `delay`, `duration` and `easing` parameter but others might accept more if you consult the [documentation](https://svelte.dev/docs#run-time-svelte-transition).
 
-You can specify a custom easing function or use a built-in [Svelte easing functions](https://svelte.dev/docs#run-time-svelte-easing) to give character to your animations — use the [ease visualiser](https://svelte.dev/examples/easing) to explore different easing options.
+You can specify a custom easing function or use a built-in [Svelte easing functions](https://svelte.dev/docs#run-time-svelte-easing) to give character to your animations. Use the [ease visualiser](https://svelte.dev/examples/easing) to explore different easing options.
 
 <Video src="transitions-fly.mp4" />
 
@@ -457,7 +457,7 @@ I have a simple modal I want to spice up when a user opens it by scaling and tra
 - The `css` function takes a `t` argument that's a value between `0` and `1` after the `easing` function has been applied and the `u` argument is the opposite and returns a value from `1` to `0`
 - I use these values to `scale` and `translateY` the element, so it starts to grow from `-100px` on the vertical axis
 
-> 🐿️ The easiest way to think about `t` is that it animates **TO** the value you specified and `u` animates **FROM** the value you specified — if you animate `scale` with `t` it goes from `0` to `1` being the normal state but using `u` it would go from `1` to `0`.
+> 🐿️ The easiest way to think about `t` is that it animates **TO** the value you specified and `u` animates **FROM** the value you specified. If you animate `scale` with `t` it goes from `0` to `1` being the normal state but using `u` it would go from `1` to `0`.
 
 ```svelte:modal.svelte {3, 12-29, 37} showLineNumbers
 <script lang="ts">

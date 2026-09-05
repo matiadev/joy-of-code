@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Cog } from '#lib/icons/index.js'
-	import { sfx } from '#lib/sfx/index.js'
 
 	import Themes from './themes.svelte'
 	import Reading from './reading.svelte'
@@ -20,7 +19,6 @@
 	aria-expanded={open}
 	aria-controls="preferences-menu"
 	aria-label="Preferences"
-	onclick={() => sfx.click()}
 >
 	<Cog width={24} height={24} aria-hidden={true} />
 </button>

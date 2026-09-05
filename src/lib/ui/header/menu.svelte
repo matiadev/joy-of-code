@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Menu } from '#lib/icons/index.js'
-	import { sfx } from '#lib/sfx/index.js'
 	import * as config from '#lib/site/config.js'
 
 	let panel: HTMLDivElement | null = $state(null)
@@ -20,7 +19,6 @@
 	aria-expanded={open}
 	aria-controls="categories-menu"
 	aria-label="Categories"
-	onclick={() => sfx.click()}
 >
 	<Menu width={24} height={24} aria-hidden={true} />
 </button>

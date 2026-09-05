@@ -13,14 +13,12 @@
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@melt-ui/pp": "^0.3.2",
 		"@playwright/test": "^1.62.1",
 		"@shikijs/core": "^4.4.3",
 		"@shikijs/engine-javascript": "^4.4.3",
 		"@shikijs/langs": "^4.4.3",
 		"@shikijs/themes": "^4.4.3",
 		"@shikijs/transformers": "^4.4.3",
-		"hast-util-to-string": "^3.0.1",
 		"@sveltejs/adapter-vercel": "7.0.0-next.8",
 		"@sveltejs/kit": "3.0.0-next.25",
 		"@sveltejs/vite-plugin-svelte": "^7.3.0",
@@ -30,6 +28,7 @@
 		"eslint": "^10.9.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"hast-util-to-string": "^3.0.1",
 		"prettier": "^3.9.6",
 		"prettier-plugin-svelte": "^4.1.1",
 		"svelte": "^5.57.0",
@@ -40,7 +39,6 @@
 		"vite": "^8.2.2"
 	},
 	"dependencies": {
-		"@melt-ui/svelte": "^0.86.6",
 		"@sveltecraft/sandbox": "^0.0.5",
 		"flexsearch": "^0.8.212",
 		"gray-matter": "^4.0.3",

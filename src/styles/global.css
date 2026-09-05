@@ -201,3 +201,22 @@ lite-youtube::before {
 		animation: none !important;
 	}
 }
+
+/* Anchor wiring lives here because the Svelte compiler strips
+   position-anchor from scoped styles. Explicit wiring keeps
+   working no matter how the popover is opened. */
+#categories-menu {
+	position-anchor: --categories-trigger;
+}
+
+#preferences-menu {
+	position-anchor: --preferences-trigger;
+}
+
+button[popovertarget='categories-menu'] {
+	anchor-name: --categories-trigger;
+}
+
+button[popovertarget='preferences-menu'] {
+	anchor-name: --preferences-trigger;
+}

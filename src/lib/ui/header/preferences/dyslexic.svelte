@@ -1,12 +1,11 @@
 <script lang="ts">
 	import { browser } from '$app/env'
-	import { createSwitch, melt } from '@melt-ui/svelte'
 	import { preferences } from './preferences.svelte'
 
-	let enabled = false
+	let enabled = $state(false)
 
 	if (browser) {
-		localStorage.font ? (enabled = true) : (enabled = false)
+		enabled = Boolean(localStorage.font)
 	}
 
 	function handleChange() {
@@ -25,32 +24,29 @@
 		}
 	}
 
-	const {
-		elements: { root, input },
-		states: { checked },
-	} = createSwitch()
+	let lastReset = preferences.resetTheme
 
 	$effect(() => {
-		preferences.resetTheme
-		checked.set(false)
-		enabled = false
+		if (preferences.resetTheme !== lastReset) {
+			lastReset = preferences.resetTheme
+			enabled = false
+		}
 	})
 </script>
 
 <form>
 	<div class="container">
-		<label for="dyslexic-font">Use font for dyslexia</label>
+		<span id="dyslexic-label">Use font for dyslexia</span>
 
 		<button
+			type="button"
 			onclick={handleChange}
-			use:melt={$root}
 			class="toggle"
-			aria-labelledby="dyslexic-font"
+			aria-labelledby="dyslexic-label"
+			aria-pressed={enabled}
 		>
 			<span class="thumb"></span>
 		</button>
-
-		<input use:melt={$input} use:input id="dyslexic-font" />
 	</div>
 </form>
 
@@ -84,7 +80,7 @@
 			transition: translate 0.15s ease;
 		}
 
-		&[data-state='checked'] {
+		&[aria-pressed='true'] {
 			--background: var(--clr-switch-on-bg);
 
 			.thumb {

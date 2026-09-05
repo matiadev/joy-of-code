@@ -1,6 +1,5 @@
 import adapter from '@sveltejs/adapter-vercel'
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
-import { sequence, preprocessMeltUI } from '@melt-ui/pp'
 import markdown from './src/lib/markdown/index.js'
 import { sveltekit } from '@sveltejs/kit/vite'
 import { defineConfig } from 'vite'
@@ -9,11 +8,7 @@ export default defineConfig({
 	plugins: [
 		sveltekit({
 			extensions: ['.svelte', '.md'],
-			preprocess: sequence([
-				markdown(),
-				vitePreprocess(),
-				preprocessMeltUI({ svelteConfigPath: false }),
-			]),
+			preprocess: [markdown(), vitePreprocess()],
 			compilerOptions: {
 				warningFilter: (warning) => {
 					const ignore = [

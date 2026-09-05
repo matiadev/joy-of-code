@@ -3,6 +3,10 @@ import { getPostsByCategory } from '#lib/site/posts.js'
 import * as config from '#lib/site/config.js'
 import type { Categories } from '#lib/types/index.js'
 
+export function entries() {
+	return Object.keys(config.categories).map((category) => ({ category }))
+}
+
 export async function load({ params }) {
 	const category = params.category as Categories
 

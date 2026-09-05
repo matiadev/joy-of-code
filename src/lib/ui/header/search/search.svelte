@@ -1,16 +1,13 @@
 <script lang="ts">
-	import { createDialog, melt } from '@melt-ui/svelte'
-	import { fade } from 'svelte/transition'
 	import { onNavigate } from '$app/navigation'
 	import { browser } from '$app/env'
 	import SearchIcon from './search-icon.svelte'
 	import SearchWorker from './search-worker?worker'
 	import type { Result } from './search'
 
-	const {
-		elements: { trigger, portalled, overlay, content },
-		states: { open },
-	} = createDialog()
+	let panel: HTMLDivElement | null = $state(null)
+	let open = $state(false)
+	let inputEl: HTMLInputElement | null = $state(null)
 
 	const platform = browser && window.navigator.platform
 	let search: 'idle' | 'load' | 'ready' = $state('idle')
@@ -19,21 +16,31 @@
 	let searchWorker: Worker | undefined = $state()
 
 	function initialize() {
-		if (search === 'ready') return
-		search = 'load'
-		searchWorker = new SearchWorker()
-		searchWorker.addEventListener('message', (e) => {
-			const { type, payload } = e.data
-			type === 'ready' && (search = 'ready')
-			type === 'results' && (results = payload.results)
-		})
-		searchWorker.postMessage({ type: 'load' })
+		if (search === 'idle') {
+			search = 'load'
+			searchWorker = new SearchWorker()
+			searchWorker.addEventListener('message', (e) => {
+				const { type, payload } = e.data
+				type === 'ready' && (search = 'ready')
+				type === 'results' && (results = payload.results)
+			})
+			searchWorker.postMessage({ type: 'load' })
+		}
+	}
+
+	function handleToggle(e: ToggleEvent) {
+		open = e.newState === 'open'
+		if (open) inputEl?.focus()
+	}
+
+	function close() {
+		panel?.hidePopover()
 	}
 
 	onNavigate(({ shallow }) => {
 		if (shallow) return
 
-		$open = false
+		close()
 	})
 
 	$effect(() => {
@@ -43,25 +50,37 @@
 	})
 
 	$effect(() => {
-		if (searchTerm && !$open) {
+		if (searchTerm && !open) {
 			searchTerm = ''
 		}
+	})
+
+	$effect(() => {
+		if (!browser) return
+		document.body.style.overflow = open ? 'hidden' : ''
 	})
 </script>
 
 <svelte:window
 	onkeydown={(e) => {
-		if (e.ctrlKey || e.metaKey) {
-			if (e.key === 'k' || e.key === 'K') {
-				e.preventDefault()
-				if (search === 'idle') initialize()
-				$open = !$open
+		if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+			e.preventDefault()
+			if (open) close()
+			else {
+				initialize()
+				panel?.showPopover()
 			}
 		}
 	}}
 />
 
-<button use:melt={$trigger} onclick={initialize} class="open-search">
+<button
+	popovertarget="search-panel"
+	aria-expanded={open}
+	aria-controls="search-panel"
+	onclick={initialize}
+	class="open-search"
+>
 	<SearchIcon />
 	<span>Search</span>
 	<div class="shortcut">
@@ -69,63 +88,109 @@
 	</div>
 </button>
 
-<div use:melt={$portalled}>
-	{#if $open}
-		<div in:fade={{ duration: 200 }} use:melt={$overlay} class="overlay"></div>
-		<div use:melt={$content} class="content">
-			<input
-				bind:value={searchTerm}
-				placeholder="Search"
-				autocomplete="off"
-				spellcheck="false"
-				type="search"
-			/>
-			{#if results.length > 0}
-				<div class="results">
-					{#if search === 'load'}
-						<p>Loading...</p>
-					{/if}
+<div
+	id="search-panel"
+	class="panel"
+	popover="auto"
+	bind:this={panel}
+	ontoggle={handleToggle}
+	role="dialog"
+	aria-modal="true"
+	aria-label="Search"
+>
+	<div class="content">
+		<input
+			bind:this={inputEl}
+			bind:value={searchTerm}
+			placeholder="Search"
+			autocomplete="off"
+			spellcheck="false"
+			type="search"
+		/>
+		{#if results.length > 0}
+			<div class="results">
+				{#if search === 'load'}
+					<p>Loading...</p>
+				{/if}
 
-					<ul>
-						{#each results as result}
-							{#if result.content.length > 0}
-								<li>
-									<a href="/{result.slug}">{@html result.title}</a>
-									<ol>
-										{#each result.content as content}
-											<li>{@html content}</li>
-										{/each}
-									</ol>
-								</li>
-							{/if}
-						{/each}
-					</ul>
-				</div>
-			{/if}
-		</div>
-	{/if}
+				<ul>
+					{#each results as result}
+						{#if result.content.length > 0}
+							<li>
+								<a href="/{result.slug}" onclick={close}>{@html result.title}</a
+								>
+								<ol>
+									{#each result.content as content}
+										<li>{@html content}</li>
+									{/each}
+								</ol>
+							</li>
+						{/if}
+					{/each}
+				</ul>
+			</div>
+		{/if}
+	</div>
 </div>
 
 <style>
-	.overlay {
+	.panel {
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: transparent;
+		width: 90vw;
+		max-width: 600px;
+		overflow: visible;
+
+		/* centered modal in the top layer */
 		position: fixed;
-		inset: 0px;
+		inset: 0;
+		margin: auto;
+		height: fit-content;
+		max-height: calc(100vh - 32px);
+
+		/* top-layer entry/exit animation */
+		opacity: 0;
+		scale: 0.96;
+		transition:
+			opacity 0.2s ease,
+			scale 0.2s ease,
+			display 0.2s allow-discrete,
+			overlay 0.2s allow-discrete;
+	}
+
+	.panel:popover-open {
+		opacity: 1;
+		scale: 1;
+
+		@starting-style {
+			opacity: 0;
+			scale: 0.96;
+		}
+	}
+
+	.panel::backdrop {
 		background-color: hsl(0 0% 0% / 80%);
 		backdrop-filter: blur(4px);
-		z-index: 30;
+		transition:
+			display 0.2s allow-discrete,
+			overlay 0.2s allow-discrete,
+			background-color 0.2s ease,
+			backdrop-filter 0.2s ease;
+	}
+
+	.panel:popover-open::backdrop {
+		@starting-style {
+			background-color: hsl(0 0% 0% / 0%);
+			backdrop-filter: blur(0px);
+		}
 	}
 
 	.content {
-		width: 90vw;
-		max-width: 600px;
-		position: fixed;
-		left: 50%;
-		top: 20%;
-		translate: -50% -0%;
 		border-radius: var(--rounded-4);
 		box-shadow: 0px 0px 20px hsl(0 0% 0% / 40%);
 		overflow: hidden;
-		z-index: 40;
 
 		input {
 			width: 100%;
@@ -197,6 +262,13 @@
 			background-color: var(--clr-search-kbd-bg);
 			border: 1px solid var(--clr-search-kbd-border);
 			border-radius: var(--rounded-4);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.panel {
+			scale: 1;
+			transition-duration: 0.1s;
 		}
 	}
 </style>

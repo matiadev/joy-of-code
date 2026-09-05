@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition'
-	import { createSelect, melt } from '@melt-ui/svelte'
 	import { browser } from '$app/env'
 	import { preferences } from './preferences.svelte'
 
@@ -59,41 +57,41 @@
 
 	const selectedTheme = getTheme() ?? themes['🌛 Night']
 
-	const {
-		elements: { trigger, menu, option, label },
-		states: { open, selected, selectedLabel },
-	} = createSelect()
+	let current: Themes['name'] = $state(selectedTheme.name)
+
+	function handleChange(e: Event) {
+		current = (e.currentTarget as HTMLSelectElement).value as Themes['name']
+		updateTheme(current)
+	}
+
+	let lastReset = preferences.resetTheme
 
 	$effect(() => {
-		updateTheme($selectedLabel)
-	})
-
-	$effect(() => {
-		preferences.resetTheme
-		selected.set({ value: '🌛 Night', label: '🌛 Night' })
+		if (preferences.resetTheme !== lastReset) {
+			lastReset = preferences.resetTheme
+			current = '🌛 Night'
+			updateTheme(current)
+		}
 	})
 </script>
 
 <div class="select">
-	<!-- svelte-ignore a11y_label_has_associated_control -->
-	<label use:melt={$label}>Theme</label>
-	<button use:melt={$trigger} class="trigger" aria-label="Theme">
-		{$selectedLabel || selectedTheme.name}
-	</button>
-	{#if $open}
-		<div use:melt={$menu} class="menu" transition:fade={{ duration: 100 }}>
-			{#each Object.entries(themes) as [key, theme] (key)}
-				<div use:melt={$option({ value: theme.name, label: theme.name })}>
-					{theme.name}
-				</div>
-			{/each}
-		</div>
-	{/if}
+	<label for="theme-select">Theme</label>
+	<select
+		id="theme-select"
+		class="trigger"
+		aria-label="Theme"
+		bind:value={current}
+		onchange={handleChange}
+	>
+		{#each Object.entries(themes) as [key, theme] (key)}
+			<option value={theme.name}>{theme.name}</option>
+		{/each}
+	</select>
 </div>
 
 <style>
-	.trigger,
-	.menu {
+	.trigger {
 		background-color: var(--clr-primary);
 		color: var(--clr-theme-txt);
 		border-radius: var(--rounded-4);
@@ -104,21 +102,5 @@
 		width: 180px;
 		padding: var(--spacing-16) var(--spacing-24);
 		font-weight: 700;
-	}
-
-	.menu {
-		display: grid;
-		overflow: hidden;
-		z-index: 1000;
-
-		> * {
-			padding: var(--spacing-16);
-			transition: background 0.1s ease;
-
-			&:hover {
-				background-color: #fff;
-				cursor: pointer;
-			}
-		}
 	}
 </style>

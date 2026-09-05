@@ -6,13 +6,18 @@ published: '2024-04-20'
 category: svelte
 ---
 
-{% youtube id="mWt7jsgZIWw" title="Svelte Markdoc Renderer" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="mWt7jsgZIWw" title="Svelte Markdoc Renderer" />
 
 ## Table of Contents
 
 ## What Is Markdoc?
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-markdoc-renderer?ctl=1&embed=1&file=src%2Froutes%2F%5Bslug%5D%2F%2Bpage.svelte&view=preview&title=Svelte Markdoc Renderer" title="Svelte Markdoc Renderer" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-markdoc-renderer?ctl=1&embed=1&file=src%2Froutes%2F%5Bslug%5D%2F%2Bpage.svelte&view=preview&title=Svelte Markdoc Renderer" title="Svelte Markdoc Renderer" />
 
 You can find the [source code on GitHub](https://github.com/joysofcode/svelte-markdoc-renderer).
 

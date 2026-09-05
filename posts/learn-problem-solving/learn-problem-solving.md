@@ -6,7 +6,13 @@ published: '2022-6-14'
 category: general
 ---
 
-{% youtube id="kaHigkGFPv8" title="Learn Problem Solving" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="kaHigkGFPv8" title="Learn Problem Solving" />
 
 ## Table of Contents
 
@@ -42,7 +48,7 @@ Sketch out what you're making using analog tools such as a pen and piece of pape
 
 Let's sketch out the requirements for a to-do list.
 
-{% img src="todos.webp" alt="To-do list app sketch" %}
+<Image src="todos.webp" alt="To-do list app sketch" />
 
 You should be able to:
 
@@ -74,7 +80,7 @@ I love how Bob Ross teaches us about life in general through his paintings becau
 
 One of my favorite examples when learning something is creating the [TodoMVC example](https://todomvc.com/examples/vanilla-es6/) because the requirements show the most important parts about using what I'm learning.
 
-{% embed src="https://todomvc.com/examples/vanilla-es6/" title="TodoMVC" %}
+<Embed src="https://todomvc.com/examples/vanilla-es6/" title="TodoMVC" />
 
 The example has a lot of window dressing because of the CSS making it appear more than it is but if you strip down the styles and look at the bare HTML you're left with something simple.
 
@@ -308,7 +314,7 @@ For example an audio player might look like a complicated piece of machinery bec
 
 The reason you have a hard time translating idea into code is because you're not thinking about how the audio player looks represented as a data structure and how to manipulate it to do what you want and using state to drive the change in the user interface.
 
-{% img src="player.webp" alt="Audio player sketch" %}
+<Image src="player.webp" alt="Audio player sketch" />
 
 A simple audio player should at least be able to:
 
@@ -418,7 +424,7 @@ I only need to dynamically render the playlist in the browser and drive the user
 
 Here's an example of everything put together using the JavaScript framework Svelte that looks close to regular HTML, CSS and JavaScript.
 
-{% embed src="https://svelte.dev/repl/93652d40f09a416d9fc177a4ac89b32b?version=3.48.0" title="Svelte audio player" %}
+<Embed src="https://svelte.dev/repl/93652d40f09a416d9fc177a4ac89b32b?version=3.48.0" title="Svelte audio player" />
 
 ## Learn How To Manipulate Data
 

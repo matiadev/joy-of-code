@@ -6,7 +6,12 @@ published: '2022-8-22'
 category: svelte
 ---
 
-{% youtube id="4dDjQiOVrOo" title="Svelte State Management Guide" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="4dDjQiOVrOo" title="Svelte State Management Guide" />
 
 ## Table of Contents
 
@@ -24,7 +29,7 @@ By default the data in your app flows down from parent to child component like a
 
 You can **co-locate** or **lift state up** to the parent component that's going to pass the props to children.
 
-{% img src="props.webp" alt="Diagram showing how passing props from parent to child component works in Svelte" %}
+<Image src="props.webp" alt="Diagram showing how passing props from parent to child component works in Svelte" />
 
 The next example uses a parent `<Counter>` component to pass the `count`, `increment` and `decrement` props down to its children.
 
@@ -101,7 +106,7 @@ If you had to pass input from one component to another and update it when it cha
 
 I've mentioned how data flows down but using the `bind:property` directive we can also let it flow the other way.
 
-{% img src="bindings.webp" alt="Diagram showing how bindings work in Svelte" %}
+<Image src="bindings.webp" alt="Diagram showing how bindings work in Svelte" />
 
 In Svelte you can bind values to properties of DOM elements but also to component props meaning your child component can talk to the parent component.
 
@@ -155,7 +160,7 @@ dispatchEvent(message)
 
 In Svelte you dispatch the custom event from a child component and listen for it in the parent component.
 
-{% img src="events.webp" alt="Diagram showing how component events work in Svelte" %}
+<Image src="events.webp" alt="Diagram showing how component events work in Svelte" />
 
 I want to track the `x` and `y` mouse coordinates when the user moves the mouse and on the `<Mouse>` component I'm listening for an `updatePosition` event.
 
@@ -207,7 +212,7 @@ Component events are awesome but they don't [bubble](https://javascript.info/bub
 
 [Stores](https://learn.svelte.dev/tutorial/writable-stores) are just objects you can subscribe to and be notified whenever the store value changes and they're great if you have global state as sometimes you have **values that need to be accessed by multiple unrelated components**.
 
-{% img src="stores.webp" alt="Diagram showing how Svelte stores work" %}
+<Image src="stores.webp" alt="Diagram showing how Svelte stores work" />
 
 Lets start with the most basic example and then I'm excited to show you how simple it is to make a toast notification system.
 
@@ -301,7 +306,7 @@ This just scratches the surface what you can do with Svelte stores but I hope yo
 
 The [Context API](https://learn.svelte.dev/tutorial/context-api) is useful when you have nested components that share state to avoid passing the same props around also known as prop drilling but also sharing logic.
 
-{% img src="context.webp" alt="Diagram showing how the Context API works in Svelte" %}
+<Image src="context.webp" alt="Diagram showing how the Context API works in Svelte" />
 
 Let's say I want to use the [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) in a more declarative way.
 
@@ -429,7 +434,7 @@ Before I confuse you **this has nothing to do with the Context API** but refers 
 
 [Module context](https://learn.svelte.dev/tutorial/sharing-code) is useful when you want to share state between multiple component instances.
 
-{% img src="module.webp" alt="Diagram showing how module context works in Svelte" %}
+<Image src="module.webp" alt="Diagram showing how module context works in Svelte" />
 
 It might seem magical but it's how JavaScript works! 🪄
 
@@ -506,7 +511,7 @@ What was the first state manager?
 
 You might not expect it but it's the URL and you can use it for things like coupon codes or referral links but you could also use it to preserve some state over a link.
 
-{% img src="url.webp" alt="Diagram showing state management using a URL" %}
+<Image src="url.webp" alt="Diagram showing state management using a URL" />
 
 Let's pretend you have some list sorted by ascending order but want to link it to someone else sorted by descending order.
 
@@ -548,7 +553,7 @@ Using [SvelteKit](https://kit.svelte.dev/) you can get the parsed query string o
 
 I want to avoid the famous “it depends” answer and that means I have to give you an opinion that doesn't represent every use case and it's more general to help you pick a solution.
 
-{% img src="guide.webp" alt="Svelte state management guide" %}
+<Image src="guide.webp" alt="Svelte state management guide" />
 
 - Do you have deeply nested components that depends on some state?
   - YES: Is the same state shared among your nested components?

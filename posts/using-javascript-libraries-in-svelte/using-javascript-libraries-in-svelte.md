@@ -6,7 +6,12 @@ published: '2023-09-15'
 category: svelte
 ---
 
-{% youtube id="N9OjaQ0XtKQ" title="Using JavaScript Libraries In Svelte" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="N9OjaQ0XtKQ" title="Using JavaScript Libraries In Svelte" />
 
 ## Table of Contents
 
@@ -16,7 +21,7 @@ The Svelte ecosystem covers the entire JavaScript ecosystem because Svelte gives
 
 You don't need a specific Svelte library for something if it doesn't exist — instead you can take advantage of the entire [npm](https://www.npmjs.com/) JavaScript ecosystem, and use an existing JavaScript library.
 
-{% embed src="https://www.sveltelab.dev/3ukxxq4a3fss7dd?files=.%2Fsrc%2Froutes%2F%2Bpage.svelte" title="Using JavaScript Libraries In Svelte" %}
+<Embed src="https://www.sveltelab.dev/3ukxxq4a3fss7dd?files=.%2Fsrc%2Froutes%2F%2Bpage.svelte" title="Using JavaScript Libraries In Svelte" />
 
 In this post I'm going to cover how to use third party JavaScript libraries in SvelteKit and ways to solve problems you're going to encounter along the way.
 

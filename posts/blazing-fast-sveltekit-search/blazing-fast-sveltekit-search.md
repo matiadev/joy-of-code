@@ -6,7 +6,12 @@ published: '2024-02-20'
 category: sveltekit
 ---
 
-{% youtube id="llGupgNwmIk" title="Blazing Fast SvelteKit Search" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="llGupgNwmIk" title="Blazing Fast SvelteKit Search" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: sveltekit
 
 In this post I'm going to show you how you can easily create the same search I use on this site using [FlexSearch](https://github.com/nextapps-de/flexsearch) inspired by the search on the [Svelte](https://svelte.dev/) site.
 
-{% embed src="https://stackblitz.com/github/joysofcode/sveltekit-flexsearch?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&view=preview&title=SvelteKit Search" title="SvelteKit Search" %}
+<Embed src="https://stackblitz.com/github/joysofcode/sveltekit-flexsearch?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&view=preview&title=SvelteKit Search" title="SvelteKit Search" />
 
 You can find the code on [GitHub](https://github.com/joysofcode/sveltekit-flexsearch).
 

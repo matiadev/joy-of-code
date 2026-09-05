@@ -6,7 +6,12 @@ published: '2023-11-03'
 category: svelte
 ---
 
-{% youtube id="_jWnyJRKOvU" title="The Best Svelte SVG Animation Library" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="_jWnyJRKOvU" title="The Best Svelte SVG Animation Library" />
 
 ## Table of Contents
 
@@ -18,7 +23,7 @@ Animotion is only responsible for animating layout transitions, and code blocks 
 
 You can use any JavaScript animation library in your slides, but I always wanted a bespoke animation library that complements Animotion.
 
-{% embed src="https://stackblitz.com/github/joysofcode/motion-svg?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Motion SVG" title="Motion SVG" %}
+<Embed src="https://stackblitz.com/github/joysofcode/motion-svg?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Motion SVG" title="Motion SVG" />
 
 You can find the code on [GitHub](https://github.com/joysofcode/motion-svg).
 

@@ -6,7 +6,12 @@ published: '2023-09-08'
 category: sveltekit
 ---
 
-{% youtube id="q_2irZO4SS8" title="Native Page Transitions With SvelteKit" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="q_2irZO4SS8" title="Native Page Transitions With SvelteKit" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: sveltekit
 
 The [View Transitions API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API) is a new browser API that lets you easily create animated transitions between different states in your app.
 
-{% embed src="https://stackblitz.com/github/joysofcode/sveltekit-view-transitions?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Native Page Transitions With SvelteKit" title="Native Page Transitions With SvelteKit" %}
+<Embed src="https://stackblitz.com/github/joysofcode/sveltekit-view-transitions?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Native Page Transitions With SvelteKit" title="Native Page Transitions With SvelteKit" />
 
 You can find the source code on [GitHub](https://github.com/joysofcode/sveltekit-view-transitions).
 

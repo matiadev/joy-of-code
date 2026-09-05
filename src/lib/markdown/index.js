@@ -33,8 +33,6 @@ import esTagHtml from '@shikijs/langs/es-tag-html'
 import { transformerMetaHighlight } from '@shikijs/transformers'
 import { rehypeCopyCode } from './plugins.js'
 
-const images = `https://raw.githubusercontent.com/mattcroat/joy-of-code/main/posts`
-
 /**
  * Only the languages used across posts (plus the grammars they
  * inject: `yaml` for Markdown frontmatter, `es-tag-html` for
@@ -127,129 +125,6 @@ function getProcessor() {
 }
 
 /**
- * Returns post slug.
- * @param {string} filename
- */
-function getSlug(filename) {
-	return filename.split('/').at(-1)?.replace('.md', '') ?? ''
-}
-
-/**
- * Renderers for custom `{% directive %}` tags. Templates are kept
- * identical so the generated HTML doesn't change.
- * @type {Record<string, (attributes: Record<string, string>, slug: string) => string>}
- */
-const directives = {
-	embed: ({ src, title }) =>
-		`
-        <iframe
-          title="${title}"
-          src="${src}"
-          loading="lazy"
-        ></iframe>
-      `.trim(),
-	video: ({ src }, slug) =>
-		`
-        <video controls>
-          <source
-            src="${images}/${slug}/images/${src}"
-            type="video/mp4"
-          />
-        </video>
-      `.trim(),
-	img: ({ src, alt }, slug) =>
-		`
-      <img
-        src="${images}/${slug}/images/${src}"
-        alt="${alt}"
-        loading="lazy"
-      />
-  `.trim(),
-	youtube: ({ id, title }) =>
-		`
-				<lite-youtube videoid="${id}" playlabel="${title}"></lite-youtube>
-			`.trim(),
-	info: ({ text }) =>
-		`
-				<div class="card info">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-						<circle cx="12" cy="12" r="10"/><path d="M12 16v-4" />
-						<path d="M12 8h.01"/>
-					</svg>
-					<span>${text}</span>
-				</div>
-			`.trim(),
-	warning: ({ text }) =>
-		`
-				<div class="card warning">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-						<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
-						<path d="M12 9v4" />
-						<path d="M12 17h.01" />
-					</svg>
-					<span>${text}</span>
-				</div>
-			`.trim(),
-	danger: ({ text }) =>
-		`
-				<div class="card danger">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
-						<circle cx="12" cy="12" r="10"/><path d="m15 9-6 6" />
-						<path d="m9 9 6 6" />
-					</svg>
-					<span>${text}</span>
-				</div>
-			`.trim(),
-}
-
-const directivePattern = /\{% (\w+)((?: \w+="[^"]*")*) %\}/g
-const attributePattern = /(\w+)="([^"]*)"/g
-
-/** Required attributes per directive. Directives missing any of
- * these are left untouched, same as before the single-pass rewrite.
- * @type {Record<string, string[]>} */
-const requiredAttributes = {
-	embed: ['src', 'title'],
-	video: ['src'],
-	img: ['src', 'alt'],
-	youtube: ['id', 'title'],
-	info: ['text'],
-	warning: ['text'],
-	danger: ['text'],
-}
-
-/**
- * Search and replace Markdown in a single pass.
- * @param {string} content
- * @param {string} slug
- */
-function searchAndReplace(content, slug) {
-	return content.replace(
-		directivePattern,
-		/**
-		 * @param {string} match
-		 * @param {string} name
-		 * @param {string} attributes
-		 */
-		(match, name, attributes) => {
-			const render = directives[name]
-			const required = requiredAttributes[name]
-			if (typeof render !== 'function' || !Array.isArray(required)) return match
-
-			const parsed = Object.fromEntries(
-				[...attributes.matchAll(attributePattern)].map(([, key, value]) => [
-					key,
-					value,
-				])
-			)
-			if (!required.every((key) => parsed[key] !== undefined)) return match
-
-			return render(parsed, slug)
-		}
-	)
-}
-
-/**
  * Escape curly braces so Svelte doesn't treat them as template
  * expressions, except inside Svelte component tags. Done in a
  * single pass instead of escaping everything and restoring it after.
@@ -266,12 +141,10 @@ function escapeHtml(content) {
 /**
  * Markdown preprocessor.
  * @param {string} content
- * @param {string} slug
  */
-async function parseMarkdown(content, slug) {
-	const replacedContent = searchAndReplace(content, slug)
+async function parseMarkdown(content) {
 	const markdownProcessor = await getProcessor()
-	const parsedMarkdown = await markdownProcessor.process(replacedContent)
+	const parsedMarkdown = await markdownProcessor.process(content)
 	return parsedMarkdown.toString()
 }
 
@@ -305,9 +178,8 @@ function markdown() {
 		 */
 		async markup({ content, filename }) {
 			if (filename.endsWith('.md')) {
-				const slug = getSlug(filename)
 				const { markdown, meta } = frontmatter(content)
-				const html = await parseMarkdown(markdown, slug)
+				const html = await parseMarkdown(markdown)
 				const code = escapeHtml(html)
 				return { code: meta + code }
 			}

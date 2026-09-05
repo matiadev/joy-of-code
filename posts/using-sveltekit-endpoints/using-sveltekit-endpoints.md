@@ -6,7 +6,13 @@ published: '2023-05-05'
 category: sveltekit
 ---
 
-{% youtube id="8OmsVZuuQMc" title="Using SvelteKit Endpoints" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="8OmsVZuuQMc" title="Using SvelteKit Endpoints" />
 
 ## Table of Contents
 
@@ -20,7 +26,7 @@ This is not surprising because SvelteKit blurs the line between frontend and bac
 
 There's a great talk by [@chriscoyier](https://twitter.com/chriscoyier) titled [Oops, I Guess We’re Full-Stack Developers Now](https://www.youtube.com/watch?v=lFOfQsi5ye0) worth watching which observed this trend early.
 
-{% youtube id="lFOfQsi5ye0" title="Oops, I Guess We’re Full-Stack Developers Now" %}
+<YouTube id="lFOfQsi5ye0" title="Oops, I Guess We’re Full-Stack Developers Now" />
 
 **Before you continue** I want to you to take a deep breath, relax and stop caring about best practices because it's a pointless pursuit many are paralyzed by when learning and instead **try and break things**.
 
@@ -28,7 +34,7 @@ There's a great talk by [@chriscoyier](https://twitter.com/chriscoyier) titled [
 
 If you're reading this post and haven't seen the video here are the examples for everything I used in the video, so you can try it out yourself.
 
-{% embed src="https://stackblitz.com/github/joysofcode/using-sveltekit-endpoints?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Using SvelteKit Endpoints" title="Using SvelteKit Endpoints" %}
+<Embed src="https://stackblitz.com/github/joysofcode/using-sveltekit-endpoints?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Using SvelteKit Endpoints" title="Using SvelteKit Endpoints" />
 
 ## Client-Side Rendering
 
@@ -36,7 +42,7 @@ I'm going to briefly go over rendering methods, so you understand how data loadi
 
 You might be familiar with the next example if you ever worked on a single page application (SPA) which uses client-side rendering (CSR).
 
-{% img src="csr.webp" alt="Client-side rendering" %}
+<Image src="csr.webp" alt="Client-side rendering" />
 
 This is a typical single-page application style which uses JavaScript
 to render content also known as client-side rendering.
@@ -76,7 +82,7 @@ A page in SvelteKit follows the rule of two like the Sith in Star Wars where the
 
 If you want to load the data before rendering the page you have to use a **page endpoint** which returns HTML on the first page visit and uses JSON data when the client-side router loads in SvelteKit for a SPA experience.
 
-{% img src="ssr.webp" alt="Server-side rendering" %}
+<Image src="ssr.webp" alt="Server-side rendering" />
 
 You can use use `+page.server.ts` if you need access to the
 file system, database, or have secrets.
@@ -114,7 +120,7 @@ The page component gets rendered twice:
 
 Page endpoints are great for rendering dynamic data.
 
-{% img src="dynamic.webp" alt="Dynamic data" %}
+<Image src="dynamic.webp" alt="Dynamic data" />
 
 ```ts:src/routes/[id]/+page.ts showLineNumbers
 async function getPost(id: string) {
@@ -378,7 +384,7 @@ You could use a **standalone endpoint** for forms but then you have to manage da
 
 A standalone endpoint can be used by **multiple routes** of your app and can even serve as a **REST API** inside your app our outside your app if you include [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) headers.
 
-{% img src="standalone.webp" alt="Standalone endpoint" %}
+<Image src="standalone.webp" alt="Standalone endpoint" />
 
 You have access to every [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) inside `+server.ts` to make a complete REST API.
 

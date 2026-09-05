@@ -6,6 +6,11 @@ published: '2021-2-13'
 category: react
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+</script>
+
 ## Table of Contents
 
 ## Introduction
@@ -148,7 +153,7 @@ The greatest benefit is that we have everything contained in one neat component.
 
 A big problem with our first example was having to keep our state, and user interface in sync. This is what frameworks do for us. **Reactivity is a programming paradigm that allows us to adjust to changes in a declarative manner**. In the React example, if the value of `pokemon` got changed it would rerender the component. You can find the most basic example of reactivity in a spreadsheet.
 
-{% src="reactivity-spreadsheet.mp4" %}
+<Video src="reactivity-spreadsheet.mp4" />
 
 _Taken from [Vue docs](https://v3.vuejs.org/guide/reactivity.html#what-is-reactivity) which are awesome, and I hope [React docs](https://reactjs.org/docs/getting-started.html) could learn from._
 
@@ -158,15 +163,15 @@ One thing I touched upon briefly was how we flushed the entire DOM for the list.
 
 We can see this in the browser by enabling "Toggle paint flashing". I'm using Firefox, but you can find the same feature in Chrome.
 
-{% img src="paint-flashing.webp" alt="Toggle paint flashing in Firefox" %}
+<Image src="paint-flashing.webp" alt="Toggle paint flashing in Firefox" />
 
 Here is the first example, using JavaScript.
 
-{% img src="js-update.gif" alt="JavaScript DOM update" %}
+<Image src="js-update.gif" alt="JavaScript DOM update" />
 
 The second example, using React.
 
-{% img src="react-update.gif" alt="React DOM update" %}
+<Image src="react-update.gif" alt="React DOM update" />
 
 This isn't to say that using the virtual DOM is required. In fact, a framework like Svelte doesn't even use it. The main takeaway is that this enables us to just write code, and not worry about performance implications.
 

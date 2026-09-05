@@ -6,7 +6,12 @@ published: '2021-10-2'
 category: css
 ---
 
-{% youtube id="5nrMpCWkncc" title="Debug Your CSS" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="5nrMpCWkncc" title="Debug Your CSS" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: css
 
 The fastest way to find misbehaving elements on the page is using the `outline` trick in CSS. This helps you find issues such as overflowing elements quickly, but more importantly it gives you a visual of the entire page.
 
-{% img src="css-debug.webp" alt="Debugging CSS" %}
+<Image src="css-debug.webp" alt="Debugging CSS" />
 
 You can use `outline` to set an outline on every element, which isn't going to affect the layout compared to using `border` — unless you specify `box-sizing: border-box`.
 
@@ -44,7 +49,7 @@ You can also add a `background` property, or use different `outline` colors for 
 
 You can turn this helper into a JavaScript bookmarklet, and use it when you need it. The only thing you have to do is create a regular bookmark in your browser, and include this code.
 
-{% img src="bookmarklet.webp" alt="Bookmarklet" %}
+<Image src="bookmarklet.webp" alt="Bookmarklet" />
 
 ```js:bookmarklet showLineNumbers
 javascript: (function () {

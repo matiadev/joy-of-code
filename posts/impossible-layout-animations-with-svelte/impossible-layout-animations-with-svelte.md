@@ -6,7 +6,14 @@ published: '2023-06-16'
 category: svelte
 ---
 
-{% youtube id="ecP8RwpkiQw" title="Impossible Layout Animations With Svelte" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="ecP8RwpkiQw" title="Impossible Layout Animations With Svelte" />
 
 ## Table of Contents
 
@@ -14,7 +21,7 @@ category: svelte
 
 There are animations that are straight up impossible using CSS alone but also expensive for performance using JavaScript.
 
-{% video src="circle-teleport.mp4" %}
+<Video src="circle-teleport.mp4" />
 
 In the example above I'm repareting the circle element which can be disorienting for the user and there's no way to animate the change unless you're using the **View Transitions API**.
 
@@ -24,7 +31,7 @@ The solution is to [FLIP your animations](https://aerotwist.com/blog/flip-your-a
 
 Instead of doing expensive calculations each frame you only use JavaScript to calculate the difference between the elements you want to animate and use CSS for what it's intended for.
 
-{% img src="flip.webp" alt="Diagram showing the FLIP animation technique used for the circle" %}
+<Image src="flip.webp" alt="Diagram showing the FLIP animation technique used for the circle" />
 
 - **FIRST** get the initial state
 - **LAST** get the last state
@@ -33,11 +40,11 @@ Instead of doing expensive calculations each frame you only use JavaScript to ca
 
 The result of using the FLIP animation technique is a buttery smooth 60 frames per second (FPS) animation.
 
-{% video src="circle-flip.mp4" %}
+<Video src="circle-flip.mp4" />
 
 If this sounds complicated don't worry because not only are you going to understand how to implement the FLIP animation technique but I'm going to show you how to use the [Flip plugin](https://greensock.com/docs/v3/Plugins/Flip/) from [GSAP](https://greensock.com/gsap/) that does everything for you.
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-gsap-flip?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Impossible Layout Animations With Svelte" title="Impossible Layout Animations With Svelte" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-gsap-flip?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Impossible Layout Animations With Svelte" title="Impossible Layout Animations With Svelte" />
 
 You might need to **enable cookies** for the example but the code is also available on [GitHub](https://github.com/joysofcode/svelte-gsap-flip).
 
@@ -45,7 +52,7 @@ You might need to **enable cookies** for the example but the code is also availa
 
 Doing FLIP animations in Svelte is possible using the `flip` animate directive but limited to keyed each blocks and using `crossfade` to complete the illusion.
 
-{% embed src="https://learn.svelte.dev/tutorial/animate" title="Svelte tutorial" %}
+<Embed src="https://learn.svelte.dev/tutorial/animate" title="Svelte tutorial" />
 
 It's great for simple transitions but animating values like rotation is cursed which is not the case if you FLIP your animations.
 
@@ -53,7 +60,7 @@ It's great for simple transitions but animating values like rotation is cursed w
 
 The FLIP animation technique looks like magic but it's simple math and you're going to learn about `getBoundingClientRect()` which is one of the most useful methods in JavaScript for measuring elements in the viewport.
 
-{% video src="how-flip-works.mp4" %}
+<Video src="how-flip-works.mp4" />
 
 In the example I'm listening for clicks on the document to swap the container that holds the circle element.
 
@@ -245,7 +252,7 @@ I'm going to use the [GSAP Flip plugin](https://greensock.com/docs/v3/Plugins/Fl
 
 For the next example I want to animate items going from a stack of circles to a grid of squares.
 
-{% video src="flip-circles.mp4" %}
+<Video src="flip-circles.mp4" />
 
 This demonstrates how GSAP handles animating values like the border radius and rotations with ease.
 
@@ -384,7 +391,7 @@ You can pass a variety of options for the animation like using `absolute` positi
 
 In the next example I want to FLIP a CSS Grid layout.
 
-{% video src="flip-grid.mp4" %}
+<Video src="flip-grid.mp4" />
 
 You're not animating CSS Grid values of course but using the FLIP animation technique to animate the transition from one state to another.
 
@@ -553,7 +560,7 @@ How awesome is that? 😄
 
 You can also use the FLIP animation technique for page transitions. It's similar to how you use the View Transitions API and it's only a couple of lines of code.
 
-{% video src="flip-movies.mp4" %}
+<Video src="flip-movies.mp4" />
 
 For this example I have a `/movies` and `/movies/movie/[id]` route and I want to animate the cover and title from one page transition to another.
 

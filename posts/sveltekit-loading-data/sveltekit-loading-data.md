@@ -6,7 +6,12 @@ published: '2023-1-10'
 category: sveltekit
 ---
 
-{% youtube id="rsmLu5nmh4g" title="SvelteKit API Endpoints And Loading Data For Pages" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="rsmLu5nmh4g" title="SvelteKit API Endpoints And Loading Data For Pages" />
 
 ## Table of Contents
 
@@ -159,7 +164,7 @@ You probably used an API like [https://dummyjson.com/posts](https://dummyjson.co
 
 Open your developer tools with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> and go to the network tab to examine it (check **disable cache** and reload the page).
 
-{% img src="headers.webp" alt="DummyJSON headers" %}
+<Image src="headers.webp" alt="DummyJSON headers" />
 
 When you visit the link it does a `GET` **request method** to a server which then returns a **response** with some JSON data because it uses **content-type: application/json** and returns a `200` **status code** which is a standard response for successful HTTP requests.
 
@@ -328,7 +333,7 @@ This way of showing data on the page where you fetch the data on the client and 
 
 Notice if you refresh the page the caching should work since the data is going to be fresh for a minute and the data is going to be loaded from the disk cache instead (this only works if you uncheck **disable cache** or close the developer tools).
 
-{% img src="cached.webp" alt="Cached response for posts" %}
+<Image src="cached.webp" alt="Cached response for posts" />
 
 You shouldn't do this though and instead cache the result on a CDN using `s-maxage` which looks something like `'Cache-Control': 'public, max-age=0, s-maxage=60'`.
 

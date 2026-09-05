@@ -6,7 +6,13 @@ published: '2024-11-22'
 category: svelte
 ---
 
-{% youtube id="XBVujg6Fn3A" title="Master The Svelte Context API" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="XBVujg6Fn3A" title="Master The Svelte Context API" />
 
 ## Table of Contents
 
@@ -192,7 +198,7 @@ To use Svelte's Context API, the only thing we have to change is the import:
 
 To understand the drawback of using global state compared to using context, we need to understand how Svelte's Context API works.
 
-{% img src="context-api.webp" alt="Svelte component tree using the Context API" %}
+<Image src="context-api.webp" alt="Svelte component tree using the Context API" />
 
 In this example, we set the context inside component `<A>` and ask for it in component `<D>` where Svelte is going to walk up the component tree until it finds the context — if we set the context inside component `<B>` it would only be available to that component and its children.
 
@@ -391,7 +397,7 @@ export function getFruitContext(): Fruit {
 
 ## Practical Example Of Using The Context API
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-context-api?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Context API" title="Svelte Context API" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-context-api?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Context API" title="Svelte Context API" />
 
 > You can find the code on [GitHub](https://github.com/joysofcode/svelte-context-api).
 

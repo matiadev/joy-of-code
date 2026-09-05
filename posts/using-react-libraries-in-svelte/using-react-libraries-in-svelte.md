@@ -6,7 +6,12 @@ published: '2024-11-16'
 category: svelte
 ---
 
-{% youtube id="SKUD-Aj1jKg" title="Using React Libraries Inside Svelte" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="SKUD-Aj1jKg" title="Using React Libraries Inside Svelte" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: svelte
 
 I love using the virtual whiteboard app [Excalidraw](https://excalidraw.com/), so I was excited to learn it was also open source, but unfortunately it's only made for React which means you can't use it inside Svelte, or does it?
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-excalidraw?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Excalidraw" title="Using React Libraries In Svelte" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-excalidraw?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Excalidraw" title="Using React Libraries In Svelte" />
 
 > You can find the code on [GitHub](https://github.com/joysofcode/svelte-excalidraw).
 

@@ -6,7 +6,13 @@ published: '2023-04-28'
 category: sveltekit
 ---
 
-{% youtube id="RhScu3uqGd0" title="SvelteKit Markdown blog" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="RhScu3uqGd0" title="SvelteKit Markdown blog" />
 
 ## Table of Contents
 
@@ -16,7 +22,7 @@ category: sveltekit
 
 You're going to make a blazingly fast and extendable SvelteKit Markdown blog you can be proud of and deploy it to Vercel at no cost.
 
-{% embed src="https://stackblitz.com/github/joysofcode/sveltekit-markdown-blog?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=SvelteKit Markdown Blog" title="SvelteKit Markdown Blog" %}
+<Embed src="https://stackblitz.com/github/joysofcode/sveltekit-markdown-blog?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=SvelteKit Markdown Blog" title="SvelteKit Markdown Blog" />
 
 You can find the finished project on [GitHub](https://github.com/joysofcode/sveltekit-markdown-blog).
 
@@ -353,7 +359,7 @@ li {
 
 Here's the result:
 
-{% img src="setup.webp" alt="Start of the SvelteKit blog" %}
+<Image src="setup.webp" alt="Start of the SvelteKit blog" />
 
 > 💪 As an exercise try adding the `/about` and `/contact` routes yourself since they're mostly used as placeholders.
 
@@ -501,7 +507,7 @@ export type Post = {
 
 You can navigate to [http://localhost:5173/api/posts](http://localhost:5173/api/posts) to see the JSON response:
 
-{% img src="endpoint.webp" alt="API endpoint for posts" %}
+<Image src="endpoint.webp" alt="API endpoint for posts" />
 
 > 🐿️ You can use the [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=en-US) Chrome extension for the highlighting.
 
@@ -596,7 +602,7 @@ export function formatDate(date: string, dateStyle: DateStyle = 'medium', locale
 
 Let's take a look at the result:
 
-{% img src="posts.webp" alt="Posts" %}
+<Image src="posts.webp" alt="Posts" />
 
 Things are coming together. 💪
 
@@ -726,7 +732,7 @@ Let's add some global styles for the post inside `app.css` since we don't have c
 
 Everything looks great:
 
-{% img src="post.webp" alt="Post" %}
+<Image src="post.webp" alt="Post" />
 
 > 💪 Turn the tags into links that point to a `/category/[category]` page that shows the posts based on the name of the category.
 

@@ -6,7 +6,12 @@ published: '2023-10-20'
 category: svelte
 ---
 
-{% youtube id="LaQc5UWe0mE" title="Svelte GUI" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="LaQc5UWe0mE" title="Svelte GUI" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: svelte
 
 You have probably seen [Tweakpane](https://cocopon.github.io/tweakpane/), or [dat.GUI](https://github.com/dataarts/dat.gui) on [CodePen](https://codepen.io/) as it's an awesome and quick way to create knobs to control the UI.
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-gui?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte GUI" title="Svelte GUI" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-gui?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte GUI" title="Svelte GUI" />
 
 The code is available on [GitHub](https://github.com/joysofcode/svelte-gui).
 

@@ -6,7 +6,14 @@ published: '2022-1-12'
 category: svelte
 ---
 
-{% youtube id="cQYLPhBmqG8" title="Make a Svelte Todo App" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="cQYLPhBmqG8" title="Make a Svelte Todo App" />
 
 ## Table of Contents
 
@@ -16,7 +23,7 @@ You can watch the [Make A Svelte Todo App](https://www.youtube.com/playlist?list
 
 This is an interactive example! 🦄
 
-{% embed src="https://svelte-todo-list-app.netlify.app/" title="Svelte Todo App" %}
+<Embed src="https://svelte-todo-list-app.netlify.app/" title="Svelte Todo App" />
 
 In the previous [Svelte For Beginners](https://joyofcode.xyz/svelte-for-beginners) post we learned Svelte fundamentals and now it's time to put what we learned into practice.
 
@@ -44,7 +51,7 @@ This might look complicated, right? 😱
 
 Here is where I would open the browser developer tools with <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> and spend some time inspecting how it works.
 
-{% img src="todomvc-editing.webp" alt="TodoMVC editing a todo item" %}
+<Image src="todomvc-editing.webp" alt="TodoMVC editing a todo item" />
 
 Huh? it's not bad as you thought! If you see it's just hiding the todo label and replacing it with a text input field of the same value if you're in the editing state.
 
@@ -56,7 +63,7 @@ In fact you can even disable the styles on the page by removing the `<head>` so 
 
 If we did this before we would immediately see through the magic trick. 🪄
 
-{% img src="todomvc-without-styles.webp" alt="TodoMVC todo list markup without styles" %}
+<Image src="todomvc-without-styles.webp" alt="TodoMVC todo list markup without styles" />
 
 This can be great fun! Instead of getting overwhelmed by everything observe how it works and write it down as a todo list (I know 🤭).
 
@@ -675,7 +682,7 @@ export interface ITodo {
 
 If you don't want to use TypeScript just ignore the types! 👍️
 
-{% img src="todos-list.webp" alt="Showing list of todo items" %}
+<Image src="todos-list.webp" alt="Showing list of todo items" />
 
 You should see a list of todo items.
 
@@ -2135,7 +2142,7 @@ That's it! 🦄
 
 There's one problem though. The transition is happening for each todo item when we change the filter.
 
-{% video src="filtering-todos-problem.mp4" %}
+<Video src="filtering-todos-problem.mp4" />
 
 Building something is the only time when you encounter a problem that requires a specific solution so you're going to learn and understand how something works instead of just watching or reading about it.
 
@@ -2311,7 +2318,7 @@ This is a great example of learning about the Svelte lifecycle function [tick](h
 
 That's it! 🥳
 
-{% video src="filtering-todos-solution.mp4" %}
+<Video src="filtering-todos-solution.mp4" />
 
 With that we can cross off all the items from the list we wanted to do at the start.
 

@@ -6,6 +6,10 @@ published: '2021-9-29'
 category: javascript
 ---
 
+<script lang="ts">
+	import Video from '#lib/components/video.svelte'
+</script>
+
 In a [previous post](https://joyofcode.xyz/create-a-coding-sandbox) we created a simple **code sandbox** from scratch using plain **TypeScript** and it works great but then I noticed something interesting.
 
 Whenever you update code on sites such as [Codepen](https://codepen.io/) the **iframe flashes** because it tears down and rebuilds the **DOM** (Document Object Model). When I was using the [Svelte REPL](https://svelte.dev/repl/hello-world), or [CodeSandbox](https://codesandbox.io/) I noticed it doesn't do that — in fact it updates **instantly** without the **iframe flashing**.
@@ -40,7 +44,7 @@ editorElement.addEventListener('input', (event) => {
 })
 ```
 
-{% video src="iframe-flashing.mp4" %}
+<Video src="iframe-flashing.mp4" />
 
 The code just takes a `<textarea>` input and updates the `srcdoc` attribute of the `<iframe>` creating a minimal code sandbox.
 
@@ -85,7 +89,7 @@ editorElement.addEventListener('input', (event) => {
 })
 ```
 
-{% video src="iframe-without-flashing.mp4" %}
+<Video src="iframe-without-flashing.mp4" />
 
 You can determine what to do based on the `type`. For example you can inject **CSS**, or insert a `<script>` tag to execute **JavaScript** code.
 

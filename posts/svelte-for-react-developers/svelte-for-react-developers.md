@@ -6,7 +6,11 @@ published: '2022-8-8'
 category: svelte
 ---
 
-{% youtube id="uWDBEUkTRGk" title="Google Analytics With SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="uWDBEUkTRGk" title="Google Analytics With SvelteKit" />
 
 ## Table of Contents
 

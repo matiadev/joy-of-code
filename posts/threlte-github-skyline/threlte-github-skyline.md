@@ -6,7 +6,12 @@ published: '2023-08-30'
 category: svelte
 ---
 
-{% youtube id="f9fd1L1FEts" title="Visualize GitHub Contributions In 3D With Svelte" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="f9fd1L1FEts" title="Visualize GitHub Contributions In 3D With Svelte" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: svelte
 
 In this post I'm going to show you how to visualize your GitHub contributions graph in 3D using [Threlte](https://threlte.xyz/) inspired by [GitHub Skyline](https://skyline.github.com/).
 
-{% embed src="https://stackblitz.com/github/joysofcode/github-skyline?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=GitHub Skyline" title="GitHub Skyline" %}
+<Embed src="https://stackblitz.com/github/joysofcode/github-skyline?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=GitHub Skyline" title="GitHub Skyline" />
 
 You can find the code on [GitHub](https://github.com/joysofcode/github-skyline).
 
@@ -61,7 +66,7 @@ Inside `routes/+page.svelte` I'm going to set up a 3D scene.
 
 You don't have to read it but in another post on [using SvelteKit for web scraping](https://joyofcode.xyz/sveltekit-web-scraping) we created a [GitHub contributions API](https://gh-contributions-api.vercel.app/) for this exact purpose.
 
-{% youtube id="T-lBPpeokfY" title="SvelteKit Web Scraping" %}
+<YouTube id="T-lBPpeokfY" title="SvelteKit Web Scraping" />
 
 Here is the [GitHub repository](https://github.com/mattcroat/github-contributions-api) which you can host yourself in case the API ever goes down, or create an API endpoint in SvelteKit and copy the code.
 

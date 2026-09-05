@@ -6,7 +6,11 @@ published: '2022-11-28'
 category: sveltekit
 ---
 
-{% youtube id="6pv70d7i-3Q" title="Progressive Form Enhancement With SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="6pv70d7i-3Q" title="Progressive Form Enhancement With SvelteKit" />
 
 ## Table of Contents
 

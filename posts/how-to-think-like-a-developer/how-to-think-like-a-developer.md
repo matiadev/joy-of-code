@@ -6,13 +6,17 @@ published: '2020-12-24'
 category: general
 ---
 
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+</script>
+
 ## Table of Contents
 
 ## Introduction
 
 You learned JavaScript. Maybe you watched a course. You felt confident in your abilities. The voice is gone. There's silence. You open your editor with a blank stare. You feel lost. What now?
 
-{% embed src="https://vanilla-todo-examples.netlify.app/05-final-version/" title="Vanilla Todo" %}
+<Embed src="https://vanilla-todo-examples.netlify.app/05-final-version/" title="Vanilla Todo" />
 
 [Source code](https://github.com/joysofcode/vanilla-todo) on GitHub.
 
@@ -152,7 +156,7 @@ Note: I'm keeping the markup to a minimum. You should be more conscious when wor
 
 ## Displaying Todos
 
-{% embed src="https://vanilla-todo-examples.netlify.app/01-show-todos/" title="Vanilla Todo" %}
+<Embed src="https://vanilla-todo-examples.netlify.app/01-show-todos/" title="Vanilla Todo" />
 
 The next thing to do is loop over our todo list items and display them:
 
@@ -252,7 +256,7 @@ function addTodo() {
 
 ## Create Todo
 
-{% embed src="https://vanilla-todo-examples.netlify.app/02-create-todo/" title="Vanilla Todo" %}
+<Embed src="https://vanilla-todo-examples.netlify.app/02-create-todo/" title="Vanilla Todo" />
 
 Let's implement it:
 
@@ -290,7 +294,7 @@ That's it!
 
 ## Update Todo
 
-{% embed src="https://vanilla-todo-examples.netlify.app/03-update-todo/" title="Vanilla Todo" %}
+<Embed src="https://vanilla-todo-examples.netlify.app/03-update-todo/" title="Vanilla Todo" />
 
 It's not enough to just read something once, and think you get it. It takes deliberate effort to try it out yourself until you understand it.
 
@@ -575,7 +579,7 @@ Keep in mind, the order in which we return them is important!
 
 ## Delete Todo
 
-{% embed src="https://vanilla-todo-examples.netlify.app/04-delete-todo/" title="Vanilla Todo" %}
+<Embed src="https://vanilla-todo-examples.netlify.app/04-delete-todo/" title="Vanilla Todo" />
 
 Great job! This part is going to be easy in comparison. We just need to pass in the todo _id_, and _filter_ the todo items. Then update the user interface.
 

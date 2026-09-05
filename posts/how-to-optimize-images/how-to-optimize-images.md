@@ -6,6 +6,10 @@ published: '2021-10-27'
 category: general
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 ## Image Optimization is a Pain
@@ -18,7 +22,7 @@ There's just one problem — **it's a giant pain**.
 
 [Squoosh](https://github.com/GoogleChromeLabs/squoosh) is a project by Google that optimizes your images right in the browser.
 
-{% img src="squoosh.webp" alt="Squoosh" %}
+<Image src="squoosh.webp" alt="Squoosh" />
 
 The [Squoosh app](https://squoosh.app/) has a delightful user interface. The only downside is that it takes a couple of steps for every image which can get tedious.
 

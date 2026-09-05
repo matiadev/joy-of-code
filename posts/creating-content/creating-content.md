@@ -6,7 +6,14 @@ published: '2023-07-28'
 category: general
 ---
 
-{% youtube id="ksFhXV3rH3Y" title="Make Your Content Look And Sound Great" %}
+<script lang="ts">
+	import Card from '#lib/components/card.svelte'
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="ksFhXV3rH3Y" title="Make Your Content Look And Sound Great" />
 
 ## Table of Contents
 
@@ -24,9 +31,9 @@ Every professional uses the [Shure SM7B](https://www.shure.com/en-US/products/mi
 
 Not only that, but it includes a hidden cost since it requires phantom power using an XLR connector — meaning you have to also pay for an audio interface.
 
-{% img src="shure.webp" alt="Shure SM7B" %}
+<Image src="shure.webp" alt="Shure SM7B" />
 
-{% img src="interface.webp" alt="Audio interface" %}
+<Image src="interface.webp" alt="Audio interface" />
 
 Even if you get a good deal, that means more points of failure when you just got started and just because a microphone is more expensive, doesn't mean you're going to sound better — if you don't know what you're doing.
 
@@ -34,7 +41,7 @@ I use an affordable **USB dynamic microphone** in the **$50-$100** range. You ha
 
 You can get a great deal and pick up a microphone bundle with a microphone arm and a pop filter:
 
-{% img src="microphone.webp" alt="Microphone bundle with a microphone arm and a pop filter" %}
+<Image src="microphone.webp" alt="Microphone bundle with a microphone arm and a pop filter" />
 
 **Don't use the microphone stand on your desk** because it might pick up desk vibrations. Using a microphone arm makes it easier to move around.
 
@@ -52,30 +59,30 @@ You can use a professional video editor like [DaVinci Resolve](https://www.black
 
 You might have heard of OBS when it comes to streaming, but it's also great for screen recording.
 
-{% img src="obs-1.webp" alt="OBS" %}
+<Image src="obs-1.webp" alt="OBS" />
 
 OBS has this concept of **scenes** and you can have multiple scenes you can transitions between if you want. For example, I have different scenes for recording windows and the entire desktop.
 
 If I'm recording a video where there's not a lot of motion, then using a low bitrate and the default settings works fine:
 
-{% img src="obs-2.webp" alt="OBS" %}
+<Image src="obs-2.webp" alt="OBS" />
 
 - Audio bitrate to **320 kbps** (the highest possible)
 - Recording quality set to **"High Quality, Medium File Size"**
 - Recording format is set to **"MPEG-4 (.mp4)"** because that's what YouTube likes
 
-{% img src="obs-3.webp" alt="OBS" %}
+<Image src="obs-3.webp" alt="OBS" />
 
 - I use **1920x1080** as the base and output resolution
 - **30 FPS** because you don't need more for tutorials since there's not a lot of motion and keeps the size down
 
 If you're going to record video with a lot of motion like animations, then you should use a higher bitrate (**~8k-20k**) and framerate (**60 FPS**). The video is going to be larger, so you have to strike a balance. You can read the [YouTube recommended upload encoding settings](https://support.google.com/youtube/answer/1722171) for more information.
 
-{% info text="I found that upscaling videos from 1080p to 1440p before rendering looks noticably better on YouTube if you care about bitrate — I assume YouTube either uses a different codec or higher bitrate at that resolution." %}
+<Card type="info">I found that upscaling videos from 1080p to 1440p before rendering looks noticably better on YouTube if you care about bitrate — I assume YouTube either uses a different codec or higher bitrate at that resolution.</Card>
 
 If you need to adjust the colors, you can go inside the **advanced** tab and play with the **color format**.
 
-{% img src="obs-4.webp" alt="OBS" %}
+<Image src="obs-4.webp" alt="OBS" />
 
 If the colors look washed out, that's easily fixed by increasing the saturation in your video editor to match what you see.
 
@@ -85,7 +92,7 @@ You can enhance your audio quality in software during or after recording to remo
 
 Another reason I love OBS is due to **OBS audio filters**, since it can enhance your audio live during the recording. You can also use [VST](https://www.wikiwand.com/en/Virtual_Studio_Technology) plugins to add more effects.
 
-{% img src="audio-filters.webp" alt="OBS audio filters" %}
+<Image src="audio-filters.webp" alt="OBS audio filters" />
 
 The most important effects include:
 
@@ -96,13 +103,13 @@ The most important effects include:
 
 Here's an informative video where you can learn how to apply OBS audio effects and adjust them to your voice.
 
-{% youtube id="G1VzeT9t24Y" title="Make Any Mic Sound Expensive In OBS" %}
+<YouTube id="G1VzeT9t24Y" title="Make Any Mic Sound Expensive In OBS" />
 
 If you already have a recording, you can use [Audacity](https://www.audacityteam.org/) to improve the audio quality using the same audio effects. You can drag the **MP4** file directly into Audacity and export it as an **MP3** file at **320kbps**.
 
 I set up a recording macro in Audacity to automate the process.
 
-{% video src="macro.mp4" %}
+<Video src="macro.mp4" />
 
 **Always use headphones** during the editing process unless you have great studio monitors, because it might sound fine over your speakers which can hide bad audio problems.
 
@@ -110,7 +117,7 @@ I set up a recording macro in Audacity to automate the process.
 
 When it comes to video editing, you only need to learn how to do basic cuts and transitions. Always learn the shortcuts to be more productive.
 
-{% video src="editing.mp4" %}
+<Video src="editing.mp4" />
 
 - Drag the recording into Kdenlive (it's going to recognize the dimensions and framerate)
 - Drop the recording into the timeline
@@ -124,7 +131,7 @@ You might be bothered by breathing sounds, but leave them in since it gives the 
 
 I only mute unpleasant sounds like sharp inhales, to provide a better listening experience.
 
-{% video src="video.mp4" %}
+<Video src="video.mp4" />
 
 You can also export Kdenlive [guides](https://docs.kdenlive.org/en/cutting_and_assembling/guides.html) from **Timeline > Guides > Export Guides** to create YouTube timestamps.
 

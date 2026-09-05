@@ -6,7 +6,11 @@ published: '2023-08-24'
 category: sveltekit
 ---
 
-{% youtube id="T-lBPpeokfY" title="Using SvelteKit For Web Scraping" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="T-lBPpeokfY" title="Using SvelteKit For Web Scraping" />
 
 ## Table of Contents
 

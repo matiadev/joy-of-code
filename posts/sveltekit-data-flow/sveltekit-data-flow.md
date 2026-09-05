@@ -6,7 +6,13 @@ published: '2023-05-12'
 category: sveltekit
 ---
 
-{% youtube id="ampDDmT3TU0" title="SvelteKit Data Flow" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="ampDDmT3TU0" title="SvelteKit Data Flow" />
 
 ## Table of Contents
 
@@ -85,7 +91,7 @@ Files that include `load` functions can also export [page options](https://learn
 
 To understand the order in which things run I've created an example with every file related to SvelteKit routing.
 
-{% embed src="https://stackblitz.com/github/joysofcode/sveltekit-data-flow?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=SvelteKit Data Flow" title="SvelteKit Data Flow" %}
+<Embed src="https://stackblitz.com/github/joysofcode/sveltekit-data-flow?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=SvelteKit Data Flow" title="SvelteKit Data Flow" />
 
 I've included a working example (you have to enable cookies) you can play around with. You can [find the project files on GitHub](https://github.com/joysofcode/sveltekit-data-flow).
 
@@ -600,7 +606,7 @@ By the way don't sweat the details because this is a lot to take in at once. The
 
 I made an awesome SvelteKit data flow cheat sheet to go over what we learned which should be helpful.
 
-{% img src="sveltekit-data-flow.png" alt="Sveltekit data flow" %}
+<Image src="sveltekit-data-flow.png" alt="Sveltekit data flow" />
 
 You can get the SVG version of the SvelteKit data flow cheat sheet as a light or dark version:
 

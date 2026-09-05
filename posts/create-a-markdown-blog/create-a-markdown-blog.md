@@ -6,7 +6,12 @@ published: '2021-10-25'
 category: next
 ---
 
-{% embed src="https://thedigitalgarden.vercel.app" title="JavaScript Sandbox" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+</script>
+
+<Embed src="https://thedigitalgarden.vercel.app" title="JavaScript Sandbox" />
 
 ## Table of Contents
 
@@ -42,7 +47,7 @@ These are the features I want from a **Markdown** blog that we're going to imple
 
 We're going to create the **URL slug** from the post title such as `post.mdx` and have **Next.js** build the page for every post, so we can access it at `http://localhost:3000/post`.
 
-{% img src="site-diagram.webp" alt="Site diagram" %}
+<Image src="site-diagram.webp" alt="Site diagram" />
 
 **Markdown**
 
@@ -160,7 +165,7 @@ Imagine what a chore it would be if we created a new page for every post such as
 
 We're going to get those paths from the **file system** because we can use **Node.js** inside **Next.js** pages. This is possible because **Next.js** has **special functions** `getStaticPaths` and `getStaticProps` that we can only use inside a page, so we can **pre-render the page at build time**.
 
-{% img src="next-page-render.webp" alt="Next.js page render" %}
+<Image src="next-page-render.webp" alt="Next.js page render" />
 
 In the example we have `[slug].tsx` inside `pages`, so **Next.js** expects us to specify a **slug** that can be any path as the **param** and that's why we created paths for [http://localhost:3000/post-1](http://localhost:3000/1) and [http://localhost:3000/post-2](http://localhost:3000/2).
 
@@ -386,7 +391,7 @@ export default function Post({ code, metadata }: PostProps) {
 
 If you navigate to [http://localhost:3000/post-1](http://localhost:3000/post-1) you should see the post.
 
-{% img src="mdx-component.webp" alt="MDX component" %}
+<Image src="mdx-component.webp" alt="MDX component" />
 
 This took barely any code and we have a working blog that we understand how it works. If you need to catch up this is how `[slug].tsx` should look like.
 
@@ -862,7 +867,7 @@ export default function Posts({ posts }: PostsProps) {
 
 Now if you navigate to [http://localhost:3000/](http://localhost:3000/) you can see the sorted posts.
 
-{% img src="sorted-posts.webp" alt="Sorted posts" %}
+<Image src="sorted-posts.webp" alt="Sorted posts" />
 
 ## Post Categories
 
@@ -1646,7 +1651,7 @@ export default prism
 
 This is the general layout of the site but for posts we use a grid where we extend images and code blocks outside the grid because it looks cool.
 
-{% img src="layout.webp" alt="Site layout" %}
+<Image src="layout.webp" alt="Site layout" />
 
 We're going to create a general layout wrapper for regular pages and one for our posts that's going to hold the **navigation** and **SEO**.
 
@@ -1964,7 +1969,7 @@ If your project is **open source** and **non-commercial** you can [request a spo
 - When you're logged in to **Vercel** tap the **New Project** button
 - Point **Vercel** to your repository
 
-{% img src="vercel.webp" alt="Deployment to Vercel" %}
+<Image src="vercel.webp" alt="Deployment to Vercel" />
 
 You shouldn't have any problems but you can always try `npm run build` on your machine to see if your site builds first and solve any issues before you deploy. If you come across any errors don't panic but calmly read the **log output** because it's just like reading your terminal but it's on another server.
 

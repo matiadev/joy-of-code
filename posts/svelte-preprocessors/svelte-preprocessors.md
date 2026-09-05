@@ -6,13 +6,18 @@ published: '2024-04-05'
 category: svelte
 ---
 
-{% youtube id="FNIwqQx7mOo" title="Svelte Preprocessors" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="FNIwqQx7mOo" title="Svelte Preprocessors" />
 
 ## Table of Contents
 
 ## What's A Preprocessor?
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-markdown-preprocessor?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&view=preview&title=Svelte Preprocessors" title="Svelte Preprocessors" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-markdown-preprocessor?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&view=preview&title=Svelte Preprocessors" title="Svelte Preprocessors" />
 
 The Svelte documentation describes [preprocessors](https://kit.svelte.dev/docs/integrations#preprocessors) as following:
 

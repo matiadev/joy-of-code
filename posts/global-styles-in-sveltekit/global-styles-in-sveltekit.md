@@ -6,7 +6,11 @@ published: '2022-11-24'
 category: sveltekit
 ---
 
-{% youtube id="jHSwChkx3TQ" title="Global Styles In SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="jHSwChkx3TQ" title="Global Styles In SvelteKit" />
 
 ## Table of Contents
 

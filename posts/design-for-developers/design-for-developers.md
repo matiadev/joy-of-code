@@ -6,7 +6,12 @@ published: '2021-11-5'
 category: design
 ---
 
-{% youtube id="YNOwO5s4AL8" title="Design For Developers" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="YNOwO5s4AL8" title="Design For Developers" />
 
 ## Table of Contents
 
@@ -34,7 +39,7 @@ Contrast draws **attention**.
 
 You can achieve **contrast** through **color**, **size** of text, and shapes to make elements look different. **Contrast** creates **visual hierarchy** meaning you know what is important on the page and in what order to read information.
 
-{% img src="text-contrast.webp" alt="Text contrast" %}
+<Image src="text-contrast.webp" alt="Text contrast" />
 
 Use **color** to increase or reduce contrast for text that isn't important, or reduce **eyestrain**.
 
@@ -42,15 +47,15 @@ You can use a shade of gray on a white background but don't do the same on a **c
 
 In that case you should pick the same background color and adjust the **contrast**.
 
-{% img src="color-contrast-bad.webp" alt="Bad text contrast" %}
+<Image src="color-contrast-bad.webp" alt="Bad text contrast" />
 
 The contrast has to pass [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) (Web Content Accessibility Guidelines), and has three levels of conformance ranging from **A**, **AA** to **AAA**.
 
-{% img src="color-contrast-good.webp" alt="Good text contrast" %}
+<Image src="color-contrast-good.webp" alt="Good text contrast" />
 
 Use the developer tools to check the contrast ratio.
 
-{% img src="contrast-checker.webp" alt="Contrast checker in developer tools" %}
+<Image src="contrast-checker.webp" alt="Contrast checker in developer tools" />
 
 ## Repetition
 
@@ -58,19 +63,19 @@ Repetition creates **consistency** in your design.
 
 Using a **consistent** style for your elements creates **rhythm** by repeating the same **font**, **size**, and **color** which makes your content more readable.
 
-{% img src="repetition.webp" alt="Repetition" %}
+<Image src="repetition.webp" alt="Repetition" />
 
 You've probably seen one of these landing pages that lets you know there's more content on the page.
 
-{% img src="scroll-more-idiot.webp" alt="Mouse indicating scrolling" %}
+<Image src="scroll-more-idiot.webp" alt="Mouse indicating scrolling" />
 
 A more clever use of design would be using the line from the logo to establish **repetition**. If you look closely none of the elements are placed randomly but with purpose. I'm going to talk more about this in **alignment**.
 
-{% img src="repetition-scrolling-heading.webp" alt="Using a design element to indicate scrolling" %}
+<Image src="repetition-scrolling-heading.webp" alt="Using a design element to indicate scrolling" />
 
 This entices the reader of your content to explore more. The number is mostly a design element, and doesn't have to have meaning, unless you want to establish **repetition** by numbering every section.
 
-{% img src="repetition-scrolling-area.webp" alt="Using a design element to indicate scrolling" %}
+<Image src="repetition-scrolling-area.webp" alt="Using a design element to indicate scrolling" />
 
 The more you look at design, the more you're going to pick up on these details.
 
@@ -84,11 +89,11 @@ Great design is in the details.
 
 A often **mistake** you can make is **centering** everything, and not constraining the width of the text which makes it hard to read.
 
-{% img src="alignment-bad.webp" alt="Bad alignment" %}
+<Image src="alignment-bad.webp" alt="Bad alignment" />
 
 The difference is stark using only **left alignment**.
 
-{% img src="alignment-good.webp" alt="Good alignment" %}
+<Image src="alignment-good.webp" alt="Good alignment" />
 
 You can enable the grid in a design tool like [Figma](https://www.figma.com/). I'm using a **twelve column grid** since that's the most frequently used one.
 
@@ -96,7 +101,7 @@ You can use [CSS grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid
 
 Let me show you the **invisible line** I mentioned earlier.
 
-{% img src="alignment-grid.webp" alt="Alignment grid overlay" %}
+<Image src="alignment-grid.webp" alt="Alignment grid overlay" />
 
 You should always have a strong **horizontal** or **vertical** line because it anchors your eye.
 
@@ -108,7 +113,7 @@ Bad design is design that looks **unintentional**.
 
 Let's look at the design of [Apple.com](https://www.apple.com/) to see how they "break the rules". You can observe how design is used to create interest where the products break the monotonous grid. Because the rest of the design is on a grid, and aligned perfectly it looks **intentional**, and not like a mistake.
 
-{% img src="apple-grid.webp" alt="Apple.com grid overlay" %}
+<Image src="apple-grid.webp" alt="Apple.com grid overlay" />
 
 ## Proximity
 
@@ -116,17 +121,17 @@ Proximity is **grouping related things together**.
 
 Use **proximity** instead of spacing everything **evenly**.
 
-{% img src="proximity.webp" alt="Proximity" %}
+<Image src="proximity.webp" alt="Proximity" />
 
 Proximity lets you brain group related information together, so it appears as **one visual unit** instead of feeling **unrelated**.
 
-{% img src="proximity-outline.webp" alt="Outline around elements showing proximity" %}
+<Image src="proximity-outline.webp" alt="Outline around elements showing proximity" />
 
 ## Layout
 
 Before you do anything, use **a piece of paper**, or a design tool to draw **wireframes** which are just simple boxes that represent your layout to avoid a lot of problems.
 
-{% img src="wireframe.webp" alt="Wireframe" %}
+<Image src="wireframe.webp" alt="Wireframe" />
 
 Another mistake is having your site look like it's made out of boxes by using a different background colors for every section. Use a more subtle shade of color instead to separate the content with subtle borders.
 
@@ -140,7 +145,7 @@ This isn't always the case because a lot of great looking design isn't always pr
 
 You can take this boring landing page, and use design to add some **visual interest**. Do as many layout ideas as you want.
 
-{% img src="wireframe-landing-page.webp" alt="Landing page wireframe" %}
+<Image src="wireframe-landing-page.webp" alt="Landing page wireframe" />
 
 Don't try to make it look good, but just try out random ideas.
 
@@ -148,11 +153,11 @@ Don't try to make it look good, but just try out random ideas.
 
 Great design is about consistency, and using the four principles of design to create a cohesive looking design.
 
-{% img src="alignment-spacing.webp" alt="Alignment spacing" %}
+<Image src="alignment-spacing.webp" alt="Alignment spacing" />
 
 ## Typography
 
-{% img src="typefaces.webp" alt="Typefaces" %}
+<Image src="typefaces.webp" alt="Typefaces" />
 
 Typography is important because it evokes emotion.
 
@@ -183,11 +188,11 @@ The optimal reading length for text is around **60 characters** but I prefer to 
 
 Always test how your typography looks on **real text**, and don't forget to adjust your title's **line height** to compensate.
 
-{% img src="typography.webp" alt="Typography" %}
+<Image src="typography.webp" alt="Typography" />
 
 ## Color
 
-{% img src="color-wheel.webp" alt="Color wheel" %}
+<Image src="color-wheel.webp" alt="Color wheel" />
 
 You don't have to understand color theory.
 
@@ -195,15 +200,15 @@ Find a **primary** color you like. From there find a **complementary** color tha
 
 To find a **complementary** color is simple — just pick the color opposite the **primary** color you picked on the **color wheel**.
 
-{% img src="color-picker.webp" alt="Color picker" %}
+<Image src="color-picker.webp" alt="Color picker" />
 
 I like the [color picker from Canva](https://www.canva.com/colors/color-wheel/) because it's simple, and you can learn more about color.
 
 You can use the **60-30-10** color rule from interior design, where **60%** is the **main** color, **30%** is the **secondary** color, and **10%** is the **accent** color.
 
-{% img src="color-palette.webp" alt="Color palette" %}
+<Image src="color-palette.webp" alt="Color palette" />
 
-{% img src="color-rule.webp" alt="Color rule" %}
+<Image src="color-rule.webp" alt="Color rule" />
 
 The **primary** color doesn't always have to be **60%**, and you can flip the values for different sections of your site.
 

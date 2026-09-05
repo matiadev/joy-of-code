@@ -6,7 +6,11 @@ published: '2023-11-10'
 category: sveltekit
 ---
 
-{% youtube id="Xvq8rCl1lIM" title="How To Create And Publish Your JavaScript Library With SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="Xvq8rCl1lIM" title="How To Create And Publish Your JavaScript Library With SvelteKit" />
 
 ## Table of Contents
 

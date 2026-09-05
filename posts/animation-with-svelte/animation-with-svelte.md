@@ -6,7 +6,13 @@ published: '2022-9-22'
 category: svelte
 ---
 
-{% youtube id="3RlBfUQCiAQ" title="Animation With Svelte" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="3RlBfUQCiAQ" title="Animation With Svelte" />
 
 ## Table of Contents
 
@@ -18,7 +24,7 @@ Animations can tell stories and help the user not feel disoriented if elements o
 
 In Svelte animations are a first class-citizen because Svelte was forged by [@Rich_Harris](https://twitter.com/Rich_Harris) in a newsroom for that purpose and is popularly used for but not limited to visual storytelling and data visualizations since then.
 
-{% img src="tweet.webp" alt="Svelte used for graphics at The New York Times" %}
+<Image src="tweet.webp" alt="Svelte used for graphics at The New York Times" />
 
 > 🧪 The code is available on [GitHub](https://github.com/joysofcode/animation-with-svelte) or you can view the examples on [StackBlitz](http://stackblitz.com/github/joysofcode/animation-with-svelte).
 
@@ -30,7 +36,7 @@ A transition is triggered by an element entering or leaving the page as a result
 
 Svelte exposes seven transition functions `fade`, `blur`, `fly`, `slide`, `scale`, `draw` and `crossfade`.
 
-{% video src="transitions-examples.mp4" %}
+<Video src="transitions-examples.mp4" />
 
 You can use the same intro and outro transition with `transition:fade` but if you want to use different intro and outro transitions use `in:` and `out:`.
 
@@ -69,7 +75,7 @@ Each transition function accepts at least a `delay`, `duration` and `easing` par
 
 You can specify a custom easing function or use a built-in [Svelte easing functions](https://svelte.dev/docs#run-time-svelte-easing) to give character to your animations — use the [ease visualiser](https://svelte.dev/examples/easing) to explore different easing options.
 
-{% video src="transitions-fly.mp4" %}
+<Video src="transitions-fly.mp4" />
 
 I want to animate a title and need to split the lines which is simple using Svelte:
 
@@ -210,7 +216,7 @@ You might encounter an undesired effect when your parent element transition play
 
 Local transitions only play when the block they belong to is created or destroyed and don't get triggered when parent blocks are created or destroyed.
 
-{% video src="transitions-local.mp4" %}
+<Video src="transitions-local.mp4" />
 
 You're not going to encounter this problem often but when you do it's useful to know about and you only have to add the `local` modifier to your transition.
 
@@ -288,7 +294,7 @@ You're not going to encounter this problem often but when you do it's useful to 
 
 Sometimes you want to play a transition whenever a value changes and the `{#key ...}` block exists for that purpose as key blocks destroy and recreate their contents when the value changes.
 
-{% video src="transitions-key.mp4" %}
+<Video src="transitions-key.mp4" />
 
 Let's say I have notifications and I want to animate the count when it updates.
 
@@ -443,7 +449,7 @@ It has a similar signature to [Svelte actions](https://learn.svelte.dev/tutorial
 
 > 🐿️ Svelte transitions use CSS instead of JavaScript, so they don't cause jank because they can run separately and not block the main thread.
 
-{% video src="transitions-custom-css.mp4" %}
+<Video src="transitions-custom-css.mp4" />
 
 I have a simple modal I want to spice up when a user opens it by scaling and transforming it:
 
@@ -562,7 +568,7 @@ Time to use the best modal ever.
 
 The Svelte documentation advises to use `css` when possible because of performance reasons but if you want to do something more ambitious like a typewriter effect using JavaScript you can use `tick` with the same arguments.
 
-{% video src="transitions-custom-js.mp4" %}
+<Video src="transitions-custom-js.mp4" />
 
 ```svelte:+page.svelte {10-24, 35-37} showLineNumbers
 <script lang="ts">
@@ -621,7 +627,7 @@ The Svelte documentation advises to use `css` when possible because of performan
 
 Use deferred transitions when you want to choreograph elements changing position from one parent to another to create an illusion how objects behave in the real world instead of disappearing and reappearing.
 
-{% img src="crossfade.webp" alt="Diagram showing how crossfade works" %}
+<Image src="crossfade.webp" alt="Diagram showing how crossfade works" />
 
 The `crossfade` function creates a pair of transitions called `send` and `receive`:
 
@@ -630,7 +636,7 @@ The `crossfade` function creates a pair of transitions called `send` and `receiv
 - If there is nothing to animate to the `fallback` transition is used
 - You can set options for `crossfade` including `delay`, `duration`, `easing` and `fallback`
 
-{% video src="transitions-deferred.mp4" %}
+<Video src="transitions-deferred.mp4" />
 
 I have some items I'm sending from one element to another and I want to animate that change using `crossfade` and provide a fallback when the item is removed.
 
@@ -766,11 +772,11 @@ The [FLIP](https://aerotwist.com/blog/flip-your-animations/) animation technique
 
 > 🐿️ The FLIP animation technique works by calculating the difference between the FIRST and LAST position of an element, INVERTING it to the original position and PLAYING it to the last position.
 
-{% img src="flip.webp" alt="Diagram showing how FLIP works" %}
+<Image src="flip.webp" alt="Diagram showing how FLIP works" />
 
 In the previous example if you remove an element it just leaves an empty space before it's removed but it would be a lot nicer if the elements around it react and change their position which sounds complicated but it's one line of code.
 
-{% video src="animate-flip.mp4" %}
+<Video src="animate-flip.mp4" />
 
 ```svelte:+page.svelte {2, 11, 27} showLineNumbers
 <script lang="ts">
@@ -829,7 +835,7 @@ Use `tweened` when you need a smooth transition between two values.
 
 In the next example I made a Pokémon game simulator where the Pokémon receives damage over time but I want to smoothly animate that change in value over time which only takes one line of code.
 
-{% video src="motion-tweened.mp4" %}
+<Video src="motion-tweened.mp4" />
 
 ```svelte:+page.svelte {3, 12, 18, 26, 49-50, 54} showLineNumbers
 <script lang="ts">
@@ -989,7 +995,7 @@ You can't use `spring` with Svelte transitions because springs don't have a set 
 
 I have a simple box I want to animate using spring physics and I'm going to use [Svelte actions](https://svelte.dev/docs#template-syntax-element-directives-use-action) which are just regular functions that gives us a reference to the element when it's created because I want to be able to reuse the animation on other elements.
 
-{% video src="motion-spring.mp4" %}
+<Video src="motion-spring.mp4" />
 
 ```svelte:+page.svelte {2, 11-35, 40} showLineNumbers
 <script lang="ts">
@@ -1055,7 +1061,7 @@ So far you have seen what a powerful combination `crossfade` and `flip` make but
 
 I'm working on a card game and want to animate placing cards from your hand to the deck and taking the card back from the deck but it's not looking great because `crossfade` doesn't consider the rotation.
 
-{% video src="flip-svelte.mp4" %}
+<Video src="flip-svelte.mp4" />
 
 There's other problems when it comes to FLIP animations like nested transforms (rotations are evil okay) but GSAP provides a [Flip plugin](https://greensock.com/docs/v3/Plugins/Flip/) that takes care of everything for you.
 
@@ -1232,7 +1238,7 @@ There's other problems when it comes to FLIP animations like nested transforms (
 </style>
 ```
 
-{% video src="flip-gsap.mp4" %}
+<Video src="flip-gsap.mp4" />
 
 The best thing about Svelte is the ease of using existing JavaScript libraries because it doesn't require special lifecycle methods to work and makes code reuse easy thanks to [actions](https://learn.svelte.dev/tutorial/actions).
 

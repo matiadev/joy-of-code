@@ -6,6 +6,10 @@ published: '2021-5-29'
 category: git
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 ## How to Write a Git Commit Message
@@ -42,7 +46,7 @@ git log --pretty=oneline
 # a11bef06 Polishing
 ```
 
-{% img src="confused.webp" alt="Person with a confused look on their face" %}
+<Image src="confused.webp" alt="Person with a confused look on their face" />
 
 Compared to being more clear, and descriptive:
 
@@ -91,19 +95,19 @@ There's other reasons why this system is useful:
 
 You can use the [Conventional Commits extension](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits). It makes it simple to write commits, in a couple of steps, using a dialogue. Pressing <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd> brings us to the source control panel:
 
-{% img src="git.png" alt="Arrow pointing to the location of Conventional Commmits inside VS Code" %}
+<Image src="git.png" alt="Arrow pointing to the location of Conventional Commmits inside VS Code" />
 
 You can select the type of change:
 
-{% img src="options.png" alt="Dialogue with options for type of commit" %}
+<Image src="options.png" alt="Dialogue with options for type of commit" />
 
 There's even emoji options:
 
-{% img src="gitmoji.png" alt="Dialogue with options for emojis" %}
+<Image src="gitmoji.png" alt="Dialogue with options for emojis" />
 
 After you're done, and do a `git log`:
 
-{% img src="commit.png" alt="Shows git log, after creating a conventional commit" %}
+<Image src="commit.png" alt="Shows git log, after creating a conventional commit" />
 
 Congrats!
 

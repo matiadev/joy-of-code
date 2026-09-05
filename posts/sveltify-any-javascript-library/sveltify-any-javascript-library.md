@@ -6,7 +6,12 @@ published: '2023-09-29'
 category: svelte
 ---
 
-{% youtube id="RuM4KHTZqD4" title="Sveltify Any JavaScript Library" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="RuM4KHTZqD4" title="Sveltify Any JavaScript Library" />
 
 ## Table of Contents
 
@@ -16,7 +21,7 @@ category: svelte
 
 Instead of using regular JavaScript you can take advantage of the declarative nature of Svelte and **Sveltify** any JavaScript library for a nicer developer experience — which you can also publish on [npm](https://www.npmjs.com/) if you want.
 
-{% embed src="https://stackblitz.com/github/joysofcode/sveltify?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Sveltify Any JavaScript Library" title="Sveltify Any JavaScript Library" %}
+<Embed src="https://stackblitz.com/github/joysofcode/sveltify?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Sveltify Any JavaScript Library" title="Sveltify Any JavaScript Library" />
 
 You can find the source code on [GitHub](https://github.com/joysofcode/sveltify).
 

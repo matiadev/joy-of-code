@@ -6,7 +6,12 @@ published: '2023-08-08'
 category: svelte
 ---
 
-{% youtube id="w2q9caYXgkg" title="Learn Svelte By Making A Matching Game" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="w2q9caYXgkg" title="Learn Svelte By Making A Matching Game" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: svelte
 
 You're going to make a fun matching game and learn more about state management and reactivity in Svelte.
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-matching-game?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Matching Game" title="Svelte Matching Game" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-matching-game?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Matching Game" title="Svelte Matching Game" />
 
 [Try the game](https://www.sveltelab.dev/23ecr9zxtm5juw2) in your browser (you might need to enable cookies) and you can also find the code on [GitHub](https://github.com/joysofcode/svelte-matching-game).
 

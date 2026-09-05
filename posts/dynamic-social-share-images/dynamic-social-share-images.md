@@ -6,13 +6,17 @@ published: '2021-10-7'
 category: typescript
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 ## Why Use Social Share Images
 
 Using a **social share image** is important to make your content stand out in a feed when you link it on **social media** because it **draws your attention** and has a large **actionable** area.
 
-{% img src="social-card.webp" alt="Example of a social share image" %}
+<Image src="social-card.webp" alt="Example of a social share image" />
 
 In this post I'm going to show you a simple way how to automate that process, so that you're able to **art direct** and **quickly export** one for your post using what you already know as a developer without involving a **headless browser**, or **serverless**.
 
@@ -35,7 +39,7 @@ Here is a [Twitter](https://twitter.com/) example that displays the **large card
 
 We're going to design the **social share image** with plain **HTML** and **CSS**, then take an **optimized image** of it that we can save.
 
-{% img src="social-share.webp" alt="Finished project showing a social share card and a save button" %}
+<Image src="social-share.webp" alt="Finished project showing a social share card and a save button" />
 
 We're going to use [Vite](https://vitejs.dev/) to initialize the project with **vanilla TypeScript** which is optional, so you can select **vanilla** if you prefer **JavaScript** and ignore types.
 
@@ -67,7 +71,7 @@ Thanks to the `contenteditable` attribute we can directly edit the text inside t
 
 For the styles we have to define a `width` and `height` of **1200x630** recommended by **Facebook** for **social share images**. We're going to add some simple styles and add a design element for interest that can be a **SVG**, or a simple shape using **CSS**.
 
-{% img src="social-share-image.png" alt="Social share image" %}
+<Image src="social-share-image.png" alt="Social share image" />
 
 Feel free to experiment with the design of your card. You can find a lot of cool patterns from places such as [Hero Patterns](https://www.heropatterns.com/) and [unDraw](https://undraw.co/illustrations), or use any **SVG** illustration site you like.
 

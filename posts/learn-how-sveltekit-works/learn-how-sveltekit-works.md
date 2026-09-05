@@ -6,7 +6,12 @@ published: '2022-7-6'
 category: sveltekit
 ---
 
-{% youtube id="VizuTy3uSNE" title="Learn How SvelteKit Works" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="VizuTy3uSNE" title="Learn How SvelteKit Works" />
 
 ## Table of Contents
 
@@ -16,7 +21,7 @@ I started web development at the height of the React era when single page applic
 
 As time moved on progressive enhancement was pushed to the side and instead of using JavaScript to enhance the user experience it started being required.
 
-{% img src="twitter.webp" alt="Twitter with JavaScript disabled" %}
+<Image src="twitter.webp" alt="Twitter with JavaScript disabled" />
 
 If you disable JavaScript on Twitter it doesn't work because it's a single page application that uses React.
 
@@ -348,7 +353,7 @@ Vite is a next generation build tool made by the Vue creator [Evan You](https://
 
 If you could zoom out and see a visual representation of what makes SvelteKit you would see something like this I consider to be the most relevant.
 
-{% img src="sveltekit.webp" alt="SvelteKit diagram" %}
+<Image src="sveltekit.webp" alt="SvelteKit diagram" />
 
 - **Vite** (development server, file watcher, bundler)
 - **Adapters** (plugins that generate output for target platforms)
@@ -358,7 +363,7 @@ If you could zoom out and see a visual representation of what makes SvelteKit yo
 
 If this was a crime show this would be the part where you say “enhance” so let's do that for Kit and see what makes it work.
 
-{% img src="kit.webp" alt="Kit diagram" %}
+<Image src="kit.webp" alt="Kit diagram" />
 
 - **Vite plugins** `vite-plugin-svelte` and `vite-plugin-svelte-kit`
 - **Node** that includes polyfills for the Fetch API using `node-fetch` and makes web APIs available as globals
@@ -459,7 +464,7 @@ If you look at the **network** tab when the page loads it's going to fetch [`htt
 
 This should be expected because we're not using server-side rendering (don't confuse the API endpoint we made for server-side rendering) but doing the data fetching on the client and using client-side rendering.
 
-{% img src="csr.webp" alt="Client-side rendering diagram" %}
+<Image src="csr.webp" alt="Client-side rendering diagram" />
 
 Client-side rendering is less resilient because JavaScript can fail for whatever reason but it also has the downside of making the round-trip to get the data.
 
@@ -588,7 +593,7 @@ If you open the page it's going to be server-side rendered meaning if you look a
 
 Instead of doing a round-trip when using client-side rendering before we use server-side rendering to get everything from the server and show it to the user.
 
-{% img src="ssr.webp" alt="Server-side rendering diagram" %}
+<Image src="ssr.webp" alt="Server-side rendering diagram" />
 
 Another interesting aside is what SvelteKit does with the `fetch` response:
 
@@ -634,7 +639,7 @@ If you navigate from `/` to `/pikachu` you can see a `GET` request to [http://lo
 
 If you navigate from `/pokemon` back to `/` you can see a `GET` request for [http://localhost:3000/api/pokemon.json](http://localhost:3000/api/pokemon.json) and if that was a page endpoint it would be `__data.json`.
 
-{% img src="navigation.webp" alt="Page navigation diagram" %}
+<Image src="navigation.webp" alt="Page navigation diagram" />
 
 When you load a page the favicon in your browser tab spins indicating the page is loading but if you look at it during navigation you're going to notice it doesn't indicating client-side navigation.
 
@@ -646,7 +651,7 @@ You can add the global `browser.router` config option or add [page options](http
 
 When a user requests a page the server sends a “dry” HTML page where the components are rendered as HTML but to make the page interactive with JavaScript hydration is used to load the JavaScript and make the page interactable.
 
-{% img src="hydration.webp" alt="Hydration diagram" %}
+<Image src="hydration.webp" alt="Hydration diagram" />
 
 Hydration sounds like a fancy term but it just means adding JavaScript back to your server-side rendered HTML page.
 
@@ -857,7 +862,7 @@ If you **view page source** you can see the hydrate script added by SvelteKit.
 
 If you go to the **sources tab** in your developer tools inside `counter.svelte` and put a breakpoint on the line that invokes the `start` function you can step through it if you're adventurous.
 
-{% img src="debugger.webp" alt="Debugger" %}
+<Image src="debugger.webp" alt="Debugger" />
 
 This is where the magic happens inside `.svelte-kit/runtime/client/start.js`.
 

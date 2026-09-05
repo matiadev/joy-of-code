@@ -6,7 +6,11 @@ published: '2024-11-20'
 category: svelte
 ---
 
-{% youtube id="XsYyruvbNVc" title="Avoid Async Effects In Svelte" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="XsYyruvbNVc" title="Avoid Async Effects In Svelte" />
 
 ## Table of Contents
 

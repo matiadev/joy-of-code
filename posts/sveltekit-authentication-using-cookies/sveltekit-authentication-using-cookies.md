@@ -6,7 +6,11 @@ published: '2022-5-12'
 category: sveltekit
 ---
 
-{% youtube id="E3VG-dLCRUk" title="SvelteKit Authentication Using Cookies" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="E3VG-dLCRUk" title="SvelteKit Authentication Using Cookies" />
 
 ## Table of Contents
 

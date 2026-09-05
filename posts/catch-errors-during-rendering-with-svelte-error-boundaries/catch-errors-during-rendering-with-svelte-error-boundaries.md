@@ -6,7 +6,11 @@ published: '2024-12-04'
 category: svelte
 ---
 
-{% youtube id="MMK9tR4pH2A" title="Svelte Error Boundaries" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="MMK9tR4pH2A" title="Svelte Error Boundaries" />
 
 ## Table of Contents
 

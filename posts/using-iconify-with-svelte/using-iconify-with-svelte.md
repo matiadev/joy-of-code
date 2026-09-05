@@ -6,7 +6,11 @@ published: '2022-12-11'
 category: category
 ---
 
-{% youtube id="iGVhzsTZSa8" title="The Best Icon Library For Svelte" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="iGVhzsTZSa8" title="The Best Icon Library For Svelte" />
 
 ## Table of Contents
 

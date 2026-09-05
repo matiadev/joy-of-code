@@ -6,7 +6,12 @@ published: '2022-12-20'
 category: sveltekit
 ---
 
-{% youtube id="obmiLi3bhkQ" title="What Is SvelteKit?" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="obmiLi3bhkQ" title="What Is SvelteKit?" />
 
 ## Table of Contents
 
@@ -122,11 +127,11 @@ Most frameworks make you decide between SSR (server-side rendering) or SSG (prer
 
 Traditional SPAs (single-page application) rely on JavaScript to load first before they can fetch any data causing a round-trip and loading spinners.
 
-{% img src="spa.webp" alt="Single page application" %}
+<Image src="spa.webp" alt="Single page application" />
 
 SvelteKit apps are server-side rendered by default for speed and SEO (search engine optimization) but once the page is loaded the client-side router kicks in which makes your app feel like a SPA to avoid reloading the page between page navigation.
 
-{% img src="ssr.webp" alt="Server-side rendering" %}
+<Image src="ssr.webp" alt="Server-side rendering" />
 
 ## SvelteKit Uses The Web Platform
 

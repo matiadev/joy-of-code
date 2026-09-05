@@ -6,6 +6,10 @@ published: '2021-9-7'
 category: javascript
 ---
 
+<script lang="ts">
+	import Video from '#lib/components/video.svelte'
+</script>
+
 One of my favorite things when working with vanilla **JavaScript** is using [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) because it makes working with the **Document Object Model** (DOM) faster and more fun than using the **imperative** browser API.
 
 Take the output of some movies as example.
@@ -62,7 +66,7 @@ const moviesHtml = /* html */ `
 document.body.innerHTML = moviesHtml
 ```
 
-{% video src="extension.mp4" %}
+<Video src="extension.mp4" />
 
 ## Conclusion
 

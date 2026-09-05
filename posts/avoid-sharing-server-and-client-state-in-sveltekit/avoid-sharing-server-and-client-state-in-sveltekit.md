@@ -6,7 +6,11 @@ published: '2024-11-30'
 category: sveltekit
 ---
 
-{% youtube id="0Sf1Q0eSJnw" title="Avoid Leaking User Data In Your SvelteKit App" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="0Sf1Q0eSJnw" title="Avoid Leaking User Data In Your SvelteKit App" />
 
 ## Table of Contents
 

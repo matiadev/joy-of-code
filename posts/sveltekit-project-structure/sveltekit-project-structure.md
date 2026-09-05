@@ -6,7 +6,11 @@ published: '2022-12-22'
 category: sveltekit
 ---
 
-{% youtube id="5VBdyfGhs7A" title="SvelteKit Project Structure Explained" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="5VBdyfGhs7A" title="SvelteKit Project Structure Explained" />
 
 ## Table of Contents
 

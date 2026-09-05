@@ -6,7 +6,11 @@ published: '2022-12-11'
 category: svelte
 ---
 
-{% youtube id="-n84EMKIXQM" title="The Best CSS Framework For Svelte" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="-n84EMKIXQM" title="The Best CSS Framework For Svelte" />
 
 ## Table of Contents
 

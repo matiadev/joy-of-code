@@ -6,11 +6,13 @@ published: '2023-06-09'
 category: svelte
 ---
 
-<script>
+<script lang="ts">
 	import Card from '#lib/components/card.svelte'
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
 </script>
 
-{% youtube id="67lqa5kTQkA" title="Create Beautiful Presentations With Svelte" %}
+<YouTube id="67lqa5kTQkA" title="Create Beautiful Presentations With Svelte" />
 
 ## Table of Contents
 
@@ -22,7 +24,7 @@ category: svelte
 
 No one likes boring presentations, but what if you could make them more engaging through rich visuals and animations using web technologies you're already familiar with?
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-deck?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Deck" title="Svelte Deck" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-deck?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Deck" title="Svelte Deck" />
 
 You might need to **enable cookies** for the example but the code is also available on [GitHub](https://github.com/joysofcode/svelte-deck).
 

@@ -6,7 +6,11 @@ published: '2022-10-12'
 category: sveltekit
 ---
 
-{% youtube id="J_G_xP0chog" title="SvelteKit With Tailwind CSS" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="J_G_xP0chog" title="SvelteKit With Tailwind CSS" />
 
 ## Table of Contents
 

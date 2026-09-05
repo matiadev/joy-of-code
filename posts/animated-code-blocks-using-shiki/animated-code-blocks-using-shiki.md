@@ -6,13 +6,18 @@ published: '2024-04-14'
 category: svelte
 ---
 
-{% youtube id="RbfIcFZsISg" title="Animated Code Blocks Using Shiki Magic Move" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="RbfIcFZsISg" title="Animated Code Blocks Using Shiki Magic Move" />
 
 ## Table of Contents
 
 ## What Is Shiki Magic Move?
 
-{% embed src="https://stackblitz.com/github/joysofcode/shiki-magic-move?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&view=preview&title=Shiki Magic Move" title="Shiki Magic Move" %}
+<Embed src="https://stackblitz.com/github/joysofcode/shiki-magic-move?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&view=preview&title=Shiki Magic Move" title="Shiki Magic Move" />
 
 You can click on the example on the page to activate the code block animation. You can find the [source code](https://github.com/joysofcode/shiki-magic-move) on GitHub.
 

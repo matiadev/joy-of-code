@@ -6,7 +6,13 @@ published: '2022-10-21'
 category: svelte
 ---
 
-{% youtube id="kMz_Ba_OF2w" title="Svelte Typing Game" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="kMz_Ba_OF2w" title="Svelte Typing Game" />
 
 ## Table of Contents
 
@@ -14,7 +20,7 @@ category: svelte
 
 By the end of this post you're going to make a typing game that measures your typing speed similar to [Monkeytype](https://monkeytype.com/).
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-typing-game?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Typing Game" title="Svelte Typing Game" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-typing-game?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Typing Game" title="Svelte Typing Game" />
 
 ## Setup
 
@@ -161,11 +167,11 @@ Problem solving in coding is similar to math where you need to figure out what i
 
 After thinking about it the variables required to solve the problem are the typed letter and the current word and letter.
 
-{% img src="game.webp" alt="Typing game diagram" %}
+<Image src="game.webp" alt="Typing game diagram" />
 
 I always find it helpful to think about how to "drive" state using a data structure and update the user interface based on some logic.
 
-{% img src="state.webp" alt="State diagram" %}
+<Image src="state.webp" alt="State diagram" />
 
 Given the sentence **"The quick brown fox jumps over a lazy dog"** you can turn it into an array `['The', 'quick', 'brown', 'fox', '...']` using the `split` method.
 
@@ -451,7 +457,7 @@ The simplest way I found to do that is taking the `Y` position of the words cont
 
 To get the measurements I'm using [`getBoundingClientRect`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect) which gives you the size and position of an element relative to the viewport and is useful for many things.
 
-{% img src="rect.webp" alt="Visual of the getBoundingClientRect() method" %}
+<Image src="rect.webp" alt="Visual of the getBoundingClientRect() method" />
 
 We're going to get a reference to the current word `wordEl`, the `Y` position for words `wordsY` and the `Y` position for the current word `wordY`.
 
@@ -490,7 +496,7 @@ I already have the reference to the letter from `letterEl` and it has some usefu
 
 Moving the caret is going to be simple as updating the `top` and `left` position.
 
-{% img src="offset.webp" alt="Element offset properties" %}
+<Image src="offset.webp" alt="Element offset properties" />
 
 Don't forget to invoke `moveCaret` when updating the game state and going to the next word.
 

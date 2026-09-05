@@ -6,7 +6,12 @@ published: '2023-10-12'
 category: svelte
 ---
 
-{% youtube id="L3uBfL-4dDM" title="Svelte Stores" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="L3uBfL-4dDM" title="Svelte Stores" />
 
 ## Table of Contents
 
@@ -58,7 +63,7 @@ export const counter = createCounter(0)
 
 This is also known as the [observer pattern](https://www.patterns.dev/posts/observer-pattern) which is just an object with subscribers who get notified when a value they're subscribed to updates — you might have heard of it as the **publish-subscribe**, or **pub/sub** pattern.
 
-{% img src="observer.webp" alt="Observer pattern" %}
+<Image src="observer.webp" alt="Observer pattern" />
 
 You can subscribe to the `counter` inside a component or regular JavaScript module.
 
@@ -200,7 +205,7 @@ So what is a Svelte store?
 
 A Svelte store is an object with a `subscribe`, `update`, and `set` method that allows you to manage and share reactive state across multiple components. It provides a straightforward way to handle data that needs to be accessed globally, enabling components to subscribe to changes and automatically re-render when the store's value changes.
 
-{% img src="store.webp" alt="Svelte store" %}
+<Image src="store.webp" alt="Svelte store" />
 
 You can import a `writable`, `readable`, or `derived` store from `svelte/store`.
 

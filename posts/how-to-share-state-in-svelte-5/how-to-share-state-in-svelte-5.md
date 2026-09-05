@@ -6,7 +6,11 @@ published: '2024-11-08'
 category: svelte
 ---
 
-{% youtube id="qI31XOrBuY0" title="Different Ways To Share State In Svelte 5" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="qI31XOrBuY0" title="Different Ways To Share State In Svelte 5" />
 
 ## Table of Contents
 

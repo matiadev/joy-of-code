@@ -6,7 +6,12 @@ published: '2023-3-24'
 category: sveltekit
 ---
 
-{% youtube id="uAF4Yd-gddo" title="Deploy A Full Stack SvelteKit App" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="uAF4Yd-gddo" title="Deploy A Full Stack SvelteKit App" />
 
 ## Table of Contents
 
@@ -26,7 +31,7 @@ This is part of a [SvelteKit series](https://www.youtube.com/watch?v=obmiLi3bhkQ
 
 By the end of this post you're going to learn how to host a full stack SvelteKit app using Prisma with a PostgreSQL database and authentication on Supabase and Vercel.
 
-{% img src="blog.webp" alt="SvelteKit blog" %}
+<Image src="blog.webp" alt="SvelteKit blog" />
 
 ## Web Hosting Types
 
@@ -40,15 +45,15 @@ There are several types of affordable web hosting you can use that is great for 
 
 This web hosting lore is mostly so we can understand things moving on and you shouldn't concern yourself with infrastructure and scaling because if scale ever becomes a problem for you then you're a more serious business that can afford to pay someone else to manage the infrastructure.
 
-{% img src="specialized.webp" alt="Specialized hosting solutions" %}
+<Image src="specialized.webp" alt="Specialized hosting solutions" />
 
 You might be familiar with traditional hosting solutions like [Digital Ocean](https://www.digitalocean.com/), [Linode](https://www.linode.com/) or [Vultr](https://www.vultr.com/) but I'm going to refer to them as specialized hosting solutions since they're all cloud providers which can get you started for a cool **$5**/month and have integrations with popular services.
 
-{% img src="generalist.webp" alt="Generalist hosting solutions" %}
+<Image src="generalist.webp" alt="Generalist hosting solutions" />
 
 Besides the specialized cloud providers that are focused on consumers you have the titans of infrastructure such as [Amazon Web Services (AWS)](https://aws.amazon.com/), [Google Cloud Platform (GCP)](https://cloud.google.com/) or [Microsoft Azure](https://azure.microsoft.com/) that offer a lot more services and are aimed at large enterprise. This might sound boring but important to help us understand how the next tier of hosting came to be.
 
-{% img src="serverless.webp" alt="Serverless hosting solutions" %}
+<Image src="serverless.webp" alt="Serverless hosting solutions" />
 
 If you want to use **infrastructure as a service** (IaaS) like AWS you need a degree to understand it. Because of that companies like [Vercel](https://vercel.com/) realized they could make an easy to use **CLI** around some of the **AWS offerings** like [AWS Lambda](https://aws.amazon.com/lambda/) and then provide you with an easy to use **frontend** and charge you money for it which makes everyone happy.
 
@@ -66,7 +71,7 @@ You might be just starting your web development journey or don't have an income 
 
 The site you're on uses Vercel and I haven't paid anything so far and what's more awesome is if your project is open source and non-commercial [Vercel can sponsor your project](https://vercel.com/guides/can-vercel-sponsor-my-open-source-project).
 
-{% img src="full-stack.webp" alt="Full stack platforms" %}
+<Image src="full-stack.webp" alt="Full stack platforms" />
 
 You might have heard of [Heroku](https://www.heroku.com/) because they take the amazing developer experience of Vercel but do it for the entire stack by having instant deploys configured.
 
@@ -74,7 +79,7 @@ Heroku has fallen out of favor recently because of their changes to their busine
 
 The reason why I haven't picked any of these is because while they have a free tier most of them require a credit card to prevent abuse because the moment you give someone a real server they're going to do nefarious things but it doesn't mean they're not awesome.
 
-{% img src="databases.webp" alt="Serverless databases" %}
+<Image src="databases.webp" alt="Serverless databases" />
 
 Because serverless has it's unique set of problems there's a bunch of serverless database providers you can use including [Supabase](https://supabase.com/) (PostgreSQL), [PlanetScale](https://planetscale.com/) (MySQL) and [MongoDB Atlas](https://www.mongodb.com/atlas/database) (MongoDB) but in this case the important part is that they have a generous free tier and some of them offer a lot more like Supabase and you can't go wrong if you pick any of these serverless databases.
 
@@ -163,13 +168,13 @@ This doesn't mean we can't take advantage over things that make a static site fa
 
 A CDN is just some servers around the globe that take the static assets like images, video and HTML and host them close to you, so when you make a request it's super fast.
 
-{% img src="cdn.webp" alt="Content delivery network" %}
+<Image src="cdn.webp" alt="Content delivery network" />
 
 Server-side rendering isn't slow because it's cheap to build a HTML page on the server but the expensive part and problem are the physics because of latency if you make a request to a database far away from you.
 
 This is what [edge computing](https://en.wikipedia.org/wiki/Edge_computing) is trying to solve and you can think of it like a CDN but instead of static assets it moves data closer to you.
 
-{% img src="edge.webp" alt="Edge computing" %}
+<Image src="edge.webp" alt="Edge computing" />
 
 I'm not going to use the edge but I'm going to show you how to set [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) HTTP headers.
 

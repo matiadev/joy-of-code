@@ -13,6 +13,7 @@ const patterns: Record<string, RegExp> = {
 	bold: /\*\*/g,
 	italic: /\b_([^_]+)_(?!\w)/g,
 	special: /{%.*?%}/g,
+	components: /<\/?(Embed|Image|Video|YouTube|Card)[^>]*>/g,
 	tags: /[<>]/g,
 }
 

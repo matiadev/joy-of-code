@@ -6,6 +6,10 @@ published: '2021-6-7'
 category: git
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 ## Before You Get Started
@@ -67,7 +71,7 @@ git checkout -b feature/pokemon
 
 Your terminal and editor indicate you're on the right branch:
 
-{% img src="vs-code.png" alt="VS Code Editor" %}
+<Image src="vs-code.png" alt="VS Code Editor" />
 
 Add the `pokemon.js` file:
 
@@ -93,7 +97,7 @@ git add styles.css
 git commit -m "style: Add Pokemon styles"
 ```
 
-{% img src="first-commits.png" alt="Shows first couple of commits" %}
+<Image src="first-commits.png" alt="Shows first couple of commits" />
 
 At this stage, we could do `git checkout main` and `git merge feature/pokemon` to merge the changes.
 
@@ -121,7 +125,7 @@ If you're playing around and make a mistake you can always do `git reset --hard 
 
 After we're done merging the changes we should remove the branch with `git branch -d feature/pokemon` since we no longer need it (you will have to repeat the previous steps if you do it).
 
-{% img src="first-merge.png" alt="Shows first couple of commits" %}
+<Image src="first-merge.png" alt="Shows first couple of commits" />
 
 Instead of using merge, let us use **interactive rebase**.
 
@@ -155,7 +159,7 @@ git rebase -i HEAD~2
 
 The `-i` command-line parameter says: "run rebase in interactive mode". The `HEAD~2` specifies the last two commits in our Git history.
 
-{% img src="rebase-open.png" alt="Shows rebase window" %}
+<Image src="rebase-open.png" alt="Shows rebase window" />
 
 You can ignore most of the output unless you want to read it. What's important are our commits at the top.
 
@@ -181,17 +185,17 @@ Let's take a look at the top of the file:
 
 After you're done save the file and close it. Another file is going to open. This is where we change the commit message.
 
-{% img src="rebase-commit.png" alt="Shows rebase commit message window" %}
+<Image src="rebase-commit.png" alt="Shows rebase commit message window" />
 
 We can delete most of it and enter our commit message. Close it after you're done.
 
-{% img src="rebase-commit-change.png" alt="Shows rebase commit change" %}
+<Image src="rebase-commit-change.png" alt="Shows rebase commit change" />
 
 If we change our mind we can <kbd>Ctrl</kbd> + <kbd>C</kbd> to stop what we're doing. We can stop the rebase at any point with `git rebase --abort`. After resolving any conflicts we use `git rebase --continue`.
 
 We are still on the `feature/pokemon` branch so let's `git checkout main`.
 
-{% img src="rebase-checkout.png" alt="Shows checkout to main branch after rebase" %}
+<Image src="rebase-checkout.png" alt="Shows checkout to main branch after rebase" />
 
 The only thing left to do is rebase the changes:
 
@@ -199,7 +203,7 @@ The only thing left to do is rebase the changes:
 git rebase feature/pokemon
 ```
 
-{% img src="rebase-complete.png" alt="Shows completed rebase on main branch" %}
+<Image src="rebase-complete.png" alt="Shows completed rebase on main branch" />
 
 That's it. Rebase is one of my favorite Git features. It's very powerful since it let's us have a Git History we can reason about.
 
@@ -217,7 +221,7 @@ Let's say we're working on the Pokemon feature. Our crack team of backend develo
 
 At one point our **feature branch** is going to get behind our main branch:
 
-{% img src="feature-behind-upstream.png" alt="Shows feature branch is behind upstream" %}
+<Image src="feature-behind-upstream.png" alt="Shows feature branch is behind upstream" />
 
 The above example shows how the "feat: Add Pokemon API" commit was pushed to our main branch meaning our feature branch is behind.
 
@@ -241,7 +245,7 @@ If we're on the `feature/pokemon` branch we can do a manual rebase:
 git rebase main
 ```
 
-{% img src="feature-behind-rebase.png" alt="Shows feature branch up to date with upstream" %}
+<Image src="feature-behind-rebase.png" alt="Shows feature branch up to date with upstream" />
 
 ```shell:terminal
 git log --oneline

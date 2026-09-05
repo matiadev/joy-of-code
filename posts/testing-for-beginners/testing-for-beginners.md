@@ -6,7 +6,11 @@ published: '2022-1-28'
 category: javascript
 ---
 
-{% youtube id="y53wwdBr5AI" title="Make a Svelte Todo App" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="y53wwdBr5AI" title="Make a Svelte Todo App" />
 
 ## Table of Contents
 

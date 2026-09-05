@@ -6,6 +6,10 @@ published: '2021-5-15'
 category: general
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 Using fonts on the web can be complicated, and unwieldy if we don't understand the trade-offs we're making. I want to share what I learned about best practices when it comes to using fonts on the web — and show you some of the pitfalls you can avoid.
@@ -29,7 +33,7 @@ The preconnect keyword is saying: **"Hey, we're going to talk to this resource f
 
 It's only a suggestion to the browser, since browsers already try to anticipate what connections a page might need — so it might be ignored completely.
 
-{% img src="preconnect.webp" alt="A diagram showing fetching a resource with, and without preconnect" %}
+<Image src="preconnect.webp" alt="A diagram showing fetching a resource with, and without preconnect" />
 
 > In each of these steps the browser sends a piece of data to a server, and the server sends back a response. That journey, from origin to destination and back, is called a round trip. — [Establish network connections early to improve perceived page speed](https://web.dev/preconnect-and-dns-prefetch/)
 
@@ -133,7 +137,7 @@ You can learn more about some of these techniques by reading about [unicode-rang
 
 I'm from 🇭🇷 [Croatia](https://en.wikipedia.org/wiki/Croatia), so we have other special characters such as "š, đ, č, ć, ž". These are included in [Latin Extended-A](https://en.wikipedia.org/wiki/Latin_Extended-A).
 
-{% img src="basic-latin.webp" alt="Basic Latin unicode range of characters" %}
+<Image src="basic-latin.webp" alt="Basic Latin unicode range of characters" />
 
 This shows the Basic Latin unicode range **U+0020-007F**.
 
@@ -141,7 +145,7 @@ Unicode is a standard maintained by the [Unicode Consortium](https://en.wikipedi
 
 For example, take the letter **A**. In Unicode this letter is represented as **U+0041**. These code points are in hexadecimal — preceded by **U+**. If we used a [Hex to ASCII Text Converter](https://www.rapidtables.com/convert/number/hex-to-ascii.html), we would get the same result.
 
-{% img src="unicode.webp" alt="Diagram showing a breakdown of unicode for the letter A" %}
+<Image src="unicode.webp" alt="Diagram showing a breakdown of unicode for the letter A" />
 
 We can see the [basic Latin](https://unicode-table.com/en/blocks/basic-latin/) range more easily using a site like [Unicode Character Table](https://unicode-table.com/en/). You can read [Unicode, UTF8 & Character Sets: The Ultimate Guide](https://www.smashingmagazine.com/2012/06/all-about-unicode-utf8-character-sets/) if you want to learn more.
 
@@ -155,7 +159,7 @@ First let's understand why do we even use hosted fonts in the first place, and r
 
 When transfering data we have to take distance into consideration. [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) means content delivery network. It's a proxy server between you and the real server.
 
-{% img src="cdn.webp" alt="Diagram of a content delivery network" %}
+<Image src="cdn.webp" alt="Diagram of a content delivery network" />
 
 - **Server A** can cache it's files on **Server B** that's closer to you
 - When you visit **Server A**, you hit **Server B** first which gives you the cached data
@@ -168,13 +172,13 @@ If you remember — [https://fonts.gstatic.com](https://fonts.gstatic.com) is th
 
 The browser also has a [HTTP cache](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching) — which serves as a temporary storage for any assets you downloaded browsing other sites so future requests are served faster.
 
-{% img src="shared-cache-a.webp" alt="Diagram of how a cache key gets generated in the shared cache" %}
+<Image src="shared-cache-a.webp" alt="Diagram of how a cache key gets generated in the shared cache" />
 
 - A user visits https://joyofcode.xyz/
 - The request to https://fonts.gstatic.com/Inter.ttf is made
 - Where the font is cached using the URL as the cache key
 
-{% img src="shared-cache-b.webp" alt="Diagram of how a cached resource from visiting another site works on a different site using the shared cache" %}
+<Image src="shared-cache-b.webp" alt="Diagram of how a cached resource from visiting another site works on a different site using the shared cache" />
 
 - The same user visits https://lesscoolsite.xyz/ which request the same font
 - It hits the HTTP cache and uses the cached version
@@ -185,13 +189,13 @@ However, the problem with this approach is:
 
 For this reason, **browsers aren't using one big cache for everything anymore — but cache on a per-site basis**:
 
-{% img src="single-cache-a.webp" alt="Diagram of how a per-site cache basis works" %}
+<Image src="single-cache-a.webp" alt="Diagram of how a per-site cache basis works" />
 
 - User visits https://joyofcode.xyz/
 - Request to https://fonts.gstatic.com/Inter.ttf is made
 - The cache key consists of the **top site** (root of the site), **current-frame site** (children of the site, or iframe), and the **resource URL**
 
-{% img src="single-cache-b.webp" alt="Diagram of how a per-site cache basis works when visiting another site" %}
+<Image src="single-cache-b.webp" alt="Diagram of how a per-site cache basis works when visiting another site" />
 
 - The same user visits https://lesscoolsite.xyz/
 - Creates a request for the same resource
@@ -213,7 +217,7 @@ Fonts come in many formats, but the most used ones on the web you're going to en
 
 [TrueType](https://en.wikipedia.org/wiki/TrueType) was developed by Apple in the late 1980s, and is what's used on most computers. [Web Open Font Format](https://en.wikipedia.org/wiki/Web_Open_Font_Format) uses [OpenType](https://en.wikipedia.org/wiki/OpenType), or [TrueType](https://en.wikipedia.org/wiki/TrueType) fonts that are compressed for the web.
 
-{% img src="size.webp" alt="Infographic showing the size difference between ttf, woff, and woff2" %}
+<Image src="size.webp" alt="Infographic showing the size difference between ttf, woff, and woff2" />
 
 This shows over a **100% reduction in file size**.
 
@@ -306,19 +310,19 @@ body {
 
 We briefly went over **font-display** earlier, but this time let's explore it further. The values range from **auto**, **block**, **swap**, **fallback**, and **optional**. By default it uses **auto** which leaves it up to the browser, where most browsers use **block**.
 
-{% img src="block.gif" alt="Shows invisible text until the font loads" %}
+<Image src="block.gif" alt="Shows invisible text until the font loads" />
 
 **Block gives the font a short block period, and an infinite swap period** — this means until the font is ready to use, it should use "invisible" text, and swap once it's ready. This creates a ugly user experience as you can see, and causes layout shifts.
 
-{% img src="swap.gif" alt="Shows how text gets swapped until the font is ready" %}
+<Image src="swap.gif" alt="Shows how text gets swapped until the font is ready" />
 
 **Swap gives the font a zero second block period and an infinite swap period** — this means the browser uses the fallback font immediately, until the font is loaded. This is the one that Google Fonts uses by default. It's important to have visible text when you visit a site. It's not the perfect solution, but works great if you use a similar looking fallback font.
 
-{% img src="fallback.gif" alt="Shows how the fallback is going to be used if the font doesn't load in a reasonable time" %}
+<Image src="fallback.gif" alt="Shows how the fallback is going to be used if the font doesn't load in a reasonable time" />
 
 **Fallback gives the font face an extremely small block period (100 ms), and a short swap period (3 seconds)** — similar to swap, if the font is not ready, it loads the fallback immediately. However, if the font doesn't load in a reasonable time, the fallback is going to be used.
 
-{% img src="optional.gif" alt="Shows how there's a small amount of time for the font to load, without a swap period" %}
+<Image src="optional.gif" alt="Shows how there's a small amount of time for the font to load, without a swap period" />
 
 **Optional gives the font face an extremely small block period (100 ms), and a zero second swap period** — you should use this, if the font you're using is unimportant to how your site looks. Otherwise it's going to be a jarring experience.
 
@@ -346,11 +350,11 @@ body {
 }
 ```
 
-{% img src="variable-fonts-axis.gif" alt="Shows weight, and slant axis for Inter" %}
+<Image src="variable-fonts-axis.gif" alt="Shows weight, and slant axis for Inter" />
 
 The variable font version of Inter has a **weight**, and **slant** axis. The best part is that's it's a fraction of the size. I like to think of variable fonts as being the SVG of fonts. If you ever wrote a media query that reduces the size of text for example, think how it snaps instead of being fluid. You can get that smooth transition with variable fonts.
 
-{% img src="custom-axis.webp" alt="Dark Mode VF with a custom Darkmode axis" %}
+<Image src="custom-axis.webp" alt="Dark Mode VF with a custom Darkmode axis" />
 
 **This is an example of a custom axis** — meant to offset a light font looking thin on a dark background by adjusting the grade which changes the weight of the font without changing it's width.
 
@@ -367,7 +371,7 @@ Google Fonts already serves variable fonts by default. You can look at the [comp
 
 Notice how significantly smaller the size is at **~17 kB**, compared to **~98 kB per-weight** for the non-varible WOFF 2 version (we could save perhaps 30% if it was gzipped) — if we combined these weights it would barely come to **~54 kB.** We can do a lot more optimization on top of this.
 
-{% img src="google-variable-fonts.webp" alt="Dark Mode VF with a custom Darkmode axis" %}
+<Image src="google-variable-fonts.webp" alt="Dark Mode VF with a custom Darkmode axis" />
 
 I also wanted to show going back to our preconnect section earlier — how there was no time spent connecting to the Google Fonts CDN, since the browser has already done that part.
 
@@ -385,7 +389,7 @@ Remember our adventure into unicode?
 
 The problem with most online converters, and tools I tried is **they completeley strip out the variations from the variable font** in the process. You can use [Wakamai Fondue](https://wakamaifondue.com/) to drop a font, and learn what it can do.
 
-{% img src="inter-variable.webp" alt="Shows everything the variable version of Inter includes" %}
+<Image src="inter-variable.webp" alt="Shows everything the variable version of Inter includes" />
 
 At the time of writing this the only reliable method is having to use **pyftsubset** which is part of **fonttools** (which means having to use Python). There's some other JavaScript libraries such as **glyphhanger** that you can use — but they also require having those dependencies, and are just an abstraction on top. **glyphanger** is interesting because it can crawl your site, and create a tiny subset based on what characters you use. **Fortunately, it's simple** — even if you don't have any Python experience like me.
 
@@ -429,7 +433,7 @@ The backwards slash let's us split text into multiple lines.
 - **Layout features** — [feature tags](https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags) such as **kern** let us justify the space between glyphs, **liga** replaces a sequence of glyphs with a single glyph, or we can specify everything with the asterisk
 - As a last step we give it the **Latin** unicode range
 
-{% img src="inter-variable-subset.webp" alt="Shows everything the subset variable version of Inter includes" %}
+<Image src="inter-variable-subset.webp" alt="Shows everything the subset variable version of Inter includes" />
 
 The file size is around **~77 kB** before gzip compared to **~800 kB**. Keep in mind, **we're using the same Latin subset, with all font weights in a single file.** We can further optimize this to only use a English-subset, removing more characters.
 

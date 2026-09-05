@@ -6,7 +6,12 @@ published: '2023-10-06'
 category: svelte
 ---
 
-{% youtube id="LGOqg0Y7sAc" title="Svelte Actions" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="LGOqg0Y7sAc" title="Svelte Actions" />
 
 ## Table of Contents
 
@@ -16,7 +21,7 @@ category: svelte
 
 [Svelte actions](https://svelte.dev/docs/svelte-action) are just regular JavaScript functions that are called when an element is created, and give you a reference to the element itself, so you can attach any behavior to that element using regular JavaScript.
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-actions?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Actions Guide" title="Svelte Actions Guide" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-actions?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Actions Guide" title="Svelte Actions Guide" />
 
 You can find the repo with the examples on [GitHub](https://github.com/joysofcode/svelte-actions).
 

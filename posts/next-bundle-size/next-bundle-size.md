@@ -6,11 +6,15 @@ published: '2021-9-1'
 category: next
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 [Next.js](https://nextjs.org/) is a **meta-framework** built on top of [React](https://reactjs.org/) that solves the problem of **hybrid static and server rendering** for **React**.
 
 That being said the [react](https://bundlephobia.com/package/react@17.0.2) package itself is a tiny library, but combined with [react-dom](https://bundlephobia.com/package/react-dom@17.0.2) it's **42 kB** of **runtime** we ship to the client.
 
-{% img src="react.webp" alt="Next.js bundle size using React" %}
+<Image src="react.webp" alt="Next.js bundle size using React" />
 
 The final **Next.js** bundle size is **79.46 kB**.
 
@@ -45,7 +49,7 @@ module.exports = {
 
 That's it! 🥳 Next time you run `npm run build`, and `npm start` there's a **48%** reduction in bundle size at **45.28 Kb**.
 
-{% img src="preact.webp" alt="Next.js bundle size using Preact" %}
+<Image src="preact.webp" alt="Next.js bundle size using Preact" />
 
 ## Conclusion
 

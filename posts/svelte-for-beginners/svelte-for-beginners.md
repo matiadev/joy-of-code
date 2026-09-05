@@ -6,13 +6,18 @@ published: '2021-12-16'
 category: svelte
 ---
 
-{% youtube id="BrkrOjknC_E" title="Svelte For Beginners" %}
+<script lang="ts">
+	import Card from '#lib/components/card.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="BrkrOjknC_E" title="Svelte For Beginners" />
 
 ## Table of Contents
 
 ## Learning Svelte
 
-{% warning text="This is an outdated guide for an older version of Svelte I decided to leave up for reference. You can <a href='https://joyofcode.xyz/learn-svelte'>read the updated Svelte 5 version</a> here." %}
+<Card type="warning">This is an outdated guide for an older version of Svelte I decided to leave up for reference. You can <a href='https://joyofcode.xyz/learn-svelte'>read the updated Svelte 5 version</a> here.</Card>
 
 The best way to learn Svelte is to go through the [Svelte tutorial](https://learn.svelte.dev/) which is great but also contains information overload if you just want to get started writing Svelte. I'm going to show you everything you should know for the majority of things you're going to build.
 

@@ -6,6 +6,11 @@ published: '2021-3-20'
 category: css
 ---
 
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 ## Introduction
@@ -40,7 +45,7 @@ You're welcome to recreate it yourself if you want to retain what you learn. You
 
 This is our finished card, with the source code.
 
-{% embed src="https://codepen.io/mattcroat/embed/yLVmKXb?height=800&theme-id=dark&default-tab=result" title="Simple Product Card" %}
+<Embed src="https://codepen.io/mattcroat/embed/yLVmKXb?height=800&theme-id=dark&default-tab=result" title="Simple Product Card" />
 
 You can copy the HTML code, if you want to get practice refactoring it to Tailwind later.
 
@@ -297,7 +302,7 @@ If you're wondering why for the color options we don't use a simple gradient —
 }
 ```
 
-{% img src="banding.webp" alt="Banding" %}
+<Image src="banding.webp" alt="Banding" />
 
 It's a fixable problem, but I opted for this solution instead since it varies across browsers.
 

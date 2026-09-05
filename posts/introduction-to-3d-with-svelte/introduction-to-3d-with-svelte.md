@@ -6,7 +6,14 @@ published: '2022-10-31'
 category: svelte
 ---
 
-{% youtube id="89LYeHOncVk" title="Introduction to 3D With Svelte" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="89LYeHOncVk" title="Introduction to 3D With Svelte" />
 
 ## Table of Contents
 
@@ -16,7 +23,7 @@ By the end of this post you're going to learn how to spice up your boring site u
 
 > ⚠️ The video is **outdated** but the post has been updated to the newest **Threlte 6** version.
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-3d?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte 3D" title="Svelte 3D" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-3d?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte 3D" title="Svelte 3D" />
 
 > 🧪 The project files are available on [GitHub](https://github.com/joysofcode/svelte-3d) and you can try it on [StackBlitz](https://stackblitz.com/github/joysofcode/svelte-3d).
 
@@ -168,7 +175,7 @@ Create a `scene.svelte` component where the magic is going to happen and add a c
 </T.Mesh>
 ```
 
-{% img src="sphere.webp" alt="First 3D scene in Threlte showing a sphere" %}
+<Image src="sphere.webp" alt="First 3D scene in Threlte showing a sphere" />
 
 - `<T>` is where everything comes from and it extends the [base Three.js class](https://threejs.org/docs/#api/en/core/Object3D)
 - I'm using a `<PerspectiveCamera>` that's slightly above the mesh with a set field of view
@@ -270,7 +277,7 @@ Threlte makes it easy to import a 3D model using the `useGltf` hook, and you can
 {/await}
 ```
 
-{% video src="models.mp4" %}
+<Video src="models.mp4" />
 
 You can look at the `<Bloom />` postprocessing effect in the example, but I mostly copied it from the Threlte [docs](https://threlte.xyz/docs/reference/core/use-render#post-processing).
 

@@ -6,7 +6,11 @@ published: '2022-9-2'
 category: svelte
 ---
 
-{% youtube id="eqwtoaP-0pk" title="Use Future CSS in Svelte" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="eqwtoaP-0pk" title="Use Future CSS in Svelte" />
 
 ## Table of Contents
 

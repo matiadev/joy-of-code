@@ -6,7 +6,11 @@ published: '2024-03-28'
 category: css
 ---
 
-{% embed src="https://svelte.dev/repl/2a2644dd768c43f6a5e16ef94fd145ca?version=4.2.12" title="Responsive CSS Grid Layout" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+</script>
+
+<Embed src="https://svelte.dev/repl/2a2644dd768c43f6a5e16ef94fd145ca?version=4.2.12" title="Responsive CSS Grid Layout" />
 
 If you're using [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout) for your layout, you can avoid writing a bunch of media queries with this simple line of CSS.
 
@@ -24,6 +28,6 @@ Let's break it down:
 
 You could also use `auto-fit` instead of `auto-fill`, but what is the difference?
 
-{% embed src="https://svelte.dev/repl/6b20131ea56a480b83af648d461bc1b4?version=4.2.12" title="CSS Grid Auto-Fill Versus Auto-Fit" %}
+<Embed src="https://svelte.dev/repl/6b20131ea56a480b83af648d461bc1b4?version=4.2.12" title="CSS Grid Auto-Fill Versus Auto-Fit" />
 
 If you want to stretch the grid items to take the entire available space use `auto-fit`, otherwise use `auto-fill`.

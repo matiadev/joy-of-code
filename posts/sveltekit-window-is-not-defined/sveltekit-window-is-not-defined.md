@@ -6,7 +6,11 @@ published: '2022-12-14'
 category: sveltekit
 ---
 
-{% youtube id="l1AB5f0Xyd4" title="How To Solve Window Is Not Defined In SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="l1AB5f0Xyd4" title="How To Solve Window Is Not Defined In SvelteKit" />
 
 ## Table of Contents
 

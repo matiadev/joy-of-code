@@ -6,6 +6,10 @@ published: '2021-3-7'
 category: javascript
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 ## Good Developers Copy, Great Developer Steal
@@ -38,11 +42,11 @@ We can search for the name of the method used in the API to find where it's loca
 
 Anyhow, the search lead me to a [couple of results](https://github.com/rimara14/number2fraction/search?l=TypeScript&q=number2fraction). I could quickly identify the one I'm looking for being [number-to-fraction.ts](https://github.com/rimara14/number2fraction/blob/master/src/number-to-fraction.ts).
 
-{% img src="search-results.webp" alt="GitHub search results for number2fraction" %}
+<Image src="search-results.webp" alt="GitHub search results for number2fraction" />
 
 Files including `.spec` (short for specification) are also helpful. They're test files to ensure the code works as intended. It's useful to us, because we can see how it's used if we have to (the reason being incomplete, or hard to understand documentation).
 
-{% img src="spec.webp" alt="Number to fraction test" %}
+<Image src="spec.webp" alt="Number to fraction test" />
 
 Don't be intimidated at looking at TypeScript files. TypeScript is JavaScript. You can ignore type annotations. You can always copy the piece of code, and remove TypeScript to not distract you. In a lot of situations, the code should also have some helpful comments.
 

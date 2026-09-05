@@ -6,7 +6,11 @@ published: '2022-5-20'
 category: general
 ---
 
-{% youtube id="WWdZMLCuC4I" title="Test Your Site In Every Browser" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="WWdZMLCuC4I" title="Test Your Site In Every Browser" />
 
 ## Table of Contents
 

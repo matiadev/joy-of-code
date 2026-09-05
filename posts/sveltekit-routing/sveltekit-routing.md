@@ -6,7 +6,12 @@ published: '2022-12-28'
 category: sveltekit
 ---
 
-{% youtube id="7hXHbGj6iE0" title="SvelteKit Routing" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="7hXHbGj6iE0" title="SvelteKit Routing" />
 
 ## Table of Contents
 
@@ -44,7 +49,7 @@ npm run dev
 
 SvelteKit uses file-based routing where routes of your app are defined by the directories in your project.
 
-{% img src="routing.webp" alt="SvelteKit routing" %}
+<Image src="routing.webp" alt="SvelteKit routing" />
 
 The routes are defined inside a `src/routes` folder. Each directory inside the `routes` folder can have or more route files using the `+` prefix.
 
@@ -181,11 +186,11 @@ The `+layout.svelte` runs on the server and client.
 
 The `<slot />` element comes from Svelte and is used to show the page content in SvelteKit since a page is just a component.
 
-{% img src="slot.webp" alt="SvelteKit slot" %}
+<Image src="slot.webp" alt="SvelteKit slot" />
 
 You can include repeating content here like a navigation, sidebar or a footer and it's going to be repeated for every child route.
 
-{% img src="layout.webp" alt="SvelteKit layout" %}
+<Image src="layout.webp" alt="SvelteKit layout" />
 
 This is how slots work behind the scenes in SvelteKit.
 
@@ -224,7 +229,7 @@ Let's say I want a `/posts` route where I can always see the existing posts on t
 </p>
 ```
 
-{% img src="posts.webp" alt="Posts route" %}
+<Image src="posts.webp" alt="Posts route" />
 
 I can create another `+layout.svelte` file inside `src/routes/posts/+layout.svelte` that other child routes inside can inherit and everything already inherits the root layout that has the navigation.
 
@@ -260,7 +265,7 @@ I can create another `+layout.svelte` file inside `src/routes/posts/+layout.svel
 </style>
 ```
 
-{% img src="slug.webp" alt="Slug route" %}
+<Image src="slug.webp" alt="Slug route" />
 
 You can create child routes for `posts` like `/posts/create` or `/posts/edit` and it would inherit the `src/routes/posts/+layout.svelte` layout.
 
@@ -305,7 +310,7 @@ Don't worry about what the `+page.ts` file does right now but notice how if you 
 </pre>
 ```
 
-{% img src="error.webp" alt="SvelteKit route error handling" %}
+<Image src="error.webp" alt="SvelteKit route error handling" />
 
 Because the error is unexpected SvelteKit is going to hide the stack trace to not reveal potential sensitive information.
 

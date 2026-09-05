@@ -6,7 +6,14 @@ published: '2022-2-28'
 category: sveltekit
 ---
 
-{% youtube id="bLBHecY4-ak" title="SvelteKit For Beginners" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="bLBHecY4-ak" title="SvelteKit For Beginners" />
 
 ## Table of Contents
 
@@ -22,7 +29,7 @@ In the future I might revisit the idea of creating a Twitter clone in SvelteKit 
 
 You're going to make **Twittr** — a social media site for sharing hot takes.
 
-{% video src="twittr.mp4" %}
+<Video src="twittr.mp4" />
 
 Here are the [finished project files](https://github.com/JoysOfCode/sveltekit-for-beginners).
 
@@ -34,7 +41,7 @@ Let's dive into it! 🐬
 
 [SvelteKit](https://kit.svelte.dev/) is an opinionated full stack framework that ties the frontend and backend together delivering the best developer and user experience.
 
-{% img src="sveltekit.webp" alt="Diagram showing how the frontend Svelte and backend Kit combined make the full stack framework SvelteKit" %}
+<Image src="sveltekit.webp" alt="Diagram showing how the frontend Svelte and backend Kit combined make the full stack framework SvelteKit" />
 
 SvelteKit is made by [@rich_harris](https://twitter.com/rich_harris) and a group of amazing [contributors](https://github.com/sveltejs/kit/graphs/contributors).
 
@@ -60,7 +67,7 @@ I made a simple Svelte example site with a Pokémon search together with a coupl
 
 You can press "open the preview in new window" button if you want to follow along.
 
-{% embed src="https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1" title="Svelte Single Page Application Example" %}
+<Embed src="https://codesandbox.io/embed/svelte-spa-example-hbowb?fontsize=14&hidenavigation=1&module=%2Froutes%2FHome.svelte&theme=dark&runonclick=1" title="Svelte Single Page Application Example" />
 
 Everything you see on the page like the content changing and navigation is done by JavaScript.
 
@@ -74,17 +81,17 @@ What happens when the page loads? The default Pokémon it fetches is Pikachu so 
 
 If you inspect the elements on the page inside the elements tab the fetched Pokémon is right there.
 
-{% img src="elements-tab.webp" alt="Showing the elements tab inside developers tools" %}
+<Image src="elements-tab.webp" alt="Showing the elements tab inside developers tools" />
 
 If you look at the response when you load the page inside the network tab (refresh the page) or view page source it's just a HTML shell that you query using JavaScript and attach the Svelte app onto.
 
 > 🐿️ This means when a bot tries to index your site unless it can execute the JavaScript it's like nothing is there.
 
-{% img src="network-tab.webp" alt="Showing the network tab for initial page load inside developer tools" %}
+<Image src="network-tab.webp" alt="Showing the network tab for initial page load inside developer tools" />
 
 Try searching for "charizard" (press <kbd>Enter</kbd> to submit the form) and you can see a fetch API request has been made and Svelte updates the user interface but we're still using the same `index.html` file.
 
-{% img src="network-request.webp" alt="Showing the network request response inside the network tab when fetching a Pokémon" %}
+<Image src="network-request.webp" alt="Showing the network request response inside the network tab when fetching a Pokémon" />
 
 This might be alright for a dashboard where we don't care about indexing pages for search engine optimization but most sites do and using any secrets like user authentication is where things start to become hard.
 
@@ -134,7 +141,7 @@ SvelteKit and Next.js let you prerender your site meaning all your pages are bui
 
 Because we're using a full stack framework we can create endpoints that correspond to [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) such as **GET** and **POST** same as using a backend framework like [Express](https://expressjs.com/).
 
-{% embed src="https://stackblitz.com/edit/sveltekit-example?ctl=1&embed=1&file=src/routes/index.svelte&hideExplorer=1&hideNavigation=1" title="SvelteKit example" %}
+<Embed src="https://stackblitz.com/edit/sveltekit-example?ctl=1&embed=1&file=src/routes/index.svelte&hideExplorer=1&hideNavigation=1" title="SvelteKit example" />
 
 For the example to work you need to **allow cookies**.
 
@@ -152,13 +159,13 @@ Open the page inside a new window and navigate to the network tab inside your de
 
 Try refreshing the page and enter a Pokémon.
 
-{% img src="javascript-disabled.webp" alt="Network tab showing how the page works with JavaScript disabled" %}
+<Image src="javascript-disabled.webp" alt="Network tab showing how the page works with JavaScript disabled" />
 
 You can see the page refresh if you look at the favicon at the top left. There's no JavaScript! 🤯
 
 If you look at the response or view the page source the HTML generated from the server is right there! You can see how the page is being hydrated.
 
-{% img src="ssr-hydrate.webp" alt="Shows page source using server-side rendering and hydration" %}
+<Image src="ssr-hydrate.webp" alt="Shows page source using server-side rendering and hydration" />
 
 Over the years we forgot how basic things like forms work and started to rely on JavaScript for everything but now we can have the best of both of worlds using progressive enhancement.
 
@@ -861,7 +868,7 @@ Let's see how this looks in practice!
 <slot />
 ```
 
-{% img src="landing-page.webp" alt="Landing page" %}
+<Image src="landing-page.webp" alt="Landing page" />
 
 It's that simple to have nested layouts! 🤯
 
@@ -920,7 +927,7 @@ SvelteKit provides a default error page but it's hard to read so we can do bette
 </style>
 ```
 
-{% img src="custom-error.webp" alt="Custom error page" %}
+<Image src="custom-error.webp" alt="Custom error page" />
 
 > 🐿️ If you remember from earlier `__error.svelte` and `__layout.svelte` templates come from `.svelte-kit`.
 
@@ -1319,7 +1326,7 @@ Now we can create another nested layout and it's going to inherit the global sty
 
 The home page is done! 🥳
 
-{% img src="home-page.webp" alt="Home page" %}
+<Image src="home-page.webp" alt="Home page" />
 
 I want to show you the real power of nested layouts — if a part of your site explodes it won't bring the entire thing down but just the part that failed with a useful error message. 🤯
 
@@ -1364,7 +1371,7 @@ I want to show you the real power of nested layouts — if a part of your site e
 </style>
 ```
 
-{% img src="nested-error.webp" alt="Error page" %}
+<Image src="nested-error.webp" alt="Error page" />
 
 ## Showing Tweets
 
@@ -1837,7 +1844,7 @@ We're going to pass each tweet as a prop to a `<Tweet>` component mostly because
 
 </details>
 
-{% img src="tweets.webp" alt="Tweets" %}
+<Image src="tweets.webp" alt="Tweets" />
 
 Because we designed the API and shaped the data we have complete control of how we want to use it.
 
@@ -1996,7 +2003,7 @@ This is what I love about SvelteKit because it's using the web platform since `r
 
 Share your hot take! 🔥
 
-{% img src="hot-take.webp" alt="Hot take" %}
+<Image src="hot-take.webp" alt="Hot take" />
 
 ## Removing Tweets
 
@@ -2327,7 +2334,7 @@ export const GET: RequestHandler = async ({ params }) => {
 
 Notice you get redirected to `home` if you like or remove a tweet but it's fine. You can always change that later in a couple of ways like passing where you want to redirect or using another endpoint.
 
-{% img src="user-profile.webp" alt="User profile" %}
+<Image src="user-profile.webp" alt="User profile" />
 
 ## Linking to a Tweet
 
@@ -2620,7 +2627,7 @@ The content is going to show on the right when we use the navigation inside the 
 
 Unfortunately I didn't have enough time to make it responsive. 😅
 
-{% img src="settings.webp" alt="Settings page" %}
+<Image src="settings.webp" alt="Settings page" />
 
 ## About Page
 

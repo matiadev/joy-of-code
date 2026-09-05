@@ -6,7 +6,11 @@ published: '2022-3-24'
 category: sveltekit
 ---
 
-{% youtube id="h2VzXTfbUpQ" title="Using Environment Variables With SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="h2VzXTfbUpQ" title="Using Environment Variables With SvelteKit" />
 
 ## Table of Contents
 

@@ -6,7 +6,11 @@ published: '2023-1-20'
 category: sveltekit
 ---
 
-{% youtube id="XNbCp7ZJi-8" title="Working With Forms In SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="XNbCp7ZJi-8" title="Working With Forms In SvelteKit" />
 
 ## Table of Contents
 

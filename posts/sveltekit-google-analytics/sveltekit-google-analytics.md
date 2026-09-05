@@ -6,7 +6,12 @@ published: '2022-5-18'
 category: sveltekit
 ---
 
-{% youtube id="l-x6H0fnqqQ" title="Google Analytics With SvelteKit" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="l-x6H0fnqqQ" title="Google Analytics With SvelteKit" />
 
 ## Table of Contents
 
@@ -22,19 +27,19 @@ From the [Get started with Google Analytics](https://developers.google.com/analy
 
 1\. Create an Analytics account by going to **Admin** in [Google Analytics](https://analytics.google.com/) and clicking **Create Account** and fill out the fields.
 
-{% img src="account-setup.webp" alt="Google Analytics account creation" %}
+<Image src="account-setup.webp" alt="Google Analytics account creation" />
 
 2\. After you signed away your soul to Google it's going to prompt you to add a **data stream** which you can always find in the column on the left when you get lost.
 
-{% img src="data-streams.webp" alt="Set up a data stream to start collecting data prompt" %}
+<Image src="data-streams.webp" alt="Set up a data stream to start collecting data prompt" />
 
 3\. After you select the **Web** as the platform the **data stream** is going to give you a public **Measurement ID** to use for tracking, so you don't have to worry about leaking it.
 
-{% img src="set-up-data-stream.webp" alt="Set up your web stream on Google Analytics" %}
+<Image src="set-up-data-stream.webp" alt="Set up your web stream on Google Analytics" />
 
 4\. You're going to find your **Measurement ID** in **Web stream details** alongside instructions on how to include Google Analytics on your site under **Tagging Instructions**.
 
-{% img src="tagging-instructions.webp" alt="Tagging instructions on Google Analytics" %}
+<Image src="tagging-instructions.webp" alt="Tagging instructions on Google Analytics" />
 
 The [Measure views](https://developers.google.com/analytics/devguides/collection/ga4/views?technology=websites) section on the Google developers page has more information on how to track views that's of interest.
 
@@ -104,7 +109,7 @@ That's it! 🎉
 
 You should start receiving data in the next 30 minutes if you go to **Reports** under **Realtime** inside Google Analytics.
 
-{% img src="realtime.webp" alt="Realtime view of incoming data inside Google Analytics" %}
+<Image src="realtime.webp" alt="Realtime view of incoming data inside Google Analytics" />
 
 If performance is a concern you can use [Partytown](https://partytown.builder.io/) to run third-party scripts from a web worker.
 

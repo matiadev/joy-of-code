@@ -6,7 +6,12 @@ published: '2023-2-22'
 category: sveltekit
 ---
 
-{% youtube id="Kzrz7GZ9pIg" title="Learn SvelteKit Hooks Through Example" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="Kzrz7GZ9pIg" title="Learn SvelteKit Hooks Through Example" />
 
 ## Table of Contents
 
@@ -27,7 +32,7 @@ Hooks can mean different things depending where you come from but in the case of
 
 Middleware is a name for a function that intercepts a **request** to the server before it's completed and lets you modify the **response**.
 
-{% img src="hooks.webp" alt="Diagram describing how hooks work" %}
+<Image src="hooks.webp" alt="Diagram describing how hooks work" />
 
 Here are some of the things hooks are used for:
 

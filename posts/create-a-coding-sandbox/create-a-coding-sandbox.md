@@ -6,7 +6,12 @@ published: '2021-9-15'
 category: typescript
 ---
 
-{% embed src="https://javascriptsandbox.netlify.app" title="JavaScript Sandbox" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import Image from '#lib/components/image.svelte'
+</script>
+
+<Embed src="https://javascriptsandbox.netlify.app" title="JavaScript Sandbox" />
 
 ## Table of Contents
 
@@ -35,7 +40,7 @@ Let's start by playing detective 🔎, and examining **CodePen** source code thr
 
 If you're in a new pen on **CodePen**, press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd> to bring up the **developers tools**. Notice something interesting by **inspecting** the right-hand column. It's an [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). You can imagine an `<iframe>` as a separate page inside another page. By definition **"it's a nested browsing context, embedding another HTML page into the current one."**
 
-{% img src="codepen.webp" alt="CodePen" %}
+<Image src="codepen.webp" alt="CodePen" />
 
 An `<iframe>` behaves just like a regular page, but contained into it's own microcosm. This sounds like the perfect spot for a **sandbox**. We can already make a couple of observations:
 
@@ -111,7 +116,7 @@ I prefer to use **class** for styling, and [global data-\* attributes](https://d
 
 There's only **two** sections, the **left-hand** side for the **editor**, and **right-hand** side for the **output** and **errors**. We're going to use a simple show and hide to only show the `<iframe>` if there are no errors, and vice versa.
 
-{% img src="diagram.webp" alt="CodePen" %}
+<Image src="diagram.webp" alt="CodePen" />
 
 We're going to start with a simple `<textarea>` for the **editor**, and disable `spellcheck` because we don't want it.
 
@@ -376,7 +381,7 @@ Don't forget we have to invoke `updateUI` to render the **user interface**. If y
 updateUI()
 ```
 
-{% img src="iframe.webp" alt="Iframe" %}
+<Image src="iframe.webp" alt="Iframe" />
 
 In `updateFrame` we just create a **template string** and replace the [srcdoc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-srcdoc) which is the entire **HTML document** of the `<iframe>` each update. The **CSS** is linked from the **public** folder because **Vite** uses it for **static assets**, so we can access it even when deployed. It has an id attribute of **app** like most frameworks use. The **code** is inside `<script>` that's a **module**, so we can use [ES modules](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/). Using **module** we also don't have to use **defer**, so the script executes after the **DOM** has loaded.
 
@@ -390,7 +395,7 @@ function updateSource(transpiledOutput: string): void {
 }
 ```
 
-{% img src="source.webp" alt="Source" %}
+<Image src="source.webp" alt="Source" />
 
 For `updateSource` we just set the `innerHTML` for `source`. The only interesting thing here is the `<xmp>` element that's like the `<pre>` element but doesn't interpret **HTML**. This isn't ideal because it's deprecated, but it's a great solution because we don't have to think about escaping the **HTML** characters. You can reach for a package that does that, or write your own solution.
 
@@ -424,7 +429,7 @@ function logError(error: string): void {
 }
 ```
 
-{% img src="error.webp" alt="Error" %}
+<Image src="error.webp" alt="Error" />
 
 That's it for the **code sandbox** part. It's not that complicated. 😄
 

@@ -6,7 +6,12 @@ published: '2022-4-29'
 category: svelte
 ---
 
-{% youtube id="7mE1UbRwU3w" title="Svelte Headless UI Component Library" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="7mE1UbRwU3w" title="Svelte Headless UI Component Library" />
 
 ## Table of Contents
 
@@ -14,7 +19,7 @@ category: svelte
 
 At the end of this post you're going to learn how to make a custom `<select>` menu using the Svelte Headless UI component library.
 
-{% img src="listbox.webp" alt="Custom drop down menu showing anime options" %}
+<Image src="listbox.webp" alt="Custom drop down menu showing anime options" />
 
 You might be used to using a component library like [Material UI](https://sveltematerialui.com/) or any other which is great if you enjoy it but you can find yourself fighting against its opinions.
 
@@ -88,7 +93,7 @@ Let's look at a regular boring `<select>` menu inside Svelte that holds some sho
 
 </details>
 
-{% img src="select.webp" alt="Regular HTML select menu" %}
+<Image src="select.webp" alt="Regular HTML select menu" />
 
 There's nothing remarkable about the regular HTML `<select>` element besides how impossible it is to add custom styles.
 

@@ -6,7 +6,11 @@ published: '2023-4-7'
 category: sveltekit
 ---
 
-{% youtube id="gkw1wFIXM_8" title="SvelteKit Page Transitions" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="gkw1wFIXM_8" title="SvelteKit Page Transitions" />
 
 ## Table of Contents
 

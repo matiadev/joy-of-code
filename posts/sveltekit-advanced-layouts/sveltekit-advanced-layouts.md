@@ -6,7 +6,12 @@ published: '2023-2-10'
 category: sveltekit
 ---
 
-{% youtube id="9UpaKEVuErs" title="Using Advanced Layouts In SvelteKit" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="9UpaKEVuErs" title="Using Advanced Layouts In SvelteKit" />
 
 ## Table of Contents
 
@@ -46,7 +51,7 @@ git checkout solution
 
 Let's say I have a million dollar idea and it's named Plume — a site for discovering and sharing inspiring quotes.
 
-{% img src="plume.webp" alt="A site for discovering and sharing inspiring quotes" %}
+<Image src="plume.webp" alt="A site for discovering and sharing inspiring quotes" />
 
 The investors are lined up but before I can push the yacht to sea I need to push the code into production but I've ran into a problem.
 
@@ -78,13 +83,13 @@ That's a sweet tree but it hides dark secrets.
 
 If you navigate to `/admin` you're going to notice the first issue where the admin layout (`/admin/+layout.svelte`) shares the root layout (`/routes/+layout.svelte`) which makes me look like a clown in the eyes of the investors. 🤡
 
-{% img src="admin-layout.webp" alt="Admin route layout problem" %}
+<Image src="admin-layout.webp" alt="Admin route layout problem" />
 
 Yikes! But that's not everything.
 
 Notice the `/quotes` route? I want a layout that shows more quotes at the end of the page if I go to other child routes like `/quotes/id/[quoteId]` but I might not want that layout for `/quotes/tags`.
 
-{% img src="tags-layout.webp" alt="Tags route layout problem" %}
+<Image src="tags-layout.webp" alt="Tags route layout problem" />
 
 Sure, I could move the `/tags` route outside the `/quotes` route which would solve the problem but I don't want to do that. Because every child route in `/quotes` shares the same layout from `/quotes/+layout.svelte` if you go to `/quotes/tags` it shows other quotes.
 
@@ -134,7 +139,7 @@ routes
 
 Wonderful!
 
-{% img src="admin-group-layout.webp" alt="Admin route using app group layout" %}
+<Image src="admin-group-layout.webp" alt="Admin route using app group layout" />
 
 To fix the **tags layout** I'm going to use a group layout to create separate groups for `(quote)` and `(tags)` under the `/quotes` route and move the `/quotes/id` route inside `quotes/(quote)` and the `/quotes/tags` route inside `/quotes/(tags)`.
 
@@ -164,7 +169,7 @@ routes
 
 That's it!
 
-{% img src="tags-group-layout.webp" alt="Tags route using the dashboard group layout" %}
+<Image src="tags-group-layout.webp" alt="Tags route using the dashboard group layout" />
 
 I think what makes group layouts confusing is when you start nesting layouts because you can think of group layouts as buckets to put things into but if you're not confident in using layouts yet this is going to be hard to wrap your head around.
 
@@ -206,7 +211,7 @@ routes
 └── +layout.svelte
 ```
 
-{% img src="page-reset.webp" alt="Example showing a page reset" %}
+<Image src="page-reset.webp" alt="Example showing a page reset" />
 
 If you ever looked up how to reset a layout in SvelteKit you were probably confused because to do so you would need a **blank root layout** which only makes sense now after you learned about group layouts and breaking out of layouts.
 
@@ -240,7 +245,7 @@ routes
 └── +layout.svelte
 ```
 
-{% img src="layout-reset.webp" alt="Example showing a layout reset" %}
+<Image src="layout-reset.webp" alt="Example showing a layout reset" />
 
 Now you know how to break out of layouts if you have to.
 

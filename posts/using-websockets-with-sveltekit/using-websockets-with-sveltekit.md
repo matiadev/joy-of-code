@@ -6,7 +6,11 @@ published: '2022-5-1'
 category: sveltekit
 ---
 
-{% youtube id="mAcKzdW5fR8" title="Using WebSockets With SvelteKit" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="mAcKzdW5fR8" title="Using WebSockets With SvelteKit" />
 
 ## Table of Contents
 

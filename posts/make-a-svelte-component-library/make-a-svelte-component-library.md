@@ -6,7 +6,12 @@ published: '2023-05-26'
 category: svelte
 ---
 
-{% youtube id="teXFHcugXaI" title="Make Your Own Svelte Component Library" %}
+<script lang="ts">
+	import Embed from '#lib/components/embed.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="teXFHcugXaI" title="Make Your Own Svelte Component Library" />
 
 ## Table of Contents
 
@@ -16,7 +21,7 @@ Svelte sparks joy because it has everything you want for creating reusable compo
 
 You're going to learn how to build and compose reusable Svelte components which you can use to make your own component library by making an accessible Svelte accordion.
 
-{% embed src="https://stackblitz.com/github/joysofcode/svelte-accordion?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Accordion" title="Svelte Accordion" %}
+<Embed src="https://stackblitz.com/github/joysofcode/svelte-accordion?ctl=1&embed=1&file=src%2Froutes%2F%2Bpage.svelte&title=Svelte Accordion" title="Svelte Accordion" />
 
 ## Building Accessible Components
 
@@ -430,7 +435,7 @@ To animate the height of the accordion item I'm going to use the `slide` transit
 
 Adding a touch of wimsy goes a long way. 🪄
 
-{% youtube id="B_n4YONte5A" title="The simple trick to transition from height 0 to auto with CSS" %}
+<YouTube id="B_n4YONte5A" title="The simple trick to transition from height 0 to auto with CSS" />
 
 You can easily animate the height of an item using CSS Grid if you have to and [@kevinpowell](https://twitter.com/KevinJPowell) has a great video on how to do that.
 

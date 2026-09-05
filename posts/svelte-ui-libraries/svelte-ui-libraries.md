@@ -6,7 +6,11 @@ published: '2022-12-11'
 category: svelte
 ---
 
-{% youtube id="qyG-xWjNZKU" title="List Of Svelte UI Libraries" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="qyG-xWjNZKU" title="List Of Svelte UI Libraries" />
 
 ## Table of Contents
 

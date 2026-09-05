@@ -7,7 +7,13 @@ category: sveltekit
 draft: true
 ---
 
-{% youtube id="XnVxDLTgCgo" title="SvelteKit Endpoints" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import Video from '#lib/components/video.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="XnVxDLTgCgo" title="SvelteKit Endpoints" />
 
 ## Table of Contents
 
@@ -165,7 +171,7 @@ In the previous example we created a standalone endpoint that fetches some place
 
 If your goal isn't to create a public facing API to be consumed by multiple pages and the only thing that cares about the data is your page then you should use a page endpoint.
 
-{% img src="sveltekit-endpoints.webp" alt="Sveltekit endpoints guide" %}
+<Image src="sveltekit-endpoints.webp" alt="Sveltekit endpoints guide" />
 
 The only change you have to do is rename the `index.json.ts` to `index.ts` to convert a standalone endpoint to a page endpoint and remove the redundant boilerplate code from `index.svelte`.
 
@@ -273,7 +279,7 @@ export const GET: RequestHandler = async ({ params }) => {
 
 If you visit [example.com/photos/1](http://example.com/photos/1) it works great but what if you wanted to navigate to the page only after the image is loaded to prevent flickering?
 
-{% video src="flicker.mp4" %}
+<Video src="flicker.mp4" />
 
 You can pass the `props` from the page endpoint to the `load` function and load the image before navigating to the page — pretend `loadImage` is some function imported from utils.
 
@@ -313,11 +319,11 @@ You can pass the `props` from the page endpoint to the `load` function and load 
 
 Thanks to `sveltekit:prefetch` when you hover over or press the image link the image starts to download and is already loaded before you navigate if you look at the network tab.
 
-{% img src="prefetch.webp" alt="Network tab showing the image prefetching" %}
+<Image src="prefetch.webp" alt="Network tab showing the image prefetching" />
 
 This solves the flickering because the image wasn't loaded yet.
 
-{% video src="without-flicker.mp4" %}
+<Video src="without-flicker.mp4" />
 
 Another example is setting [Cache-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) HTTP headers for the page because you have to set it on the HTML document and not the page endpoint to be cached on a [content-delivery network](https://en.wikipedia.org/wiki/Content_delivery_network).
 

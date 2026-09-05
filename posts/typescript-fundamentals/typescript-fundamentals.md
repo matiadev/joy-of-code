@@ -6,7 +6,12 @@ published: '2021-7-7'
 category: typescript
 ---
 
-{% youtube id="Giu1uoiNbGk" title="TypeScript Fundamentals" %}
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="Giu1uoiNbGk" title="TypeScript Fundamentals" />
 
 ## Table of Contents
 
@@ -26,17 +31,17 @@ Have you ever asked yourself how **code completion** in your editor works?
 const pokemon = ['Bulbasaur', 'Charmander', 'Squirtle']
 ```
 
-{% img src="hover-type.webp" alt="Type on hover" %}
+<Image src="hover-type.webp" alt="Type on hover" />
 
 The editor knows that `pokemon` is an **array** of strings.
 
-{% img src="intellisense.webp" alt="Intellisense" %}
+<Image src="intellisense.webp" alt="Intellisense" />
 
 Since `pokemon` is an **array** the [editor intellisense](https://code.visualstudio.com/docs/editor/intellisense) is smart enough to only show us **array** methods.
 
 Imagine not having this feature. You would have to remember and look every method up on the [MDN Web Docs](https://developer.mozilla.org/en-US/).
 
-{% img src="signature-call.webp" alt="Signature call" %}
+<Image src="signature-call.webp" alt="Signature call" />
 
 If we look at the `map` array method we can see it's **call signature** and description in the tooltip.
 
@@ -54,13 +59,13 @@ const pokemon = ['Bulbasaur', 'Charmander', 'Squirtle']
 pokemon.push(1) // oops! 💩
 ```
 
-{% img src="ts-error.webp" alt="TypeScript error" %}
+<Image src="ts-error.webp" alt="TypeScript error" />
 
 The `pokemon` array contains only strings, so we get a **type error** when trying to assign `number` to `string`.
 
 The **VS Code** editor uses the **TypeScript language server** under the hood.
 
-{% img src="built-in-extensions.webp" alt="Built-in extensions" %}
+<Image src="built-in-extensions.webp" alt="Built-in extensions" />
 
 If we look at the built-in **VS Code** extensions, we can notice some usual suspects. Look, there's [Emmet](https://www.emmet.io/). 😄
 
@@ -96,7 +101,7 @@ const pikachu = {
 pikachu.weigth // oops! 💩
 ```
 
-{% img src="no-checking.webp" alt="No checking" %}
+<Image src="no-checking.webp" alt="No checking" />
 
 To prove my point I'm sure you barely noticed the mistake and had to look at what it was. 😄
 
@@ -113,7 +118,7 @@ const pikachu = {
 pikachu.weigth // 🤔 Did you mean 'weight'?
 ```
 
-{% img src="checking.webp" alt="Checking" %}
+<Image src="checking.webp" alt="Checking" />
 
 **Code completion** already makes it hard to make such a mistake writing regular JavaScript because of the benefits we get from TypeScript under the hood, but when we do there's nothing to warn us.
 
@@ -191,7 +196,7 @@ So far we've seen **we can reap the benefits of TypeScript without using TypeScr
 
 If you're on the fence about TypeScript but prefer [JSDoc](https://jsdoc.app/) you can take advantage of TypeScript being **built-in**. You can use **JSDoc** for types and have **self-documenting** code.
 
-{% img src="jsdoc.webp" alt="JSDoc" %}
+<Image src="jsdoc.webp" alt="JSDoc" />
 
 You can read more about [JSDoc support](https://code.visualstudio.com/Docs/languages/javascript#_jsdoc-support) for **VS Code** and look at the examples.
 
@@ -246,7 +251,7 @@ const stringPrimitive = 'Pikachu'
 const stringObject = new String('Pikachu')
 ```
 
-{% img src="primitives.webp" alt="Primitives" %}
+<Image src="primitives.webp" alt="Primitives" />
 
 JavaScript converts **primitive types** to **primitive wrapper objects** behind the scenes so we can use their methods.
 
@@ -306,7 +311,7 @@ function addPokemon(name: string, timeAdded: Date) {
 
 In the example the argument `name` is of type `string` and argument `timeAdded` is of type `Date` which is just a built-in type.
 
-{% img src="code-completion.webp" alt="Code completion" %}
+<Image src="code-completion.webp" alt="Code completion" />
 
 This is extremely useful when dealing with some API because the documentation lives inside your editor.
 
@@ -316,7 +321,7 @@ This is extremely useful when dealing with some API because the documentation li
 addPokemon('Pikachu', Date())
 ```
 
-{% img src="date-string.webp" alt="Date string" %}
+<Image src="date-string.webp" alt="Date string" />
 
 The `Date` function returns a `string` but we have to pass the `new Date` constructor that returns an object. The type **doesn't match** so TypeScript complains that you **can't assign** `string` to `Date`.
 
@@ -325,7 +330,7 @@ The `Date` function returns a `string` but we have to pass the `new Date` constr
 addPokemon('Pikachu', new Date())
 ```
 
-{% img src="date-constructor.webp" alt="Date constructor" %}
+<Image src="date-constructor.webp" alt="Date constructor" />
 
 Let's start learning about TypeScript and using it in practice.
 
@@ -335,7 +340,7 @@ To get started open the [TypeScript Playground](https://www.typescriptlang.org/p
 
 The playground is a great way of seeing the compiled JavaScript code and generated TypeScript types without having to set up anything while using the same [Monaco editor](https://microsoft.github.io/monaco-editor/) that powers VS Code, so you should feel at home.
 
-{% img src="typescript-playground.webp" alt="TypeScript Playground" %}
+<Image src="typescript-playground.webp" alt="TypeScript Playground" />
 
 The **right side** of the editor has some useful tabs:
 
@@ -872,9 +877,9 @@ Let's break it down into steps:
 - If `arg1` is `string` and `arg2` is `number` we know it matches the first signature
 - If `arg1` is an `object` we know it matches the second signature, so we can use **type assertion** and destructure the `name` and `hp` values from it
 
-{% img src="first-overload-signature.webp" alt="Overload signature" %}
+<Image src="first-overload-signature.webp" alt="Overload signature" />
 
-{% img src="second-overload-signature.webp" alt="Overload signature" %}
+<Image src="second-overload-signature.webp" alt="Overload signature" />
 
 ## Object Types
 
@@ -989,7 +994,7 @@ console.log(logPokemon())
 
 **Functions are just special objects in JavaScript** which is a roundabout way of saying we can type them as any other object.
 
-{% img src="functions-are-objects.webp" alt="Functions are objects" %}
+<Image src="functions-are-objects.webp" alt="Functions are objects" />
 
 The next examples shows ways to type different **function expressions** using a **type alias**.
 
@@ -1648,7 +1653,7 @@ interface PokemonAPIResponse {
 }
 ```
 
-{% img src="pokemon-api.webp" alt="Pokemon API" %}
+<Image src="pokemon-api.webp" alt="Pokemon API" />
 
 This shows the [Pokemon API response](https://pokeapi.co/api/v2/pokemon/pikachu).
 
@@ -2585,7 +2590,7 @@ Hooking into code like this is called [metaprogramming](https://en.wikipedia.org
 
 There's a great video by [Fireship](https://fireship.io/) on [The Magic of TypeScript Decorators](https://www.youtube.com/watch?v=O6A-u_FoEX8) you should watch. 🍿
 
-{% youtube id="O6A-u_FoEX8" title="The Magic of TypeScript Decorators" %}
+<YouTube id="O6A-u_FoEX8" title="The Magic of TypeScript Decorators" />
 
 If you want to dive deep into **decorators** you can read [Decorators](https://www.typescriptlang.org/docs/handbook/decorators.html) from the TypeScript Handbook.
 
@@ -2615,7 +2620,7 @@ Next create a `app.ts` file at the root of the project and add some TypeScript c
 const pokemon: string = 'Pikachu'
 ```
 
-{% img src="typescript-setup.webp" alt="TypeScript setup" %}
+<Image src="typescript-setup.webp" alt="TypeScript setup" />
 
 Since your web browser and **Node** don't understand TypeScript we have to **transpile** the TypeScript code to JavaScript.
 
@@ -2623,7 +2628,7 @@ Since your web browser and **Node** don't understand TypeScript we have to **tra
 npx tsc app.ts
 ```
 
-{% img src="typescript-compiler.webp" alt="TypeScript compiler" %}
+<Image src="typescript-compiler.webp" alt="TypeScript compiler" />
 
 [npm](https://www.npmjs.com/) includes a `npx` tool that runs executables without having to install a package globally. It just downloads the binary to your `.bin` folder in `node_modules` and removes it when you're done.
 
@@ -2655,7 +2660,7 @@ This lets us just run `npm run dev`.
 npm run dev
 ```
 
-{% img src="typescript-watch.webp" alt="TypeScript watch" %}
+<Image src="typescript-watch.webp" alt="TypeScript watch" />
 
 If you're not using **Vite** and want **live reload** for your site you can use [live-server](https://www.npmjs.com/package/live-server) together with TypeScript at the same time.
 
@@ -2690,7 +2695,7 @@ If you're a **Node** chad 💪 you can use [ts-node](https://www.npmjs.com/packa
 
 You also get a live code environment (**REPL**) if you run `ts-node` like you would typing `node` in your terminal.
 
-{% img src="ts-node.webp" alt="ts-node" %}
+<Image src="ts-node.webp" alt="ts-node" />
 
 If you're using `ts-node` you can use [nodemon](https://www.npmjs.com/package/nodemon) to watch the files by creating a `nodemon app.ts` script in `package.json`.
 
@@ -2704,7 +2709,7 @@ TypeScript looks for a `tsconfig.json` file that we can create by hand or genera
 npx tsc --init
 ```
 
-{% img src="tsconfig.webp" alt="TSConfig" %}
+<Image src="tsconfig.webp" alt="TSConfig" />
 
 Inside the generated `tsconfig.json` file we can see useful descriptions alongside the TypeScript **compiler options**.
 
@@ -2742,7 +2747,7 @@ Since we set the **rootDir** we don't have specify what file to run inside `pack
 }
 ```
 
-{% img src="typescript-output.webp" alt="TypeScript output" %}
+<Image src="typescript-output.webp" alt="TypeScript output" />
 
 If you want to fire up a quick TypeScript demo you can use an online editor like [CodeSandbox](https://codesandbox.io/) so you can try things out for any project or framework.
 
@@ -2762,7 +2767,7 @@ We can inspect the **generic** `Array` interface by selecting `Array` and pressi
 const pokemon: Array<string> = ['Bulbasaur', 'Charmander', 'Squirtle']
 ```
 
-{% img src="array-interface.webp" alt="Array interface" %}
+<Image src="array-interface.webp" alt="Array interface" />
 
 There's always going to be a lot of information in **type definition** files, so focus on what you're inspecting. You can jump from one **type definition** to another by doing the same to other types inside.
 
@@ -2773,11 +2778,11 @@ There's a couple of interesting things to note:
 
 If we poke around **lib.es2015.core.d.ts** we can find the types that describe how to create arrays on the fly.
 
-{% img src="array-constructor.webp" alt="Array constructor" %}
+<Image src="array-constructor.webp" alt="Array constructor" />
 
 If we go back and look at **lib.es5.d.ts** on the right it looks like something we would expect. You can double-click it or <kbd>Alt</kbd> + <kbd>Click</kbd> the **type definition** to open it in a separate tab.
 
-{% img src="array-interface-es5.webp" alt="es5 interface" %}
+<Image src="array-interface-es5.webp" alt="es5 interface" />
 
 This has properties we would expect like `length`, `pop`, `push`, and `map`.
 
@@ -2818,7 +2823,7 @@ const bulbasaur: string = 'bulbasaur'
 const chosenPokemon = pokemon[bulbasaur]
 ```
 
-{% img src="problems-tab.webp" alt="Problems tab" %}
+<Image src="problems-tab.webp" alt="Problems tab" />
 
 ```json:error
 Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ bulbasaur: { id: number; hp: number; attack: number; defense: number; }; charmander: { id: number; hp: number; attack: number; defense: number; }; squirtle: { id: number; hp: number; attack: number; defense: number; }; }'.
@@ -2931,7 +2936,7 @@ If you used `const` it would infer it as a **literal type**, so the type assignm
 
 There's times when TypeScript goes **cuckoo for Cocoa Puffs** and something goes wrong. Instead of closing and opening your editor just **restart the TypeScript server** by pressing <kbd>F1</kbd> to open the **command palette** in VS Code and find **TypeScript: Restart TS server**.
 
-{% img src="ts-server.webp" alt="Restart TS server" %}
+<Image src="ts-server.webp" alt="Restart TS server" />
 
 If you don't understand the error open up the [TypeScript Playground](https://www.typescriptlang.org/play/) and **reproduce** it there so you have a shareable link you can send to anyone.
 
@@ -2947,7 +2952,7 @@ The great thing about TypeScript is that the community can gather around to crea
 
 [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) is a project that holds a repository for types that everyone gathered around to contribute types having over **80,000** commits and it's used to [search for types](https://www.typescriptlang.org/dt/search?search=) on the official TypeScript page.
 
-{% img src="type-search.webp" alt="Type search" %}
+<Image src="type-search.webp" alt="Type search" />
 
 In the example we have a simple **HTTP server** in **Node** that sends a JSON response.
 
@@ -2963,7 +2968,7 @@ const server = http.createServer(requestListener)
 server.listen(8080)
 ```
 
-{% img src="type-definitions.webp" alt="Type definitions" %}
+<Image src="type-definitions.webp" alt="Type definitions" />
 
 You don't have to use search to figure out if what you're using is typed or not — TypeScript is going to let you know.
 
@@ -2975,7 +2980,7 @@ Let's install the types for Node.
 npm i -D @types/node
 ```
 
-{% img src="require-to-import.webp" alt="Require to import" %}
+<Image src="require-to-import.webp" alt="Require to import" />
 
 TypeScript lets us know we can convert `require` to an `import`.
 
@@ -2999,7 +3004,7 @@ Let's select the `http` part and press <kbd>F12</kbd> to **Go to Definition**. T
 
 Inside the file we can do a <kbd>Ctrl</kbd> + <kbd>F</kbd> search for `requestListener`. If that wouldn't work we coud look for `req` or `res` until we find something.
 
-{% img src="type-declaration-search.webp" alt="Type declaration search" %}
+<Image src="type-declaration-search.webp" alt="Type declaration search" />
 
 We found our types! 🎉 The `req` argument expects `IncomingMessage` and the `res` argument expects `ServerResponse`.
 
@@ -3047,7 +3052,7 @@ We can use [quicktype](https://quicktype.io/) to generate types for more than ju
 
 Their default example uses Pokemon, so it's perfect! Consistency. 💪
 
-{% img src="quicktype.webp" alt="Convert JSON into gorgeous, typesafe code in any language" %}
+<Image src="quicktype.webp" alt="Convert JSON into gorgeous, typesafe code in any language" />
 
 This is also great as a learning tool.
 

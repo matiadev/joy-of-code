@@ -6,7 +6,11 @@ published: '2023-06-02'
 category: svelte
 ---
 
-{% youtube id="dp-7NvLDrK4" title="Using The Svelte Context API With Stores" %}
+<script lang="ts">
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="dp-7NvLDrK4" title="Using The Svelte Context API With Stores" />
 
 ## Table of Contents
 

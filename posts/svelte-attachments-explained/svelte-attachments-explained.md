@@ -6,7 +6,12 @@ published: '2025-05-16'
 category: svelte
 ---
 
-{% youtube id="9PREEREiPAE" title="Svelte Attachments" %}
+<script lang="ts">
+	import Card from '#lib/components/card.svelte'
+	import YouTube from '#lib/components/youtube.svelte'
+</script>
+
+<YouTube id="9PREEREiPAE" title="Svelte Attachments" />
 
 ## Table of Contents
 
@@ -198,7 +203,7 @@ If you want to pass your own arguments like `options`, you can return the attach
 <div {@attach to({ rotation: 360, duration: 2 })} class="box"></div>
 ```
 
-{% info text="This pattern is also called a thunk. A thunk is a function that delays some work until it's needed, rather than performing it immediately." %}
+<Card type="info">This pattern is also called a thunk. A thunk is a function that delays some work until it's needed, rather than performing it immediately.</Card>
 
 You can have multiple attachments. In this example we're using the `Draggable` plugin from GSAP to make the box draggable:
 

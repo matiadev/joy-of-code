@@ -6,13 +6,17 @@ published: '2021-8-29'
 category: css
 ---
 
+<script lang="ts">
+	import Image from '#lib/components/image.svelte'
+</script>
+
 ## Table of Contents
 
 ## Prefers Color Scheme
 
 The majority of modern operating systems let the user choose between a **light** and **dark** mode preference (besides **Linux** as far as I know 😢).
 
-{% img src="comparison.webp" alt="Comparison between light and dark favicon" %}
+<Image src="comparison.webp" alt="Comparison between light and dark favicon" />
 
 We can take advantage of this by using the [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) media query to change the favicon based on the user's preference.
 
@@ -24,7 +28,7 @@ We can take advantage of this by using the [prefers-color-scheme](https://develo
 
 If we look at [caniuse](https://caniuse.com/), the `prefers-color-scheme` media query is [supported across 91% of browsers](https://caniuse.com/prefers-color-scheme).
 
-{% img src="prefers-color-scheme.webp" alt="Prefers color scheme browser usage" %}
+<Image src="prefers-color-scheme.webp" alt="Prefers color scheme browser usage" />
 
 ## Using JavaScript
 
@@ -67,15 +71,15 @@ Inside the [external resource link element](https://developer.mozilla.org/en-US/
 
 The `media` attribute is [supported across 97% of browsers](https://caniuse.com/mdn-html_elements_link_media).
 
-{% img src="link-media.webp" alt="Link media attribute browser usage" %}
+<Image src="link-media.webp" alt="Link media attribute browser usage" />
 
 ## Using a SVG Favicon
 
 I prefer using a **SVG** favicon since it's easy to change and you don't have to think about the dimensions and size. Unfortunately, **SVG favicons** are only [supported across 74% of browsers](https://caniuse.com/link-icon-svg). We have to provide a **fallback** version for **Internet Explorer** and **Safari**.
 
-{% img src="svg-favicons.webp" alt="SVG favicons browser usage" %}
+<Image src="svg-favicons.webp" alt="SVG favicons browser usage" />
 
-{% img src="safari.webp" alt="Person shouting at Safari to be normal" %}
+<Image src="safari.webp" alt="Person shouting at Safari to be normal" />
 
 ```html:example.html showLineNumbers
 <link rel="icon" href="favicon.svg" type="image/svg+xml">

@@ -78,7 +78,9 @@ If I'm recording a video where there's not a lot of motion, then using a low bit
 
 If you're going to record video with a lot of motion like animations, then you should use a higher bitrate (**~8k-20k**) and framerate (**60 FPS**). The video is going to be larger, so you have to strike a balance. You can read the [YouTube recommended upload encoding settings](https://support.google.com/youtube/answer/1722171) for more information.
 
-<Card type="info">I found that upscaling videos from 1080p to 1440p before rendering looks noticably better on YouTube if you care about bitrate, I assume YouTube either uses a different codec or higher bitrate at that resolution.</Card>
+<Card type="info">
+I found that upscaling videos from 1080p to 1440p before rendering looks noticably better on YouTube if you care about bitrate, I assume YouTube either uses a different codec or higher bitrate at that resolution.
+</Card>
 
 If you need to adjust the colors, you can go inside the **advanced** tab and play with the **color format**.
 

@@ -42,7 +42,7 @@
 <style>
 	p {
 		font-family: 'JetBrains Mono';
-		font-size: var(--font-32);
+		font-size: 2rem;
 	}
 
 	button {

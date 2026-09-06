@@ -77,7 +77,7 @@
 	}
 
 	ul {
-		margin-block: var(--spacing-24);
+		margin-block: 1.5rem;
 	}
 
 	ul li::before {
@@ -85,8 +85,8 @@
 	}
 
 	input {
-		padding: var(--spacing-16);
+		padding: 1rem;
 		color: #000;
-		border-radius: var(--rounded-20);
+		border-radius: 20px;
 	}
 </style>

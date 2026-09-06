@@ -15,7 +15,7 @@
 
 <style>
 	p {
-		font-size: var(--font-32);
-		margin-top: var(--spacing-24);
+		font-size: 2rem;
+		margin-top: 1.5rem;
 	}
 </style>

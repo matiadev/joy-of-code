@@ -203,7 +203,9 @@ If you want to pass your own arguments like `options`, you can return the attach
 <div {@attach to({ rotation: 360, duration: 2 })} class="box"></div>
 ```
 
-<Card type="info">This pattern is also called a thunk. A thunk is a function that delays some work until it's needed, rather than performing it immediately.</Card>
+<Card type="info">
+This pattern is also called a thunk. A thunk is a function that delays some work until it's needed, rather than performing it immediately.
+</Card>
 
 You can have multiple attachments. In this example we're using the `Draggable` plugin from GSAP to make the box draggable:
 

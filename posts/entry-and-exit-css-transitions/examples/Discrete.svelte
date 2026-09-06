@@ -21,6 +21,8 @@
 					display: grid;
 					place-content: center;
 					text-align: center;
+					background-color: #1b1e27;
+					color-scheme: dark;
 				}
 
 				.boxes {
@@ -68,6 +70,6 @@
 
 <style>
 	.sandbox {
-		margin-bottom: var(--spacing-32);
+		margin-bottom: 2rem;
 	}
 </style>

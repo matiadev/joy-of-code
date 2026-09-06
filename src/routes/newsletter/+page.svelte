@@ -13,19 +13,6 @@
 
 <Heading>Newsletter</Heading>
 
-<div class="newsletter">
+<div class="grid justify-items-center min-[860px]:mb-32">
 	<Newsletter />
 </div>
-
-<style>
-	.newsletter {
-		display: grid;
-		justify-items: center;
-
-		@media (min-width: 860px) {
-			display: grid;
-			justify-items: center;
-			margin-bottom: var(--spacing-128);
-		}
-	}
-</style>

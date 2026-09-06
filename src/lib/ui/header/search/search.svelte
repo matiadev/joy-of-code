@@ -79,12 +79,20 @@
 	aria-expanded={open}
 	aria-controls="search-panel"
 	onclick={initialize}
-	class="open-search"
+	class="flex items-center gap-2 rounded-2xl border border-search-border bg-search px-4 py-2 text-search-fg transition-colors duration-300 hover:text-primary"
 >
 	<SearchIcon />
-	<span>Search</span>
-	<div class="shortcut">
-		<kbd>{platform === 'MacIntel' ? '⌘' : 'Ctrl'}</kbd> + <kbd>K</kbd>
+	<span class="hidden min-[600px]:block">Search</span>
+	<div class="hidden min-[600px]:block">
+		<kbd
+			class="rounded border border-search-kbd-border bg-search-kbd px-2 py-1 text-search-kbd-fg"
+			>{platform === 'MacIntel' ? '⌘' : 'Ctrl'}</kbd
+		>
+		+
+		<kbd
+			class="rounded border border-search-kbd-border bg-search-kbd px-2 py-1 text-search-kbd-fg"
+			>K</kbd
+		>
 	</div>
 </button>
 
@@ -98,7 +106,7 @@
 	aria-modal="true"
 	aria-label="Search"
 >
-	<div class="content">
+	<div class="overflow-hidden rounded shadow-2xl">
 		<input
 			bind:this={inputEl}
 			bind:value={searchTerm}
@@ -106,9 +114,10 @@
 			autocomplete="off"
 			spellcheck="false"
 			type="search"
+			class="w-full bg-search-input p-4 text-search-input-fg"
 		/>
 		{#if results.length > 0}
-			<div class="results">
+			<div class="max-h-(--results-cap) overflow-y-auto bg-search-results p-4">
 				{#if search === 'load'}
 					<p>Loading...</p>
 				{/if}
@@ -116,10 +125,13 @@
 				<ul>
 					{#each results as result}
 						{#if result.content.length > 0}
-							<li>
-								<a href="/{result.slug}" onclick={close}>{@html result.title}</a
+							<li
+								class="not-last:mb-4 not-last:border-b not-last:border-results not-last:pb-4"
+							>
+								<a href="/{result.slug}" onclick={close} class="block text-2xl"
+									>{@html result.title}</a
 								>
-								<ol>
+								<ol class="mt-2">
 									{#each result.content as content}
 										<li>{@html content}</li>
 									{/each}
@@ -135,22 +147,28 @@
 
 <style>
 	.panel {
+		--panel-width: 90vw;
+		--panel-top: 20vh;
+		--panel-max: calc(80vh - 32px);
+		--backdrop-color: hsl(0 0% 0% / 80%);
+		--backdrop-hidden: hsl(0 0% 0% / 0%);
+		--backdrop-blur: 4px;
 		margin: 0;
 		padding: 0;
 		border: none;
 		background: transparent;
-		width: 90vw;
-		max-width: 600px;
+		width: var(--panel-width);
+		max-width: var(--container-narrow);
 		overflow: visible;
 
-		/* centered modal in the top layer */
+		/* top anchored modal in the top layer, grows downward so the input stays put */
 		position: fixed;
 		inset: 0;
-		margin: auto;
+		margin: var(--panel-top) auto auto;
 		height: fit-content;
-		max-height: calc(100vh - 32px);
+		max-height: var(--panel-max);
 
-		/* top-layer entry/exit animation */
+		/* top layer entry and exit animation */
 		opacity: 0;
 		scale: 0.96;
 		transition:
@@ -171,8 +189,8 @@
 	}
 
 	.panel::backdrop {
-		background-color: hsl(0 0% 0% / 80%);
-		backdrop-filter: blur(4px);
+		background-color: var(--backdrop-color);
+		backdrop-filter: blur(var(--backdrop-blur));
 		transition:
 			display 0.2s allow-discrete,
 			overlay 0.2s allow-discrete,
@@ -182,87 +200,13 @@
 
 	.panel:popover-open::backdrop {
 		@starting-style {
-			background-color: hsl(0 0% 0% / 0%);
-			backdrop-filter: blur(0px);
+			background-color: var(--backdrop-hidden);
+			backdrop-filter: blur(0);
 		}
 	}
 
-	.content {
-		border-radius: var(--rounded-4);
-		box-shadow: 0px 0px 20px hsl(0 0% 0% / 40%);
-		overflow: hidden;
-
-		input {
-			width: 100%;
-			padding: var(--spacing-16);
-			color: var(--clr-search-input-txt);
-			background-color: var(--clr-search-input-bg);
-
-			&:focus {
-				box-shadow: none;
-				border-radius: 0px;
-			}
-		}
-	}
-
-	.results {
-		max-height: 60vh;
-		padding: var(--spacing-16);
-		background-color: var(--clr-search-results-bg);
-		overflow-y: auto;
-		scrollbar-width: thin;
-
-		ol {
-			margin-block-start: var(--spacing-8);
-		}
-
-		li:not(:last-child) {
-			margin-block-end: var(--spacing-16);
-			padding-block-end: var(--spacing-16);
-			border-bottom: 1px solid var(--clr-results-border);
-		}
-
-		a {
-			display: block;
-			font-size: var(--font-24);
-		}
-
-		:global(mark) {
-			background-color: var(--clr-primary);
-		}
-	}
-
-	.open-search {
-		display: flex;
-		align-items: center;
-		gap: var(--spacing-8);
-		padding: var(--spacing-8) var(--spacing-16);
-		color: var(--clr-search-txt);
-		background-color: var(--clr-search-bg);
-		border: 1px solid var(--clr-search-border);
-		border-radius: var(--rounded-20);
-		transition: color 0.3s ease;
-
-		&:hover {
-			color: var(--clr-primary);
-		}
-
-		span,
-		.shortcut {
-			display: none;
-
-			@media (width >= 600px) {
-				display: block;
-			}
-		}
-
-		kbd {
-			padding: 4px 8px;
-			color: var(--clr-search-kbd-txt);
-			background-color: var(--clr-search-kbd-bg);
-			border: 1px solid var(--clr-search-kbd-border);
-			border-radius: var(--rounded-4);
-		}
+	:global(mark) {
+		background-color: var(--color-primary);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

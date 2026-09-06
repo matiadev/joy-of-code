@@ -21,8 +21,8 @@
 		textarea {
 			width: 600px;
 			height: 200px;
-			padding: var(--spacing-8);
-			border-radius: var(--rounded-4);
+			padding: 0.5rem;
+			border-radius: 4px;
 		}
 	}
 </style>

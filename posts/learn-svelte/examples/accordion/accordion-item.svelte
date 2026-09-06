@@ -32,12 +32,12 @@
 <style>
 	.accordion-item {
 		&:not(:last-child) {
-			margin-bottom: var(--spacing-24);
+			margin-bottom: 1.5rem;
 		}
 
 		.accordion-heading {
 			display: flex;
-			gap: var(--spacing-32);
+			gap: 2rem;
 			padding: 0px;
 			border: none;
 		}
@@ -51,7 +51,7 @@
 		}
 
 		.accordion-content {
-			margin-top: var(--spacing-8);
+			margin-top: 0.5rem;
 		}
 	}
 </style>

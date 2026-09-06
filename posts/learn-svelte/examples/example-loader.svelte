@@ -46,9 +46,9 @@
 		accent-color: orangered;
 
 		height: 400px;
-		margin-bottom: var(--spacing-32);
-		background: var(--clr-code-bg);
-		border-radius: var(--rounded-20);
+		margin-bottom: 2rem;
+		background: linear-gradient(hsl(226 19% 13%), hsl(226 19% 16%));
+		border-radius: 20px;
 		text-align: center;
 		box-shadow: var(--shadow-md);
 		overflow: hidden auto;
@@ -62,13 +62,13 @@
 				height: 100%;
 				display: grid;
 				place-content: center;
-				padding: var(--spacing-24);
+				padding: 1.5rem;
 			}
 
 			button {
-				padding: var(--spacing-16);
-				border: 4px solid var(--clr-primary);
-				border-radius: var(--rounded-20);
+				padding: 1rem;
+				border: 4px solid var(--color-primary);
+				border-radius: 20px;
 				text-transform: capitalize;
 				transition: scale 0.15s ease-out;
 

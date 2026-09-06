@@ -28,7 +28,7 @@
 	label {
 		display: flex;
 		align-items: center;
-		gap: var(--spacing-8);
-		margin-top: var(--spacing-16);
+		gap: 0.5rem;
+		margin-top: 1rem;
 	}
 </style>

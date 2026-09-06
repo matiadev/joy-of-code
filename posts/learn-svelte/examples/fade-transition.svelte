@@ -21,6 +21,6 @@
 
 <style>
 	.message {
-		font-size: var(--font-48);
+		font-size: 3rem;
 	}
 </style>

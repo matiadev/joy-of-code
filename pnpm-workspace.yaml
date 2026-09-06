@@ -9,8 +9,3 @@ minimumReleaseAgeExclude:
   - prettier-plugin-svelte@4.0.0
   - vite@8.0.14
   - '@sveltecraft/sandbox@0.0.1'
-onlyBuiltDependencies:
-  - core-js
-  - esbuild
-  - protobufjs
-  - svelte-preprocess

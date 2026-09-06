@@ -3,94 +3,58 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="/assets/apple-touch-icon.png"
+		<meta name="color-scheme" content="dark light" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: light)"
+			content="#fafafa"
 		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/assets/favicon-32x32.png"
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="#182030"
 		/>
+		<link rel="icon" href="%sveltekit.assets%/assets/favicon.svg" />
+		<link rel="icon" href="%sveltekit.assets%/assets/favicon.ico" />
+		<link rel="manifest" href="%sveltekit.assets%/manifest.json" />
 		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/assets/favicon-16x16.png"
+			rel="alternate"
+			type="application/atom+xml"
+			href="%sveltekit.assets%/rss.xml"
 		/>
-		<link rel="icon" href="/assets/favicon.svg" />
-		<link rel="icon" href="/assets/favicon.ico" />
-		<link rel="manifest" href="/manifest.json" />
-		<link rel="alternate" type="application/atom+xml" href="/rss.xml" />
 		<script>
-			const html = document.documentElement
-			const userTheme = localStorage.theme
-			const userFont = localStorage.font
-			const userPostFontSize = localStorage.textSize
-			const userPostTextLength = localStorage.textLength
-			const userPostTextHeight = localStorage.textHeight
+			try {
+				var html = document.documentElement
+				var theme = localStorage.theme
 
-			const prefersDarkMode = window.matchMedia(
-				'(prefers-color-scheme: dark)'
-			).matches
-			const prefersLightMode = window.matchMedia(
-				'(prefers-color-scheme: light)'
-			).matches
+				// one-time migration from emoji themes to light/dark
+				var darkThemes = [
+					'🌛 Night',
+					'🐺 Night Howl',
+					'🧠 Night Mind',
+					'🌙 Dusk',
+				]
+				var lightThemes = ['☀️ Daylight', '☀️ Light']
 
-			// check if the user set a dyslexic font
-			if (userFont) {
-				html.dataset.font = userFont
-			}
+				if (darkThemes.includes(theme)) {
+					theme = localStorage.theme = 'dark'
+				} else if (lightThemes.includes(theme)) {
+					theme = localStorage.theme = 'light'
+				}
 
-			// check if the user set a font size for posts
-			if (userPostFontSize) {
-				html.style.setProperty('--post-txt-size', userPostFontSize)
-			}
+				var dark =
+					theme === 'dark' ||
+					(!theme && matchMedia('(prefers-color-scheme: dark)').matches)
+				html.classList.toggle('dark', dark)
 
-			// check if the user set a text length for posts
-			if (userPostTextLength) {
-				html.style.setProperty('--post-txt-length', userPostTextLength)
-			}
-
-			// check if the user set a text height for posts
-			if (userPostTextHeight) {
-				html.style.setProperty('--post-txt-height', userPostTextHeight)
-			}
-
-			// check if the user set a theme
-			if (userTheme) {
-				html.dataset.theme = userTheme
-			}
-
-			// the user might have a deprecated theme
-			if (userTheme === '🌙 Dusk') {
-				html.dataset.theme = '🌛 Night'
-				localStorage.theme = '🌛 Night'
-			}
-
-			if (userTheme === '☀️ Light') {
-				html.dataset.theme = '☀️ Daylight'
-				localStorage.theme = '☀️ Daylight'
-			}
-
-			// otherwise check for user preference
-			if (!userTheme && prefersDarkMode) {
-				html.dataset.theme = '🌛 Night'
-				localStorage.theme = '🌛 Night'
-			}
-
-			if (!userTheme && prefersLightMode) {
-				html.dataset.theme = '☀️ Daylight'
-				localStorage.theme = '☀️ Daylight'
-			}
-
-			// if nothing is set default to dark mode
-			if (!userTheme && !prefersDarkMode && !prefersLightMode) {
-				html.dataset.theme = '🌛 Night'
-				localStorage.theme = '🌛 Night'
-			}
+				if (localStorage.font) html.dataset.font = 'dyslexic'
+				if (localStorage.textSize)
+					html.style.setProperty('--post-txt-size', localStorage.textSize)
+				if (localStorage.textLength)
+					html.style.setProperty('--post-txt-length', localStorage.textLength)
+				if (localStorage.textHeight)
+					html.style.setProperty('--post-txt-height', localStorage.textHeight)
+			} catch {}
 		</script>
 		%sveltekit.head%
 	</head>

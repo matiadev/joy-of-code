@@ -30,11 +30,11 @@
 
 	input {
 		color: #000;
-		padding: var(--spacing-16);
-		border-radius: var(--rounded-20);
+		padding: 1rem;
+		border-radius: 20px;
 	}
 
 	ul {
-		margin-top: var(--spacing-32);
+		margin-top: 2rem;
 	}
 </style>

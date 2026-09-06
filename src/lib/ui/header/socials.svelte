@@ -3,7 +3,7 @@
 	import * as config from '#lib/site/config.js'
 </script>
 
-<div class="socials">
+<div class="hidden items-center gap-4 min-[768px]:flex">
 	<a href={config.youtube} target="_blank" rel="noreferrer">
 		<YouTube width={24} height={24} aria-label="YouTube" />
 	</a>
@@ -17,15 +17,3 @@
 		<RSS width={24} height={24} aria-label="RSS feed" />
 	</a>
 </div>
-
-<style>
-	.socials {
-		display: none;
-
-		@media (width >= 768px) {
-			display: flex;
-			align-items: center;
-			gap: var(--spacing-16);
-		}
-	}
-</style>

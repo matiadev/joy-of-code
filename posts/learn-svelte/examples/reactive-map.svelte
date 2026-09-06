@@ -54,10 +54,10 @@
 	}
 
 	input {
-		margin-bottom: var(--spacing-32);
-		padding: var(--spacing-16);
+		margin-bottom: 2rem;
+		padding: 1rem;
 		color: #000;
-		border-radius: var(--rounded-20);
+		border-radius: 20px;
 	}
 
 	summary {
@@ -66,7 +66,7 @@
 
 	details {
 		overflow: hidden;
-		margin-bottom: var(--spacing-32);
+		margin-bottom: 2rem;
 
 		.data {
 			height: 200px;

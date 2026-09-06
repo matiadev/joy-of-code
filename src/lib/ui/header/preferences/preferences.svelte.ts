@@ -58,10 +58,11 @@ class Preferences {
 		this.textLength = DEFAULT_TEXT_LENGTH
 		this.textHeight = DEFAULT_TEXT_HEIGHT
 
-		this.#htmlEl!.dataset.theme = '🌛 Night'
+		const dark = matchMedia('(prefers-color-scheme: dark)').matches
+		this.#htmlEl!.classList.toggle('dark', dark)
 		delete this.#htmlEl!.dataset.font
 
-		localStorage.theme = '🌛 Night'
+		localStorage.theme = dark ? 'dark' : 'light'
 		localStorage.removeItem('font')
 
 		this.resetTheme = !this.resetTheme

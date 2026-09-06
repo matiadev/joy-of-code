@@ -40,7 +40,7 @@
 	div {
 		display: grid;
 		justify-items: start;
-		gap: var(--spacing-16);
+		gap: 1rem;
 
 		> * {
 			margin: 0;
@@ -49,6 +49,6 @@
 
 	hr {
 		width: 100%;
-		margin-top: var(--spacing-24);
+		margin-top: 1.5rem;
 	}
 </style>

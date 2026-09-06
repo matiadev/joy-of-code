@@ -4,7 +4,7 @@
 </div>
 <br>
 
-## ▶️ Joy of Code ![YouTube Subscribers](https://img.shields.io/youtube/channel/subscribers/UC6wpjLSLn2dhlaDjn6_V0rw)
+## ▶️ Joy of Code [![YouTube](https://img.shields.io/badge/youtube-subscribe-red?logo=youtube)](https://www.youtube.com/@joyofcodedev)
 
 I make web development content on [YouTube](https://www.youtube.com/@joyofcodedev).
 

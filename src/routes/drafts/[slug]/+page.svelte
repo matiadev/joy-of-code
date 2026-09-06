@@ -1,12 +1,19 @@
 <script lang="ts">
 	import { formatDate } from '#lib/utils/index.js'
 	import * as config from '#lib/site/config.js'
+	import type { PageData } from './$types'
 
 	import Card from '../../[slug]/card.svelte'
 	import Clipboard from '../../[slug]/clipboard.svelte'
 	import TableOfContents from '../../[slug]/toc.svelte'
 
-	let { data } = $props()
+	type Props = {
+		data: PageData
+	}
+
+	let { data }: Props = $props()
+
+	const Content = $derived(data.component)
 
 	let editUrl = $derived(
 		`${config.fileUrl}/${data.frontmatter.slug}/${data.frontmatter.slug}.md`
@@ -41,36 +48,17 @@
 
 	<article class="prose">
 		<header>
-			<h1 class="title">{data.frontmatter.title}</h1>
-			<p class="published">
-				Published {formatDate(data.frontmatter.published)}
+			<h1 class="mx-auto max-w-narrow">{data.frontmatter.title}</h1>
+			<p class="mt-6">
+				Published <span class="font-bold">{formatDate(data.frontmatter.published)}</span>
 			</p>
 		</header>
 
-		<data.component />
+		<Content />
 	</article>
 
-	<div class="cards">
+	<div class="mx-auto my-16 grid max-w-prose gap-8">
 		<Card preset="support" />
 		<Card preset="edit" {editUrl} />
 	</div>
 </main>
-
-<style>
-	.cards {
-		display: grid;
-		row-gap: var(--spacing-32);
-		max-width: var(--post-txt-length);
-		margin: var(--spacing-64) 0;
-		margin-inline: auto;
-	}
-
-	.title {
-		max-width: 600px;
-		margin-inline: auto;
-	}
-
-	.published {
-		margin-top: var(--spacing-24);
-	}
-</style>

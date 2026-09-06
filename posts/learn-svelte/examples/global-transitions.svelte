@@ -30,11 +30,11 @@
 		width: 400px;
 		display: grid;
 		grid-template-columns: repeat(10, 1fr);
-		gap: var(--spacing-16);
+		gap: 1rem;
 	}
 
 	button {
-		margin-top: var(--spacing-32);
+		margin-top: 2rem;
 		margin-inline: auto;
 		justify-self: start;
 	}

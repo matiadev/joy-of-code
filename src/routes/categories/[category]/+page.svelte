@@ -20,32 +20,13 @@
 
 <Posts {posts}>
 	{#snippet title()}
-		<div class="container">
+		<div class="flex justify-between">
 			<div>
-				<span class="tag">{category}</span>
+				<span class="rounded-2xl bg-base p-4 font-bold shadow-sm">{category}</span>
 			</div>
 			<div>
-				<span class="results">{posts.length}</span> results
+				<span class="font-bold">{posts.length}</span> results
 			</div>
 		</div>
 	{/snippet}
 </Posts>
-
-<style>
-	.container {
-		display: flex;
-		justify-content: space-between;
-
-		.tag {
-			padding: var(--spacing-16);
-			font-weight: 700;
-			background-color: var(--clr-bg);
-			border-radius: var(--rounded-20);
-			box-shadow: var(--shadow-sm);
-		}
-
-		.results {
-			font-weight: 700;
-		}
-	}
-</style>

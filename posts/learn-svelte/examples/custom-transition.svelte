@@ -36,12 +36,12 @@
 
 <style>
 	.text {
-		font-size: var(--font-48);
+		font-size: 3rem;
 	}
 
 	button {
 		margin-inline: auto;
 		justify-self: start;
-		margin-top: var(--spacing-32);
+		margin-top: 2rem;
 	}
 </style>

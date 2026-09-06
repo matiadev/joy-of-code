@@ -28,110 +28,40 @@
 </svelte:head>
 
 <main>
-	<section class="hero">
-		<div class="latest-post">
-			<h1 class="title">{posts[0].title}</h1>
-			<p class="description">{posts[0].description}</p>
-			<a class="continue-reading" href={posts[0].slug}>
+	<section
+		class="mt-16 rounded-2xl border border-menu-border bg-footer px-6 py-8 shadow-sm min-[860px]:grid min-[860px]:grid-cols-12 min-[860px]:gap-x-6"
+	>
+		<div class="min-[860px]:col-span-5 min-[860px]:col-start-2">
+			<h1 class="py-4 text-hero-title">{posts[0].title}</h1>
+			<p class="text-xl leading-8 text-card-fg">{posts[0].description}</p>
+			<a class="mt-8 flex w-max items-center gap-1" href={posts[0].slug}>
 				<span>Continue reading</span>
 				<ArrowRight width={24} height={24} aria-hidden={true} />
 			</a>
 		</div>
 
-		<div class="divider"></div>
+		<div
+			class="my-8 border-b border-menu-border min-[860px]:col-span-1 min-[860px]:col-start-7 min-[860px]:m-0 min-[860px]:justify-self-center min-[860px]:border-b-0 min-[860px]:border-l"
+		></div>
 
-		<div class="newsletter">
-			<h2>Subscribe for updates</h2>
+		<div
+			class="min-[860px]:col-span-5 min-[860px]:col-start-8 min-[860px]:grid min-[860px]:place-content-center"
+		>
+			<h2 class="text-heading">Subscribe for updates</h2>
 			<Newsletter />
 		</div>
 	</section>
 
 	<Posts {posts}>
 		{#snippet title()}
-			<h3 class="latest">Latest</h3>
+			<h3 class="font-bold">Latest</h3>
 		{/snippet}
 
 		{#snippet more()}
-			<a href="/archive">
+			<a href="/archive" class="mt-8 flex w-max gap-1">
 				<span>See more posts</span>
 				<ArrowRight width="24" height="24" aria-hidden="true" />
 			</a>
 		{/snippet}
 	</Posts>
 </main>
-
-<style>
-	.hero {
-		margin-block-start: var(--spacing-64);
-		padding: var(--spacing-32) var(--spacing-24);
-		background: var(--clr-footer-bg);
-		border: 1px solid var(--clr-menu-border);
-		border-radius: var(--rounded-20);
-		box-shadow: var(--shadow-sm);
-
-		@media (width >= 860px) {
-			display: grid;
-			grid-template-columns: repeat(12, [column-start] 1fr);
-			column-gap: var(--spacing-24);
-		}
-
-		.divider {
-			border-bottom: 1px solid var(--clr-menu-border);
-			margin: var(--spacing-32) 0;
-
-			@media (width >= 860px) {
-				grid-column: column-start 7 / span 1;
-				justify-self: center;
-				margin: 0;
-				border-left: 1px solid var(--clr-menu-border);
-				border-bottom: none;
-			}
-		}
-	}
-
-	.latest-post {
-		@media (width >= 860px) {
-			grid-column: column-start 2 / span 5;
-		}
-
-		.title {
-			padding-block: var(--spacing-16);
-			font-size: clamp(var(--font-24), 4vw, 40px);
-		}
-
-		.description {
-			font-size: var(--font-20);
-			color: var(--clr-card-txt);
-		}
-
-		.continue-reading {
-			width: max-content;
-			display: flex;
-			align-items: center;
-			margin-top: var(--spacing-32);
-		}
-
-		a {
-			display: flex;
-			gap: var(--spacing-4);
-		}
-	}
-
-	.newsletter {
-		@media (width >= 860px) {
-			display: grid;
-			place-content: center;
-			grid-auto-rows: min-content;
-			grid-column: column-start 8 / span 4;
-		}
-
-		h2 {
-			font-size: var(--font-32);
-			line-height: 32px;
-		}
-	}
-
-	.latest {
-		font-weight: 700;
-	}
-</style>

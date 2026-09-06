@@ -2,18 +2,12 @@
 	import { preferences } from './preferences.svelte'
 </script>
 
-<div class="reset-preferences">
+<div class="flex items-center justify-between gap-8 pt-6 min-[480px]:gap-16">
 	<span>Use default settings</span>
-	<button onclick={() => preferences.reset()}>Reset</button>
+	<button
+		onclick={() => preferences.reset()}
+		class="rounded bg-primary px-4 py-2 font-bold text-theme-fg shadow-sm"
+	>
+		Reset
+	</button>
 </div>
-
-<style>
-	button {
-		padding: var(--spacing-8) var(--spacing-16);
-		font-weight: 700;
-		color: var(--clr-input-txt);
-		background-color: var(--clr-primary);
-		border-radius: var(--rounded-4);
-		box-shadow: var(--shadow-sm);
-	}
-</style>

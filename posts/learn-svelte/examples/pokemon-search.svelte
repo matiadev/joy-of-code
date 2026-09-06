@@ -33,14 +33,14 @@
 
 <style>
 	input {
-		padding: var(--spacing-16);
+		padding: 1rem;
 		color: #000;
-		border-radius: var(--rounded-20);
+		border-radius: 20px;
 	}
 
 	img {
 		width: 200px;
-		margin-top: var(--spacing-24);
+		margin-top: 1.5rem;
 		image-rendering: pixelated;
 	}
 </style>

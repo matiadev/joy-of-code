@@ -48,7 +48,8 @@ export async function POST({ request }) {
 		)
 	} catch (error) {
 		if (error instanceof Error) {
-			return Response.json({ error: error.message })
+			return Response.json({ error: error.message }, { status: 500 })
 		}
+		return Response.json({ error: 'Something went wrong. 😊' }, { status: 500 })
 	}
 }

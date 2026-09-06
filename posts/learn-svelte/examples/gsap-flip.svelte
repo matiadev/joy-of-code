@@ -39,9 +39,9 @@
 		width: 600px;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		gap: var(--spacing-8);
+		gap: 0.5rem;
 		color: orangered;
-		font-size: var(--font-32);
+		font-size: 2rem;
 		font-weight: 700;
 		text-shadow: 2px 2px 0px #000;
 
@@ -51,11 +51,11 @@
 			aspect-ratio: 1;
 			background-color: #222;
 			border: 1px solid #333;
-			border-radius: var(--rounded-20);
+			border-radius: 20px;
 		}
 	}
 
 	button {
-		margin-top: var(--spacing-24);
+		margin-top: 1.5rem;
 	}
 </style>

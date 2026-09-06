@@ -26,7 +26,7 @@
 		width: 500px;
 
 		video {
-			margin-bottom: var(--spacing-8);
+			margin-bottom: 0.5rem;
 			border-radius: 0.5rem;
 		}
 

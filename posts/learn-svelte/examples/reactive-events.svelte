@@ -55,14 +55,14 @@
 	.box {
 		aspect-ratio: 1;
 		width: 100px;
-		margin-bottom: var(--spacing-8);
+		margin-bottom: 0.5rem;
 		background-color: orangered;
 		border-radius: 1rem;
 	}
 
 	label {
 		display: flex;
-		gap: var(--spacing-8);
-		margin-top: var(--spacing-32);
+		gap: 0.5rem;
+		margin-top: 2rem;
 	}
 </style>

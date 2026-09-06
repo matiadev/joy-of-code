@@ -12,15 +12,15 @@
 
 <Heading>Drafts</Heading>
 
-<section>
-	<div class="container">
+<section class="mx-auto mt-16 max-w-article">
+	<div class="flex justify-between">
 		<h3>Drafts</h3>
 		<div>
-			<span class="results">{data.posts.length}</span> results
+			<span class="font-bold">{data.posts.length}</span> results
 		</div>
 	</div>
 
-	<div class="posts">
+	<div class="mt-16">
 		{#each data.posts as post, i}
 			<div
 				in:fade={{
@@ -28,10 +28,14 @@
 					delay: i < 10 ? 100 * i : 100 * 4,
 				}}
 			>
-				<a href="/drafts/{post.slug}">
-					<article class="post">
-						<div class="details">
-							<span class="title">{post.title}</span>
+				<a href="/drafts/{post.slug}" class="before:content-none">
+					<article class="mt-8 border-b border-menu-border pb-8">
+						<div>
+							<span
+								class="title text-card-title font-medium capitalize"
+							>
+								{post.title}
+							</span>
 						</div>
 					</article>
 				</a>
@@ -39,48 +43,3 @@
 		{/each}
 	</div>
 </section>
-
-<style>
-	section {
-		max-width: 740px;
-		margin-inline: auto;
-		margin-block-start: var(--spacing-64);
-
-		.container {
-			display: flex;
-			justify-content: space-between;
-
-			.results {
-				font-weight: 700;
-			}
-		}
-	}
-
-	.posts {
-		margin-top: var(--spacing-64);
-
-		a::before {
-			content: none;
-		}
-
-		.post {
-			margin-block-start: var(--spacing-32);
-			padding-block-end: var(--spacing-32);
-			border-bottom: 1px solid var(--clr-menu-border);
-
-			:global(html[data-font='dyslexic']) & .title {
-				font-family: var(--font-dyslexic);
-				font-size: var(--font-24);
-				line-height: 32px;
-			}
-
-			.title {
-				font-family: var(--font-sans);
-				font-size: clamp(var(--font-24), 4vw, var(--font-32));
-				font-weight: 500;
-				line-height: 40px;
-				text-transform: capitalize;
-			}
-		}
-	}
-</style>

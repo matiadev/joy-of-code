@@ -22,6 +22,6 @@
 	}
 
 	button {
-		margin-top: var(--spacing-32);
+		margin-top: 2rem;
 	}
 </style>

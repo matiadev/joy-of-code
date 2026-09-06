@@ -20,7 +20,9 @@ category: svelte
 
 The [Svelte Inspector](https://github.com/sveltejs/vite-plugin-svelte/blob/main/docs/inspector.md) is part of the `@sveltejs/vite-plugin-svelte` package found in most Svelte and SvelteKit projects which helps you find any element on the page in your code editor:
 
-<Card type="info">This post has been updated for Svelte 5 and the same instructions should work for any Vite based Svelte and SvelteKit project.</Card>
+<Card type="info">
+This post has been updated for Svelte 5 and the same instructions should work for any Vite based Svelte and SvelteKit project.
+</Card>
 
 <Video src="inspector.mp4" />
 

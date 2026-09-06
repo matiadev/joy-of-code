@@ -28,7 +28,10 @@
 	}
 </script>
 
-<form {onsubmit}>
+<form
+	{onsubmit}
+	class="my-4 flex h-16 max-w-field rounded border border-input-border shadow-sm"
+>
 	<label for="email" class="sr-only">Enter your email</label>
 	<input
 		bind:value={email}
@@ -37,83 +40,30 @@
 		name="email"
 		placeholder="your@email.com"
 		autocomplete="on"
+		class="w-full flex-1 rounded-l bg-input p-6 placeholder:text-input-placeholder"
 	/>
-	<button type="submit">
-		<Envelope width={24} height={24} aria-hidden={true} />
-		<span>Subscribe</span>
+	<button
+		type="submit"
+		class="rounded-r bg-primary p-6 text-input-fg min-[860px]:flex min-[860px]:items-center min-[860px]:justify-center min-[860px]:gap-1"
+	>
+		<Envelope
+			width={24}
+			height={24}
+			aria-hidden={true}
+			class="hidden min-[860px]:block"
+		/>
+		<span class="text-base font-bold [text-box:trim-both_cap_alphabetic]"
+			>Subscribe</span
+		>
 	</button>
 </form>
 
-<div class="message">
+<div class="mb-4 font-bold">
 	{#if error}
-		<span in:fade class="error">{error}</span>
+		<span in:fade class="text-error">{error}</span>
 	{/if}
 
 	{#if success}
-		<span in:fade class="success">{success}</span>
+		<span in:fade class="text-primary">{success}</span>
 	{/if}
 </div>
-
-<style>
-	form {
-		display: flex;
-		max-width: 360px;
-		height: 48px;
-		margin: var(--spacing-16) 0;
-		border-radius: var(--rounded-4);
-		border: 1px solid var(--clr-input-border);
-		box-shadow: var(--shadow-sm);
-
-		input {
-			width: 100%;
-			padding: var(--spacing-8) var(--spacing-16);
-			background-color: var(--clr-input-bg);
-			border-radius: var(--rounded-4) 0 0 var(--rounded-4);
-			flex: 1;
-
-			&::placeholder {
-				color: var(--clr-input-placeholder-txt);
-			}
-		}
-
-		button {
-			padding: var(--spacing-8);
-			color: var(--clr-input-txt);
-			background-color: var(--clr-primary);
-			border-radius: 0 var(--rounded-4) var(--rounded-4) 0;
-
-			span {
-				font-size: var(--font-16);
-				font-weight: 700;
-				text-box: trim-both cap alphabetic;
-			}
-
-			@media (width >= 860px) {
-				display: flex;
-				align-items: center;
-				gap: var(--spacing-4);
-			}
-
-			:global(svg) {
-				display: none;
-
-				@media (width >= 860px) {
-					display: block;
-				}
-			}
-		}
-	}
-
-	.message {
-		margin-bottom: var(--spacing-16);
-		font-weight: 700;
-
-		.error {
-			color: hsl(9 100% 64%);
-		}
-
-		.success {
-			color: var(--clr-primary);
-		}
-	}
-</style>

@@ -25,6 +25,8 @@
 				body {
 					display: grid;
 					place-content: center;
+					background-color: #1b1e27;
+					color-scheme: dark;
 				}
 
 				body:has(#toggle:checked) .box {
@@ -86,6 +88,6 @@
 
 <style>
 	.sandbox {
-		margin-bottom: var(--spacing-32);
+		margin-bottom: 2rem;
 	}
 </style>

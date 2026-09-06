@@ -98,7 +98,7 @@
 		section {
 			display: grid;
 			grid-template-columns: repeat(2, 240px);
-			gap: var(--spacing-32);
+			gap: 2rem;
 		}
 	}
 
@@ -109,16 +109,16 @@
 			margin-top: 1rem;
 
 			article:not(:last-child) {
-				margin-bottom: var(--spacing-16);
+				margin-bottom: 1rem;
 			}
 		}
 	}
 
 	p {
-		margin-bottom: var(--spacing-8);
+		margin-bottom: 0.5rem;
 	}
 
 	button {
-		padding: var(--spacing-4);
+		padding: 0.25rem;
 	}
 </style>

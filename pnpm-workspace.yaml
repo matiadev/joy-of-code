@@ -4,7 +4,7 @@ allowBuilds:
   core-js: true
   esbuild: true
   protobufjs: true
-  svelte-preprocess: true
+  svelte-preprocess: set this to true or false
 minimumReleaseAgeExclude:
   - prettier-plugin-svelte@4.0.0
   - vite@8.0.14

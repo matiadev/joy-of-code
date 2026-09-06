@@ -6,8 +6,14 @@ node_modules
 .env
 .env.*
 !.env.example
+example/
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+bun.lock
+bun.lockb
+
+# Miscellaneous
+/static/

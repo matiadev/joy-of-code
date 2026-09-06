@@ -174,10 +174,10 @@ function markdown() {
 		 * Convert Markdown to HTML.
 		 * @param {Object} params
 		 * @param {string} params.content
-		 * @param {string} params.filename
+		 * @param {string} [params.filename]
 		 */
 		async markup({ content, filename }) {
-			if (filename.endsWith('.md')) {
+			if (filename?.endsWith('.md')) {
 				const { markdown, meta } = frontmatter(content)
 				const html = await parseMarkdown(markdown)
 				const code = escapeHtml(html)
